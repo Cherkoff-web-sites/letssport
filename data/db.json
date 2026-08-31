@@ -1,0 +1,4533 @@
+{
+  "settings": {
+    "packPrice": 7500,
+    "packLessons": 8,
+    "note": "Цена 8 занятий из расчёта стоимости. 1 занятие = 7500 / 8. Скидка семьи: 2 ребёнка 10%, 3 ребёнка 20%."
+  },
+  "months": [
+    {
+      "id": "2026-09",
+      "label": "Сентябрь 2026",
+      "year": 2026,
+      "month": 9,
+      "days": [
+        {
+          "day": 1,
+          "weekday": "вт"
+        },
+        {
+          "day": 2,
+          "weekday": "ср"
+        },
+        {
+          "day": 3,
+          "weekday": "чт"
+        },
+        {
+          "day": 4,
+          "weekday": "пт"
+        },
+        {
+          "day": 5,
+          "weekday": "сб"
+        },
+        {
+          "day": 6,
+          "weekday": "воскр"
+        },
+        {
+          "day": 7,
+          "weekday": "пн"
+        },
+        {
+          "day": 8,
+          "weekday": "вт"
+        },
+        {
+          "day": 9,
+          "weekday": "ср"
+        },
+        {
+          "day": 10,
+          "weekday": "чт"
+        },
+        {
+          "day": 11,
+          "weekday": "пт"
+        },
+        {
+          "day": 12,
+          "weekday": "сб"
+        },
+        {
+          "day": 13,
+          "weekday": "воскр"
+        },
+        {
+          "day": 14,
+          "weekday": "пн"
+        },
+        {
+          "day": 15,
+          "weekday": "вт"
+        },
+        {
+          "day": 16,
+          "weekday": "ср"
+        },
+        {
+          "day": 17,
+          "weekday": "чт"
+        },
+        {
+          "day": 18,
+          "weekday": "пт"
+        },
+        {
+          "day": 19,
+          "weekday": "сб"
+        },
+        {
+          "day": 20,
+          "weekday": "воскр"
+        },
+        {
+          "day": 21,
+          "weekday": "пн"
+        },
+        {
+          "day": 22,
+          "weekday": "вт"
+        },
+        {
+          "day": 23,
+          "weekday": "ср"
+        },
+        {
+          "day": 24,
+          "weekday": "чт"
+        },
+        {
+          "day": 25,
+          "weekday": "пт"
+        },
+        {
+          "day": 26,
+          "weekday": "сб"
+        },
+        {
+          "day": 27,
+          "weekday": "воскр"
+        },
+        {
+          "day": 28,
+          "weekday": "пн"
+        },
+        {
+          "day": 29,
+          "weekday": "вт"
+        },
+        {
+          "day": 30,
+          "weekday": "ср"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "g1",
+      "name": "ХГ ТИМИРЯЗЕВСКАЯ (пн/ср 17:30-18:30)",
+      "weekdays": [
+        "пн",
+        "ср"
+      ]
+    },
+    {
+      "id": "g2",
+      "name": "ХГ ТИМИРЯЗЕВСКАЯ (пн/ср 18:30-19:30)",
+      "weekdays": [
+        "пн",
+        "ср"
+      ]
+    },
+    {
+      "id": "g3",
+      "name": "ХГ ТИМИРЯЗЕВСКАЯ (пн/ср 19:30-20:30)",
+      "weekdays": [
+        "пн",
+        "ср"
+      ]
+    },
+    {
+      "id": "g4",
+      "name": "ХГ ВАЛДАЙСКИЙ ст (ср17:00-18:00/пт 16:30-17:30)",
+      "weekdays": [
+        "ср",
+        "пт"
+      ]
+    },
+    {
+      "id": "g5",
+      "name": "ХГ ФЕСТИВАЛЬНАЯ (пн 18:00-19:00/пт 18:15-19:15)",
+      "weekdays": [
+        "пн",
+        "пт"
+      ]
+    },
+    {
+      "id": "g6",
+      "name": "ХГ ФЕСТИВАЛЬНАЯ (пн 19:00-20:00/пт 19:15-20:15)",
+      "weekdays": [
+        "пн",
+        "пт"
+      ]
+    },
+    {
+      "id": "g7",
+      "name": "ХГ СЕРЕБРЯНЫЙ (ср 19:00-20:00 /пт 18:00-19:00)",
+      "weekdays": [
+        "ср",
+        "пт"
+      ]
+    },
+    {
+      "id": "g8",
+      "name": "САМБО ТИМИРЯЗЕВСКАЯ (вт/чт 17:00-18:00)",
+      "weekdays": [
+        "вт",
+        "чт"
+      ]
+    },
+    {
+      "id": "g9",
+      "name": "САМБО ТИМИРЯЗЕВСКАЯ (вт/чт 18:00-19:00)",
+      "weekdays": [
+        "вт",
+        "чт"
+      ]
+    },
+    {
+      "id": "g10",
+      "name": "САМБО ТИМИРЯЗЕВСКАЯ (вт/чт 19:00-20:00)",
+      "weekdays": [
+        "вт",
+        "чт"
+      ]
+    },
+    {
+      "id": "g11",
+      "name": "САМБО БЕГОВАЯ (пн/чт 19:00-20:00)",
+      "weekdays": [
+        "пн",
+        "чт"
+      ]
+    },
+    {
+      "id": "g12",
+      "name": "САМБО ВАЛДАЙСКИЙ (пн/пт 18:30-19:30)",
+      "weekdays": [
+        "пн",
+        "пт"
+      ]
+    },
+    {
+      "id": "g13",
+      "name": "САМБО ВАЛДАЙСКИЙ (пн/пт 19:30-21:00)",
+      "weekdays": [
+        "пн",
+        "пт"
+      ]
+    },
+    {
+      "id": "g14",
+      "name": "САМБО ВАЛДАЙСКИЙ (ср 18:00-19:00/сб 11:00-12:00)",
+      "weekdays": [
+        "ср",
+        "сб"
+      ]
+    },
+    {
+      "id": "g15",
+      "name": "САМБО ВАЛДАЙСКИЙ (ср 19:00-20:00/сб 12:00-13:00)",
+      "weekdays": [
+        "ср",
+        "сб"
+      ]
+    },
+    {
+      "id": "g16",
+      "name": "САМБО ВАЛДАЙСКИЙй (ср 20:00-21:00/сб 13:00-14:00)",
+      "weekdays": [
+        "ср",
+        "сб"
+      ]
+    },
+    {
+      "id": "g17",
+      "name": "САМБО ФЕСТИВАЛЬНАЯ (ср 18:00-19:00/сб 11:00-12:00)",
+      "weekdays": [
+        "ср",
+        "сб"
+      ]
+    },
+    {
+      "id": "g18",
+      "name": "САМБО ФЕСТИВАЛЬНАЯ (ср 19:00-20:00/сб 12:00-13:00)",
+      "weekdays": [
+        "ср",
+        "сб"
+      ]
+    },
+    {
+      "id": "g19",
+      "name": "САМБО ФЕСТИВАЛЬНАЯ (ср 20:00-21:00/сб 13:00-14:00)",
+      "weekdays": [
+        "ср",
+        "сб"
+      ]
+    },
+    {
+      "id": "g20",
+      "name": "САМБО ФЕСТИВАЛЬНАЯ (пн/пт 17:00 - 18:00)",
+      "weekdays": [
+        "пн",
+        "пт"
+      ]
+    },
+    {
+      "id": "g21",
+      "name": "САМБО СЕРЕБРЯНЫЙ (пн/пт 19:00-20:00)",
+      "weekdays": [
+        "пн",
+        "пт"
+      ]
+    },
+    {
+      "id": "g22",
+      "name": "САМБО СЕРЕБРЯНЫЙ (пн/пт 20:00-21:00)",
+      "weekdays": [
+        "пн",
+        "пт"
+      ]
+    }
+  ],
+  "children": [
+    {
+      "id": "c1",
+      "name": "Суханова Варя",
+      "groupId": "g1",
+      "familyId": "f1",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c2",
+      "name": "Максименко Таисия",
+      "groupId": "g1",
+      "familyId": "f2",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c3",
+      "name": "Черныш Елизавета",
+      "groupId": "g1",
+      "familyId": "f3",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c4",
+      "name": "Сосенкова Анастасия",
+      "groupId": "g1",
+      "familyId": "f4",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c5",
+      "name": "Никулина Есения",
+      "groupId": "g1",
+      "familyId": "f5",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c6",
+      "name": "Старостина Мария",
+      "groupId": "g1",
+      "familyId": "f6",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c7",
+      "name": "Стародубцева Юлия",
+      "groupId": "g1",
+      "familyId": "f7",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c8",
+      "name": "Русакова Алиса",
+      "groupId": "g1",
+      "familyId": "f8",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c9",
+      "name": "Гриншпун Полина",
+      "groupId": "g2",
+      "familyId": "f9",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c10",
+      "name": "Казак Мария",
+      "groupId": "g2",
+      "familyId": "f10",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c11",
+      "name": "Бабкина Римма",
+      "groupId": "g2",
+      "familyId": "f11",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c12",
+      "name": "Табакова Софья",
+      "groupId": "g2",
+      "familyId": "f12",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c13",
+      "name": "Эльматова Сауле",
+      "groupId": "g2",
+      "familyId": "f13",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c14",
+      "name": "Махрова София",
+      "groupId": "g3",
+      "familyId": "f14",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c15",
+      "name": "Тюрина Кристина",
+      "groupId": "g3",
+      "familyId": "f15",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c16",
+      "name": "Татаринцева Варя",
+      "groupId": "g3",
+      "familyId": "f16",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c17",
+      "name": "Гребенник Юлия",
+      "groupId": "g3",
+      "familyId": "f17",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c18",
+      "name": "Лучникова Ангелина",
+      "groupId": "g3",
+      "familyId": "f18",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c19",
+      "name": "Пьянкова Екатерина",
+      "groupId": "g3",
+      "familyId": "f19",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c20",
+      "name": "Байкова Арина",
+      "groupId": "g4",
+      "familyId": "f20",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c21",
+      "name": "Александрова Ульяна",
+      "groupId": "g4",
+      "familyId": "f21",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c22",
+      "name": "Кравчук Маргарита",
+      "groupId": "g4",
+      "familyId": "f22",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c23",
+      "name": "Марсакова Василиса",
+      "groupId": "g4",
+      "familyId": "f23",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c24",
+      "name": "Новикова Николь",
+      "groupId": "g4",
+      "familyId": "f24",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c25",
+      "name": "Ицкова Екатерина",
+      "groupId": "g4",
+      "familyId": "f25",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c26",
+      "name": "Грехова Ольга",
+      "groupId": "g4",
+      "familyId": "f26",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c27",
+      "name": "Лоренсон Ирина",
+      "groupId": "g4",
+      "familyId": "f27",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c28",
+      "name": "Мухина София",
+      "groupId": "g4",
+      "familyId": "f28",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c29",
+      "name": "Бясова Вера",
+      "groupId": "g5",
+      "familyId": "f29",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c30",
+      "name": "Мамедова Лея",
+      "groupId": "g5",
+      "familyId": "f30",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c31",
+      "name": "Кириченко Варвара",
+      "groupId": "g5",
+      "familyId": "f31",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c32",
+      "name": "Никишкина Полина",
+      "groupId": "g6",
+      "familyId": "f32",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c33",
+      "name": "Никишкина Дарья",
+      "groupId": "g6",
+      "familyId": "f32",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c34",
+      "name": "Никишкина Александра",
+      "groupId": "g6",
+      "familyId": "f32",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c35",
+      "name": "Саливончик Александра",
+      "groupId": "g6",
+      "familyId": "f33",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c36",
+      "name": "Глушкова Алена",
+      "groupId": "g6",
+      "familyId": "f34",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c37",
+      "name": "Деренкова Настя",
+      "groupId": "g6",
+      "familyId": "f35",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c38",
+      "name": "Тихоненкова Виктория",
+      "groupId": "g6",
+      "familyId": "f36",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c39",
+      "name": "Хаустова Александра",
+      "groupId": "g6",
+      "familyId": "f37",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c40",
+      "name": "Чепина Пелагея",
+      "groupId": "g6",
+      "familyId": "f38",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c41",
+      "name": "Пантелеева Дарья",
+      "groupId": "g6",
+      "familyId": "f39",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c42",
+      "name": "Черных Алиса",
+      "groupId": "g7",
+      "familyId": "f40",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c43",
+      "name": "Шаровская Анастасия",
+      "groupId": "g7",
+      "familyId": "f41",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c44",
+      "name": "Котельникова Владислава",
+      "groupId": "g7",
+      "familyId": "f42",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c45",
+      "name": "Трухина Милана",
+      "groupId": "g7",
+      "familyId": "f43",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c46",
+      "name": "Гулдаева Кира",
+      "groupId": "g7",
+      "familyId": "f44",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c47",
+      "name": "Ермакова Александра",
+      "groupId": "g7",
+      "familyId": "f45",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c48",
+      "name": "Жук Степан",
+      "groupId": "g8",
+      "familyId": "f46",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c49",
+      "name": "Белов Александр",
+      "groupId": "g8",
+      "familyId": "f47",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c50",
+      "name": "Игошин Арсений",
+      "groupId": "g8",
+      "familyId": "f48",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c51",
+      "name": "Чиков Леонид",
+      "groupId": "g8",
+      "familyId": "f49",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c52",
+      "name": "Прохоренко Георгий",
+      "groupId": "g8",
+      "familyId": "f50",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c53",
+      "name": "Адамчук Алексей",
+      "groupId": "g8",
+      "familyId": "f51",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c54",
+      "name": "Дробышев Василий",
+      "groupId": "g8",
+      "familyId": "f52",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c55",
+      "name": "Захаров Кирилл",
+      "groupId": "g8",
+      "familyId": "f53",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c56",
+      "name": "Алимов Маулен",
+      "groupId": "g8",
+      "familyId": "f54",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c57",
+      "name": "Чибисов Лука",
+      "groupId": "g8",
+      "familyId": "f55",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c58",
+      "name": "Шишкин Михаил",
+      "groupId": "g8",
+      "familyId": "f56",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c59",
+      "name": "Барковский Родион",
+      "groupId": "g9",
+      "familyId": "f57",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c60",
+      "name": "Барковская Амина",
+      "groupId": "g9",
+      "familyId": "f57",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c61",
+      "name": "Смирнов Мирон",
+      "groupId": "g9",
+      "familyId": "f58",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c62",
+      "name": "Ларин Николай",
+      "groupId": "g9",
+      "familyId": "f59",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c63",
+      "name": "Бабаков Григорий",
+      "groupId": "g9",
+      "familyId": "f60",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c64",
+      "name": "Мыкита Роман",
+      "groupId": "g9",
+      "familyId": "f61",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c65",
+      "name": "Климов Петр",
+      "groupId": "g9",
+      "familyId": "f62",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c66",
+      "name": "Машуров Руслан",
+      "groupId": "g9",
+      "familyId": "f63",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c67",
+      "name": "Смирнов Виктор",
+      "groupId": "g9",
+      "familyId": "f58",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c68",
+      "name": "Гусейнов Адам",
+      "groupId": "g9",
+      "familyId": "f64",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c69",
+      "name": "Семченков Роман",
+      "groupId": "g9",
+      "familyId": "f65",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c70",
+      "name": "Петров Мирон",
+      "groupId": "g9",
+      "familyId": "f66",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c71",
+      "name": "Рожаев Михаил",
+      "groupId": "g10",
+      "familyId": "f67",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c72",
+      "name": "Смирнова Тася",
+      "groupId": "g10",
+      "familyId": "f58",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c73",
+      "name": "Тарасов Александр",
+      "groupId": "g10",
+      "familyId": "f68",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c74",
+      "name": "Смирнов Владимир",
+      "groupId": "g10",
+      "familyId": "f58",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c75",
+      "name": "Осипов Степан",
+      "groupId": "g10",
+      "familyId": "f69",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c76",
+      "name": "Прошин Илья",
+      "groupId": "g10",
+      "familyId": "f70",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c77",
+      "name": "Новиков Тимофей",
+      "groupId": "g10",
+      "familyId": "f24",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c78",
+      "name": "Каптелов Владислав",
+      "groupId": "g10",
+      "familyId": "f71",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c79",
+      "name": "Сафронов Илья",
+      "groupId": "g10",
+      "familyId": "f72",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c80",
+      "name": "Мигунов Илья",
+      "groupId": "g10",
+      "familyId": "f73",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c81",
+      "name": "Шабаев Сергей",
+      "groupId": "g10",
+      "familyId": "f74",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c82",
+      "name": "Чивиков Владимир",
+      "groupId": "g11",
+      "familyId": "f75",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c83",
+      "name": "Михайлов Мирон",
+      "groupId": "g11",
+      "familyId": "f76",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c84",
+      "name": "Арсентьев Артем",
+      "groupId": "g11",
+      "familyId": "f77",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c85",
+      "name": "Трофимов Сергей",
+      "groupId": "g11",
+      "familyId": "f78",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c86",
+      "name": "Новиков Роман",
+      "groupId": "g11",
+      "familyId": "f24",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c87",
+      "name": "Девяшин Лев",
+      "groupId": "g11",
+      "familyId": "f79",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c88",
+      "name": "Парфенов Эдгар",
+      "groupId": "g11",
+      "familyId": "f80",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c89",
+      "name": "Шиманов Артем",
+      "groupId": "g12",
+      "familyId": "f81",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c90",
+      "name": "Анохин Артем",
+      "groupId": "g12",
+      "familyId": "f82",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c91",
+      "name": "Чепусов Ярослав",
+      "groupId": "g12",
+      "familyId": "f83",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c92",
+      "name": "Крашенников Иван",
+      "groupId": "g12",
+      "familyId": "f84",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c93",
+      "name": "Бровко Ева",
+      "groupId": "g12",
+      "familyId": "f85",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c94",
+      "name": "Павлов Федор",
+      "groupId": "g12",
+      "familyId": "f86",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c95",
+      "name": "Гришанова Елизавета",
+      "groupId": "g12",
+      "familyId": "f87",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c96",
+      "name": "Ивасенко Глеб",
+      "groupId": "g12",
+      "familyId": "f88",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c97",
+      "name": "Хочинский Федор",
+      "groupId": "g12",
+      "familyId": "f89",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c98",
+      "name": "Бурмистров Глеб",
+      "groupId": "g12",
+      "familyId": "f90",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c99",
+      "name": "Хмельницкий Тимофей",
+      "groupId": "g12",
+      "familyId": "f91",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c100",
+      "name": "Матвеев Илья",
+      "groupId": "g12",
+      "familyId": "f92",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c101",
+      "name": "Цоглин Степан",
+      "groupId": "g13",
+      "familyId": "f93",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c102",
+      "name": "Налбандян Роберт",
+      "groupId": "g13",
+      "familyId": "f94",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c103",
+      "name": "Лаврентьев Даниил",
+      "groupId": "g13",
+      "familyId": "f95",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c104",
+      "name": "Крупчатников Андрей",
+      "groupId": "g13",
+      "familyId": "f96",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c105",
+      "name": "Степанов Максим",
+      "groupId": "g13",
+      "familyId": "f97",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c106",
+      "name": "Зеленцов Павел",
+      "groupId": "g13",
+      "familyId": "f98",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c107",
+      "name": "Клочко Павел",
+      "groupId": "g13",
+      "familyId": "f99",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c108",
+      "name": "Габулов Артем",
+      "groupId": "g13",
+      "familyId": "f100",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c109",
+      "name": "Саркисов Эдгар",
+      "groupId": "g13",
+      "familyId": "f101",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c110",
+      "name": "Ткаченко Михаил",
+      "groupId": "g13",
+      "familyId": "f102",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c111",
+      "name": "Михалев Артем",
+      "groupId": "g13",
+      "familyId": "f103",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c112",
+      "name": "Царев Андрей",
+      "groupId": "g13",
+      "familyId": "f104",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c113",
+      "name": "Синяев Максим",
+      "groupId": "g13",
+      "familyId": "f105",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c114",
+      "name": "Мелешко Иван",
+      "groupId": "g14",
+      "familyId": "f106",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c115",
+      "name": "Гончаров Артем",
+      "groupId": "g14",
+      "familyId": "f107",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c116",
+      "name": "Артемьев Федор",
+      "groupId": "g14",
+      "familyId": "f108",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c117",
+      "name": "Шеин Петр",
+      "groupId": "g14",
+      "familyId": "f109",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c118",
+      "name": "Мазай Михаил",
+      "groupId": "g14",
+      "familyId": "f110",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c119",
+      "name": "Зеленцов Артем",
+      "groupId": "g14",
+      "familyId": "f98",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c120",
+      "name": "Караванский Михаил",
+      "groupId": "g14",
+      "familyId": "f111",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c121",
+      "name": "Караванская Виктория",
+      "groupId": "g14",
+      "familyId": "f111",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c122",
+      "name": "Сурнин Федор",
+      "groupId": "g14",
+      "familyId": "f112",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c123",
+      "name": "Колгушкин Никита",
+      "groupId": "g14",
+      "familyId": "f113",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c124",
+      "name": "Коротеев Денис",
+      "groupId": "g14",
+      "familyId": "f114",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c125",
+      "name": "Тесля Всеволод",
+      "groupId": "g14",
+      "familyId": "f115",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c126",
+      "name": "Ивасенко Степан",
+      "groupId": "g14",
+      "familyId": "f88",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c127",
+      "name": "Пестрецова Мария",
+      "groupId": "g14",
+      "familyId": "f116",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c128",
+      "name": "Коломиец Мария",
+      "groupId": "g14",
+      "familyId": "f117",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c129",
+      "name": "Коломиец Катя",
+      "groupId": "g14",
+      "familyId": "f117",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c130",
+      "name": "Шабалкин Костя",
+      "groupId": "g15",
+      "familyId": "f118",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c131",
+      "name": "Сурнин Михаил",
+      "groupId": "g15",
+      "familyId": "f112",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c132",
+      "name": "Колгушкин Максим",
+      "groupId": "g15",
+      "familyId": "f113",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c133",
+      "name": "Зобов Роман",
+      "groupId": "g15",
+      "familyId": "f119",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c134",
+      "name": "Поляков Игорь",
+      "groupId": "g15",
+      "familyId": "f120",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c135",
+      "name": "Евдокимов Александр",
+      "groupId": "g15",
+      "familyId": "f121",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c136",
+      "name": "Грицай Дмитрий",
+      "groupId": "g15",
+      "familyId": "f122",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c137",
+      "name": "Ушаков Иван",
+      "groupId": "g15",
+      "familyId": "f123",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c138",
+      "name": "Неумоин Александр",
+      "groupId": "g15",
+      "familyId": "f124",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c139",
+      "name": "Окунев Павел",
+      "groupId": "g15",
+      "familyId": "f125",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c140",
+      "name": "Крайнов Даниил",
+      "groupId": "g15",
+      "familyId": "f126",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c141",
+      "name": "Шароглазов Антон",
+      "groupId": "g15",
+      "familyId": "f127",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c142",
+      "name": "Литвинов Тимофей",
+      "groupId": "g16",
+      "familyId": "f128",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c143",
+      "name": "Гончарук Павел",
+      "groupId": "g16",
+      "familyId": "f129",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c144",
+      "name": "Ераносян Богдан",
+      "groupId": "g16",
+      "familyId": "f130",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c145",
+      "name": "Ераносян Матвей",
+      "groupId": "g16",
+      "familyId": "f130",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c146",
+      "name": "Глинский Кирилл",
+      "groupId": "g16",
+      "familyId": "f131",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c147",
+      "name": "Якубенок Павел",
+      "groupId": "g16",
+      "familyId": "f132",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c148",
+      "name": "Багдасаров Роберт",
+      "groupId": "g16",
+      "familyId": "f133",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c149",
+      "name": "Старцев Егор",
+      "groupId": "g16",
+      "familyId": "f134",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c150",
+      "name": "Теледеков Сергей",
+      "groupId": "g16",
+      "familyId": "f135",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c151",
+      "name": "Куликов Ярослав",
+      "groupId": "g16",
+      "familyId": "f136",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c152",
+      "name": "Леонов Тимофей",
+      "groupId": "g16",
+      "familyId": "f137",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c153",
+      "name": "Сапожников Михаил",
+      "groupId": "g16",
+      "familyId": "f138",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c154",
+      "name": "Царицын Дмитрий",
+      "groupId": "g16",
+      "familyId": "f139",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c155",
+      "name": "Крылов Артем",
+      "groupId": "g16",
+      "familyId": "f140",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c156",
+      "name": "Горелов Григорий",
+      "groupId": "g16",
+      "familyId": "f141",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c157",
+      "name": "Шестаков Михаил",
+      "groupId": "g16",
+      "familyId": "f142",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c158",
+      "name": "Быстревский Мирон",
+      "groupId": "g16",
+      "familyId": "f143",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c159",
+      "name": "Якубенок Артем",
+      "groupId": "g16",
+      "familyId": "f132",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c160",
+      "name": "Сметанников Артем",
+      "groupId": "g17",
+      "familyId": "f144",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c161",
+      "name": "Ермолаев Роман",
+      "groupId": "g17",
+      "familyId": "f145",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c162",
+      "name": "Бясов Константин",
+      "groupId": "g17",
+      "familyId": "f29",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c163",
+      "name": "Савинов Андрей",
+      "groupId": "g17",
+      "familyId": "f146",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c164",
+      "name": "Курчакова Дарья",
+      "groupId": "g17",
+      "familyId": "f147",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c165",
+      "name": "Курчаков Александр",
+      "groupId": "g17",
+      "familyId": "f147",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c166",
+      "name": "Дубровский Марк",
+      "groupId": "g17",
+      "familyId": "f148",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c167",
+      "name": "Адрианов Владислав",
+      "groupId": "g17",
+      "familyId": "f149",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c168",
+      "name": "Свиридов Егор",
+      "groupId": "g17",
+      "familyId": "f150",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c169",
+      "name": "Дубовик Митя",
+      "groupId": "g17",
+      "familyId": "f151",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c170",
+      "name": "Максимов Марк",
+      "groupId": "g17",
+      "familyId": "f152",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c171",
+      "name": "Свитков Даниил",
+      "groupId": "g17",
+      "familyId": "f153",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c172",
+      "name": "Добрица Матвей",
+      "groupId": "g17",
+      "familyId": "f154",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c173",
+      "name": "Джулай Ярослав",
+      "groupId": "g18",
+      "familyId": "f155",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c174",
+      "name": "Нагель Сергей",
+      "groupId": "g18",
+      "familyId": "f156",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c175",
+      "name": "Жикин Степан",
+      "groupId": "g18",
+      "familyId": "f157",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c176",
+      "name": "Чаадаев Илья",
+      "groupId": "g18",
+      "familyId": "f158",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c177",
+      "name": "Губанищев Кирилл",
+      "groupId": "g18",
+      "familyId": "f159",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c178",
+      "name": "Юшков Родион",
+      "groupId": "g18",
+      "familyId": "f160",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c179",
+      "name": "Ермолович Сергей",
+      "groupId": "g18",
+      "familyId": "f161",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c180",
+      "name": "Фомичев Глеб",
+      "groupId": "g18",
+      "familyId": "f162",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c181",
+      "name": "Стародубцев Александр",
+      "groupId": "g18",
+      "familyId": "f7",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c182",
+      "name": "Кравченко Артем",
+      "groupId": "g18",
+      "familyId": "f163",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c183",
+      "name": "Фомичев Тихон",
+      "groupId": "g18",
+      "familyId": "f162",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c184",
+      "name": "Волынцев Александр",
+      "groupId": "g18",
+      "familyId": "f164",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c185",
+      "name": "Нечаев Петр",
+      "groupId": "g18",
+      "familyId": "f165",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c186",
+      "name": "Угрецов Елисей",
+      "groupId": "g18",
+      "familyId": "f166",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c187",
+      "name": "Хусяинов Тимур",
+      "groupId": "g18",
+      "familyId": "f167",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c188",
+      "name": "Баукина Василиса",
+      "groupId": "g18",
+      "familyId": "f168",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c189",
+      "name": "Добрица Алиса",
+      "groupId": "g18",
+      "familyId": "f154",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c190",
+      "name": "Моисеев Максим",
+      "groupId": "g18",
+      "familyId": "f169",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c191",
+      "name": "Нуркаев Егор",
+      "groupId": "g19",
+      "familyId": "f170",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c192",
+      "name": "Макаров Андрей",
+      "groupId": "g19",
+      "familyId": "f171",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c193",
+      "name": "Саенко Максим",
+      "groupId": "g19",
+      "familyId": "f172",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c194",
+      "name": "Нестерович Михаил",
+      "groupId": "g19",
+      "familyId": "f173",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c195",
+      "name": "Игнатьев Владимир",
+      "groupId": "g19",
+      "familyId": "f174",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c196",
+      "name": "Ломаев Михаил",
+      "groupId": "g19",
+      "familyId": "f175",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c197",
+      "name": "Кокозов Костя",
+      "groupId": "g19",
+      "familyId": "f176",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c198",
+      "name": "Бондаренко Дарья",
+      "groupId": "g19",
+      "familyId": "f177",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c199",
+      "name": "Вишневский Всеволод",
+      "groupId": "g19",
+      "familyId": "f178",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c200",
+      "name": "Нечаев Максим",
+      "groupId": "g19",
+      "familyId": "f165",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c201",
+      "name": "Минасов Давид",
+      "groupId": "g19",
+      "familyId": "f179",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c202",
+      "name": "Баш Даниил",
+      "groupId": "g19",
+      "familyId": "f180",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c203",
+      "name": "Имранов Камиль",
+      "groupId": "g19",
+      "familyId": "f181",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c204",
+      "name": "Буряков Кирилл",
+      "groupId": "g20",
+      "familyId": "f182",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c205",
+      "name": "Ершов Роман",
+      "groupId": "g20",
+      "familyId": "f183",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c206",
+      "name": "Ершов Иван",
+      "groupId": "g20",
+      "familyId": "f183",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c207",
+      "name": "Хасиев Аслан",
+      "groupId": "g20",
+      "familyId": "f184",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c208",
+      "name": "Финогеев Даниил",
+      "groupId": "g20",
+      "familyId": "f185",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c209",
+      "name": "Шуть Артем",
+      "groupId": "g20",
+      "familyId": "f186",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c210",
+      "name": "Зайцева Елена",
+      "groupId": "g20",
+      "familyId": "f187",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c211",
+      "name": "Ершов Тихон",
+      "groupId": "g20",
+      "familyId": "f183",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c212",
+      "name": "Ершов Петр",
+      "groupId": "g20",
+      "familyId": "f183",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c213",
+      "name": "Галышкин Владислав",
+      "groupId": "g21",
+      "familyId": "f188",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c214",
+      "name": "Гулдаев Александр",
+      "groupId": "g21",
+      "familyId": "f44",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c215",
+      "name": "Марков Артем",
+      "groupId": "g21",
+      "familyId": "f189",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c216",
+      "name": "Абдулаев Амин",
+      "groupId": "g21",
+      "familyId": "f190",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c217",
+      "name": "Назаров Александр",
+      "groupId": "g21",
+      "familyId": "f191",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c218",
+      "name": "Красавин Родион",
+      "groupId": "g21",
+      "familyId": "f192",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c219",
+      "name": "Александров Степан",
+      "groupId": "g22",
+      "familyId": "f21",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c220",
+      "name": "Мокин Даниил",
+      "groupId": "g22",
+      "familyId": "f193",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c221",
+      "name": "Мокин Кирилл",
+      "groupId": "g22",
+      "familyId": "f193",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c222",
+      "name": "Тарасов Геннадий",
+      "groupId": "g22",
+      "familyId": "f68",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c223",
+      "name": "Маркелов Артем",
+      "groupId": "g22",
+      "familyId": "f194",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c224",
+      "name": "Лапшин Иван",
+      "groupId": "g22",
+      "familyId": "f195",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    },
+    {
+      "id": "c225",
+      "name": "Ермаков Михаил",
+      "groupId": "g22",
+      "familyId": "f45",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": false
+      }
+    }
+  ],
+  "attendance": {
+    "2026-09:c1:2": "present",
+    "2026-09:c1:7": "present",
+    "2026-09:c1:9": "present",
+    "2026-09:c1:14": "present",
+    "2026-09:c1:16": "present",
+    "2026-09:c1:23": "present",
+    "2026-09:c1:28": "present",
+    "2026-09:c2:2": "present",
+    "2026-09:c2:7": "present",
+    "2026-09:c2:14": "present",
+    "2026-09:c2:16": "present",
+    "2026-09:c2:21": "present",
+    "2026-09:c2:23": "present",
+    "2026-09:c2:28": "present",
+    "2026-09:c3:2": "present",
+    "2026-09:c3:7": "present",
+    "2026-09:c3:16": "present",
+    "2026-09:c3:21": "present",
+    "2026-09:c3:23": "excused",
+    "2026-09:c3:28": "present",
+    "2026-09:c3:30": "present",
+    "2026-09:c4:2": "excused",
+    "2026-09:c4:7": "present",
+    "2026-09:c4:9": "present",
+    "2026-09:c4:16": "present",
+    "2026-09:c4:21": "present",
+    "2026-09:c4:28": "excused",
+    "2026-09:c4:30": "present",
+    "2026-09:c5:7": "excused",
+    "2026-09:c5:9": "present",
+    "2026-09:c5:14": "present",
+    "2026-09:c5:16": "present",
+    "2026-09:c5:21": "present",
+    "2026-09:c5:23": "present",
+    "2026-09:c5:30": "present",
+    "2026-09:c6:2": "present",
+    "2026-09:c6:9": "present",
+    "2026-09:c6:14": "present",
+    "2026-09:c6:21": "present",
+    "2026-09:c6:23": "present",
+    "2026-09:c6:28": "present",
+    "2026-09:c6:30": "present",
+    "2026-09:c7:2": "present",
+    "2026-09:c7:7": "present",
+    "2026-09:c7:9": "present",
+    "2026-09:c7:14": "present",
+    "2026-09:c7:23": "present",
+    "2026-09:c7:28": "present",
+    "2026-09:c7:30": "excused",
+    "2026-09:c8:2": "present",
+    "2026-09:c8:7": "present",
+    "2026-09:c8:9": "excused",
+    "2026-09:c8:14": "present",
+    "2026-09:c8:16": "present",
+    "2026-09:c8:23": "present",
+    "2026-09:c8:28": "present",
+    "2026-09:c9:2": "present",
+    "2026-09:c9:7": "present",
+    "2026-09:c9:14": "excused",
+    "2026-09:c9:16": "present",
+    "2026-09:c9:21": "present",
+    "2026-09:c9:23": "present",
+    "2026-09:c9:28": "present",
+    "2026-09:c9:30": "present",
+    "2026-09:c10:2": "present",
+    "2026-09:c10:7": "present",
+    "2026-09:c10:9": "present",
+    "2026-09:c10:16": "present",
+    "2026-09:c10:21": "present",
+    "2026-09:c10:28": "present",
+    "2026-09:c10:30": "present",
+    "2026-09:c11:7": "present",
+    "2026-09:c11:9": "present",
+    "2026-09:c11:14": "present",
+    "2026-09:c11:16": "present",
+    "2026-09:c11:21": "present",
+    "2026-09:c11:30": "present",
+    "2026-09:c12:9": "present",
+    "2026-09:c12:14": "present",
+    "2026-09:c12:16": "excused",
+    "2026-09:c12:21": "present",
+    "2026-09:c12:23": "present",
+    "2026-09:c12:30": "present",
+    "2026-09:c13:2": "present",
+    "2026-09:c13:9": "present",
+    "2026-09:c13:14": "present",
+    "2026-09:c13:21": "excused",
+    "2026-09:c13:23": "present",
+    "2026-09:c13:28": "present",
+    "2026-09:c13:30": "present",
+    "2026-09:c14:2": "present",
+    "2026-09:c14:7": "present",
+    "2026-09:c14:9": "present",
+    "2026-09:c14:14": "present",
+    "2026-09:c14:16": "present",
+    "2026-09:c14:23": "present",
+    "2026-09:c14:28": "present",
+    "2026-09:c15:2": "present",
+    "2026-09:c15:7": "present",
+    "2026-09:c15:14": "present",
+    "2026-09:c15:16": "present",
+    "2026-09:c15:21": "present",
+    "2026-09:c15:23": "present",
+    "2026-09:c15:28": "present",
+    "2026-09:c16:2": "present",
+    "2026-09:c16:7": "present",
+    "2026-09:c16:16": "present",
+    "2026-09:c16:21": "present",
+    "2026-09:c16:23": "excused",
+    "2026-09:c16:28": "present",
+    "2026-09:c16:30": "present",
+    "2026-09:c17:2": "excused",
+    "2026-09:c17:7": "present",
+    "2026-09:c17:9": "present",
+    "2026-09:c17:16": "present",
+    "2026-09:c17:21": "present",
+    "2026-09:c17:28": "excused",
+    "2026-09:c17:30": "present",
+    "2026-09:c18:7": "excused",
+    "2026-09:c18:9": "present",
+    "2026-09:c18:14": "present",
+    "2026-09:c18:16": "present",
+    "2026-09:c18:21": "present",
+    "2026-09:c18:23": "present",
+    "2026-09:c18:30": "present",
+    "2026-09:c19:2": "present",
+    "2026-09:c19:9": "present",
+    "2026-09:c19:14": "present",
+    "2026-09:c19:21": "present",
+    "2026-09:c19:23": "present",
+    "2026-09:c19:28": "present",
+    "2026-09:c19:30": "present",
+    "2026-09:c20:2": "present",
+    "2026-09:c20:4": "excused",
+    "2026-09:c20:9": "present",
+    "2026-09:c20:11": "present",
+    "2026-09:c20:18": "present",
+    "2026-09:c20:23": "present",
+    "2026-09:c20:30": "excused",
+    "2026-09:c21:2": "present",
+    "2026-09:c21:9": "excused",
+    "2026-09:c21:11": "present",
+    "2026-09:c21:16": "present",
+    "2026-09:c21:18": "present",
+    "2026-09:c21:23": "present",
+    "2026-09:c21:25": "present",
+    "2026-09:c22:2": "present",
+    "2026-09:c22:4": "present",
+    "2026-09:c22:11": "present",
+    "2026-09:c22:16": "present",
+    "2026-09:c22:23": "present",
+    "2026-09:c22:25": "present",
+    "2026-09:c22:30": "present",
+    "2026-09:c23:2": "present",
+    "2026-09:c23:4": "present",
+    "2026-09:c23:9": "present",
+    "2026-09:c23:11": "present",
+    "2026-09:c23:16": "present",
+    "2026-09:c23:25": "present",
+    "2026-09:c23:30": "present",
+    "2026-09:c24:4": "present",
+    "2026-09:c24:9": "present",
+    "2026-09:c24:11": "excused",
+    "2026-09:c24:16": "present",
+    "2026-09:c24:18": "present",
+    "2026-09:c24:25": "present",
+    "2026-09:c24:30": "present",
+    "2026-09:c25:4": "present",
+    "2026-09:c25:9": "present",
+    "2026-09:c25:16": "excused",
+    "2026-09:c25:18": "present",
+    "2026-09:c25:23": "present",
+    "2026-09:c25:25": "present",
+    "2026-09:c25:30": "present",
+    "2026-09:c26:2": "present",
+    "2026-09:c26:4": "present",
+    "2026-09:c26:9": "present",
+    "2026-09:c26:11": "present",
+    "2026-09:c26:18": "present",
+    "2026-09:c26:23": "present",
+    "2026-09:c26:30": "present",
+    "2026-09:c27:2": "present",
+    "2026-09:c27:9": "present",
+    "2026-09:c27:11": "present",
+    "2026-09:c27:16": "present",
+    "2026-09:c27:18": "present",
+    "2026-09:c27:23": "present",
+    "2026-09:c28:2": "present",
+    "2026-09:c28:11": "present",
+    "2026-09:c28:16": "present",
+    "2026-09:c28:18": "excused",
+    "2026-09:c28:23": "present",
+    "2026-09:c28:25": "present",
+    "2026-09:c29:4": "present",
+    "2026-09:c29:7": "present",
+    "2026-09:c29:11": "present",
+    "2026-09:c29:21": "present",
+    "2026-09:c29:25": "present",
+    "2026-09:c29:28": "present",
+    "2026-09:c30:4": "present",
+    "2026-09:c30:7": "present",
+    "2026-09:c30:11": "present",
+    "2026-09:c30:18": "present",
+    "2026-09:c30:21": "present",
+    "2026-09:c30:25": "present",
+    "2026-09:c30:28": "excused",
+    "2026-09:c31:4": "present",
+    "2026-09:c31:7": "excused",
+    "2026-09:c31:14": "present",
+    "2026-09:c31:18": "present",
+    "2026-09:c31:21": "present",
+    "2026-09:c31:25": "present",
+    "2026-09:c32:4": "present",
+    "2026-09:c32:14": "present",
+    "2026-09:c32:18": "present",
+    "2026-09:c32:21": "present",
+    "2026-09:c32:25": "excused",
+    "2026-09:c32:28": "present",
+    "2026-09:c33:4": "excused",
+    "2026-09:c33:7": "present",
+    "2026-09:c33:11": "present",
+    "2026-09:c33:14": "present",
+    "2026-09:c33:18": "present",
+    "2026-09:c33:28": "present",
+    "2026-09:c34:7": "present",
+    "2026-09:c34:11": "present",
+    "2026-09:c34:14": "present",
+    "2026-09:c34:18": "present",
+    "2026-09:c34:25": "present",
+    "2026-09:c34:28": "present",
+    "2026-09:c35:4": "present",
+    "2026-09:c35:7": "present",
+    "2026-09:c35:11": "present",
+    "2026-09:c35:14": "excused",
+    "2026-09:c35:21": "present",
+    "2026-09:c35:25": "present",
+    "2026-09:c35:28": "present",
+    "2026-09:c36:4": "present",
+    "2026-09:c36:7": "present",
+    "2026-09:c36:11": "present",
+    "2026-09:c36:21": "present",
+    "2026-09:c36:25": "present",
+    "2026-09:c36:28": "present",
+    "2026-09:c37:4": "present",
+    "2026-09:c37:7": "present",
+    "2026-09:c37:11": "excused",
+    "2026-09:c37:14": "present",
+    "2026-09:c37:18": "present",
+    "2026-09:c37:21": "present",
+    "2026-09:c37:25": "present",
+    "2026-09:c38:4": "present",
+    "2026-09:c38:14": "present",
+    "2026-09:c38:18": "present",
+    "2026-09:c38:21": "present",
+    "2026-09:c38:25": "present",
+    "2026-09:c39:4": "present",
+    "2026-09:c39:11": "present",
+    "2026-09:c39:14": "present",
+    "2026-09:c39:18": "present",
+    "2026-09:c39:21": "excused",
+    "2026-09:c39:28": "present",
+    "2026-09:c40:7": "present",
+    "2026-09:c40:11": "present",
+    "2026-09:c40:14": "present",
+    "2026-09:c40:18": "present",
+    "2026-09:c40:28": "present",
+    "2026-09:c41:7": "present",
+    "2026-09:c41:11": "present",
+    "2026-09:c41:14": "present",
+    "2026-09:c41:18": "excused",
+    "2026-09:c41:21": "present",
+    "2026-09:c41:25": "present",
+    "2026-09:c41:28": "present",
+    "2026-09:c42:2": "present",
+    "2026-09:c42:4": "present",
+    "2026-09:c42:11": "present",
+    "2026-09:c42:16": "present",
+    "2026-09:c42:23": "excused",
+    "2026-09:c42:25": "present",
+    "2026-09:c42:30": "present",
+    "2026-09:c43:2": "excused",
+    "2026-09:c43:4": "present",
+    "2026-09:c43:9": "present",
+    "2026-09:c43:11": "present",
+    "2026-09:c43:16": "present",
+    "2026-09:c43:18": "present",
+    "2026-09:c43:25": "present",
+    "2026-09:c43:30": "present",
+    "2026-09:c44:4": "present",
+    "2026-09:c44:9": "present",
+    "2026-09:c44:16": "present",
+    "2026-09:c44:18": "present",
+    "2026-09:c44:23": "present",
+    "2026-09:c44:25": "present",
+    "2026-09:c44:30": "present",
+    "2026-09:c45:2": "present",
+    "2026-09:c45:4": "present",
+    "2026-09:c45:9": "present",
+    "2026-09:c45:18": "present",
+    "2026-09:c45:23": "present",
+    "2026-09:c45:25": "excused",
+    "2026-09:c45:30": "present",
+    "2026-09:c46:2": "present",
+    "2026-09:c46:4": "excused",
+    "2026-09:c46:9": "present",
+    "2026-09:c46:11": "present",
+    "2026-09:c46:18": "present",
+    "2026-09:c46:23": "present",
+    "2026-09:c46:30": "excused",
+    "2026-09:c47:2": "present",
+    "2026-09:c47:9": "excused",
+    "2026-09:c47:11": "present",
+    "2026-09:c47:16": "present",
+    "2026-09:c47:18": "present",
+    "2026-09:c47:23": "present",
+    "2026-09:c47:25": "present",
+    "2026-09:c48:1": "excused",
+    "2026-09:c48:3": "present",
+    "2026-09:c48:8": "present",
+    "2026-09:c48:10": "present",
+    "2026-09:c48:15": "present",
+    "2026-09:c48:17": "present",
+    "2026-09:c48:24": "present",
+    "2026-09:c48:29": "present",
+    "2026-09:c49:3": "present",
+    "2026-09:c49:8": "present",
+    "2026-09:c49:15": "present",
+    "2026-09:c49:17": "present",
+    "2026-09:c49:22": "present",
+    "2026-09:c49:24": "present",
+    "2026-09:c49:29": "present",
+    "2026-09:c50:1": "present",
+    "2026-09:c50:3": "present",
+    "2026-09:c50:8": "present",
+    "2026-09:c50:17": "present",
+    "2026-09:c50:22": "present",
+    "2026-09:c50:24": "excused",
+    "2026-09:c50:29": "present",
+    "2026-09:c51:1": "present",
+    "2026-09:c51:3": "excused",
+    "2026-09:c51:8": "present",
+    "2026-09:c51:10": "present",
+    "2026-09:c51:17": "present",
+    "2026-09:c51:22": "present",
+    "2026-09:c51:29": "excused",
+    "2026-09:c52:1": "present",
+    "2026-09:c52:8": "excused",
+    "2026-09:c52:10": "present",
+    "2026-09:c52:15": "present",
+    "2026-09:c52:17": "present",
+    "2026-09:c52:22": "present",
+    "2026-09:c52:24": "present",
+    "2026-09:c53:1": "present",
+    "2026-09:c53:3": "present",
+    "2026-09:c53:10": "present",
+    "2026-09:c53:15": "present",
+    "2026-09:c53:22": "present",
+    "2026-09:c53:24": "present",
+    "2026-09:c53:29": "present",
+    "2026-09:c54:1": "present",
+    "2026-09:c54:3": "present",
+    "2026-09:c54:8": "present",
+    "2026-09:c54:10": "present",
+    "2026-09:c54:15": "present",
+    "2026-09:c54:24": "present",
+    "2026-09:c54:29": "present",
+    "2026-09:c55:3": "present",
+    "2026-09:c55:8": "present",
+    "2026-09:c55:10": "excused",
+    "2026-09:c55:15": "present",
+    "2026-09:c55:17": "present",
+    "2026-09:c55:24": "present",
+    "2026-09:c55:29": "present",
+    "2026-09:c56:3": "present",
+    "2026-09:c56:8": "present",
+    "2026-09:c56:15": "excused",
+    "2026-09:c56:17": "present",
+    "2026-09:c56:22": "present",
+    "2026-09:c56:24": "present",
+    "2026-09:c56:29": "present",
+    "2026-09:c57:1": "present",
+    "2026-09:c57:3": "present",
+    "2026-09:c57:8": "present",
+    "2026-09:c57:10": "present",
+    "2026-09:c57:17": "present",
+    "2026-09:c57:22": "present",
+    "2026-09:c57:29": "present",
+    "2026-09:c58:1": "present",
+    "2026-09:c58:8": "present",
+    "2026-09:c58:10": "present",
+    "2026-09:c58:15": "present",
+    "2026-09:c58:17": "present",
+    "2026-09:c58:22": "present",
+    "2026-09:c59:1": "present",
+    "2026-09:c59:10": "present",
+    "2026-09:c59:15": "present",
+    "2026-09:c59:17": "excused",
+    "2026-09:c59:22": "present",
+    "2026-09:c59:24": "present",
+    "2026-09:c60:1": "present",
+    "2026-09:c60:3": "present",
+    "2026-09:c60:10": "present",
+    "2026-09:c60:15": "present",
+    "2026-09:c60:22": "excused",
+    "2026-09:c60:24": "present",
+    "2026-09:c60:29": "present",
+    "2026-09:c61:1": "excused",
+    "2026-09:c61:3": "present",
+    "2026-09:c61:8": "present",
+    "2026-09:c61:10": "present",
+    "2026-09:c61:15": "present",
+    "2026-09:c61:17": "present",
+    "2026-09:c61:24": "present",
+    "2026-09:c61:29": "present",
+    "2026-09:c62:3": "present",
+    "2026-09:c62:8": "present",
+    "2026-09:c62:15": "present",
+    "2026-09:c62:17": "present",
+    "2026-09:c62:22": "present",
+    "2026-09:c62:24": "present",
+    "2026-09:c62:29": "present",
+    "2026-09:c63:1": "present",
+    "2026-09:c63:3": "present",
+    "2026-09:c63:8": "present",
+    "2026-09:c63:17": "present",
+    "2026-09:c63:22": "present",
+    "2026-09:c63:24": "excused",
+    "2026-09:c63:29": "present",
+    "2026-09:c64:1": "present",
+    "2026-09:c64:3": "excused",
+    "2026-09:c64:8": "present",
+    "2026-09:c64:10": "present",
+    "2026-09:c64:17": "present",
+    "2026-09:c64:22": "present",
+    "2026-09:c64:29": "excused",
+    "2026-09:c65:1": "present",
+    "2026-09:c65:8": "excused",
+    "2026-09:c65:10": "present",
+    "2026-09:c65:15": "present",
+    "2026-09:c65:17": "present",
+    "2026-09:c65:22": "present",
+    "2026-09:c65:24": "present",
+    "2026-09:c66:1": "present",
+    "2026-09:c66:3": "present",
+    "2026-09:c66:10": "present",
+    "2026-09:c66:15": "present",
+    "2026-09:c66:22": "present",
+    "2026-09:c66:24": "present",
+    "2026-09:c66:29": "present",
+    "2026-09:c67:1": "present",
+    "2026-09:c67:3": "present",
+    "2026-09:c67:8": "present",
+    "2026-09:c67:10": "present",
+    "2026-09:c67:15": "present",
+    "2026-09:c67:24": "present",
+    "2026-09:c67:29": "present",
+    "2026-09:c68:3": "present",
+    "2026-09:c68:8": "present",
+    "2026-09:c68:10": "excused",
+    "2026-09:c68:15": "present",
+    "2026-09:c68:17": "present",
+    "2026-09:c68:24": "present",
+    "2026-09:c68:29": "present",
+    "2026-09:c69:3": "present",
+    "2026-09:c69:8": "present",
+    "2026-09:c69:15": "excused",
+    "2026-09:c69:17": "present",
+    "2026-09:c69:22": "present",
+    "2026-09:c69:24": "present",
+    "2026-09:c69:29": "present",
+    "2026-09:c70:1": "present",
+    "2026-09:c70:3": "present",
+    "2026-09:c70:8": "present",
+    "2026-09:c70:10": "present",
+    "2026-09:c70:17": "present",
+    "2026-09:c70:22": "present",
+    "2026-09:c70:29": "present",
+    "2026-09:c71:1": "present",
+    "2026-09:c71:8": "present",
+    "2026-09:c71:10": "present",
+    "2026-09:c71:15": "present",
+    "2026-09:c71:17": "present",
+    "2026-09:c71:22": "present",
+    "2026-09:c72:1": "present",
+    "2026-09:c72:10": "present",
+    "2026-09:c72:15": "present",
+    "2026-09:c72:17": "excused",
+    "2026-09:c72:22": "present",
+    "2026-09:c72:24": "present",
+    "2026-09:c73:1": "present",
+    "2026-09:c73:3": "present",
+    "2026-09:c73:10": "present",
+    "2026-09:c73:15": "present",
+    "2026-09:c73:22": "excused",
+    "2026-09:c73:24": "present",
+    "2026-09:c73:29": "present",
+    "2026-09:c74:1": "excused",
+    "2026-09:c74:3": "present",
+    "2026-09:c74:8": "present",
+    "2026-09:c74:10": "present",
+    "2026-09:c74:15": "present",
+    "2026-09:c74:17": "present",
+    "2026-09:c74:24": "present",
+    "2026-09:c74:29": "present",
+    "2026-09:c75:3": "present",
+    "2026-09:c75:8": "present",
+    "2026-09:c75:15": "present",
+    "2026-09:c75:17": "present",
+    "2026-09:c75:22": "present",
+    "2026-09:c75:24": "present",
+    "2026-09:c75:29": "present",
+    "2026-09:c76:1": "present",
+    "2026-09:c76:3": "present",
+    "2026-09:c76:8": "present",
+    "2026-09:c76:17": "present",
+    "2026-09:c76:22": "present",
+    "2026-09:c76:24": "excused",
+    "2026-09:c76:29": "present",
+    "2026-09:c77:1": "present",
+    "2026-09:c77:3": "excused",
+    "2026-09:c77:8": "present",
+    "2026-09:c77:10": "present",
+    "2026-09:c77:17": "present",
+    "2026-09:c77:22": "present",
+    "2026-09:c77:29": "excused",
+    "2026-09:c78:1": "present",
+    "2026-09:c78:8": "excused",
+    "2026-09:c78:10": "present",
+    "2026-09:c78:15": "present",
+    "2026-09:c78:17": "present",
+    "2026-09:c78:22": "present",
+    "2026-09:c78:24": "present",
+    "2026-09:c79:1": "present",
+    "2026-09:c79:3": "present",
+    "2026-09:c79:10": "present",
+    "2026-09:c79:15": "present",
+    "2026-09:c79:22": "present",
+    "2026-09:c79:24": "present",
+    "2026-09:c79:29": "present",
+    "2026-09:c80:1": "present",
+    "2026-09:c80:3": "present",
+    "2026-09:c80:8": "present",
+    "2026-09:c80:10": "present",
+    "2026-09:c80:15": "present",
+    "2026-09:c80:24": "present",
+    "2026-09:c80:29": "present",
+    "2026-09:c81:3": "present",
+    "2026-09:c81:8": "present",
+    "2026-09:c81:10": "excused",
+    "2026-09:c81:15": "present",
+    "2026-09:c81:17": "present",
+    "2026-09:c81:24": "present",
+    "2026-09:c81:29": "present",
+    "2026-09:c82:3": "present",
+    "2026-09:c82:7": "present",
+    "2026-09:c82:17": "present",
+    "2026-09:c82:21": "present",
+    "2026-09:c82:24": "present",
+    "2026-09:c82:28": "excused",
+    "2026-09:c83:3": "present",
+    "2026-09:c83:7": "excused",
+    "2026-09:c83:10": "present",
+    "2026-09:c83:14": "present",
+    "2026-09:c83:17": "present",
+    "2026-09:c83:21": "present",
+    "2026-09:c84:10": "present",
+    "2026-09:c84:14": "present",
+    "2026-09:c84:17": "present",
+    "2026-09:c84:21": "present",
+    "2026-09:c84:28": "present",
+    "2026-09:c85:7": "present",
+    "2026-09:c85:10": "present",
+    "2026-09:c85:14": "present",
+    "2026-09:c85:17": "excused",
+    "2026-09:c85:24": "present",
+    "2026-09:c85:28": "present",
+    "2026-09:c86:3": "present",
+    "2026-09:c86:7": "present",
+    "2026-09:c86:10": "present",
+    "2026-09:c86:14": "present",
+    "2026-09:c86:24": "present",
+    "2026-09:c86:28": "present",
+    "2026-09:c87:3": "present",
+    "2026-09:c87:7": "present",
+    "2026-09:c87:10": "present",
+    "2026-09:c87:14": "excused",
+    "2026-09:c87:17": "present",
+    "2026-09:c87:21": "present",
+    "2026-09:c87:24": "present",
+    "2026-09:c87:28": "present",
+    "2026-09:c88:3": "present",
+    "2026-09:c88:7": "present",
+    "2026-09:c88:17": "present",
+    "2026-09:c88:21": "present",
+    "2026-09:c88:24": "present",
+    "2026-09:c88:28": "present",
+    "2026-09:c89:4": "present",
+    "2026-09:c89:7": "present",
+    "2026-09:c89:11": "excused",
+    "2026-09:c89:14": "present",
+    "2026-09:c89:18": "present",
+    "2026-09:c89:21": "present",
+    "2026-09:c89:25": "present",
+    "2026-09:c90:4": "present",
+    "2026-09:c90:14": "present",
+    "2026-09:c90:18": "present",
+    "2026-09:c90:21": "present",
+    "2026-09:c90:25": "present",
+    "2026-09:c91:4": "present",
+    "2026-09:c91:11": "present",
+    "2026-09:c91:14": "present",
+    "2026-09:c91:18": "present",
+    "2026-09:c91:21": "excused",
+    "2026-09:c91:28": "present",
+    "2026-09:c92:7": "present",
+    "2026-09:c92:11": "present",
+    "2026-09:c92:14": "present",
+    "2026-09:c92:18": "present",
+    "2026-09:c92:28": "present",
+    "2026-09:c93:7": "present",
+    "2026-09:c93:11": "present",
+    "2026-09:c93:14": "present",
+    "2026-09:c93:18": "excused",
+    "2026-09:c93:21": "present",
+    "2026-09:c93:25": "present",
+    "2026-09:c93:28": "present",
+    "2026-09:c94:4": "present",
+    "2026-09:c94:7": "present",
+    "2026-09:c94:11": "present",
+    "2026-09:c94:21": "present",
+    "2026-09:c94:25": "present",
+    "2026-09:c94:28": "present",
+    "2026-09:c95:4": "present",
+    "2026-09:c95:7": "present",
+    "2026-09:c95:11": "present",
+    "2026-09:c95:18": "present",
+    "2026-09:c95:21": "present",
+    "2026-09:c95:25": "present",
+    "2026-09:c95:28": "excused",
+    "2026-09:c96:4": "present",
+    "2026-09:c96:7": "excused",
+    "2026-09:c96:14": "present",
+    "2026-09:c96:18": "present",
+    "2026-09:c96:21": "present",
+    "2026-09:c96:25": "present",
+    "2026-09:c97:4": "present",
+    "2026-09:c97:14": "present",
+    "2026-09:c97:18": "present",
+    "2026-09:c97:21": "present",
+    "2026-09:c97:25": "excused",
+    "2026-09:c97:28": "present",
+    "2026-09:c98:4": "excused",
+    "2026-09:c98:7": "present",
+    "2026-09:c98:11": "present",
+    "2026-09:c98:14": "present",
+    "2026-09:c98:18": "present",
+    "2026-09:c98:28": "present",
+    "2026-09:c99:7": "present",
+    "2026-09:c99:11": "present",
+    "2026-09:c99:14": "present",
+    "2026-09:c99:18": "present",
+    "2026-09:c99:25": "present",
+    "2026-09:c99:28": "present",
+    "2026-09:c100:4": "present",
+    "2026-09:c100:7": "present",
+    "2026-09:c100:11": "present",
+    "2026-09:c100:14": "excused",
+    "2026-09:c100:21": "present",
+    "2026-09:c100:25": "present",
+    "2026-09:c100:28": "present",
+    "2026-09:c101:4": "present",
+    "2026-09:c101:7": "present",
+    "2026-09:c101:11": "present",
+    "2026-09:c101:21": "present",
+    "2026-09:c101:25": "present",
+    "2026-09:c101:28": "present",
+    "2026-09:c102:4": "present",
+    "2026-09:c102:7": "present",
+    "2026-09:c102:11": "excused",
+    "2026-09:c102:14": "present",
+    "2026-09:c102:18": "present",
+    "2026-09:c102:21": "present",
+    "2026-09:c102:25": "present",
+    "2026-09:c103:4": "present",
+    "2026-09:c103:14": "present",
+    "2026-09:c103:18": "present",
+    "2026-09:c103:21": "present",
+    "2026-09:c103:25": "present",
+    "2026-09:c104:4": "present",
+    "2026-09:c104:11": "present",
+    "2026-09:c104:14": "present",
+    "2026-09:c104:18": "present",
+    "2026-09:c104:21": "excused",
+    "2026-09:c104:28": "present",
+    "2026-09:c105:7": "present",
+    "2026-09:c105:11": "present",
+    "2026-09:c105:14": "present",
+    "2026-09:c105:18": "present",
+    "2026-09:c105:28": "present",
+    "2026-09:c106:7": "present",
+    "2026-09:c106:11": "present",
+    "2026-09:c106:14": "present",
+    "2026-09:c106:18": "excused",
+    "2026-09:c106:21": "present",
+    "2026-09:c106:25": "present",
+    "2026-09:c106:28": "present",
+    "2026-09:c107:4": "present",
+    "2026-09:c107:7": "present",
+    "2026-09:c107:11": "present",
+    "2026-09:c107:21": "present",
+    "2026-09:c107:25": "present",
+    "2026-09:c107:28": "present",
+    "2026-09:c108:4": "present",
+    "2026-09:c108:7": "present",
+    "2026-09:c108:11": "present",
+    "2026-09:c108:18": "present",
+    "2026-09:c108:21": "present",
+    "2026-09:c108:25": "present",
+    "2026-09:c108:28": "excused",
+    "2026-09:c109:4": "present",
+    "2026-09:c109:7": "excused",
+    "2026-09:c109:14": "present",
+    "2026-09:c109:18": "present",
+    "2026-09:c109:21": "present",
+    "2026-09:c109:25": "present",
+    "2026-09:c110:4": "present",
+    "2026-09:c110:14": "present",
+    "2026-09:c110:18": "present",
+    "2026-09:c110:21": "present",
+    "2026-09:c110:25": "excused",
+    "2026-09:c110:28": "present",
+    "2026-09:c111:4": "excused",
+    "2026-09:c111:7": "present",
+    "2026-09:c111:11": "present",
+    "2026-09:c111:14": "present",
+    "2026-09:c111:18": "present",
+    "2026-09:c111:28": "present",
+    "2026-09:c112:7": "present",
+    "2026-09:c112:11": "present",
+    "2026-09:c112:14": "present",
+    "2026-09:c112:18": "present",
+    "2026-09:c112:25": "present",
+    "2026-09:c112:28": "present",
+    "2026-09:c113:4": "present",
+    "2026-09:c113:7": "present",
+    "2026-09:c113:11": "present",
+    "2026-09:c113:14": "excused",
+    "2026-09:c113:21": "present",
+    "2026-09:c113:25": "present",
+    "2026-09:c113:28": "present",
+    "2026-09:c114:2": "present",
+    "2026-09:c114:9": "present",
+    "2026-09:c114:12": "present",
+    "2026-09:c114:16": "present",
+    "2026-09:c114:19": "excused",
+    "2026-09:c114:26": "present",
+    "2026-09:c114:30": "present",
+    "2026-09:c115:5": "present",
+    "2026-09:c115:9": "present",
+    "2026-09:c115:12": "present",
+    "2026-09:c115:16": "present",
+    "2026-09:c115:26": "present",
+    "2026-09:c115:30": "present",
+    "2026-09:c116:5": "present",
+    "2026-09:c116:9": "present",
+    "2026-09:c116:12": "present",
+    "2026-09:c116:16": "excused",
+    "2026-09:c116:19": "present",
+    "2026-09:c116:23": "present",
+    "2026-09:c116:26": "present",
+    "2026-09:c116:30": "present",
+    "2026-09:c117:2": "present",
+    "2026-09:c117:5": "present",
+    "2026-09:c117:9": "present",
+    "2026-09:c117:19": "present",
+    "2026-09:c117:23": "present",
+    "2026-09:c117:26": "present",
+    "2026-09:c117:30": "present",
+    "2026-09:c118:2": "present",
+    "2026-09:c118:5": "present",
+    "2026-09:c118:9": "present",
+    "2026-09:c118:16": "present",
+    "2026-09:c118:19": "present",
+    "2026-09:c118:23": "present",
+    "2026-09:c118:26": "excused",
+    "2026-09:c119:2": "present",
+    "2026-09:c119:5": "excused",
+    "2026-09:c119:12": "present",
+    "2026-09:c119:16": "present",
+    "2026-09:c119:19": "present",
+    "2026-09:c119:23": "present",
+    "2026-09:c120:2": "present",
+    "2026-09:c120:12": "present",
+    "2026-09:c120:16": "present",
+    "2026-09:c120:19": "present",
+    "2026-09:c120:23": "excused",
+    "2026-09:c120:26": "present",
+    "2026-09:c120:30": "present",
+    "2026-09:c121:2": "excused",
+    "2026-09:c121:5": "present",
+    "2026-09:c121:9": "present",
+    "2026-09:c121:12": "present",
+    "2026-09:c121:16": "present",
+    "2026-09:c121:26": "present",
+    "2026-09:c121:30": "present",
+    "2026-09:c122:5": "present",
+    "2026-09:c122:9": "present",
+    "2026-09:c122:12": "present",
+    "2026-09:c122:16": "present",
+    "2026-09:c122:23": "present",
+    "2026-09:c122:26": "present",
+    "2026-09:c122:30": "present",
+    "2026-09:c123:2": "present",
+    "2026-09:c123:5": "present",
+    "2026-09:c123:9": "present",
+    "2026-09:c123:12": "excused",
+    "2026-09:c123:19": "present",
+    "2026-09:c123:23": "present",
+    "2026-09:c123:26": "present",
+    "2026-09:c123:30": "present",
+    "2026-09:c124:2": "present",
+    "2026-09:c124:5": "present",
+    "2026-09:c124:9": "present",
+    "2026-09:c124:19": "present",
+    "2026-09:c124:23": "present",
+    "2026-09:c124:26": "present",
+    "2026-09:c124:30": "excused",
+    "2026-09:c125:2": "present",
+    "2026-09:c125:5": "present",
+    "2026-09:c125:9": "excused",
+    "2026-09:c125:12": "present",
+    "2026-09:c125:16": "present",
+    "2026-09:c125:19": "present",
+    "2026-09:c125:23": "present",
+    "2026-09:c126:2": "present",
+    "2026-09:c126:12": "present",
+    "2026-09:c126:16": "present",
+    "2026-09:c126:19": "present",
+    "2026-09:c126:23": "present",
+    "2026-09:c126:30": "present",
+    "2026-09:c127:2": "present",
+    "2026-09:c127:9": "present",
+    "2026-09:c127:12": "present",
+    "2026-09:c127:16": "present",
+    "2026-09:c127:19": "excused",
+    "2026-09:c127:26": "present",
+    "2026-09:c127:30": "present",
+    "2026-09:c128:5": "present",
+    "2026-09:c128:9": "present",
+    "2026-09:c128:12": "present",
+    "2026-09:c128:16": "present",
+    "2026-09:c128:26": "present",
+    "2026-09:c128:30": "present",
+    "2026-09:c129:5": "present",
+    "2026-09:c129:9": "present",
+    "2026-09:c129:12": "present",
+    "2026-09:c129:16": "excused",
+    "2026-09:c129:19": "present",
+    "2026-09:c129:23": "present",
+    "2026-09:c129:26": "present",
+    "2026-09:c129:30": "present",
+    "2026-09:c130:2": "present",
+    "2026-09:c130:5": "present",
+    "2026-09:c130:9": "present",
+    "2026-09:c130:19": "present",
+    "2026-09:c130:23": "present",
+    "2026-09:c130:26": "present",
+    "2026-09:c130:30": "present",
+    "2026-09:c131:2": "present",
+    "2026-09:c131:5": "present",
+    "2026-09:c131:9": "present",
+    "2026-09:c131:16": "present",
+    "2026-09:c131:19": "present",
+    "2026-09:c131:23": "present",
+    "2026-09:c131:26": "excused",
+    "2026-09:c132:2": "present",
+    "2026-09:c132:5": "excused",
+    "2026-09:c132:12": "present",
+    "2026-09:c132:16": "present",
+    "2026-09:c132:19": "present",
+    "2026-09:c132:23": "present",
+    "2026-09:c133:2": "present",
+    "2026-09:c133:12": "present",
+    "2026-09:c133:16": "present",
+    "2026-09:c133:19": "present",
+    "2026-09:c133:23": "excused",
+    "2026-09:c133:26": "present",
+    "2026-09:c133:30": "present",
+    "2026-09:c134:2": "excused",
+    "2026-09:c134:5": "present",
+    "2026-09:c134:9": "present",
+    "2026-09:c134:12": "present",
+    "2026-09:c134:16": "present",
+    "2026-09:c134:26": "present",
+    "2026-09:c134:30": "present",
+    "2026-09:c135:5": "present",
+    "2026-09:c135:9": "present",
+    "2026-09:c135:12": "present",
+    "2026-09:c135:16": "present",
+    "2026-09:c135:23": "present",
+    "2026-09:c135:26": "present",
+    "2026-09:c135:30": "present",
+    "2026-09:c136:2": "present",
+    "2026-09:c136:5": "present",
+    "2026-09:c136:9": "present",
+    "2026-09:c136:12": "excused",
+    "2026-09:c136:19": "present",
+    "2026-09:c136:23": "present",
+    "2026-09:c136:26": "present",
+    "2026-09:c136:30": "present",
+    "2026-09:c137:2": "present",
+    "2026-09:c137:5": "present",
+    "2026-09:c137:9": "present",
+    "2026-09:c137:19": "present",
+    "2026-09:c137:23": "present",
+    "2026-09:c137:26": "present",
+    "2026-09:c137:30": "excused",
+    "2026-09:c138:2": "present",
+    "2026-09:c138:5": "present",
+    "2026-09:c138:9": "excused",
+    "2026-09:c138:12": "present",
+    "2026-09:c138:16": "present",
+    "2026-09:c138:19": "present",
+    "2026-09:c138:23": "present",
+    "2026-09:c139:2": "present",
+    "2026-09:c139:12": "present",
+    "2026-09:c139:16": "present",
+    "2026-09:c139:19": "present",
+    "2026-09:c139:23": "present",
+    "2026-09:c139:30": "present",
+    "2026-09:c140:2": "present",
+    "2026-09:c140:9": "present",
+    "2026-09:c140:12": "present",
+    "2026-09:c140:16": "present",
+    "2026-09:c140:19": "excused",
+    "2026-09:c140:26": "present",
+    "2026-09:c140:30": "present",
+    "2026-09:c141:5": "present",
+    "2026-09:c141:9": "present",
+    "2026-09:c141:12": "present",
+    "2026-09:c141:16": "present",
+    "2026-09:c141:26": "present",
+    "2026-09:c141:30": "present",
+    "2026-09:c142:5": "present",
+    "2026-09:c142:9": "present",
+    "2026-09:c142:12": "present",
+    "2026-09:c142:16": "excused",
+    "2026-09:c142:19": "present",
+    "2026-09:c142:23": "present",
+    "2026-09:c142:26": "present",
+    "2026-09:c142:30": "present",
+    "2026-09:c143:2": "present",
+    "2026-09:c143:5": "present",
+    "2026-09:c143:9": "present",
+    "2026-09:c143:19": "present",
+    "2026-09:c143:23": "present",
+    "2026-09:c143:26": "present",
+    "2026-09:c143:30": "present",
+    "2026-09:c144:2": "present",
+    "2026-09:c144:5": "present",
+    "2026-09:c144:9": "present",
+    "2026-09:c144:16": "present",
+    "2026-09:c144:19": "present",
+    "2026-09:c144:23": "present",
+    "2026-09:c144:26": "excused",
+    "2026-09:c145:2": "present",
+    "2026-09:c145:5": "excused",
+    "2026-09:c145:12": "present",
+    "2026-09:c145:16": "present",
+    "2026-09:c145:19": "present",
+    "2026-09:c145:23": "present",
+    "2026-09:c146:2": "present",
+    "2026-09:c146:12": "present",
+    "2026-09:c146:16": "present",
+    "2026-09:c146:19": "present",
+    "2026-09:c146:23": "excused",
+    "2026-09:c146:26": "present",
+    "2026-09:c146:30": "present",
+    "2026-09:c147:2": "excused",
+    "2026-09:c147:5": "present",
+    "2026-09:c147:9": "present",
+    "2026-09:c147:12": "present",
+    "2026-09:c147:16": "present",
+    "2026-09:c147:26": "present",
+    "2026-09:c147:30": "present",
+    "2026-09:c148:5": "present",
+    "2026-09:c148:9": "present",
+    "2026-09:c148:12": "present",
+    "2026-09:c148:16": "present",
+    "2026-09:c148:23": "present",
+    "2026-09:c148:26": "present",
+    "2026-09:c148:30": "present",
+    "2026-09:c149:2": "present",
+    "2026-09:c149:5": "present",
+    "2026-09:c149:9": "present",
+    "2026-09:c149:12": "excused",
+    "2026-09:c149:19": "present",
+    "2026-09:c149:23": "present",
+    "2026-09:c149:26": "present",
+    "2026-09:c149:30": "present",
+    "2026-09:c150:2": "present",
+    "2026-09:c150:5": "present",
+    "2026-09:c150:9": "present",
+    "2026-09:c150:19": "present",
+    "2026-09:c150:23": "present",
+    "2026-09:c150:26": "present",
+    "2026-09:c150:30": "excused",
+    "2026-09:c151:2": "present",
+    "2026-09:c151:5": "present",
+    "2026-09:c151:9": "excused",
+    "2026-09:c151:12": "present",
+    "2026-09:c151:16": "present",
+    "2026-09:c151:19": "present",
+    "2026-09:c151:23": "present",
+    "2026-09:c152:2": "present",
+    "2026-09:c152:12": "present",
+    "2026-09:c152:16": "present",
+    "2026-09:c152:19": "present",
+    "2026-09:c152:23": "present",
+    "2026-09:c152:30": "present",
+    "2026-09:c153:2": "present",
+    "2026-09:c153:9": "present",
+    "2026-09:c153:12": "present",
+    "2026-09:c153:16": "present",
+    "2026-09:c153:19": "excused",
+    "2026-09:c153:26": "present",
+    "2026-09:c153:30": "present",
+    "2026-09:c154:5": "present",
+    "2026-09:c154:9": "present",
+    "2026-09:c154:12": "present",
+    "2026-09:c154:16": "present",
+    "2026-09:c154:26": "present",
+    "2026-09:c154:30": "present",
+    "2026-09:c155:5": "present",
+    "2026-09:c155:9": "present",
+    "2026-09:c155:12": "present",
+    "2026-09:c155:16": "excused",
+    "2026-09:c155:19": "present",
+    "2026-09:c155:23": "present",
+    "2026-09:c155:26": "present",
+    "2026-09:c155:30": "present",
+    "2026-09:c156:2": "present",
+    "2026-09:c156:5": "present",
+    "2026-09:c156:9": "present",
+    "2026-09:c156:19": "present",
+    "2026-09:c156:23": "present",
+    "2026-09:c156:26": "present",
+    "2026-09:c156:30": "present",
+    "2026-09:c157:2": "present",
+    "2026-09:c157:5": "present",
+    "2026-09:c157:9": "present",
+    "2026-09:c157:16": "present",
+    "2026-09:c157:19": "present",
+    "2026-09:c157:23": "present",
+    "2026-09:c157:26": "excused",
+    "2026-09:c158:2": "present",
+    "2026-09:c158:5": "excused",
+    "2026-09:c158:12": "present",
+    "2026-09:c158:16": "present",
+    "2026-09:c158:19": "present",
+    "2026-09:c158:23": "present",
+    "2026-09:c159:2": "present",
+    "2026-09:c159:12": "present",
+    "2026-09:c159:16": "present",
+    "2026-09:c159:19": "present",
+    "2026-09:c159:23": "excused",
+    "2026-09:c159:26": "present",
+    "2026-09:c159:30": "present",
+    "2026-09:c160:2": "excused",
+    "2026-09:c160:5": "present",
+    "2026-09:c160:9": "present",
+    "2026-09:c160:12": "present",
+    "2026-09:c160:16": "present",
+    "2026-09:c160:26": "present",
+    "2026-09:c160:30": "present",
+    "2026-09:c161:5": "present",
+    "2026-09:c161:9": "present",
+    "2026-09:c161:12": "present",
+    "2026-09:c161:16": "present",
+    "2026-09:c161:23": "present",
+    "2026-09:c161:26": "present",
+    "2026-09:c161:30": "present",
+    "2026-09:c162:2": "present",
+    "2026-09:c162:5": "present",
+    "2026-09:c162:9": "present",
+    "2026-09:c162:12": "excused",
+    "2026-09:c162:19": "present",
+    "2026-09:c162:23": "present",
+    "2026-09:c162:26": "present",
+    "2026-09:c162:30": "present",
+    "2026-09:c163:2": "present",
+    "2026-09:c163:5": "present",
+    "2026-09:c163:9": "present",
+    "2026-09:c163:19": "present",
+    "2026-09:c163:23": "present",
+    "2026-09:c163:26": "present",
+    "2026-09:c163:30": "excused",
+    "2026-09:c164:2": "present",
+    "2026-09:c164:5": "present",
+    "2026-09:c164:9": "excused",
+    "2026-09:c164:12": "present",
+    "2026-09:c164:16": "present",
+    "2026-09:c164:19": "present",
+    "2026-09:c164:23": "present",
+    "2026-09:c165:2": "present",
+    "2026-09:c165:12": "present",
+    "2026-09:c165:16": "present",
+    "2026-09:c165:19": "present",
+    "2026-09:c165:23": "present",
+    "2026-09:c165:30": "present",
+    "2026-09:c166:2": "present",
+    "2026-09:c166:9": "present",
+    "2026-09:c166:12": "present",
+    "2026-09:c166:16": "present",
+    "2026-09:c166:19": "excused",
+    "2026-09:c166:26": "present",
+    "2026-09:c166:30": "present",
+    "2026-09:c167:5": "present",
+    "2026-09:c167:9": "present",
+    "2026-09:c167:12": "present",
+    "2026-09:c167:16": "present",
+    "2026-09:c167:26": "present",
+    "2026-09:c167:30": "present",
+    "2026-09:c168:5": "present",
+    "2026-09:c168:9": "present",
+    "2026-09:c168:12": "present",
+    "2026-09:c168:16": "excused",
+    "2026-09:c168:19": "present",
+    "2026-09:c168:23": "present",
+    "2026-09:c168:26": "present",
+    "2026-09:c168:30": "present",
+    "2026-09:c169:2": "present",
+    "2026-09:c169:5": "present",
+    "2026-09:c169:9": "present",
+    "2026-09:c169:19": "present",
+    "2026-09:c169:23": "present",
+    "2026-09:c169:26": "present",
+    "2026-09:c169:30": "present",
+    "2026-09:c170:2": "present",
+    "2026-09:c170:5": "present",
+    "2026-09:c170:9": "present",
+    "2026-09:c170:16": "present",
+    "2026-09:c170:19": "present",
+    "2026-09:c170:23": "present",
+    "2026-09:c170:26": "excused",
+    "2026-09:c171:2": "present",
+    "2026-09:c171:5": "excused",
+    "2026-09:c171:12": "present",
+    "2026-09:c171:16": "present",
+    "2026-09:c171:19": "present",
+    "2026-09:c171:23": "present",
+    "2026-09:c172:2": "present",
+    "2026-09:c172:12": "present",
+    "2026-09:c172:16": "present",
+    "2026-09:c172:19": "present",
+    "2026-09:c172:23": "excused",
+    "2026-09:c172:26": "present",
+    "2026-09:c172:30": "present",
+    "2026-09:c173:2": "excused",
+    "2026-09:c173:5": "present",
+    "2026-09:c173:9": "present",
+    "2026-09:c173:12": "present",
+    "2026-09:c173:16": "present",
+    "2026-09:c173:26": "present",
+    "2026-09:c173:30": "present",
+    "2026-09:c174:5": "present",
+    "2026-09:c174:9": "present",
+    "2026-09:c174:12": "present",
+    "2026-09:c174:16": "present",
+    "2026-09:c174:23": "present",
+    "2026-09:c174:26": "present",
+    "2026-09:c174:30": "present",
+    "2026-09:c175:2": "present",
+    "2026-09:c175:5": "present",
+    "2026-09:c175:9": "present",
+    "2026-09:c175:12": "excused",
+    "2026-09:c175:19": "present",
+    "2026-09:c175:23": "present",
+    "2026-09:c175:26": "present",
+    "2026-09:c175:30": "present",
+    "2026-09:c176:2": "present",
+    "2026-09:c176:5": "present",
+    "2026-09:c176:9": "present",
+    "2026-09:c176:19": "present",
+    "2026-09:c176:23": "present",
+    "2026-09:c176:26": "present",
+    "2026-09:c176:30": "excused",
+    "2026-09:c177:2": "present",
+    "2026-09:c177:5": "present",
+    "2026-09:c177:9": "excused",
+    "2026-09:c177:12": "present",
+    "2026-09:c177:16": "present",
+    "2026-09:c177:19": "present",
+    "2026-09:c177:23": "present",
+    "2026-09:c178:2": "present",
+    "2026-09:c178:12": "present",
+    "2026-09:c178:16": "present",
+    "2026-09:c178:19": "present",
+    "2026-09:c178:23": "present",
+    "2026-09:c178:30": "present",
+    "2026-09:c179:2": "present",
+    "2026-09:c179:9": "present",
+    "2026-09:c179:12": "present",
+    "2026-09:c179:16": "present",
+    "2026-09:c179:19": "excused",
+    "2026-09:c179:26": "present",
+    "2026-09:c179:30": "present",
+    "2026-09:c180:5": "present",
+    "2026-09:c180:9": "present",
+    "2026-09:c180:12": "present",
+    "2026-09:c180:16": "present",
+    "2026-09:c180:26": "present",
+    "2026-09:c180:30": "present",
+    "2026-09:c181:5": "present",
+    "2026-09:c181:9": "present",
+    "2026-09:c181:12": "present",
+    "2026-09:c181:16": "excused",
+    "2026-09:c181:19": "present",
+    "2026-09:c181:23": "present",
+    "2026-09:c181:26": "present",
+    "2026-09:c181:30": "present",
+    "2026-09:c182:2": "present",
+    "2026-09:c182:5": "present",
+    "2026-09:c182:9": "present",
+    "2026-09:c182:19": "present",
+    "2026-09:c182:23": "present",
+    "2026-09:c182:26": "present",
+    "2026-09:c182:30": "present",
+    "2026-09:c183:2": "present",
+    "2026-09:c183:5": "present",
+    "2026-09:c183:9": "present",
+    "2026-09:c183:16": "present",
+    "2026-09:c183:19": "present",
+    "2026-09:c183:23": "present",
+    "2026-09:c183:26": "excused",
+    "2026-09:c184:2": "present",
+    "2026-09:c184:5": "excused",
+    "2026-09:c184:12": "present",
+    "2026-09:c184:16": "present",
+    "2026-09:c184:19": "present",
+    "2026-09:c184:23": "present",
+    "2026-09:c185:2": "present",
+    "2026-09:c185:12": "present",
+    "2026-09:c185:16": "present",
+    "2026-09:c185:19": "present",
+    "2026-09:c185:23": "excused",
+    "2026-09:c185:26": "present",
+    "2026-09:c185:30": "present",
+    "2026-09:c186:2": "excused",
+    "2026-09:c186:5": "present",
+    "2026-09:c186:9": "present",
+    "2026-09:c186:12": "present",
+    "2026-09:c186:16": "present",
+    "2026-09:c186:26": "present",
+    "2026-09:c186:30": "present",
+    "2026-09:c187:5": "present",
+    "2026-09:c187:9": "present",
+    "2026-09:c187:12": "present",
+    "2026-09:c187:16": "present",
+    "2026-09:c187:23": "present",
+    "2026-09:c187:26": "present",
+    "2026-09:c187:30": "present",
+    "2026-09:c188:2": "present",
+    "2026-09:c188:5": "present",
+    "2026-09:c188:9": "present",
+    "2026-09:c188:12": "excused",
+    "2026-09:c188:19": "present",
+    "2026-09:c188:23": "present",
+    "2026-09:c188:26": "present",
+    "2026-09:c188:30": "present",
+    "2026-09:c189:2": "present",
+    "2026-09:c189:5": "present",
+    "2026-09:c189:9": "present",
+    "2026-09:c189:19": "present",
+    "2026-09:c189:23": "present",
+    "2026-09:c189:26": "present",
+    "2026-09:c189:30": "excused",
+    "2026-09:c190:2": "present",
+    "2026-09:c190:5": "present",
+    "2026-09:c190:9": "excused",
+    "2026-09:c190:12": "present",
+    "2026-09:c190:16": "present",
+    "2026-09:c190:19": "present",
+    "2026-09:c190:23": "present",
+    "2026-09:c191:2": "present",
+    "2026-09:c191:12": "present",
+    "2026-09:c191:16": "present",
+    "2026-09:c191:19": "present",
+    "2026-09:c191:23": "present",
+    "2026-09:c191:30": "present",
+    "2026-09:c192:2": "present",
+    "2026-09:c192:9": "present",
+    "2026-09:c192:12": "present",
+    "2026-09:c192:16": "present",
+    "2026-09:c192:19": "excused",
+    "2026-09:c192:26": "present",
+    "2026-09:c192:30": "present",
+    "2026-09:c193:5": "present",
+    "2026-09:c193:9": "present",
+    "2026-09:c193:12": "present",
+    "2026-09:c193:16": "present",
+    "2026-09:c193:26": "present",
+    "2026-09:c193:30": "present",
+    "2026-09:c194:5": "present",
+    "2026-09:c194:9": "present",
+    "2026-09:c194:12": "present",
+    "2026-09:c194:16": "excused",
+    "2026-09:c194:19": "present",
+    "2026-09:c194:23": "present",
+    "2026-09:c194:26": "present",
+    "2026-09:c194:30": "present",
+    "2026-09:c195:2": "present",
+    "2026-09:c195:5": "present",
+    "2026-09:c195:9": "present",
+    "2026-09:c195:19": "present",
+    "2026-09:c195:23": "present",
+    "2026-09:c195:26": "present",
+    "2026-09:c195:30": "present",
+    "2026-09:c196:2": "present",
+    "2026-09:c196:5": "present",
+    "2026-09:c196:9": "present",
+    "2026-09:c196:16": "present",
+    "2026-09:c196:19": "present",
+    "2026-09:c196:23": "present",
+    "2026-09:c196:26": "excused",
+    "2026-09:c197:2": "present",
+    "2026-09:c197:5": "excused",
+    "2026-09:c197:12": "present",
+    "2026-09:c197:16": "present",
+    "2026-09:c197:19": "present",
+    "2026-09:c197:23": "present",
+    "2026-09:c198:2": "present",
+    "2026-09:c198:12": "present",
+    "2026-09:c198:16": "present",
+    "2026-09:c198:19": "present",
+    "2026-09:c198:23": "excused",
+    "2026-09:c198:26": "present",
+    "2026-09:c198:30": "present",
+    "2026-09:c199:2": "excused",
+    "2026-09:c199:5": "present",
+    "2026-09:c199:9": "present",
+    "2026-09:c199:12": "present",
+    "2026-09:c199:16": "present",
+    "2026-09:c199:26": "present",
+    "2026-09:c199:30": "present",
+    "2026-09:c200:5": "present",
+    "2026-09:c200:9": "present",
+    "2026-09:c200:12": "present",
+    "2026-09:c200:16": "present",
+    "2026-09:c200:23": "present",
+    "2026-09:c200:26": "present",
+    "2026-09:c200:30": "present",
+    "2026-09:c201:2": "present",
+    "2026-09:c201:5": "present",
+    "2026-09:c201:9": "present",
+    "2026-09:c201:12": "excused",
+    "2026-09:c201:19": "present",
+    "2026-09:c201:23": "present",
+    "2026-09:c201:26": "present",
+    "2026-09:c201:30": "present",
+    "2026-09:c202:2": "present",
+    "2026-09:c202:5": "present",
+    "2026-09:c202:9": "present",
+    "2026-09:c202:19": "present",
+    "2026-09:c202:23": "present",
+    "2026-09:c202:26": "present",
+    "2026-09:c202:30": "excused",
+    "2026-09:c203:2": "present",
+    "2026-09:c203:5": "present",
+    "2026-09:c203:9": "excused",
+    "2026-09:c203:12": "present",
+    "2026-09:c203:16": "present",
+    "2026-09:c203:19": "present",
+    "2026-09:c203:23": "present",
+    "2026-09:c204:4": "present",
+    "2026-09:c204:7": "present",
+    "2026-09:c204:11": "present",
+    "2026-09:c204:14": "excused",
+    "2026-09:c204:21": "present",
+    "2026-09:c204:25": "present",
+    "2026-09:c204:28": "present",
+    "2026-09:c205:4": "present",
+    "2026-09:c205:7": "present",
+    "2026-09:c205:11": "present",
+    "2026-09:c205:21": "present",
+    "2026-09:c205:25": "present",
+    "2026-09:c205:28": "present",
+    "2026-09:c206:4": "present",
+    "2026-09:c206:7": "present",
+    "2026-09:c206:11": "excused",
+    "2026-09:c206:14": "present",
+    "2026-09:c206:18": "present",
+    "2026-09:c206:21": "present",
+    "2026-09:c206:25": "present",
+    "2026-09:c207:4": "present",
+    "2026-09:c207:14": "present",
+    "2026-09:c207:18": "present",
+    "2026-09:c207:21": "present",
+    "2026-09:c207:25": "present",
+    "2026-09:c208:4": "present",
+    "2026-09:c208:11": "present",
+    "2026-09:c208:14": "present",
+    "2026-09:c208:18": "present",
+    "2026-09:c208:21": "excused",
+    "2026-09:c208:28": "present",
+    "2026-09:c209:7": "present",
+    "2026-09:c209:11": "present",
+    "2026-09:c209:14": "present",
+    "2026-09:c209:18": "present",
+    "2026-09:c209:28": "present",
+    "2026-09:c210:7": "present",
+    "2026-09:c210:11": "present",
+    "2026-09:c210:14": "present",
+    "2026-09:c210:18": "excused",
+    "2026-09:c210:21": "present",
+    "2026-09:c210:25": "present",
+    "2026-09:c210:28": "present",
+    "2026-09:c211:4": "present",
+    "2026-09:c211:7": "present",
+    "2026-09:c211:11": "present",
+    "2026-09:c211:21": "present",
+    "2026-09:c211:25": "present",
+    "2026-09:c211:28": "present",
+    "2026-09:c212:4": "present",
+    "2026-09:c212:7": "present",
+    "2026-09:c212:11": "present",
+    "2026-09:c212:18": "present",
+    "2026-09:c212:21": "present",
+    "2026-09:c212:25": "present",
+    "2026-09:c212:28": "excused",
+    "2026-09:c213:4": "present",
+    "2026-09:c213:7": "excused",
+    "2026-09:c213:14": "present",
+    "2026-09:c213:18": "present",
+    "2026-09:c213:21": "present",
+    "2026-09:c213:25": "present",
+    "2026-09:c214:4": "present",
+    "2026-09:c214:14": "present",
+    "2026-09:c214:18": "present",
+    "2026-09:c214:21": "present",
+    "2026-09:c214:25": "excused",
+    "2026-09:c214:28": "present",
+    "2026-09:c215:4": "excused",
+    "2026-09:c215:7": "present",
+    "2026-09:c215:11": "present",
+    "2026-09:c215:14": "present",
+    "2026-09:c215:18": "present",
+    "2026-09:c215:28": "present",
+    "2026-09:c216:7": "present",
+    "2026-09:c216:11": "present",
+    "2026-09:c216:14": "present",
+    "2026-09:c216:18": "present",
+    "2026-09:c216:25": "present",
+    "2026-09:c216:28": "present",
+    "2026-09:c217:4": "present",
+    "2026-09:c217:7": "present",
+    "2026-09:c217:11": "present",
+    "2026-09:c217:14": "excused",
+    "2026-09:c217:21": "present",
+    "2026-09:c217:25": "present",
+    "2026-09:c217:28": "present",
+    "2026-09:c218:4": "present",
+    "2026-09:c218:7": "present",
+    "2026-09:c218:11": "present",
+    "2026-09:c218:21": "present",
+    "2026-09:c218:25": "present",
+    "2026-09:c218:28": "present",
+    "2026-09:c219:4": "present",
+    "2026-09:c219:7": "present",
+    "2026-09:c219:11": "excused",
+    "2026-09:c219:14": "present",
+    "2026-09:c219:18": "present",
+    "2026-09:c219:21": "present",
+    "2026-09:c219:25": "present",
+    "2026-09:c220:4": "present",
+    "2026-09:c220:14": "present",
+    "2026-09:c220:18": "present",
+    "2026-09:c220:21": "present",
+    "2026-09:c220:25": "present",
+    "2026-09:c221:4": "present",
+    "2026-09:c221:11": "present",
+    "2026-09:c221:14": "present",
+    "2026-09:c221:18": "present",
+    "2026-09:c221:21": "excused",
+    "2026-09:c221:28": "present",
+    "2026-09:c222:7": "present",
+    "2026-09:c222:11": "present",
+    "2026-09:c222:14": "present",
+    "2026-09:c222:18": "present",
+    "2026-09:c222:28": "present",
+    "2026-09:c223:7": "present",
+    "2026-09:c223:11": "present",
+    "2026-09:c223:14": "present",
+    "2026-09:c223:18": "excused",
+    "2026-09:c223:21": "present",
+    "2026-09:c223:25": "present",
+    "2026-09:c223:28": "present",
+    "2026-09:c224:4": "present",
+    "2026-09:c224:7": "present",
+    "2026-09:c224:11": "present",
+    "2026-09:c224:21": "present",
+    "2026-09:c224:25": "present",
+    "2026-09:c224:28": "present",
+    "2026-09:c225:4": "present",
+    "2026-09:c225:7": "present",
+    "2026-09:c225:11": "present",
+    "2026-09:c225:18": "present",
+    "2026-09:c225:21": "present",
+    "2026-09:c225:25": "present",
+    "2026-09:c225:28": "excused"
+  },
+  "source": {
+    "attendanceSheet": "март 26  ",
+    "comment": "Состав групп из таблицы посещаемости (март 2026, группы конца прошлого сезона). Актуальные группы клиент пришлёт отдельно."
+  }
+}
