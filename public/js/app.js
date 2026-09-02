@@ -38,7 +38,9 @@ async function load() {
   render();
 }
 
-function persistCal() {
+function usesAttTable() {
+  return role === "trainer" || role === "admin";
+}
   sessionStorage.setItem("lk-cal", calMode);
   sessionStorage.setItem("lk-day", String(selectedDay));
 }
@@ -437,17 +439,17 @@ function trainerTable() {
 }
 
 function calendarView() {
-  const body = role === "trainer"
+  const body = usesAttTable()
     ? trainerTable()
     : calMode === "week" ? viewWeek()
     : calMode === "month" ? viewMonth()
     : calMode === "year" ? viewYear()
     : viewDay();
   return `
-    <div class="gcal ${role === "trainer" ? "gcal-table" : ""}">
+    <div class="gcal ${usesAttTable() ? "gcal-table" : ""}">
       ${calToolbar()}
       ${body}
-      ${calMode === "year" && role !== "trainer" ? "" : addForm()}
+      ${calMode === "year" && !usesAttTable() ? "" : addForm()}
     </div>
     ${role === "parent" ? parentPaySection() : ""}
   `;
