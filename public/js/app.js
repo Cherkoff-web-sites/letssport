@@ -343,16 +343,111 @@ function parentPaySection() {
   `;
 }
 
+function trainerColumns() {
+  if (calMode === "day") return state.month.days.filter((d) => d.day === selectedDay);
+  if (calMode === "week") {
+    return weekDays().filter((d) => d.inMonth).map((d) => dayMeta(d.day));
+  }
+  return state.month.days;
+}
+
+function trainerWeekStrip() {
+  const days = weekDays();
+  return `
+    <div class="week-strip">
+      ${days.map((d) => {
+        const on = d.inMonth && d.day === selectedDay;
+        const today = d.inMonth && isToday(d.day);
+        const dots = d.inMonth ? dotsForDay(d.day) : { any: 0 };
+        return `
+          <button type="button" class="week-day ${on ? "is-on" : ""} ${d.inMonth ? "" : "is-out"} ${today ? "is-today" : ""}" data-pick-day="${d.inMonth ? d.day : ""}" ${d.inMonth ? "" : "disabled"}>
+            <small>${WEEK_SHORT[d.weekday]}</small>
+            <strong>${d.day}</strong>
+            <span class="mini-dots">${dotHtml(dots)}</span>
+          </button>`;
+      }).join("")}
+    </div>`;
+}
+
+function trainerTable() {
+  const kids = rosterKids();
+  const group = currentGroup();
+  const clickable = state.permissions.editAttendance;
+  if (calMode === "year") {
+    const months = MONTH_NAMES.map((name, i) => {
+      const active = i + 1 === state.month.month;
+      return `<th class="${active ? "is-now" : ""}">${name.slice(0, 3)}</th>`;
+    }).join("");
+    const rows = kids.map((c) => {
+      const cells = MONTH_NAMES.map((_, i) => {
+        const active = i + 1 === state.month.month;
+        const n = active ? state.month.days.filter((d) => markOf(c.id, d.day) === "present").length : "";
+        return `<td class="${active ? "is-now" : "is-out"}">${active ? (n || "—") : ""}</td>`;
+      }).join("");
+      return `<tr>
+        <th class="sticky ${c.kind === "trial" ? "name-trial" : ""}">${c.name}${c.kind === "trial" ? " · пробный" : ""}</th>
+        ${cells}
+      </tr>`;
+    }).join("");
+    return `
+      <div class="att-wrap">
+        <table class="att-table">
+          <thead><tr><th class="sticky">Фамилия</th>${months}</tr></thead>
+          <tbody>${rows || "<tr><td class=\"sticky\">Никого нет</td></tr>"}</tbody>
+        </table>
+      </div>
+      <p class="hint">В учёте пока ${MONTH_NAMES[state.month.month - 1]}. Нажмите «Месяц», чтобы править дни.</p>`;
+  }
+  const cols = trainerColumns();
+  const head = cols.map((d) => `
+    <th class="${isToday(d.day) ? "is-today" : ""} ${isTrainingDay(group, d.day) ? "is-train" : ""} ${d.day === selectedDay ? "is-on" : ""}" data-pick-day="${d.day}">
+      <small>${WEEK_SHORT[d.weekday]}</small>
+      ${d.day}
+    </th>`).join("");
+  const rows = kids.map((c) => {
+    const del = canDelete(c)
+      ? `<button class="icon-del" data-del="${c.id}" type="button" aria-label="Убрать">×</button>`
+      : "";
+    const cells = cols.map((d) => {
+      const mark = markOf(c.id, d.day);
+      const open = clickable ? `data-open-mark="${c.id}" data-day="${d.day}"` : "";
+      return `<td class="mark ${mark} ${isTrainingDay(group, d.day) ? "is-train" : ""}" ${open}>${markLabel[mark] || ""}</td>`;
+    }).join("");
+    return `<tr>
+      <th class="sticky ${c.kind === "trial" ? "name-trial" : ""}">
+        <span>${c.name}${c.kind === "trial" ? " · пробный" : ""}</span>
+        ${del}
+      </th>
+      ${cells}
+    </tr>`;
+  }).join("");
+  return `
+    ${calMode === "month" ? "" : trainerWeekStrip()}
+    <div class="att-wrap">
+      <table class="att-table">
+        <thead>
+          <tr>
+            <th class="sticky">Фамилия</th>
+            ${head}
+          </tr>
+        </thead>
+        <tbody>${rows || `<tr><td class="sticky">Никого нет</td>${cols.map(() => "<td></td>").join("")}</tr>`}</tbody>
+      </table>
+    </div>`;
+}
+
 function calendarView() {
-  const body = calMode === "week" ? viewWeek()
+  const body = role === "trainer"
+    ? trainerTable()
+    : calMode === "week" ? viewWeek()
     : calMode === "month" ? viewMonth()
     : calMode === "year" ? viewYear()
     : viewDay();
   return `
-    <div class="gcal">
+    <div class="gcal ${role === "trainer" ? "gcal-table" : ""}">
       ${calToolbar()}
       ${body}
-      ${calMode === "year" ? "" : addForm()}
+      ${calMode === "year" && role !== "trainer" ? "" : addForm()}
     </div>
     ${role === "parent" ? parentPaySection() : ""}
   `;
@@ -493,7 +588,6 @@ document.getElementById("app").addEventListener("click", async (e) => {
   const pick = e.target.closest("[data-pick-day]");
   if (pick && pick.dataset.pickDay) {
     selectedDay = Number(pick.dataset.pickDay);
-    if (calMode === "month" || calMode === "year") calMode = role === "trainer" ? "day" : calMode;
     persistCal();
     render();
     return;

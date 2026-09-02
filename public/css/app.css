@@ -261,7 +261,49 @@ table.sheet {
 }
 .pay-btn { min-width: 120px; }
 
-.gcal { display: flex; flex-direction: column; gap: 12px; max-width: 720px; margin: 0 auto; }
+.gcal.gcal-table { max-width: none; }
+.att-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: rgba(255,255,255,.86);
+  border-radius: 16px;
+  max-width: 100%;
+}
+.att-table {
+  border-collapse: collapse;
+  width: max-content;
+  min-width: 100%;
+  font-size: 13px;
+}
+.att-table th, .att-table td {
+  border: 1px solid var(--line);
+  padding: 8px 6px;
+  text-align: center;
+  min-width: 40px;
+}
+.att-table th.sticky, .att-table td.sticky {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  text-align: left;
+  min-width: 148px;
+  max-width: 42vw;
+  background: #f4fafc;
+  white-space: normal;
+  word-break: break-word;
+}
+.att-table thead th { background: #e7f2f7; font-weight: 500; }
+.att-table thead th.sticky { z-index: 3; }
+.att-table th small { display: block; font-size: 10px; color: var(--muted); font-weight: 400; }
+.att-table th.is-on { background: var(--navy); color: #fff; }
+.att-table th.is-on small { color: rgba(255,255,255,.8); }
+.att-table th.is-today, .att-table td.is-now { box-shadow: inset 0 -3px 0 #d64545; }
+.att-table td.is-train, .att-table th.is-train { background: rgba(47, 158, 106, .08); }
+.att-table td.mark { cursor: pointer; font-weight: 600; }
+.att-table td.mark.present { color: var(--ok); }
+.att-table td.mark.trial { color: var(--navy); }
+.att-table td.mark.excused { color: var(--warn); }
+.att-table .icon-del { padding: 0 4px; }
 .gcal-bar { display: flex; gap: 8px; align-items: center; }
 .gcal-modes {
   display: grid;
