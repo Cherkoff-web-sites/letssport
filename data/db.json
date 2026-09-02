@@ -2,7 +2,8 @@
   "settings": {
     "packPrice": 7500,
     "packLessons": 8,
-    "note": "Цена 8 занятий из расчёта стоимости. 1 занятие = 7500 / 8. Скидка семьи: 2 ребёнка 10%, 3 ребёнка 20%."
+    "note": "Цена 8 занятий из расчёта стоимости. 1 занятие = 7500 / 8. Скидка семьи: 2 ребёнка 10%, 3 ребёнка 20%.",
+    "trialPrice": 500
   },
   "months": [
     {
@@ -323,7 +324,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c2",
@@ -335,7 +338,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c3",
@@ -347,7 +352,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c4",
@@ -359,7 +366,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c5",
@@ -371,7 +380,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c6",
@@ -383,7 +394,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c7",
@@ -395,7 +408,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c8",
@@ -407,7 +422,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c9",
@@ -419,7 +436,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c10",
@@ -431,7 +450,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c11",
@@ -443,7 +464,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c12",
@@ -455,7 +478,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c13",
@@ -467,7 +492,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c14",
@@ -479,7 +506,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c15",
@@ -491,7 +520,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c16",
@@ -503,7 +534,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c17",
@@ -515,7 +548,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c18",
@@ -527,7 +562,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c19",
@@ -539,7 +576,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c20",
@@ -551,7 +590,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c21",
@@ -563,7 +604,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c22",
@@ -575,7 +618,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c23",
@@ -587,7 +632,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c24",
@@ -599,7 +646,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c25",
@@ -611,7 +660,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c26",
@@ -623,7 +674,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c27",
@@ -635,7 +688,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c28",
@@ -647,7 +702,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c29",
@@ -659,7 +716,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c30",
@@ -671,7 +730,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c31",
@@ -683,7 +744,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c32",
@@ -695,7 +758,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c33",
@@ -707,7 +772,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c34",
@@ -719,7 +786,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c35",
@@ -731,7 +800,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c36",
@@ -743,7 +814,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c37",
@@ -755,7 +828,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c38",
@@ -767,7 +842,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c39",
@@ -779,7 +856,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c40",
@@ -791,7 +870,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c41",
@@ -803,7 +884,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c42",
@@ -815,7 +898,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c43",
@@ -827,7 +912,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c44",
@@ -839,7 +926,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c45",
@@ -851,7 +940,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c46",
@@ -863,7 +954,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c47",
@@ -875,7 +968,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c48",
@@ -887,7 +982,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c49",
@@ -899,7 +996,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c50",
@@ -911,7 +1010,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c51",
@@ -923,7 +1024,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c52",
@@ -935,7 +1038,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c53",
@@ -947,7 +1052,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c54",
@@ -959,7 +1066,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c55",
@@ -971,7 +1080,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c56",
@@ -983,7 +1094,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c57",
@@ -995,7 +1108,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c58",
@@ -1007,7 +1122,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c59",
@@ -1019,7 +1136,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c60",
@@ -1031,7 +1150,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c61",
@@ -1043,7 +1164,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c62",
@@ -1055,7 +1178,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c63",
@@ -1067,7 +1192,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c64",
@@ -1079,7 +1206,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c65",
@@ -1091,7 +1220,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c66",
@@ -1103,7 +1234,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c67",
@@ -1115,7 +1248,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c68",
@@ -1127,7 +1262,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c69",
@@ -1139,7 +1276,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c70",
@@ -1151,7 +1290,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c71",
@@ -1163,7 +1304,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c72",
@@ -1175,7 +1318,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c73",
@@ -1187,7 +1332,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c74",
@@ -1199,7 +1346,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c75",
@@ -1211,7 +1360,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c76",
@@ -1223,7 +1374,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c77",
@@ -1235,7 +1388,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c78",
@@ -1247,7 +1402,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c79",
@@ -1259,7 +1416,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c80",
@@ -1271,7 +1430,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c81",
@@ -1283,7 +1444,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c82",
@@ -1295,7 +1458,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c83",
@@ -1307,7 +1472,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c84",
@@ -1319,7 +1486,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c85",
@@ -1331,7 +1500,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c86",
@@ -1343,7 +1514,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c87",
@@ -1355,7 +1528,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c88",
@@ -1367,7 +1542,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c89",
@@ -1379,7 +1556,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c90",
@@ -1391,7 +1570,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c91",
@@ -1403,7 +1584,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c92",
@@ -1415,7 +1598,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c93",
@@ -1427,7 +1612,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c94",
@@ -1439,7 +1626,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c95",
@@ -1451,7 +1640,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c96",
@@ -1463,7 +1654,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c97",
@@ -1475,7 +1668,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c98",
@@ -1487,7 +1682,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c99",
@@ -1499,7 +1696,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c100",
@@ -1511,7 +1710,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c101",
@@ -1523,7 +1724,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c102",
@@ -1535,7 +1738,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c103",
@@ -1547,7 +1752,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c104",
@@ -1559,7 +1766,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c105",
@@ -1571,7 +1780,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c106",
@@ -1583,7 +1794,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c107",
@@ -1595,7 +1808,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c108",
@@ -1607,7 +1822,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c109",
@@ -1619,7 +1836,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c110",
@@ -1631,7 +1850,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c111",
@@ -1643,7 +1864,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c112",
@@ -1655,7 +1878,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c113",
@@ -1667,7 +1892,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c114",
@@ -1679,7 +1906,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c115",
@@ -1691,7 +1920,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c116",
@@ -1703,7 +1934,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c117",
@@ -1715,7 +1948,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c118",
@@ -1727,7 +1962,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c119",
@@ -1739,7 +1976,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c120",
@@ -1751,7 +1990,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c121",
@@ -1763,7 +2004,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c122",
@@ -1775,7 +2018,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c123",
@@ -1787,7 +2032,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c124",
@@ -1799,7 +2046,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c125",
@@ -1811,7 +2060,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c126",
@@ -1823,7 +2074,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c127",
@@ -1835,7 +2088,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c128",
@@ -1847,7 +2102,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c129",
@@ -1859,7 +2116,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c130",
@@ -1871,7 +2130,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c131",
@@ -1883,7 +2144,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c132",
@@ -1895,7 +2158,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c133",
@@ -1907,7 +2172,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c134",
@@ -1919,7 +2186,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c135",
@@ -1931,7 +2200,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c136",
@@ -1943,7 +2214,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c137",
@@ -1955,7 +2228,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c138",
@@ -1967,7 +2242,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c139",
@@ -1979,7 +2256,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c140",
@@ -1991,7 +2270,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c141",
@@ -2003,7 +2284,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c142",
@@ -2015,7 +2298,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c143",
@@ -2027,7 +2312,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c144",
@@ -2039,7 +2326,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c145",
@@ -2051,7 +2340,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c146",
@@ -2063,7 +2354,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c147",
@@ -2075,7 +2368,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c148",
@@ -2087,7 +2382,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c149",
@@ -2099,7 +2396,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c150",
@@ -2111,7 +2410,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c151",
@@ -2123,7 +2424,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c152",
@@ -2135,7 +2438,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c153",
@@ -2147,7 +2452,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c154",
@@ -2159,7 +2466,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c155",
@@ -2171,7 +2480,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c156",
@@ -2183,7 +2494,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c157",
@@ -2195,7 +2508,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c158",
@@ -2207,7 +2522,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c159",
@@ -2219,7 +2536,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c160",
@@ -2231,7 +2550,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c161",
@@ -2243,7 +2564,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c162",
@@ -2255,7 +2578,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c163",
@@ -2267,7 +2592,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c164",
@@ -2279,7 +2606,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c165",
@@ -2291,7 +2620,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c166",
@@ -2303,7 +2634,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c167",
@@ -2315,7 +2648,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c168",
@@ -2327,7 +2662,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c169",
@@ -2339,7 +2676,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c170",
@@ -2351,7 +2690,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c171",
@@ -2363,7 +2704,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c172",
@@ -2375,7 +2718,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c173",
@@ -2387,7 +2732,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c174",
@@ -2399,7 +2746,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c175",
@@ -2411,7 +2760,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c176",
@@ -2423,7 +2774,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c177",
@@ -2435,7 +2788,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c178",
@@ -2447,7 +2802,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c179",
@@ -2459,7 +2816,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c180",
@@ -2471,7 +2830,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c181",
@@ -2483,7 +2844,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c182",
@@ -2495,7 +2858,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c183",
@@ -2507,7 +2872,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c184",
@@ -2519,7 +2886,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c185",
@@ -2531,7 +2900,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c186",
@@ -2543,7 +2914,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c187",
@@ -2555,7 +2928,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c188",
@@ -2567,7 +2942,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c189",
@@ -2579,7 +2956,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c190",
@@ -2591,7 +2970,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c191",
@@ -2603,7 +2984,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c192",
@@ -2615,7 +2998,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c193",
@@ -2627,7 +3012,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c194",
@@ -2639,7 +3026,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c195",
@@ -2651,7 +3040,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c196",
@@ -2663,7 +3054,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c197",
@@ -2675,7 +3068,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c198",
@@ -2687,7 +3082,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c199",
@@ -2699,7 +3096,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c200",
@@ -2711,7 +3110,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c201",
@@ -2723,7 +3124,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c202",
@@ -2735,7 +3138,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c203",
@@ -2747,7 +3152,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c204",
@@ -2759,7 +3166,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c205",
@@ -2771,7 +3180,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c206",
@@ -2783,7 +3194,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c207",
@@ -2795,7 +3208,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c208",
@@ -2807,7 +3222,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c209",
@@ -2819,7 +3236,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c210",
@@ -2831,7 +3250,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c211",
@@ -2843,7 +3264,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c212",
@@ -2855,7 +3278,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c213",
@@ -2867,7 +3292,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c214",
@@ -2879,7 +3306,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c215",
@@ -2891,7 +3320,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c216",
@@ -2903,7 +3334,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c217",
@@ -2915,7 +3348,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c218",
@@ -2927,7 +3362,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c219",
@@ -2939,7 +3376,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c220",
@@ -2951,7 +3390,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c221",
@@ -2963,7 +3404,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c222",
@@ -2975,7 +3418,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c223",
@@ -2987,7 +3432,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c224",
@@ -2999,7 +3446,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     },
     {
       "id": "c225",
@@ -3011,7 +3460,9 @@
         "application": false,
         "certificate": false,
         "insurance": false
-      }
+      },
+      "kind": "regular",
+      "addedBy": "admin"
     }
   ],
   "attendance": {
@@ -4529,5 +4980,6 @@
   "source": {
     "attendanceSheet": "март 26  ",
     "comment": "Состав групп из таблицы посещаемости (март 2026, группы конца прошлого сезона). Актуальные группы клиент пришлёт отдельно."
-  }
+  },
+  "payments": {}
 }

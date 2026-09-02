@@ -194,7 +194,72 @@ table.sheet {
 .form-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; }
 .warn-text { color: #b42318; font-size: 13px; }
 
+.sheet td.mark.trial { color: var(--navy); font-weight: 700; }
+.name-trial { font-weight: 700 !important; }
+.row-trial td { background: rgba(18, 58, 82, .04); }
+.row-paid td { box-shadow: inset 3px 0 0 var(--ok); }
+
+.cal-week { margin: 0 0 28px; }
+.cal-week h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 500;
+}
+.cal-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.cal-chips span {
+  min-width: 36px;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.7);
+  font-weight: 500;
+  font-size: 13px;
+}
+.cal-wrap { max-height: none; }
+
+.legend b.trial { color: var(--navy); }
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ink);
+  padding-bottom: 10px;
+}
+.check input { min-width: auto; }
+
+.pay-how { margin-top: 8px; }
+.qr-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 160px));
+  gap: 18px;
+  margin: 12px 0 16px;
+}
+.qr-row figure { margin: 0; text-align: center; }
+.qr-row img {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  display: block;
+}
+.qr-row figcaption { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+.pay-btn.is-paid,
+.btn.is-paid {
+  background: var(--ok);
+  color: #fff;
+  border: 0;
+}
+.pay-btn { min-width: 120px; }
+
 @media (max-width: 800px) {
   .roles { grid-template-columns: 1fr; }
   .top { align-items: flex-start; }
+  .qr-row { grid-template-columns: 1fr 1fr; }
 }
