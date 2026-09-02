@@ -41,6 +41,8 @@ async function load() {
 function usesAttTable() {
   return role === "trainer" || role === "admin";
 }
+
+function persistCal() {
   sessionStorage.setItem("lk-cal", calMode);
   sessionStorage.setItem("lk-day", String(selectedDay));
 }
