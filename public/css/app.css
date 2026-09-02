@@ -182,6 +182,7 @@ table.sheet {
 .legend b.excused { color: var(--warn); }
 
 .child-grid { display: grid; gap: 16px; }
+.parent-pay { max-width: 720px; margin: 20px auto 0; display: grid; gap: 12px; }
 .child-card { padding: 20px 22px; }
 .pay {
   display: flex;

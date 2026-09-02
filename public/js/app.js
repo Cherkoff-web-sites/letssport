@@ -311,6 +311,38 @@ function dotHtml(dots) {
   return `${dots.present ? "<i class=\"d-present\"></i>" : ""}${dots.trial ? "<i class=\"d-trial\"></i>" : ""}${dots.excused ? "<i class=\"d-excused\"></i>" : ""}`;
 }
 
+function parentPaySection() {
+  if (!state.children.length) return "";
+  const total = state.billing.reduce((s, b) => s + b.discounted, 0);
+  const familyPaid = state.billing.length > 0 && state.billing.every((b) => b.paid);
+  const cards = state.children.map((c) => {
+    const b = state.billing.find((x) => x.childId === c.id);
+    if (!b) return "";
+    const group = state.groups.find((g) => g.id === c.groupId);
+    return `
+      <article class="child-card">
+        <h2 class="${c.kind === "trial" ? "name-trial" : ""}">${c.name}${c.kind === "trial" ? " · пробный" : ""}</h2>
+        <p>${group ? group.name : ""}</p>
+        <div class="pay">
+          <div><span>Был / справка</span><strong>${b.present} / ${b.excused}</strong></div>
+          <div><span>К оплате</span><strong>${rub(b.toPaySum)}</strong></div>
+          <div><span>Со скидкой ${b.discountPercent}%</span><strong>${rub(b.discounted)}</strong></div>
+        </div>
+      </article>
+    `;
+  }).join("");
+  return `
+    <div class="parent-pay">
+      <p class="note">Оплата за ${state.month.label.toLowerCase()} вперёд. Справка снимает занятие с оплаты. Вы смотрите только своих детей.</p>
+      <div class="child-grid">${cards}</div>
+      <article class="child-card">
+        <div class="pay"><div><span>Итого по семье</span><strong>${rub(total)}</strong></div></div>
+      </article>
+      ${payBlock(total, familyPaid, true)}
+    </div>
+  `;
+}
+
 function calendarView() {
   const body = calMode === "week" ? viewWeek()
     : calMode === "month" ? viewMonth()
@@ -322,6 +354,7 @@ function calendarView() {
       ${body}
       ${calMode === "year" ? "" : addForm()}
     </div>
+    ${role === "parent" ? parentPaySection() : ""}
   `;
 }
 
@@ -331,15 +364,15 @@ function payBlock(total, familyPaid, withButton) {
       <h2>Как оплатить?</h2>
       <div class="qr-row">
         <figure>
-          <img src="/img/qr-1.svg" alt="QR 1">
+          <img src="/img/qr-1.svg" alt="QR для оплаты 1">
           <figcaption>QR 1</figcaption>
         </figure>
         <figure>
-          <img src="/img/qr-2.svg" alt="QR 2">
+          <img src="/img/qr-2.svg" alt="QR для оплаты 2">
           <figcaption>QR 2</figcaption>
         </figure>
       </div>
-      <p>Сканируйте один из кодов. Переходов нет.</p>
+      <p>Сканируйте один из кодов. Переходов по ссылке нет — только QR.</p>
       <label class="field">Сумма
         <input value="${Math.round(total)}" readonly>
       </label>
