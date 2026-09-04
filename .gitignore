@@ -3,3 +3,5 @@ _dump_*.json
 _att_preview.json
 _inspect.js
 _inspect_att.js
+data/db.backup-*.json
+data/db.json.tmp

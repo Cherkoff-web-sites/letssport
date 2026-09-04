@@ -11,15 +11,20 @@
 </head>
 <body class="landing">
   <div class="wrap">
-    <p class="eyebrow">ДСК «Займемся Спортом» · демо без входа</p>
+    <p class="eyebrow">ДСК «Займемся Спортом»</p>
     <h1>Кабинет учёта</h1>
-    <p class="lead">Вместо Excel: посещаемость, состав группы и расчёт абонемента. Выберите роль — родитель, тренер, координатор или руководитель. Логин появится позже.</p>
-    <div class="roles" id="roles"></div>
-    <section class="families hidden" id="families-box">
-      <h2>Чьими глазами смотрим</h2>
-      <p class="muted">Родитель видит только своих детей: посещение и сумму к оплате за сентябрь.</p>
-      <div class="family-list" id="families"></div>
-    </section>
+    <p class="lead">Войдите логином семьи, тренера, координатора или руководителя.</p>
+    <form class="login-box" id="login">
+      <label class="field">Логин
+        <input name="login" autocomplete="username" required>
+      </label>
+      <label class="field">Пароль
+        <input name="password" type="password" autocomplete="current-password" required>
+      </label>
+      <p class="warn-text hidden" id="login-err"></p>
+      <button class="btn" type="submit">Войти</button>
+    </form>
+    <p class="demo-hint">Демо: coord / coord · boss / boss · hg / hg · sambo / sambo · sem1 / s1001</p>
   </div>
   <script src="js/landing.js"></script>
 </body>

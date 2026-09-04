@@ -10,11 +10,15 @@
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-  <header class="top">
-    <a class="logo" href="/">ЗС<span>учёт</span></a>
-    <div class="top-meta" id="top-meta"></div>
+  <header class="top top-slim">
+    <a class="logo logo-mark" href="/cabinet.html" title="Кабинет">ЗС</a>
     <nav class="tabs" id="tabs"></nav>
-    <a class="switch" href="/">Роль</a>
+    <button class="icon-btn" id="logout" type="button" title="Выход" aria-label="Выход">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M10 7V5a2 2 0 0 1 2-2h7v18h-7a2 2 0 0 1-2-2v-2" stroke="currentColor" stroke-width="1.7"/>
+        <path d="M4 12h11M12 8l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
   </header>
   <main id="app" class="app"></main>
   <div id="overlay"></div>
