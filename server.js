@@ -103,6 +103,34 @@ app.get("/api/meta", (_req, res) => {
   res.json({ roles: ROLES });
 });
 
+app.get("/api/demo-accounts", (_req, res) => {
+  try {
+    const db = store.load();
+    const fam = (db.families || [])[0];
+    const accounts = [
+      { role: "Координатор", login: "coord", password: "coord" },
+      { role: "Руководитель", login: "boss", password: "boss" }
+    ];
+    for (const t of db.trainers || []) {
+      accounts.push({
+        role: (t.sport === "hg" ? "Тренер ХГ" : "Тренер борьба") + " · " + t.name,
+        login: t.login,
+        password: t.password
+      });
+    }
+    if (fam) {
+      accounts.push({
+        role: "Родитель · " + (fam.parentName || "семья"),
+        login: fam.login,
+        password: fam.password
+      });
+    }
+    res.json({ accounts });
+  } catch (err) {
+    sendError(res, 500, err.message);
+  }
+});
+
 app.post("/api/login", (req, res) => {
   try {
     const result = store.login(req.body && req.body.login, req.body && req.body.password);

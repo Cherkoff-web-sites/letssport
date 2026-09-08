@@ -6,7 +6,8 @@
     "trialPrice": 500,
     "pricesArePack8": true,
     "groupPacksReady": true,
-    "demoMixedDurationChild": true
+    "demoMixedDurationChild": true,
+    "siteTrainersSeeded": true
   },
   "months": [
     {
@@ -9245,43 +9246,97 @@
   ],
   "trainers": [
     {
-      "id": "t1",
-      "name": "Тренер ХГ",
+      "id": "t-bobina-k",
+      "name": "Бобина Ксения",
       "sport": "hg",
-      "login": "hg",
-      "password": "hg",
+      "login": "bobina_k",
+      "password": "bobina_k",
       "groupIds": [
         "g1",
+        "g5"
+      ]
+    },
+    {
+      "id": "t-bobina-s",
+      "name": "Бобина Софья",
+      "sport": "hg",
+      "login": "bobina_s",
+      "password": "bobina_s",
+      "groupIds": [
         "g2",
+        "g6"
+      ]
+    },
+    {
+      "id": "t-borkovec",
+      "name": "Борковец Валерия",
+      "sport": "hg",
+      "login": "borkovec",
+      "password": "borkovec",
+      "groupIds": [
         "g3",
-        "g4",
-        "g5",
-        "g6",
         "g7"
       ]
     },
     {
-      "id": "t2",
-      "name": "Тренер Самбо",
+      "id": "t-korneva",
+      "name": "Корнева Яна",
+      "sport": "hg",
+      "login": "korneva",
+      "password": "korneva",
+      "groupIds": [
+        "g4"
+      ]
+    },
+    {
+      "id": "t-smirnov",
+      "name": "Смирнов Владислав",
       "sport": "sambo",
-      "login": "sambo",
-      "password": "sambo",
+      "login": "smirnov",
+      "password": "smirnov",
       "groupIds": [
         "g8",
-        "g9",
-        "g10",
-        "g11",
         "g12",
-        "g13",
-        "g14",
-        "g15",
         "g16",
+        "g20"
+      ]
+    },
+    {
+      "id": "t-stulov",
+      "name": "Стулов Вадим",
+      "sport": "sambo",
+      "login": "stulov",
+      "password": "stulov",
+      "groupIds": [
+        "g9",
+        "g13",
         "g17",
+        "g21"
+      ]
+    },
+    {
+      "id": "t-vereykin",
+      "name": "Верейкин Максим",
+      "sport": "sambo",
+      "login": "vereykin",
+      "password": "vereykin",
+      "groupIds": [
+        "g10",
+        "g14",
         "g18",
-        "g19",
-        "g20",
-        "g21",
         "g22"
+      ]
+    },
+    {
+      "id": "t-chmel",
+      "name": "Чмель Андрей",
+      "sport": "sambo",
+      "login": "chmel",
+      "password": "chmel",
+      "groupIds": [
+        "g11",
+        "g15",
+        "g19"
       ]
     }
   ],
