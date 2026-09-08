@@ -345,7 +345,7 @@ app.get("/api/qr-map", (_req, res) => {
   try {
     res.json(JSON.parse(fs.readFileSync(file, "utf8")));
   } catch {
-    res.json({ qr1: "/img/qr-1.svg", qr2: "/img/qr-2.svg" });
+    res.json({ qr1: "/img/qr-1.jpg", qr2: "/img/qr-2.jpg" });
   }
 });
 

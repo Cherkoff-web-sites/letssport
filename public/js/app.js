@@ -26,7 +26,7 @@ const fmtWhen = (iso) => {
 };
 
 let monthId = "";
-let qrMap = { qr1: "/img/qr-1.svg", qr2: "/img/qr-2.svg" };
+let qrMap = { qr1: "/img/qr-1.jpg", qr2: "/img/qr-2.jpg" };
 let view = "";
 let dirTab = "coord";
 let calcTab = "prices";
@@ -138,14 +138,9 @@ function attOf(groupId, childId, day) {
 function cellMark(child, groupId, day) {
   if (isSick(child.id, day)) return { cls: "sick", text: "Б", locked: true };
   const m = attOf(groupId, child.id, day);
-  if (child.kind === "trial") {
-    if (!m || m === "trial0") return { cls: "trial0", text: "0", locked: false };
-    if (m === "trial500") return { cls: "trial500", text: "500", locked: false };
-    if (m === "present") return { cls: "present", text: "+", locked: false };
-  }
-  if (m === "present") return { cls: "present", text: "+", locked: false };
-  if (m === "trial500") return { cls: "trial500", text: "500", locked: false };
   if (m === "trial0") return { cls: "trial0", text: "0", locked: false };
+  if (m === "trial500") return { cls: "trial500", text: "500", locked: false };
+  if (m === "present") return { cls: "present", text: "+", locked: false };
   return { cls: "", text: "", locked: false };
 }
 
@@ -358,7 +353,7 @@ function parentView() {
     </button>`).join("");
   const qrs = (state.qrs || ["qr1"]).map((id) => `
     <figure>
-      <img src="${qrMap[id] || "/img/qr-1.svg"}" alt="QR">
+      <img src="${qrMap[id] || "/img/qr-1.jpg"}" alt="QR">
       <figcaption>${id === "qr2" ? "QR 2" : "QR 1"}</figcaption>
     </figure>`).join("");
   const paid = p.status === "yellow" || p.status === "green";
@@ -987,7 +982,11 @@ document.getElementById("app").addEventListener("submit", async (e) => {
     const name = e.target.name.value;
     const trial = !!(e.target.trial && e.target.trial.checked) || !!(e.target.trialForced);
     const g = currentGroup();
-    const res = await api("/api/groups/" + g.id + "/children", "POST", { name, kind: trial ? "trial" : "regular" });
+    const res = await api("/api/groups/" + g.id + "/children", "POST", {
+      name,
+      kind: trial ? "trial" : "regular",
+      day: selectedDay || todayDay()
+    });
     const data = await res.json();
     if (!res.ok) return alert(data.error);
     await load();

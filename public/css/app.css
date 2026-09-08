@@ -108,7 +108,15 @@ button, input, select { font: inherit; }
 .tabs button.is-off, .btn.ghost { background: transparent; color: var(--navy); border: 1px solid var(--line); }
 .switch { background: #fff; color: var(--navy); }
 
-.app { padding: 22px; }
+.app {
+  --app-max: 1400px;
+  --app-pad: 22px;
+  max-width: var(--app-max);
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--app-pad);
+  box-sizing: border-box;
+}
 .toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -268,6 +276,12 @@ table.sheet {
   background: rgba(255,255,255,.86);
   border-radius: 16px;
   max-width: 100%;
+}
+/* Таблицацы: контейнер 1400, наружу только вправо до края экрана */
+.gcal.gcal-table .att-wrap {
+  width: calc(100vw - (100vw - min(100vw, var(--app-max))) / 2 - var(--app-pad));
+  max-width: none;
+  border-radius: 16px 0 0 16px;
 }
 .att-table {
   border-collapse: collapse;
@@ -505,7 +519,7 @@ table.sheet {
   .tabs { width: 100%; order: 5; display: flex; }
   .tabs button { flex: 1; }
   .switch { font-size: 12px; padding: 6px 10px; }
-  .app { padding: 12px; }
+  .app { --app-pad: 12px; padding: var(--app-pad); }
   .qr-row { grid-template-columns: 1fr 1fr; }
   .gcal-modes button { font-size: 11px; padding: 8px 2px; }
   .today-btn { font-size: 12px; }
@@ -527,7 +541,11 @@ table.sheet {
 }
 .demo-hint { margin-top: 18px; color: rgba(255,255,255,.75); font-size: 13px; }
 
-.top-slim { flex-wrap: nowrap; gap: 10px; padding: 8px 12px; }
+.top-slim {
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 8px max(12px, calc((100vw - 1400px) / 2 + 12px));
+}
 .logo-mark { font-size: 18px; letter-spacing: .14em; }
 .icon-btn {
   border: 0;
