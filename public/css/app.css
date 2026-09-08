@@ -789,6 +789,13 @@ input, select {
 .branch-card small { display: block; margin-top: 8px; color: var(--muted); }
 .center-row { display: flex; justify-content: center; margin: 8px 0 0; }
 .list-cards { display: grid; gap: 10px; margin: 0; }
+.trainer-list-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.trainer-list-card strong { font-weight: 500; }
 .search-input { width: 100%; margin: 0; }
 .ath-list { display: grid; gap: 12px; margin: 0; }
 .ath-card {

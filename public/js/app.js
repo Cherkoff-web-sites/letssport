@@ -34,6 +34,7 @@ let selectedGroup = "";
 let selectedBranch = "";
 let selectedChild = "";
 let selectedSport = "";
+let selectedTrainer = "";
 let selectedFamily = "";
 let calMode = sessionStorage.getItem("lk-cal") || "";
 let selectedDay = Number(sessionStorage.getItem("lk-day") || 0);
@@ -230,7 +231,7 @@ function renderTabs() {
     tabs.push(["athletes", "Спортсмены"], ["sick", "Больничный"], ["branches", "Филиалы"]);
   }
   document.getElementById("tabs").innerHTML = tabs.map(([id, title]) => {
-    const branchish = ["branches", "groups", "group", "trainers", "trainer-sport"].includes(view);
+    const branchish = ["branches", "groups", "group", "trainers", "trainer-sport", "trainer-one"].includes(view);
     const on = role === "director"
       ? dirTab === id
       : (id === "branches" ? branchish : view === id);
@@ -572,7 +573,7 @@ function staffSub() {
     ["sick", "Больничный"],
     ["branches", "Филиалы"]
   ];
-  const onBranches = ["branches", "groups", "group", "trainers", "trainer-sport"].includes(view);
+  const onBranches = ["branches", "groups", "group", "trainers", "trainer-sport", "trainer-one"].includes(view);
   return `<div class="subtabs">${items.map(([id, t]) => {
     const on = id === "branches" ? onBranches : view === id;
     return `<button type="button" class="${on ? "" : "is-off"}" data-go="${id}">${t}</button>`;
@@ -582,7 +583,7 @@ function staffSub() {
 function coordView() {
   const inner = view === "athletes" ? athletesView()
     : view === "sick" ? sickView()
-    : (view === "trainers" || view === "trainer-sport") ? trainersView()
+    : (view === "trainers" || view === "trainer-sport" || view === "trainer-one") ? trainersView()
     : view === "group" ? attendanceScreen()
     : view === "groups" ? groupsOfBranch()
     : branchesView();
@@ -696,7 +697,7 @@ function sickView() {
 }
 
 function trainersView() {
-  if (view !== "trainer-sport") {
+  if (view === "trainers") {
     return `
       <button class="btn ghost" type="button" data-go="branches">← Филиалы</button>
       <h2>Тренеры</h2>
@@ -705,42 +706,60 @@ function trainersView() {
         <button class="branch-card" type="button" data-sport="sambo"><strong>Борьба</strong><small>самбо</small></button>
       </div>`;
   }
+
+  const sportLabel = selectedSport === "hg" ? "ХГ" : "Борьба";
   const list = state.trainers.filter((t) => t.sport === selectedSport);
+
+  if (view === "trainer-sport" || !selectedTrainer) {
+    const cards = list.map((t) => {
+      const n = (t.groupIds || []).length;
+      return `<button class="sheet-item trainer-list-card" type="button" data-open-trainer="${t.id}">
+        <strong>${esc(t.name)}</strong>
+        <span class="sheet-item-branch">логин ${esc(t.login)} · групп: ${n}</span>
+      </button>`;
+    }).join("");
+    return `
+      <button class="btn ghost" type="button" data-go="trainers">← Виды</button>
+      <h2>${sportLabel}</h2>
+      <p class="hint">Выберите тренера, чтобы посмотреть и назначить группы.</p>
+      <div class="list-cards">${cards || "<p class=\"hint\">Нет тренеров</p>"}</div>
+      <form class="add-bar" id="new-trainer">
+        <input name="name" placeholder="Имя тренера" required>
+        <input name="login" placeholder="логин" required>
+        <input name="password" placeholder="пароль" required>
+        <button class="btn" type="submit">Добавить</button>
+      </form>`;
+  }
+
+  const t = state.trainers.find((x) => x.id === selectedTrainer);
+  if (!t) {
+    selectedTrainer = "";
+    view = "trainer-sport";
+    return trainersView();
+  }
+  if (!trainerDraft[t.id]) trainerDraft[t.id] = [...(t.groupIds || [])];
+  const selected = new Set(trainerDraft[t.id]);
   const groups = state.groups.filter((g) => g.sport === selectedSport);
-  const cards = list.map((t) => {
-    if (!trainerDraft[t.id]) trainerDraft[t.id] = [...(t.groupIds || [])];
-    const selected = new Set(trainerDraft[t.id]);
-    const sorted = groups.slice().sort((a, b) => {
-      const as = selected.has(a.id) ? 0 : 1;
-      const bs = selected.has(b.id) ? 0 : 1;
-      if (as !== bs) return as - bs;
-      const ba = branchName(a.branchId).localeCompare(branchName(b.branchId), "ru");
-      if (ba) return ba;
-      return groupTitle(a).localeCompare(groupTitle(b), "ru");
-    });
-    const opts = sorted.map((g) => `
-      <button type="button" class="sheet-item ${selected.has(g.id) ? "is-on" : ""}" data-toggle-tg="${t.id}" data-group="${g.id}">
-        <span class="sheet-item-branch">${esc(branchName(g.branchId) || "Филиал")}</span>
-        <span class="sheet-item-title">${esc(groupTitle(g))}</span>
-      </button>`).join("");
-    return `<article class="ath-card">
-      <strong>${esc(t.name)}</strong>
-      <p class="hint">логин ${esc(t.login)} · пароль ${esc(t.password)}</p>
-      <p class="hint">Сначала выбранные. В названии — филиал. Нажмите на группу, чтобы добавить или убрать.</p>
-      <div class="multi multi-pick">${opts || "<p class=\"hint\">Нет групп</p>"}</div>
-      <button class="btn ghost" type="button" data-save-trainer="${t.id}">Сохранить группы</button>
-    </article>`;
-  }).join("");
+  const sorted = groups.slice().sort((a, b) => {
+    const as = selected.has(a.id) ? 0 : 1;
+    const bs = selected.has(b.id) ? 0 : 1;
+    if (as !== bs) return as - bs;
+    const ba = branchName(a.branchId).localeCompare(branchName(b.branchId), "ru");
+    if (ba) return ba;
+    return groupTitle(a).localeCompare(groupTitle(b), "ru");
+  });
+  const opts = sorted.map((g) => `
+    <button type="button" class="sheet-item ${selected.has(g.id) ? "is-on" : ""}" data-toggle-tg="${t.id}" data-group="${g.id}">
+      <span class="sheet-item-branch">${esc(branchName(g.branchId) || "Филиал")}</span>
+      <span class="sheet-item-title">${esc(groupTitle(g))}</span>
+    </button>`).join("");
   return `
-    <button class="btn ghost" type="button" data-go="trainers">← Виды</button>
-    <h2>${selectedSport === "hg" ? "ХГ" : "Борьба"}</h2>
-    ${cards || "<p class=\"hint\">Нет тренеров</p>"}
-    <form class="add-bar" id="new-trainer">
-      <input name="name" placeholder="Имя тренера" required>
-      <input name="login" placeholder="логин" required>
-      <input name="password" placeholder="пароль" required>
-      <button class="btn" type="submit">Добавить</button>
-    </form>`;
+    <button class="btn ghost" type="button" data-back-trainers>← ${sportLabel}</button>
+    <h2>${esc(t.name)}</h2>
+    <p class="hint">логин ${esc(t.login)} · пароль ${esc(t.password)}</p>
+    <p class="hint">Сначала выбранные. В названии — филиал. Нажмите на группу, чтобы закрепить или снять.</p>
+    <div class="multi multi-pick">${opts || "<p class=\"hint\">Нет групп</p>"}</div>
+    <button class="btn" type="button" data-save-trainer="${t.id}">Сохранить группы</button>`;
 }
 
 function calcView() {
@@ -1120,7 +1139,13 @@ document.getElementById("app").addEventListener("click", async (e) => {
   if (e.target.closest("[data-open-groups]")) { sheet = { type: "groups", q: "" }; drawOverlay(); return; }
 
   const go = e.target.closest("[data-go]");
-  if (go) { view = go.dataset.go; selectedChild = ""; render(); return; }
+  if (go) {
+    view = go.dataset.go;
+    selectedChild = "";
+    if (view === "trainers") selectedTrainer = "";
+    render();
+    return;
+  }
 
   const br = e.target.closest("[data-open-branch]");
   if (br) { selectedBranch = br.dataset.openBranch; view = "groups"; render(); return; }
@@ -1129,7 +1154,28 @@ document.getElementById("app").addEventListener("click", async (e) => {
   if (og) { selectedGroup = og.dataset.openGroup; view = "group"; render(); return; }
 
   const sport = e.target.closest("[data-sport]");
-  if (sport) { selectedSport = sport.dataset.sport; view = "trainer-sport"; render(); return; }
+  if (sport) {
+    selectedSport = sport.dataset.sport;
+    selectedTrainer = "";
+    view = "trainer-sport";
+    render();
+    return;
+  }
+
+  const openTr = e.target.closest("[data-open-trainer]");
+  if (openTr) {
+    selectedTrainer = openTr.dataset.openTrainer;
+    view = "trainer-one";
+    render();
+    return;
+  }
+
+  if (e.target.closest("[data-back-trainers]")) {
+    selectedTrainer = "";
+    view = "trainer-sport";
+    render();
+    return;
+  }
 
   const openChild = e.target.closest("[data-open-child]");
   if (openChild) { selectedChild = openChild.dataset.openChild; showFormula = false; render(); return; }
@@ -1259,7 +1305,8 @@ document.getElementById("app").addEventListener("click", async (e) => {
     await api("/api/trainers/" + tid, "PATCH", { groupIds: ids });
     delete trainerDraft[tid];
     await load();
-    view = "trainer-sport";
+    selectedTrainer = tid;
+    view = "trainer-one";
     return;
   }
 
@@ -1377,6 +1424,7 @@ document.getElementById("app").addEventListener("submit", async (e) => {
     const data = await res.json();
     if (!res.ok) return alert(data.error);
     await load();
+    selectedTrainer = "";
     view = "trainer-sport";
   }
   const bp = e.target.closest("[data-branch-price]");
