@@ -3,7 +3,10 @@
     "packPrice": 7500,
     "packLessons": 8,
     "note": "Цена 8 занятий из расчёта стоимости. 1 занятие = 7500 / 8. Скидка семьи: 2 ребёнка 10%, 3 ребёнка 20%.",
-    "trialPrice": 500
+    "trialPrice": 500,
+    "pricesArePack8": true,
+    "groupPacksReady": true,
+    "demoMixedDurationChild": true
   },
   "months": [
     {
@@ -279,7 +282,9 @@
       "sport": "hg",
       "durationMin": 60,
       "time": "пн/ср 17:30-18:30",
-      "title": "ХГ · пн/ср · пн/ср 17:30-18:30 · 1 ч"
+      "title": "ХГ · пн/ср · пн/ср 17:30-18:30 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g2",
@@ -292,7 +297,9 @@
       "sport": "hg",
       "durationMin": 60,
       "time": "пн/ср 18:30-19:30",
-      "title": "ХГ · пн/ср · пн/ср 18:30-19:30 · 1 ч"
+      "title": "ХГ · пн/ср · пн/ср 18:30-19:30 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g3",
@@ -305,7 +312,9 @@
       "sport": "hg",
       "durationMin": 60,
       "time": "пн/ср 19:30-20:30",
-      "title": "ХГ · пн/ср · пн/ср 19:30-20:30 · 1 ч"
+      "title": "ХГ · пн/ср · пн/ср 19:30-20:30 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g4",
@@ -316,9 +325,11 @@
       ],
       "branchId": "b2",
       "sport": "hg",
-      "durationMin": 90,
+      "durationMin": 60,
       "time": "ср17:00-18:00/пт 16:30-17:30",
-      "title": "ХГ · ср/пт · ср17:00-18:00/пт 16:30-17:30 · 1,5 ч"
+      "title": "ХГ · ср/пт · ср17:00-18:00/пт 16:30-17:30 · 1 ч",
+      "packPrice": 7500,
+      "packLessons": 8
     },
     {
       "id": "g5",
@@ -331,7 +342,9 @@
       "sport": "hg",
       "durationMin": 60,
       "time": "пн 18:00-19:00/пт 18:15-19:15",
-      "title": "ХГ · пн/пт · пн 18:00-19:00/пт 18:15-19:15 · 1 ч"
+      "title": "ХГ · пн/пт · пн 18:00-19:00/пт 18:15-19:15 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g6",
@@ -344,7 +357,9 @@
       "sport": "hg",
       "durationMin": 60,
       "time": "пн 19:00-20:00/пт 19:15-20:15",
-      "title": "ХГ · пн/пт · пн 19:00-20:00/пт 19:15-20:15 · 1 ч"
+      "title": "ХГ · пн/пт · пн 19:00-20:00/пт 19:15-20:15 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g7",
@@ -357,7 +372,9 @@
       "sport": "hg",
       "durationMin": 60,
       "time": "ср 19:00-20:00 /пт 18:00-19:00",
-      "title": "ХГ · ср/пт · ср 19:00-20:00 /пт 18:00-19:00 · 1 ч"
+      "title": "ХГ · ср/пт · ср 19:00-20:00 /пт 18:00-19:00 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g8",
@@ -370,7 +387,9 @@
       "sport": "sambo",
       "durationMin": 60,
       "time": "вт/чт 17:00-18:00",
-      "title": "Самбо · вт/чт · вт/чт 17:00-18:00 · 1 ч"
+      "title": "Самбо · вт/чт · вт/чт 17:00-18:00 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g9",
@@ -383,7 +402,9 @@
       "sport": "sambo",
       "durationMin": 60,
       "time": "вт/чт 18:00-19:00",
-      "title": "Самбо · вт/чт · вт/чт 18:00-19:00 · 1 ч"
+      "title": "Самбо · вт/чт · вт/чт 18:00-19:00 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g10",
@@ -396,7 +417,9 @@
       "sport": "sambo",
       "durationMin": 60,
       "time": "вт/чт 19:00-20:00",
-      "title": "Самбо · вт/чт · вт/чт 19:00-20:00 · 1 ч"
+      "title": "Самбо · вт/чт · вт/чт 19:00-20:00 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g11",
@@ -409,7 +432,9 @@
       "sport": "sambo",
       "durationMin": 60,
       "time": "пн/чт 19:00-20:00",
-      "title": "Самбо · пн/чт · пн/чт 19:00-20:00 · 1 ч"
+      "title": "Самбо · пн/чт · пн/чт 19:00-20:00 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g12",
@@ -420,9 +445,11 @@
       ],
       "branchId": "b2",
       "sport": "sambo",
-      "durationMin": 90,
+      "durationMin": 60,
       "time": "пн/пт 18:30-19:30",
-      "title": "Самбо · пн/пт · пн/пт 18:30-19:30 · 1,5 ч"
+      "title": "Самбо · пн/пт · пн/пт 18:30-19:30 · 1 ч",
+      "packPrice": 7500,
+      "packLessons": 8
     },
     {
       "id": "g13",
@@ -435,7 +462,9 @@
       "sport": "sambo",
       "durationMin": 90,
       "time": "пн/пт 19:30-21:00",
-      "title": "Самбо · пн/пт · пн/пт 19:30-21:00 · 1,5 ч"
+      "title": "Самбо · пн/пт · пн/пт 19:30-21:00 · 1,5 ч",
+      "packPrice": 9500,
+      "packLessons": 8
     },
     {
       "id": "g14",
@@ -446,9 +475,11 @@
       ],
       "branchId": "b2",
       "sport": "sambo",
-      "durationMin": 90,
+      "durationMin": 60,
       "time": "ср 18:00-19:00/сб 11:00-12:00",
-      "title": "Самбо · ср/сб · ср 18:00-19:00/сб 11:00-12:00 · 1,5 ч"
+      "title": "Самбо · ср/сб · ср 18:00-19:00/сб 11:00-12:00 · 1 ч",
+      "packPrice": 7500,
+      "packLessons": 8
     },
     {
       "id": "g15",
@@ -459,9 +490,11 @@
       ],
       "branchId": "b2",
       "sport": "sambo",
-      "durationMin": 90,
+      "durationMin": 60,
       "time": "ср 19:00-20:00/сб 12:00-13:00",
-      "title": "Самбо · ср/сб · ср 19:00-20:00/сб 12:00-13:00 · 1,5 ч"
+      "title": "Самбо · ср/сб · ср 19:00-20:00/сб 12:00-13:00 · 1 ч",
+      "packPrice": 7500,
+      "packLessons": 8
     },
     {
       "id": "g16",
@@ -472,9 +505,11 @@
       ],
       "branchId": "b2",
       "sport": "sambo",
-      "durationMin": 90,
+      "durationMin": 60,
       "time": "ср 20:00-21:00/сб 13:00-14:00",
-      "title": "Самбо · ср/сб · ср 20:00-21:00/сб 13:00-14:00 · 1,5 ч"
+      "title": "Самбо · ср/сб · ср 20:00-21:00/сб 13:00-14:00 · 1 ч",
+      "packPrice": 7500,
+      "packLessons": 8
     },
     {
       "id": "g17",
@@ -487,7 +522,9 @@
       "sport": "sambo",
       "durationMin": 60,
       "time": "ср 18:00-19:00/сб 11:00-12:00",
-      "title": "Самбо · ср/сб · ср 18:00-19:00/сб 11:00-12:00 · 1 ч"
+      "title": "Самбо · ср/сб · ср 18:00-19:00/сб 11:00-12:00 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g18",
@@ -500,7 +537,9 @@
       "sport": "sambo",
       "durationMin": 60,
       "time": "ср 19:00-20:00/сб 12:00-13:00",
-      "title": "Самбо · ср/сб · ср 19:00-20:00/сб 12:00-13:00 · 1 ч"
+      "title": "Самбо · ср/сб · ср 19:00-20:00/сб 12:00-13:00 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g19",
@@ -513,7 +552,9 @@
       "sport": "sambo",
       "durationMin": 60,
       "time": "ср 20:00-21:00/сб 13:00-14:00",
-      "title": "Самбо · ср/сб · ср 20:00-21:00/сб 13:00-14:00 · 1 ч"
+      "title": "Самбо · ср/сб · ср 20:00-21:00/сб 13:00-14:00 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g20",
@@ -526,7 +567,9 @@
       "sport": "sambo",
       "durationMin": 60,
       "time": "пн/пт 17:00 - 18:00",
-      "title": "Самбо · пн/пт · пн/пт 17:00 - 18:00 · 1 ч"
+      "title": "Самбо · пн/пт · пн/пт 17:00 - 18:00 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g21",
@@ -539,7 +582,9 @@
       "sport": "sambo",
       "durationMin": 60,
       "time": "пн/пт 19:00-20:00",
-      "title": "Самбо · пн/пт · пн/пт 19:00-20:00 · 1 ч"
+      "title": "Самбо · пн/пт · пн/пт 19:00-20:00 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     },
     {
       "id": "g22",
@@ -552,7 +597,9 @@
       "sport": "sambo",
       "durationMin": 60,
       "time": "пн/пт 20:00-21:00",
-      "title": "Самбо · пн/пт · пн/пт 20:00-21:00 · 1 ч"
+      "title": "Самбо · пн/пт · пн/пт 20:00-21:00 · 1 ч",
+      "packLessons": 8,
+      "packPrice": 8000
     }
   ],
   "children": [
@@ -2155,7 +2202,8 @@
       "kind": "regular",
       "addedBy": "admin",
       "groupIds": [
-        "g12"
+        "g12",
+        "g13"
       ]
     },
     {
@@ -5994,36 +6042,66 @@
     {
       "id": "b1",
       "name": "ТИМИРЯЗЕВСКАЯ",
-      "priceHour": 1000,
-      "priceHourHalf": 1500,
+      "priceHour": 8000,
+      "priceHourHalf": 12000,
       "qr": "qr1"
     },
     {
       "id": "b2",
       "name": "ВАЛДАЙСКИЙ",
-      "priceHour": 1000,
-      "priceHourHalf": 1500,
-      "qr": "qr1"
+      "priceHour": 7500,
+      "priceHourHalf": 9500,
+      "qr": "qr1",
+      "tariffs": [
+        {
+          "id": "vt1",
+          "label": "8 занятий × 1,5 ч",
+          "packPrice": 9500,
+          "packLessons": 8,
+          "durationMin": 90
+        },
+        {
+          "id": "vt2",
+          "label": "12 занятий × 1 ч",
+          "packPrice": 9500,
+          "packLessons": 12,
+          "durationMin": 60
+        },
+        {
+          "id": "vt3",
+          "label": "8 занятий × 1 ч",
+          "packPrice": 7500,
+          "packLessons": 8,
+          "durationMin": 60
+        },
+        {
+          "id": "vt4",
+          "label": "16 занятий × 1 ч",
+          "packPrice": 11500,
+          "packLessons": 16,
+          "durationMin": 60
+        }
+      ]
     },
     {
       "id": "b3",
       "name": "ФЕСТИВАЛЬНАЯ",
-      "priceHour": 1000,
-      "priceHourHalf": 1500,
+      "priceHour": 8000,
+      "priceHourHalf": 12000,
       "qr": "qr1"
     },
     {
       "id": "b4",
       "name": "СЕРЕБРЯНЫЙ",
-      "priceHour": 1000,
-      "priceHourHalf": 1500,
+      "priceHour": 8000,
+      "priceHourHalf": 12000,
       "qr": "qr2"
     },
     {
       "id": "b5",
       "name": "БЕГОВАЯ",
-      "priceHour": 1000,
-      "priceHourHalf": 1500,
+      "priceHour": 8000,
+      "priceHourHalf": 12000,
       "qr": "qr2"
     }
   ],
@@ -6034,7 +6112,15 @@
       "password": "s1001",
       "parentName": "Родитель Суханова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Суханова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f2",
@@ -6042,7 +6128,15 @@
       "password": "s1002",
       "parentName": "Родитель Максименко",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Максименко",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f3",
@@ -6050,7 +6144,15 @@
       "password": "s1003",
       "parentName": "Родитель Черныш",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Черныш",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f4",
@@ -6058,7 +6160,15 @@
       "password": "s1004",
       "parentName": "Родитель Сосенкова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Сосенкова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f5",
@@ -6066,7 +6176,15 @@
       "password": "s1005",
       "parentName": "Родитель Никулина",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Никулина",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f6",
@@ -6074,7 +6192,15 @@
       "password": "s1006",
       "parentName": "Родитель Старостина",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Старостина",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f7",
@@ -6082,7 +6208,15 @@
       "password": "s1007",
       "parentName": "Родитель Стародубцева",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Стародубцева",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f8",
@@ -6090,7 +6224,15 @@
       "password": "s1008",
       "parentName": "Родитель Русакова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Русакова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f9",
@@ -6098,7 +6240,15 @@
       "password": "s1009",
       "parentName": "Родитель Гриншпун",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Гриншпун",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f10",
@@ -6106,7 +6256,15 @@
       "password": "s1010",
       "parentName": "Родитель Казак",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Казак",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f11",
@@ -6114,7 +6272,15 @@
       "password": "s1011",
       "parentName": "Родитель Бабкина",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Бабкина",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f12",
@@ -6122,7 +6288,15 @@
       "password": "s1012",
       "parentName": "Родитель Табакова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Табакова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f13",
@@ -6130,7 +6304,15 @@
       "password": "s1013",
       "parentName": "Родитель Эльматова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Эльматова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f14",
@@ -6138,7 +6320,15 @@
       "password": "s1014",
       "parentName": "Родитель Махрова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Махрова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f15",
@@ -6146,7 +6336,15 @@
       "password": "s1015",
       "parentName": "Родитель Тюрина",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Тюрина",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f16",
@@ -6154,7 +6352,15 @@
       "password": "s1016",
       "parentName": "Родитель Татаринцева",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Татаринцева",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f17",
@@ -6162,7 +6368,15 @@
       "password": "s1017",
       "parentName": "Родитель Гребенник",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Гребенник",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f18",
@@ -6170,7 +6384,15 @@
       "password": "s1018",
       "parentName": "Родитель Лучникова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Лучникова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f19",
@@ -6178,7 +6400,15 @@
       "password": "s1019",
       "parentName": "Родитель Пьянкова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Пьянкова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f20",
@@ -6186,7 +6416,15 @@
       "password": "s1020",
       "parentName": "Родитель Байкова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Байкова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f21",
@@ -6194,7 +6432,15 @@
       "password": "s1021",
       "parentName": "Родитель Александрова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Александрова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f22",
@@ -6202,7 +6448,15 @@
       "password": "s1022",
       "parentName": "Родитель Кравчук",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Кравчук",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f23",
@@ -6210,7 +6464,15 @@
       "password": "s1023",
       "parentName": "Родитель Марсакова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Марсакова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f24",
@@ -6218,7 +6480,15 @@
       "password": "s1024",
       "parentName": "Родитель Новикова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Новикова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f25",
@@ -6226,7 +6496,15 @@
       "password": "s1025",
       "parentName": "Родитель Ицкова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ицкова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f26",
@@ -6234,7 +6512,15 @@
       "password": "s1026",
       "parentName": "Родитель Грехова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Грехова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f27",
@@ -6242,7 +6528,15 @@
       "password": "s1027",
       "parentName": "Родитель Лоренсон",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Лоренсон",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f28",
@@ -6250,7 +6544,15 @@
       "password": "s1028",
       "parentName": "Родитель Мухина",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Мухина",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f29",
@@ -6258,7 +6560,15 @@
       "password": "s1029",
       "parentName": "Родитель Бясова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Бясова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f30",
@@ -6266,7 +6576,15 @@
       "password": "s1030",
       "parentName": "Родитель Мамедова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Мамедова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f31",
@@ -6274,7 +6592,15 @@
       "password": "s1031",
       "parentName": "Родитель Кириченко",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Кириченко",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f32",
@@ -6282,7 +6608,15 @@
       "password": "s1032",
       "parentName": "Родитель Никишкина",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Никишкина",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f33",
@@ -6290,7 +6624,15 @@
       "password": "s1033",
       "parentName": "Родитель Саливончик",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Саливончик",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f34",
@@ -6298,7 +6640,15 @@
       "password": "s1034",
       "parentName": "Родитель Глушкова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Глушкова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f35",
@@ -6306,7 +6656,15 @@
       "password": "s1035",
       "parentName": "Родитель Деренкова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Деренкова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f36",
@@ -6314,7 +6672,15 @@
       "password": "s1036",
       "parentName": "Родитель Тихоненкова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Тихоненкова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f37",
@@ -6322,7 +6688,15 @@
       "password": "s1037",
       "parentName": "Родитель Хаустова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Хаустова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f38",
@@ -6330,7 +6704,15 @@
       "password": "s1038",
       "parentName": "Родитель Чепина",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Чепина",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f39",
@@ -6338,7 +6720,15 @@
       "password": "s1039",
       "parentName": "Родитель Пантелеева",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Пантелеева",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f40",
@@ -6346,7 +6736,15 @@
       "password": "s1040",
       "parentName": "Родитель Черных",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Черных",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f41",
@@ -6354,7 +6752,15 @@
       "password": "s1041",
       "parentName": "Родитель Шаровская",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Шаровская",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f42",
@@ -6362,7 +6768,15 @@
       "password": "s1042",
       "parentName": "Родитель Котельникова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Котельникова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f43",
@@ -6370,7 +6784,15 @@
       "password": "s1043",
       "parentName": "Родитель Трухина",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Трухина",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f44",
@@ -6378,7 +6800,15 @@
       "password": "s1044",
       "parentName": "Родитель Гулдаева",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Гулдаева",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f45",
@@ -6386,7 +6816,15 @@
       "password": "s1045",
       "parentName": "Родитель Ермакова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ермакова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f46",
@@ -6394,7 +6832,15 @@
       "password": "s1046",
       "parentName": "Родитель Жук",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Жук",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f47",
@@ -6402,7 +6848,15 @@
       "password": "s1047",
       "parentName": "Родитель Белов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Белов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f48",
@@ -6410,7 +6864,15 @@
       "password": "s1048",
       "parentName": "Родитель Игошин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Игошин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f49",
@@ -6418,7 +6880,15 @@
       "password": "s1049",
       "parentName": "Родитель Чиков",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Чиков",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f50",
@@ -6426,7 +6896,15 @@
       "password": "s1050",
       "parentName": "Родитель Прохоренко",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Прохоренко",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f51",
@@ -6434,7 +6912,15 @@
       "password": "s1051",
       "parentName": "Родитель Адамчук",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Адамчук",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f52",
@@ -6442,7 +6928,15 @@
       "password": "s1052",
       "parentName": "Родитель Дробышев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Дробышев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f53",
@@ -6450,7 +6944,15 @@
       "password": "s1053",
       "parentName": "Родитель Захаров",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Захаров",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f54",
@@ -6458,7 +6960,15 @@
       "password": "s1054",
       "parentName": "Родитель Алимов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Алимов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f55",
@@ -6466,7 +6976,15 @@
       "password": "s1055",
       "parentName": "Родитель Чибисов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Чибисов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f56",
@@ -6474,7 +6992,15 @@
       "password": "s1056",
       "parentName": "Родитель Шишкин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Шишкин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f57",
@@ -6482,7 +7008,15 @@
       "password": "s1057",
       "parentName": "Родитель Барковский",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Барковский",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f58",
@@ -6490,7 +7024,15 @@
       "password": "s1058",
       "parentName": "Родитель Смирнов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Смирнов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f59",
@@ -6498,7 +7040,15 @@
       "password": "s1059",
       "parentName": "Родитель Ларин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ларин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f60",
@@ -6506,7 +7056,15 @@
       "password": "s1060",
       "parentName": "Родитель Бабаков",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Бабаков",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f61",
@@ -6514,7 +7072,15 @@
       "password": "s1061",
       "parentName": "Родитель Мыкита",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Мыкита",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f62",
@@ -6522,7 +7088,15 @@
       "password": "s1062",
       "parentName": "Родитель Климов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Климов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f63",
@@ -6530,7 +7104,15 @@
       "password": "s1063",
       "parentName": "Родитель Машуров",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Машуров",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f64",
@@ -6538,7 +7120,15 @@
       "password": "s1064",
       "parentName": "Родитель Гусейнов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Гусейнов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f65",
@@ -6546,7 +7136,15 @@
       "password": "s1065",
       "parentName": "Родитель Семченков",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Семченков",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f66",
@@ -6554,7 +7152,15 @@
       "password": "s1066",
       "parentName": "Родитель Петров",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Петров",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f67",
@@ -6562,7 +7168,15 @@
       "password": "s1067",
       "parentName": "Родитель Рожаев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Рожаев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f68",
@@ -6570,7 +7184,15 @@
       "password": "s1068",
       "parentName": "Родитель Тарасов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Тарасов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f69",
@@ -6578,7 +7200,15 @@
       "password": "s1069",
       "parentName": "Родитель Осипов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Осипов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f70",
@@ -6586,7 +7216,15 @@
       "password": "s1070",
       "parentName": "Родитель Прошин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Прошин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f71",
@@ -6594,7 +7232,15 @@
       "password": "s1071",
       "parentName": "Родитель Каптелов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Каптелов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f72",
@@ -6602,7 +7248,15 @@
       "password": "s1072",
       "parentName": "Родитель Сафронов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Сафронов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f73",
@@ -6610,7 +7264,15 @@
       "password": "s1073",
       "parentName": "Родитель Мигунов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Мигунов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f74",
@@ -6618,7 +7280,15 @@
       "password": "s1074",
       "parentName": "Родитель Шабаев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Шабаев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f75",
@@ -6626,7 +7296,15 @@
       "password": "s1075",
       "parentName": "Родитель Чивиков",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Чивиков",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f76",
@@ -6634,7 +7312,15 @@
       "password": "s1076",
       "parentName": "Родитель Михайлов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Михайлов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f77",
@@ -6642,7 +7328,15 @@
       "password": "s1077",
       "parentName": "Родитель Арсентьев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Арсентьев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f78",
@@ -6650,7 +7344,15 @@
       "password": "s1078",
       "parentName": "Родитель Трофимов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Трофимов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f79",
@@ -6658,7 +7360,15 @@
       "password": "s1079",
       "parentName": "Родитель Девяшин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Девяшин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f80",
@@ -6666,7 +7376,15 @@
       "password": "s1080",
       "parentName": "Родитель Парфенов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Парфенов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f81",
@@ -6674,7 +7392,15 @@
       "password": "s1081",
       "parentName": "Родитель Шиманов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Шиманов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f82",
@@ -6682,7 +7408,15 @@
       "password": "s1082",
       "parentName": "Родитель Анохин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Анохин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f83",
@@ -6690,7 +7424,15 @@
       "password": "s1083",
       "parentName": "Родитель Чепусов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Чепусов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f84",
@@ -6698,7 +7440,15 @@
       "password": "s1084",
       "parentName": "Родитель Крашенников",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Крашенников",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f85",
@@ -6706,7 +7456,15 @@
       "password": "s1085",
       "parentName": "Родитель Бровко",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Бровко",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f86",
@@ -6714,7 +7472,15 @@
       "password": "s1086",
       "parentName": "Родитель Павлов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Павлов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f87",
@@ -6722,7 +7488,15 @@
       "password": "s1087",
       "parentName": "Родитель Гришанова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Гришанова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f88",
@@ -6730,7 +7504,15 @@
       "password": "s1088",
       "parentName": "Родитель Ивасенко",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ивасенко",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f89",
@@ -6738,7 +7520,15 @@
       "password": "s1089",
       "parentName": "Родитель Хочинский",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Хочинский",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f90",
@@ -6746,7 +7536,15 @@
       "password": "s1090",
       "parentName": "Родитель Бурмистров",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Бурмистров",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f91",
@@ -6754,7 +7552,15 @@
       "password": "s1091",
       "parentName": "Родитель Хмельницкий",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Хмельницкий",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f92",
@@ -6762,7 +7568,15 @@
       "password": "s1092",
       "parentName": "Родитель Матвеев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Матвеев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f93",
@@ -6770,7 +7584,15 @@
       "password": "s1093",
       "parentName": "Родитель Цоглин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Цоглин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f94",
@@ -6778,7 +7600,15 @@
       "password": "s1094",
       "parentName": "Родитель Налбандян",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Налбандян",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f95",
@@ -6786,7 +7616,15 @@
       "password": "s1095",
       "parentName": "Родитель Лаврентьев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Лаврентьев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f96",
@@ -6794,7 +7632,15 @@
       "password": "s1096",
       "parentName": "Родитель Крупчатников",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Крупчатников",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f97",
@@ -6802,7 +7648,15 @@
       "password": "s1097",
       "parentName": "Родитель Степанов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Степанов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f98",
@@ -6810,7 +7664,15 @@
       "password": "s1098",
       "parentName": "Родитель Зеленцов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Зеленцов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f99",
@@ -6818,7 +7680,15 @@
       "password": "s1099",
       "parentName": "Родитель Клочко",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Клочко",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f100",
@@ -6826,7 +7696,15 @@
       "password": "s1100",
       "parentName": "Родитель Габулов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Габулов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f101",
@@ -6834,7 +7712,15 @@
       "password": "s1101",
       "parentName": "Родитель Саркисов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Саркисов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f102",
@@ -6842,7 +7728,15 @@
       "password": "s1102",
       "parentName": "Родитель Ткаченко",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ткаченко",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f103",
@@ -6850,7 +7744,15 @@
       "password": "s1103",
       "parentName": "Родитель Михалев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Михалев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f104",
@@ -6858,7 +7760,15 @@
       "password": "s1104",
       "parentName": "Родитель Царев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Царев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f105",
@@ -6866,7 +7776,15 @@
       "password": "s1105",
       "parentName": "Родитель Синяев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Синяев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f106",
@@ -6874,7 +7792,15 @@
       "password": "s1106",
       "parentName": "Родитель Мелешко",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Мелешко",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f107",
@@ -6882,7 +7808,15 @@
       "password": "s1107",
       "parentName": "Родитель Гончаров",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Гончаров",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f108",
@@ -6890,7 +7824,15 @@
       "password": "s1108",
       "parentName": "Родитель Артемьев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Артемьев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f109",
@@ -6898,7 +7840,15 @@
       "password": "s1109",
       "parentName": "Родитель Шеин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Шеин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f110",
@@ -6906,7 +7856,15 @@
       "password": "s1110",
       "parentName": "Родитель Мазай",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Мазай",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f111",
@@ -6914,7 +7872,15 @@
       "password": "s1111",
       "parentName": "Родитель Караванский",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Караванский",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f112",
@@ -6922,7 +7888,15 @@
       "password": "s1112",
       "parentName": "Родитель Сурнин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Сурнин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f113",
@@ -6930,7 +7904,15 @@
       "password": "s1113",
       "parentName": "Родитель Колгушкин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Колгушкин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f114",
@@ -6938,7 +7920,15 @@
       "password": "s1114",
       "parentName": "Родитель Коротеев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Коротеев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f115",
@@ -6946,7 +7936,15 @@
       "password": "s1115",
       "parentName": "Родитель Тесля",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Тесля",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f116",
@@ -6954,7 +7952,15 @@
       "password": "s1116",
       "parentName": "Родитель Пестрецова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Пестрецова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f117",
@@ -6962,7 +7968,15 @@
       "password": "s1117",
       "parentName": "Родитель Коломиец",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Коломиец",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f118",
@@ -6970,7 +7984,15 @@
       "password": "s1118",
       "parentName": "Родитель Шабалкин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Шабалкин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f119",
@@ -6978,7 +8000,15 @@
       "password": "s1119",
       "parentName": "Родитель Зобов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Зобов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f120",
@@ -6986,7 +8016,15 @@
       "password": "s1120",
       "parentName": "Родитель Поляков",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Поляков",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f121",
@@ -6994,7 +8032,15 @@
       "password": "s1121",
       "parentName": "Родитель Евдокимов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Евдокимов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f122",
@@ -7002,7 +8048,15 @@
       "password": "s1122",
       "parentName": "Родитель Грицай",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Грицай",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f123",
@@ -7010,7 +8064,15 @@
       "password": "s1123",
       "parentName": "Родитель Ушаков",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ушаков",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f124",
@@ -7018,7 +8080,15 @@
       "password": "s1124",
       "parentName": "Родитель Неумоин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Неумоин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f125",
@@ -7026,7 +8096,15 @@
       "password": "s1125",
       "parentName": "Родитель Окунев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Окунев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f126",
@@ -7034,7 +8112,15 @@
       "password": "s1126",
       "parentName": "Родитель Крайнов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Крайнов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f127",
@@ -7042,7 +8128,15 @@
       "password": "s1127",
       "parentName": "Родитель Шароглазов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Шароглазов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f128",
@@ -7050,7 +8144,15 @@
       "password": "s1128",
       "parentName": "Родитель Литвинов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Литвинов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f129",
@@ -7058,7 +8160,15 @@
       "password": "s1129",
       "parentName": "Родитель Гончарук",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Гончарук",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f130",
@@ -7066,7 +8176,15 @@
       "password": "s1130",
       "parentName": "Родитель Ераносян",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ераносян",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f131",
@@ -7074,7 +8192,15 @@
       "password": "s1131",
       "parentName": "Родитель Глинский",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Глинский",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f132",
@@ -7082,7 +8208,15 @@
       "password": "s1132",
       "parentName": "Родитель Якубенок",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Якубенок",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f133",
@@ -7090,7 +8224,15 @@
       "password": "s1133",
       "parentName": "Родитель Багдасаров",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Багдасаров",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f134",
@@ -7098,7 +8240,15 @@
       "password": "s1134",
       "parentName": "Родитель Старцев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Старцев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f135",
@@ -7106,7 +8256,15 @@
       "password": "s1135",
       "parentName": "Родитель Теледеков",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Теледеков",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f136",
@@ -7114,7 +8272,15 @@
       "password": "s1136",
       "parentName": "Родитель Куликов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Куликов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f137",
@@ -7122,7 +8288,15 @@
       "password": "s1137",
       "parentName": "Родитель Леонов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Леонов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f138",
@@ -7130,7 +8304,15 @@
       "password": "s1138",
       "parentName": "Родитель Сапожников",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Сапожников",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f139",
@@ -7138,7 +8320,15 @@
       "password": "s1139",
       "parentName": "Родитель Царицын",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Царицын",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f140",
@@ -7146,7 +8336,15 @@
       "password": "s1140",
       "parentName": "Родитель Крылов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Крылов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f141",
@@ -7154,7 +8352,15 @@
       "password": "s1141",
       "parentName": "Родитель Горелов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Горелов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f142",
@@ -7162,7 +8368,15 @@
       "password": "s1142",
       "parentName": "Родитель Шестаков",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Шестаков",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f143",
@@ -7170,7 +8384,15 @@
       "password": "s1143",
       "parentName": "Родитель Быстревский",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Быстревский",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f144",
@@ -7178,7 +8400,15 @@
       "password": "s1144",
       "parentName": "Родитель Сметанников",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Сметанников",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f145",
@@ -7186,7 +8416,15 @@
       "password": "s1145",
       "parentName": "Родитель Ермолаев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ермолаев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f146",
@@ -7194,7 +8432,15 @@
       "password": "s1146",
       "parentName": "Родитель Савинов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Савинов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f147",
@@ -7202,7 +8448,15 @@
       "password": "s1147",
       "parentName": "Родитель Курчакова",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Курчакова",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f148",
@@ -7210,7 +8464,15 @@
       "password": "s1148",
       "parentName": "Родитель Дубровский",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Дубровский",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f149",
@@ -7218,7 +8480,15 @@
       "password": "s1149",
       "parentName": "Родитель Адрианов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Адрианов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f150",
@@ -7226,7 +8496,15 @@
       "password": "s1150",
       "parentName": "Родитель Свиридов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Свиридов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f151",
@@ -7234,7 +8512,15 @@
       "password": "s1151",
       "parentName": "Родитель Дубовик",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Дубовик",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f152",
@@ -7242,7 +8528,15 @@
       "password": "s1152",
       "parentName": "Родитель Максимов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Максимов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f153",
@@ -7250,7 +8544,15 @@
       "password": "s1153",
       "parentName": "Родитель Свитков",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Свитков",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f154",
@@ -7258,7 +8560,15 @@
       "password": "s1154",
       "parentName": "Родитель Добрица",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Добрица",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f155",
@@ -7266,7 +8576,15 @@
       "password": "s1155",
       "parentName": "Родитель Джулай",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Джулай",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f156",
@@ -7274,7 +8592,15 @@
       "password": "s1156",
       "parentName": "Родитель Нагель",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Нагель",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f157",
@@ -7282,7 +8608,15 @@
       "password": "s1157",
       "parentName": "Родитель Жикин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Жикин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f158",
@@ -7290,7 +8624,15 @@
       "password": "s1158",
       "parentName": "Родитель Чаадаев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Чаадаев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f159",
@@ -7298,7 +8640,15 @@
       "password": "s1159",
       "parentName": "Родитель Губанищев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Губанищев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f160",
@@ -7306,7 +8656,15 @@
       "password": "s1160",
       "parentName": "Родитель Юшков",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Юшков",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f161",
@@ -7314,7 +8672,15 @@
       "password": "s1161",
       "parentName": "Родитель Ермолович",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ермолович",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f162",
@@ -7322,7 +8688,15 @@
       "password": "s1162",
       "parentName": "Родитель Фомичев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Фомичев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f163",
@@ -7330,7 +8704,15 @@
       "password": "s1163",
       "parentName": "Родитель Кравченко",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Кравченко",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f164",
@@ -7338,7 +8720,15 @@
       "password": "s1164",
       "parentName": "Родитель Волынцев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Волынцев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f165",
@@ -7346,7 +8736,15 @@
       "password": "s1165",
       "parentName": "Родитель Нечаев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Нечаев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f166",
@@ -7354,7 +8752,15 @@
       "password": "s1166",
       "parentName": "Родитель Угрецов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Угрецов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f167",
@@ -7362,7 +8768,15 @@
       "password": "s1167",
       "parentName": "Родитель Хусяинов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Хусяинов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f168",
@@ -7370,7 +8784,15 @@
       "password": "s1168",
       "parentName": "Родитель Баукина",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Баукина",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f169",
@@ -7378,7 +8800,15 @@
       "password": "s1169",
       "parentName": "Родитель Моисеев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Моисеев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f170",
@@ -7386,7 +8816,15 @@
       "password": "s1170",
       "parentName": "Родитель Нуркаев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Нуркаев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f171",
@@ -7394,7 +8832,15 @@
       "password": "s1171",
       "parentName": "Родитель Макаров",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Макаров",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f172",
@@ -7402,7 +8848,15 @@
       "password": "s1172",
       "parentName": "Родитель Саенко",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Саенко",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f173",
@@ -7410,7 +8864,15 @@
       "password": "s1173",
       "parentName": "Родитель Нестерович",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Нестерович",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f174",
@@ -7418,7 +8880,15 @@
       "password": "s1174",
       "parentName": "Родитель Игнатьев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Игнатьев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f175",
@@ -7426,7 +8896,15 @@
       "password": "s1175",
       "parentName": "Родитель Ломаев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ломаев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f176",
@@ -7434,7 +8912,15 @@
       "password": "s1176",
       "parentName": "Родитель Кокозов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Кокозов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f177",
@@ -7442,7 +8928,15 @@
       "password": "s1177",
       "parentName": "Родитель Бондаренко",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Бондаренко",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f178",
@@ -7450,7 +8944,15 @@
       "password": "s1178",
       "parentName": "Родитель Вишневский",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Вишневский",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f179",
@@ -7458,7 +8960,15 @@
       "password": "s1179",
       "parentName": "Родитель Минасов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Минасов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f180",
@@ -7466,7 +8976,15 @@
       "password": "s1180",
       "parentName": "Родитель Баш",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Баш",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f181",
@@ -7474,7 +8992,15 @@
       "password": "s1181",
       "parentName": "Родитель Имранов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Имранов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f182",
@@ -7482,7 +9008,15 @@
       "password": "s1182",
       "parentName": "Родитель Буряков",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Буряков",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f183",
@@ -7490,7 +9024,15 @@
       "password": "s1183",
       "parentName": "Родитель Ершов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ершов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f184",
@@ -7498,7 +9040,15 @@
       "password": "s1184",
       "parentName": "Родитель Хасиев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Хасиев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f185",
@@ -7506,7 +9056,15 @@
       "password": "s1185",
       "parentName": "Родитель Финогеев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Финогеев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f186",
@@ -7514,7 +9072,15 @@
       "password": "s1186",
       "parentName": "Родитель Шуть",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Шуть",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f187",
@@ -7522,7 +9088,15 @@
       "password": "s1187",
       "parentName": "Родитель Зайцева",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Зайцева",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f188",
@@ -7530,7 +9104,15 @@
       "password": "s1188",
       "parentName": "Родитель Галышкин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Галышкин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f189",
@@ -7538,7 +9120,15 @@
       "password": "s1189",
       "parentName": "Родитель Марков",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Марков",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f190",
@@ -7546,7 +9136,15 @@
       "password": "s1190",
       "parentName": "Родитель Абдулаев",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Абдулаев",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f191",
@@ -7554,7 +9152,15 @@
       "password": "s1191",
       "parentName": "Родитель Назаров",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Назаров",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f192",
@@ -7562,7 +9168,15 @@
       "password": "s1192",
       "parentName": "Родитель Красавин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Красавин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f193",
@@ -7570,7 +9184,15 @@
       "password": "s1193",
       "parentName": "Родитель Мокин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Мокин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f194",
@@ -7578,7 +9200,15 @@
       "password": "s1194",
       "parentName": "Родитель Маркелов",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Маркелов",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f195",
@@ -7586,7 +9216,15 @@
       "password": "s1195",
       "parentName": "Родитель Лапшин",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Лапшин",
+          "phone": "",
+          "email": ""
+        }
+      ]
     },
     {
       "id": "f196",
@@ -7594,7 +9232,15 @@
       "password": "198653",
       "parentName": "Родитель ??????",
       "phone": "",
-      "email": ""
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель ??????",
+          "phone": "",
+          "email": ""
+        }
+      ]
     }
   ],
   "trainers": [

@@ -38,6 +38,7 @@ let selectedFamily = "";
 let calMode = sessionStorage.getItem("lk-cal") || "";
 let selectedDay = Number(sessionStorage.getItem("lk-day") || 0);
 let sheet = null;
+let trainerDraft = {};
 let qAthletes = "";
 let qParents = "";
 let qSick = "";
@@ -111,6 +112,18 @@ function rosterKids(group) {
 function groupTitle(g) {
   if (!g) return "Группа";
   return g.title || g.name;
+}
+
+function branchName(branchId) {
+  const b = (state.branches || []).find((x) => x.id === branchId);
+  return b ? b.name : "";
+}
+
+function groupTitleFull(g) {
+  if (!g) return "Группа";
+  const branch = branchName(g.branchId);
+  const title = groupTitle(g);
+  return branch ? `${branch} · ${title}` : title;
 }
 
 function dayMeta(dayNum) {
@@ -187,6 +200,12 @@ function trainerColumns() {
 function canDelete(child) {
   if (role === "admin" || role === "director") return true;
   return role === "trainer" && child.addedBy === "trainer" && child.kind === "trial";
+}
+
+function canEnroll(child) {
+  if (!child || child.kind !== "trial") return false;
+  if (role === "admin" || role === "director") return true;
+  return role === "trainer" && child.addedBy === "trainer";
 }
 
 function staffMode() {
@@ -270,6 +289,9 @@ function attTable(opts) {
     const del = opts.deletable && canDelete(c)
       ? `<button class="icon-del" data-ungroup="${c.id}" type="button" aria-label="Убрать">×</button>`
       : "";
+    const enroll = canEnroll(c)
+      ? `<button class="btn-enroll" data-enroll="${c.id}" type="button">В группу</button>`
+      : "";
     const cells = cols.map((d) => {
       const mark = cellMark(c, gid, d.day);
       const open = clickable && !mark.locked ? `data-toggle-mark="${c.id}" data-day="${d.day}" data-group="${gid}"` : "";
@@ -278,7 +300,8 @@ function attTable(opts) {
     const trialTag = c.kind === "trial" ? `<span class="trial-tag">пробный</span>` : "";
     return `<tr>
       <th class="sticky ${c.kind === "trial" ? "name-trial" : ""}">
-        <span>${esc(c.name)} ${trialTag}</span>${del}
+        <span class="name-row">${esc(c.name)} ${trialTag}</span>
+        <span class="name-actions">${enroll}${del}</span>
       </th>
       ${cells}
     </tr>`;
@@ -333,24 +356,65 @@ function addExistingForm() {
   </form>`;
 }
 
+function periodPhase(month) {
+  if (!month) return "current";
+  const now = new Date();
+  const start = new Date(month.year, month.month - 1, 1);
+  const end = new Date(month.year, month.month, 0, 23, 59, 59, 999);
+  if (now < start) return "upcoming";
+  if (now > end) return "closed";
+  return "current";
+}
+
+function periodPhaseLabel(phase) {
+  if (phase === "closed") return "завершён";
+  if (phase === "upcoming") return "ещё не начался";
+  return "сейчас идёт";
+}
+
 function monthSwitch() {
-  if (!state.months || state.months.length < 2) return "";
-  return `<div class="subtabs">${state.months.map((m) => `
-    <button type="button" class="${state.month.id === m.id ? "" : "is-off"}" data-month="${m.id}">${esc(m.label)}</button>
-  `).join("")}</div>`;
+  if (!state.months || !state.months.length) return "";
+  return `<div class="subtabs period-tabs">${state.months.map((m) => {
+    const phase = periodPhase(m);
+    const tag = phase === "closed" ? " · завершён" : phase === "current" ? " · сейчас" : "";
+    return `<button type="button" class="${state.month.id === m.id ? "" : "is-off"}" data-month="${m.id}">${esc(m.label)}${tag}</button>`;
+  }).join("")}</div>`;
+}
+
+function parentPeriodBanner() {
+  const m = state.month;
+  const phase = periodPhase(m);
+  const phaseText = periodPhaseLabel(phase);
+  return `
+    <div class="period-banner period-${phase}">
+      <p class="period-banner-title">Платёжный период · ${esc(m.label)}</p>
+      <p class="period-banner-meta">Период <b>${phaseText}</b>. Расчёт, баланс и счёт ниже закреплены за этим месяцем.</p>
+    </div>`;
 }
 
 function parentView() {
   if (selectedChild) return parentChildView();
   const p = state.period || {};
-  const kids = (p.perChild || []).map((row) => `
-    <button class="child-card tap-card" type="button" data-open-child="${row.childId}">
+  const phase = periodPhase(state.month);
+  const kids = (p.perChild || []).map((row) => {
+    const groups = row.groups || [];
+    const groupLines = groups.map((g) => `
+      <div class="group-line">
+        <span class="group-line-main">${esc(g.branch ? g.branch + " · " : "")}${esc(g.title)}</span>
+        <span class="group-line-meta">${esc(g.durationLabel)} · ${g.sessions} зан. × ${rub(g.unit)} = <b>${rub(g.advance)}</b></span>
+        <span class="group-line-meta">был ${g.present} · Б ${g.sickCount}</span>
+      </div>`).join("");
+    return `
+    <article class="child-card parent-child-card">
       <h2 class="${row.kind === "trial" ? "name-trial" : ""}">${esc(row.name)}${row.kind === "trial" ? " · пробный" : ""}</h2>
+      ${groups.length > 1 ? `<p class="hint">Ходит в ${groups.length} группы — данные сведены ниже</p>` : ""}
+      <div class="group-lines">${groupLines || "<p class=\"hint\">Нет группы</p>"}</div>
       <div class="pay">
-        <div><span>Списано</span><strong>${rub(row.spent)}</strong></div>
         <div><span>Был / Б</span><strong>${row.present} / ${row.sickCount}</strong></div>
       </div>
-    </button>`).join("");
+      <button class="btn child-open-btn" type="button" data-open-child="${row.childId}">Календарь посещений</button>
+    </article>`;
+  }).join("");
   const qrs = (state.qrs || ["qr1"]).map((id) => `
     <figure>
       <img src="${qrMap[id] || "/img/qr-1.jpg"}" alt="QR">
@@ -360,24 +424,26 @@ function parentView() {
   return `
     <div class="parent-home">
       ${monthSwitch()}
-      <p class="note">Кабинет семьи · ${esc(state.month.label)}. Нажмите на ребёнка — календарь посещений и формула.</p>
+      ${parentPeriodBanner()}
       <div class="child-grid">${kids || "<p class=\"hint\">Нет детей в семье</p>"}</div>
       <article class="child-card">
+        <p class="card-period-tag">Баланс за ${esc(state.month.label)}${phase === "closed" ? " · период завершён" : ""}</p>
         <div class="pay">
-          <div><span>Остаток баланса</span><strong>${rub(p.opening)}</strong></div>
+          <div><span>Остаток на начало месяца</span><strong>${rub(p.opening)}</strong></div>
           <div><span>Аванс</span><strong>${rub(p.advance)}</strong></div>
-          <div><span>Списано за месяц</span><strong>${rub(p.spent)}</strong></div>
+          <div><span>Остаток на конец месяца</span><strong>${rub(p.balance)}</strong></div>
         </div>
       </article>
       <article class="child-card">
-        <div class="pay"><div><span>Итого к оплате</span><strong>${rub(Math.max(0, p.amountDue))}</strong></div>
-        <div><span>Текущий баланс</span><strong>${rub(p.balance)}</strong></div></div>
+        <p class="card-period-tag">Счёт платёжного периода · ${esc(state.month.label)}</p>
+        <div class="pay"><div><span>Итого к оплате</span><strong>${rub(Math.max(0, p.amountDue))}</strong></div></div>
         ${p.discountPercent ? `<p class="hint">Скидка многодетных ${p.discountPercent}%</p>` : ""}
         <button class="btn ghost" type="button" data-toggle-formula>${showFormula ? "Скрыть формулу" : "Показать формулу"}</button>
         ${showFormula ? formulaHtml(p) : ""}
       </article>
       <article class="child-card pay-how">
         <h2>Как оплатить</h2>
+        <p class="hint">Оплата относится к периоду ${esc(state.month.label)}</p>
         <div class="qr-row">${qrs}</div>
         <label class="field">Сумма<input value="${Math.round(Math.max(0, p.amountDue || 0))}" readonly></label>
         <button class="btn pay-btn ${paid ? "is-paid" : ""}" type="button" data-parent-pay ${paid ? "disabled" : ""}>
@@ -391,11 +457,14 @@ function formulaHtml(p) {
   const kids = (p.perChild || []).map((c) => {
     const visits = (c.formula || []).filter((l) => l.day != null || l.mark);
     const adv = (c.formula || []).filter((l) => l.sessions != null);
+    const groupBits = (c.groups || []).map((g) =>
+      `<li class="f-adv">${esc(g.branch ? g.branch + " · " : "")}${esc(g.title)} · ${esc(g.durationLabel)} · ${g.sessions}×${rub(g.unit)} = <b>${rub(g.advance)}</b></li>`
+    ).join("");
     return `<details class="formula-child" open>
       <summary><b>${esc(c.name)}</b>${c.kind === "trial" ? " · пробный" : ""} —
         аванс ${rub(c.advance)}, списано ${rub(c.spent)}, был ${c.present}, Б ${c.sickCount}${c.trial500 ? ", 500×" + c.trial500 : ""}</summary>
       <ul>
-        ${adv.map((l) => `<li class="f-adv">Аванс: ${esc(l.group)} · ${l.sessions} зан. × ${rub(l.price)} = <b>${rub(l.part)}</b></li>`).join("")}
+        ${groupBits || adv.map((l) => `<li class="f-adv">Аванс: ${esc(l.group)} · ${l.sessions} зан. × ${rub(l.price)} = <b>${rub(l.part)}</b>${l.note ? `<br><small>${esc(l.note)}</small>` : ""}</li>`).join("")}
         ${visits.map((l) => `<li class="f-visit">${esc(l.group)} · ${l.day} число · <b>${esc(l.mark)}</b> → ${l.price ? "−" + rub(l.price) : "0 ₽"}${l.note ? " (" + esc(l.note) + ")" : ""}</li>`).join("") || "<li>Нет отметок посещений</li>"}
       </ul>
     </details>`;
@@ -405,7 +474,7 @@ function formulaHtml(p) {
   return `<div class="formula">
     <h3>Ход расчёта</h3>
     <ol class="formula-steps">
-      <li>Аванс сырой (занятия × тариф филиала): <b>${rub(p.advanceRaw)}</b></li>
+      <li>Аванс сырой (по группам: занятия × цена пакета ÷ занятий в пакете): <b>${rub(p.advanceRaw)}</b></li>
       <li>Скидка многодетных ${p.discountPercent || 0}%: аванс = ${rub(p.advanceRaw)} × (1 − ${p.discountPercent || 0}/100) = <b>${rub(p.advance)}</b></li>
       <li>Остаток с прошлого периода: <b>${rub(credit)}</b>${debt ? ` · долг прошлого: <b class="warn-text">${rub(debt)}</b>` : ""}</li>
       <li>Счёт к оплате: аванс ${rub(p.advance)} − остаток ${rub(credit)} + долг ${rub(debt)} = <b>${rub(p.requested)}</b></li>
@@ -419,21 +488,74 @@ function formulaHtml(p) {
   </div>`;
 }
 
+function parentCombinedAtt(child) {
+  const groups = state.groups.filter((g) => (child.groupIds || []).includes(g.id));
+  if (!groups.length) return `<p class="hint">Нет группы</p>`;
+  const cols = trainerColumns();
+  const head = cols.map((d) => `
+    <th class="${isToday(d.day) ? "is-today" : ""} ${d.day === selectedDay ? "is-on" : ""}" data-pick-day="${d.day}">
+      <small>${WEEK_SHORT[d.weekday]}</small>${d.day}
+    </th>`).join("");
+  const rows = groups.map((g) => {
+    const packLessons = Number(g.packLessons) || 8;
+    const packPrice = Number(g.packPrice) || 0;
+    const unit = packLessons ? Math.round(packPrice / packLessons) : 0;
+    const dur = g.durationMin === 90 ? "1,5 ч" : "1 ч";
+    const branch = branchName(g.branchId);
+    const cells = cols.map((d) => {
+      const mark = cellMark(child, g.id, d.day);
+      return `<td class="mark big-mark ${mark.cls} ${isTrainingDay(g, d.day) ? "is-train" : ""}">${mark.text}</td>`;
+    }).join("");
+    return `<tr>
+      <th class="sticky">
+        <span class="sheet-item-branch">${esc(branch || "Филиал")} · ${dur} · ${rub(unit)}</span>
+        <span>${esc(groupTitle(g))}</span>
+      </th>
+      ${cells}
+    </tr>`;
+  }).join("");
+  const strip = calMode === "week" ? weekStrip() : "";
+  return `
+    ${strip}
+    <div class="att-wrap">
+      <table class="att-table">
+        <thead><tr><th class="sticky">Группа / тариф</th>${head}</tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
 function parentChildView() {
   const child = state.children.find((c) => c.id === selectedChild);
   if (!child) return `<p class="hint">Ребёнок не найден</p>`;
-  const groups = state.groups.filter((g) => (child.groupIds || []).includes(g.id));
   const row = (state.period && state.period.perChild || []).find((x) => x.childId === child.id);
-  const tables = groups.map((g) => `
-    <h3>${esc(groupTitle(g))}</h3>
-    ${attTable({ group: g, kids: [child], clickable: false, deletable: false })}
-  `).join("");
+  const groups = row && row.groups ? row.groups : [];
+  const summary = groups.map((g) => `
+    <div class="group-sum-card">
+      <strong>${esc(g.branch ? g.branch + " · " : "")}${esc(g.title)}</strong>
+      <p>${esc(g.durationLabel)} · пакет ${rub(g.packPrice)} / ${g.packLessons} = <b>${rub(g.unit)}</b> за занятие</p>
+      <div class="pay">
+        <div><span>В месяце</span><strong>${g.sessions}</strong></div>
+        <div><span>Аванс</span><strong>${rub(g.advance)}</strong></div>
+        <div><span>Был / Б</span><strong>${g.present} / ${g.sickCount}</strong></div>
+      </div>
+    </div>`).join("");
   return `
-    <div class="gcal gcal-table">
+    <div class="gcal gcal-table parent-child">
       <button class="btn ghost" type="button" data-back-parent>← К семье</button>
       <h2>${esc(child.name)}</h2>
+      ${parentPeriodBanner()}
+      <p class="note">Сводная таблица из всех групп ребёнка. Разный тариф часа и 1,5 ч считается отдельно и складывается в итог.</p>
+      <div class="group-sum-grid">${summary || "<p class=\"hint\">Нет групп</p>"}</div>
+      <article class="child-card">
+        <div class="pay">
+          <div><span>Итого аванс</span><strong>${rub(row ? row.advance : 0)}</strong></div>
+          <div><span>Был / Б</span><strong>${row ? row.present : 0} / ${row ? row.sickCount : 0}</strong></div>
+        </div>
+      </article>
       ${calToolbar(false)}
-      ${tables}
+      <h3 class="sheet-section">Общая таблица посещений</h3>
+      ${parentCombinedAtt(child)}
       <button class="btn ghost" type="button" data-toggle-formula>${showFormula ? "Скрыть формулу" : "Формула расчёта"}</button>
       ${showFormula && state.period ? formulaHtml({
         ...state.period,
@@ -535,6 +657,7 @@ function athletesView() {
         <span class="muted-inline">${insLabel}</span>
       </div>
       <div class="ath-actions">
+        ${canEnroll(c) ? `<button class="btn" type="button" data-enroll="${c.id}">Зачислить в группу</button>` : ""}
         <button class="btn ghost" type="button" data-child-groups="${c.id}">
           ${n ? "Группы: " + n : "<span class=\"warn-text\">Нет группы</span>"}
         </button>
@@ -585,12 +708,26 @@ function trainersView() {
   const list = state.trainers.filter((t) => t.sport === selectedSport);
   const groups = state.groups.filter((g) => g.sport === selectedSport);
   const cards = list.map((t) => {
-    const selected = new Set(t.groupIds || []);
-    const opts = groups.map((g) => `<label class="check"><input type="checkbox" data-tg="${t.id}" value="${g.id}" ${selected.has(g.id) ? "checked" : ""}> ${esc(groupTitle(g))}</label>`).join("");
+    if (!trainerDraft[t.id]) trainerDraft[t.id] = [...(t.groupIds || [])];
+    const selected = new Set(trainerDraft[t.id]);
+    const sorted = groups.slice().sort((a, b) => {
+      const as = selected.has(a.id) ? 0 : 1;
+      const bs = selected.has(b.id) ? 0 : 1;
+      if (as !== bs) return as - bs;
+      const ba = branchName(a.branchId).localeCompare(branchName(b.branchId), "ru");
+      if (ba) return ba;
+      return groupTitle(a).localeCompare(groupTitle(b), "ru");
+    });
+    const opts = sorted.map((g) => `
+      <button type="button" class="sheet-item ${selected.has(g.id) ? "is-on" : ""}" data-toggle-tg="${t.id}" data-group="${g.id}">
+        <span class="sheet-item-branch">${esc(branchName(g.branchId) || "Филиал")}</span>
+        <span class="sheet-item-title">${esc(groupTitle(g))}</span>
+      </button>`).join("");
     return `<article class="ath-card">
       <strong>${esc(t.name)}</strong>
       <p class="hint">логин ${esc(t.login)} · пароль ${esc(t.password)}</p>
-      <div class="multi">${opts}</div>
+      <p class="hint">Сначала выбранные. В названии — филиал. Нажмите на группу, чтобы добавить или убрать.</p>
+      <div class="multi multi-pick">${opts || "<p class=\"hint\">Нет групп</p>"}</div>
       <button class="btn ghost" type="button" data-save-trainer="${t.id}">Сохранить группы</button>
     </article>`;
   }).join("");
@@ -617,22 +754,70 @@ function calcView() {
 }
 
 function pricesView() {
-  const cards = (state.branches || []).map((b) => `
-    <article class="ath-card">
+  const pack = Number(state.settings && state.settings.packLessons) || 8;
+  const cards = (state.branches || []).map((b) => {
+    const groups = state.groups.filter((g) => g.branchId === b.id);
+    const tariffs = b.tariffs || [];
+    return `
+    <article class="ath-card price-branch">
       <strong>${esc(b.name)}</strong>
+      <p class="hint">Базовые пакеты филиала (если у группы свой пакет не задан): ${pack}×1ч = ${rub(b.priceHour)}, ${pack}×1,5ч = ${rub(b.priceHourHalf)}</p>
       <form class="add-bar" data-branch-price="${b.id}">
-        <label class="field">час, ₽<input name="priceHour" type="number" value="${b.priceHour}"></label>
-        <label class="field">1,5 часа, ₽<input name="priceHourHalf" type="number" value="${b.priceHourHalf}"></label>
+        <label class="field">${pack} занятий · 1 час, ₽
+          <input name="priceHour" type="number" value="${b.priceHour}">
+        </label>
+        <label class="field">${pack} занятий · 1,5 часа, ₽
+          <input name="priceHourHalf" type="number" value="${b.priceHourHalf}">
+        </label>
         <label class="field">QR
           <select name="qr">
             <option value="qr1" ${b.qr === "qr1" ? "selected" : ""}>QR 1</option>
             <option value="qr2" ${b.qr === "qr2" ? "selected" : ""}>QR 2</option>
           </select>
         </label>
-        <button class="btn" type="submit">Сохранить</button>
+        <button class="btn" type="submit">Сохранить базу</button>
       </form>
-    </article>`).join("");
+      ${tariffs.length ? `
+        <p class="hint">Тарифы с бумажки (быстрый выбор для группы):
+          ${tariffs.map((t) => `${esc(t.label)} — ${rub(t.packPrice)}`).join(" · ")}
+        </p>` : ""}
+      <h3 class="sheet-section">Группы филиала</h3>
+      <div class="price-groups">
+        ${groups.map((g) => {
+          const lessons = Number(g.packLessons) || pack;
+          const price = Number(g.packPrice) || (g.durationMin === 90 ? b.priceHourHalf : b.priceHour);
+          const unit = lessons ? Math.round(price / lessons) : 0;
+          return `
+          <form class="add-bar stack-form price-group" data-group-pack="${g.id}">
+            <p class="hint"><b>${esc(groupTitle(g))}</b></p>
+            <label class="field">цена пакета, ₽
+              <input name="packPrice" type="number" value="${price}">
+            </label>
+            <label class="field">занятий в пакете
+              <input name="packLessons" type="number" min="1" value="${lessons}">
+            </label>
+            <label class="field">длительность
+              <select name="durationMin">
+                <option value="60" ${g.durationMin !== 90 ? "selected" : ""}>1 час</option>
+                <option value="90" ${g.durationMin === 90 ? "selected" : ""}>1,5 часа</option>
+              </select>
+            </label>
+            ${tariffs.length ? `
+            <label class="field">тариф с бумажки
+              <select name="tariffId">
+                <option value="">— не менять —</option>
+                ${tariffs.map((t) => `<option value="${t.id}">${esc(t.label)} (${rub(t.packPrice)})</option>`).join("")}
+              </select>
+            </label>` : ""}
+            <p class="hint price-hint">1 занятие = ${rub(unit)} · аванс за месяц ≈ число тренировок × ${rub(unit)}</p>
+            <button class="btn" type="submit">Сохранить группу</button>
+          </form>`;
+        }).join("") || "<p class=\"hint\">Нет групп</p>"}
+      </div>
+    </article>`;
+  }).join("");
   return `
+    <p class="note">Ребёнок может ходить в несколько групп — стоимость месяца складывается: занятия₁×(пакет₁/N₁) + занятия₂×(пакет₂/N₂). Пример Валдайский: 4 из «8×1,5ч за 9500» + 4 из «12×1ч за 9500» = 4×1187,5 + 4×791,67.</p>
     <div class="ath-list">${cards}</div>
     <article class="child-card">
       <h2>QR для оплаты</h2>
@@ -723,16 +908,27 @@ function drawOverlay() {
   }
   if (sheet.type === "child-groups") {
     const child = state.children.find((c) => c.id === sheet.childId);
-    const have = new Set((child && child.groupIds) || []);
+    if (!sheet.selected) sheet.selected = [...((child && child.groupIds) || [])];
+    const selected = new Set(sheet.selected);
+    const sorted = state.groups.slice().sort((a, b) => {
+      const as = selected.has(a.id) ? 0 : 1;
+      const bs = selected.has(b.id) ? 0 : 1;
+      if (as !== bs) return as - bs;
+      const ba = branchName(a.branchId).localeCompare(branchName(b.branchId), "ru");
+      if (ba) return ba;
+      return groupTitle(a).localeCompare(groupTitle(b), "ru");
+    });
     el.innerHTML = `
       <div class="sheet" role="dialog">
+        ${sheet.backFamily ? `<button class="sheet-back" type="button" data-back-family aria-label="Назад">← Назад</button>` : ""}
         <p class="sheet-kicker">${esc(child ? child.name : "")} · группы</p>
+        <p class="hint">Сначала выбранные. В названии указан филиал. Нажмите на группу, чтобы добавить или убрать.</p>
         <div class="sheet-list">
-          ${state.groups.map((g) => `
-            <label class="sheet-item check">
-              <input type="checkbox" data-cg="${g.id}" ${have.has(g.id) ? "checked" : ""}>
-              ${esc(groupTitle(g))}
-            </label>`).join("")}
+          ${sorted.map((g) => `
+            <button type="button" class="sheet-item ${selected.has(g.id) ? "is-on" : ""}" data-toggle-cg="${g.id}">
+              <span class="sheet-item-branch">${esc(branchName(g.branchId) || "Филиал")}</span>
+              <span class="sheet-item-title">${esc(groupTitle(g))}</span>
+            </button>`).join("")}
         </div>
         <button class="btn" type="button" data-save-cgroups>Сохранить</button>
         <button type="button" class="btn ghost sheet-cancel" data-close-sheet>Закрыть</button>
@@ -740,32 +936,145 @@ function drawOverlay() {
     return;
   }
   if (sheet.type === "family") {
-    const child = state.children.find((c) => c.id === sheet.childId);
-    const fam = state.families.find((f) => f.id === (child && child.familyId));
-    const kids = state.children.filter((c) => c.familyId === (fam && fam.id));
-    const showKids = sheet.kids;
-    el.innerHTML = `
+    el.innerHTML = familySheetHtml();
+  }
+}
+
+function familySheetHtml() {
+  const child = state.children.find((c) => c.id === sheet.childId);
+  const fam = state.families.find((f) => f.id === (sheet.familyId || (child && child.familyId)));
+  const view = sheet.view || "home";
+  const back = view !== "home"
+    ? `<button class="sheet-back" type="button" data-fam-view="home" aria-label="Назад">← Назад</button>`
+    : "";
+
+  if (!fam && view !== "assign") {
+    return `
       <div class="sheet" role="dialog">
         <p class="sheet-kicker">Семья · ${esc(child ? child.name : "")}</p>
-        ${fam ? `<p>логин <b>${esc(fam.login)}</b><br>пароль <b>${esc(fam.password)}</b></p>
-          <form id="fam-edit">
-            <label class="field">ФИО родителя<input name="parentName" value="${esc(fam.parentName)}"></label>
-            <label class="field">телефон<input name="phone" value="${esc(fam.phone)}"></label>
-            <label class="field">почта<input name="email" value="${esc(fam.email)}"></label>
-            <button class="btn" type="submit">Сохранить контакты</button>
-          </form>
-          <button class="btn ghost" type="button" data-toggle-fkids>Дети в семье</button>
-          ${showKids ? `<div class="sheet-list">${kids.map((k) => `<div class="sheet-item">${esc(k.name)}</div>`).join("")}</div>` : ""}
-          <p class="hint">Назначить другую семью</p>
-          <select data-assign-fam>
-            <option value="">— новая семья —</option>
-            ${state.families.map((f) => `<option value="${f.id}" ${fam.id === f.id ? "selected" : ""}>${esc(f.parentName)} (${esc(f.login)})</option>`).join("")}
-          </select>
-          <button class="btn ghost" type="button" data-do-assign>Назначить / создать</button>`
-          : `<p>Семья не назначена</p><button class="btn" type="button" data-do-assign>Создать семью</button>`}
+        <p class="hint">Семья не назначена</p>
+        <button class="btn" type="button" data-do-assign>Создать новую семью</button>
+        <button class="btn ghost" type="button" data-fam-view="assign">Назначить из списка</button>
         <button type="button" class="btn ghost sheet-cancel" data-close-sheet>Закрыть</button>
       </div>`;
   }
+
+  if (view === "assign") {
+    return `
+      <div class="sheet" role="dialog">
+        ${child && child.familyId ? back : `<button class="sheet-back" type="button" data-fam-view="home" aria-label="Назад">← Назад</button>`}
+        <p class="sheet-kicker">Назначить семью</p>
+        <p class="hint">Выберите существующую семью или создайте новую для ${esc(child ? child.name : "ребёнка")}.</p>
+        <select data-assign-fam>
+          <option value="">— создать новую семью —</option>
+          ${state.families.map((f) => `<option value="${f.id}" ${fam && fam.id === f.id ? "selected" : ""}>${esc(f.parentName)} (${esc(f.login)})</option>`).join("")}
+        </select>
+        <button class="btn" type="button" data-do-assign>Назначить</button>
+        <button type="button" class="btn ghost sheet-cancel" data-close-sheet>Закрыть</button>
+      </div>`;
+  }
+
+  if (!fam) {
+    sheet.view = "home";
+    return familySheetHtml();
+  }
+
+  if (view === "parent-new") {
+    return `
+      <div class="sheet" role="dialog">
+        ${back}
+        <p class="sheet-kicker">Новый родитель</p>
+        <form id="fam-parent-new">
+          <label class="field">ФИО<input name="name" required placeholder="Фамилия Имя"></label>
+          <label class="field">телефон<input name="phone" placeholder="+7..."></label>
+          <label class="field">почта<input name="email" type="email" placeholder="email@"></label>
+          <button class="btn" type="submit">Добавить</button>
+        </form>
+        <button type="button" class="btn ghost sheet-cancel" data-close-sheet>Закрыть</button>
+      </div>`;
+  }
+
+  if (view === "parent-edit") {
+    const parent = (fam.parents || []).find((p) => p.id === sheet.parentId) || (fam.parents || [])[0];
+    if (!parent) {
+      sheet.view = "home";
+      return familySheetHtml();
+    }
+    return `
+      <div class="sheet" role="dialog">
+        ${back}
+        <p class="sheet-kicker">Родитель</p>
+        <form id="fam-parent-edit">
+          <input type="hidden" name="id" value="${esc(parent.id)}">
+          <label class="field">ФИО<input name="name" required value="${esc(parent.name)}"></label>
+          <label class="field">телефон<input name="phone" value="${esc(parent.phone || "")}"></label>
+          <label class="field">почта<input name="email" type="email" value="${esc(parent.email || "")}"></label>
+          <button class="btn" type="submit">Сохранить</button>
+        </form>
+        ${(fam.parents || []).length > 1
+          ? `<button class="btn ghost warn-btn" type="button" data-remove-parent="${esc(parent.id)}">Убрать из семьи</button>`
+          : ""}
+        <button type="button" class="btn ghost sheet-cancel" data-close-sheet>Закрыть</button>
+      </div>`;
+  }
+
+  if (view === "child") {
+    const kid = state.children.find((c) => c.id === sheet.viewChildId);
+    if (!kid) {
+      sheet.view = "home";
+      return familySheetHtml();
+    }
+    const groups = state.groups.filter((g) => (kid.groupIds || []).includes(g.id));
+    return `
+      <div class="sheet" role="dialog">
+        ${back}
+        <p class="sheet-kicker">${esc(kid.name)}</p>
+        ${kid.kind === "trial" ? `<span class="trial-tag">пробный</span>` : ""}
+        <p class="hint">Группы ребёнка</p>
+        <div class="sheet-list">
+          ${groups.map((g) => `
+            <div class="sheet-item is-static">
+              <span class="sheet-item-branch">${esc(branchName(g.branchId) || "Филиал")}</span>
+              <span class="sheet-item-title">${esc(groupTitle(g))}</span>
+            </div>`).join("") || `<p class="hint">Нет группы</p>`}
+        </div>
+        <button class="btn" type="button" data-open-kid-groups="${kid.id}">Изменить группы</button>
+        <button type="button" class="btn ghost sheet-cancel" data-close-sheet>Закрыть</button>
+      </div>`;
+  }
+
+  const parents = fam.parents || [];
+  const kids = state.children.filter((c) => c.familyId === fam.id);
+  return `
+    <div class="sheet" role="dialog">
+      <p class="sheet-kicker">Семья · ${esc(child ? child.name : fam.parentName)}</p>
+      <div class="cred-block">
+        <div><span>логин</span><b>${esc(fam.login)}</b></div>
+        <div><span>пароль</span><b>${esc(fam.password)}</b></div>
+      </div>
+
+      <h3 class="sheet-section">Родители</h3>
+      <div class="sheet-list">
+        ${parents.map((p) => `
+          <button type="button" class="sheet-item contact-card" data-edit-parent="${esc(p.id)}">
+            <strong>${esc(p.name)}</strong>
+            <span>${esc(p.phone || "телефон не указан")}</span>
+            <span>${esc(p.email || "почта не указана")}</span>
+          </button>`).join("")}
+      </div>
+      <button class="btn ghost" type="button" data-fam-view="parent-new">+ Добавить родителя</button>
+
+      <h3 class="sheet-section">Дети в семье</h3>
+      <div class="sheet-list">
+        ${kids.map((k) => `
+          <button type="button" class="sheet-item" data-fam-child="${k.id}">
+            ${esc(k.name)}${k.kind === "trial" ? " · пробный" : ""}
+          </button>`).join("") || `<p class="hint">Нет детей</p>`}
+      </div>
+
+      <button class="btn ghost" type="button" data-fam-view="assign">Сменить семью ребёнка</button>
+      <button type="button" class="btn ghost sheet-cancel" data-close-sheet>Закрыть</button>
+    </div>`;
 }
 
 document.getElementById("logout").addEventListener("click", () => {
@@ -854,6 +1163,17 @@ document.getElementById("app").addEventListener("click", async (e) => {
     return;
   }
 
+  const enrollBtn = e.target.closest("[data-enroll]");
+  if (enrollBtn) {
+    e.preventDefault();
+    if (!confirm("Зачислить в группу? Отметки 0 и 500 сохранятся, дальше можно ставить «+» как обычным.")) return;
+    const res = await api(`/api/children/${enrollBtn.dataset.enroll}/enroll`, "POST");
+    const data = await res.json();
+    if (!res.ok) return alert(data.error);
+    await load();
+    return;
+  }
+
   if (e.target.closest("[data-parent-pay]")) {
     await api("/api/pay/parent", "POST", { monthId: state.month.id });
     await load();
@@ -871,9 +1191,28 @@ document.getElementById("app").addEventListener("click", async (e) => {
   }
 
   const cg = e.target.closest("[data-child-groups]");
-  if (cg) { sheet = { type: "child-groups", childId: cg.dataset.childGroups }; drawOverlay(); return; }
+  if (cg) {
+    const child = state.children.find((c) => c.id === cg.dataset.childGroups);
+    sheet = {
+      type: "child-groups",
+      childId: cg.dataset.childGroups,
+      selected: [...((child && child.groupIds) || [])]
+    };
+    drawOverlay();
+    return;
+  }
   const cf = e.target.closest("[data-child-family]");
-  if (cf) { sheet = { type: "family", childId: cf.dataset.childFamily, kids: false }; drawOverlay(); return; }
+  if (cf) {
+    const child = state.children.find((c) => c.id === cf.dataset.childFamily);
+    sheet = {
+      type: "family",
+      childId: cf.dataset.childFamily,
+      familyId: child ? child.familyId : "",
+      view: "home"
+    };
+    drawOverlay();
+    return;
+  }
 
   const sc = e.target.closest("[data-sick-child]");
   if (sc) { selectedChild = sc.dataset.sickChild; render(); return; }
@@ -915,10 +1254,26 @@ document.getElementById("app").addEventListener("click", async (e) => {
 
   const saveT = e.target.closest("[data-save-trainer]");
   if (saveT) {
-    const ids = [...document.querySelectorAll(`[data-tg="${saveT.dataset.saveTrainer}"]:checked`)].map((i) => i.value);
-    await api("/api/trainers/" + saveT.dataset.saveTrainer, "PATCH", { groupIds: ids });
+    const tid = saveT.dataset.saveTrainer;
+    const ids = trainerDraft[tid] || [];
+    await api("/api/trainers/" + tid, "PATCH", { groupIds: ids });
+    delete trainerDraft[tid];
     await load();
     view = "trainer-sport";
+    return;
+  }
+
+  const toggleTg = e.target.closest("[data-toggle-tg]");
+  if (toggleTg) {
+    const tid = toggleTg.dataset.toggleTg;
+    const gid = toggleTg.dataset.group;
+    const t = (state.trainers || []).find((x) => x.id === tid);
+    if (!trainerDraft[tid]) trainerDraft[tid] = [...((t && t.groupIds) || [])];
+    const set = new Set(trainerDraft[tid]);
+    if (set.has(gid)) set.delete(gid);
+    else set.add(gid);
+    trainerDraft[tid] = [...set];
+    render();
     return;
   }
 
@@ -1035,6 +1390,21 @@ document.getElementById("app").addEventListener("submit", async (e) => {
     dirTab = "calc";
     calcTab = "prices";
   }
+  const gp = e.target.closest("[data-group-pack]");
+  if (gp) {
+    const body = {
+      packPrice: Number(e.target.packPrice.value),
+      packLessons: Number(e.target.packLessons.value),
+      durationMin: Number(e.target.durationMin.value)
+    };
+    if (e.target.tariffId && e.target.tariffId.value) body.tariffId = e.target.tariffId.value;
+    const res = await api("/api/groups/" + gp.dataset.groupPack, "PATCH", body);
+    const data = await res.json();
+    if (!res.ok) return alert(data.error);
+    await load();
+    dirTab = "calc";
+    calcTab = "prices";
+  }
 });
 
 document.getElementById("overlay").addEventListener("click", async (e) => {
@@ -1043,37 +1413,139 @@ document.getElementById("overlay").addEventListener("click", async (e) => {
   }
   const g = e.target.closest("[data-pick-group]");
   if (g) { selectedGroup = g.dataset.pickGroup; sheet = null; render(); return; }
-  if (e.target.closest("[data-save-cgroups]") && sheet) {
-    const ids = [...document.querySelectorAll("[data-cg]:checked")].map((i) => i.dataset.cg);
-    await api("/api/children/" + sheet.childId, "PATCH", { groupIds: ids });
-    sheet = null;
-    await load();
+  const toggleCg = e.target.closest("[data-toggle-cg]");
+  if (toggleCg && sheet && sheet.type === "child-groups") {
+    const id = toggleCg.dataset.toggleCg;
+    const set = new Set(sheet.selected || []);
+    if (set.has(id)) set.delete(id);
+    else set.add(id);
+    sheet.selected = [...set];
+    drawOverlay();
     return;
   }
-  if (e.target.closest("[data-toggle-fkids]") && sheet) {
-    sheet.kids = !sheet.kids; drawOverlay(); return;
+  if (e.target.closest("[data-back-family]") && sheet && sheet.backFamily) {
+    sheet = { ...sheet.backFamily, type: "family" };
+    drawOverlay();
+    return;
   }
+  if (e.target.closest("[data-save-cgroups]") && sheet) {
+    const ids = sheet.selected || [];
+    const childId = sheet.childId;
+    const backFamily = sheet.backFamily || null;
+    await api("/api/children/" + childId, "PATCH", { groupIds: ids });
+    await load();
+    if (backFamily) {
+      sheet = { ...backFamily, type: "family" };
+      drawOverlay();
+    } else {
+      sheet = null;
+      drawOverlay();
+      render();
+    }
+    return;
+  }
+
+  const famView = e.target.closest("[data-fam-view]");
+  if (famView && sheet && sheet.type === "family") {
+    sheet.view = famView.dataset.famView;
+    sheet.parentId = "";
+    sheet.viewChildId = "";
+    drawOverlay();
+    return;
+  }
+  const editParent = e.target.closest("[data-edit-parent]");
+  if (editParent && sheet && sheet.type === "family") {
+    sheet.view = "parent-edit";
+    sheet.parentId = editParent.dataset.editParent;
+    drawOverlay();
+    return;
+  }
+  const famChild = e.target.closest("[data-fam-child]");
+  if (famChild && sheet && sheet.type === "family") {
+    sheet.view = "child";
+    sheet.viewChildId = famChild.dataset.famChild;
+    drawOverlay();
+    return;
+  }
+  const openKidGroups = e.target.closest("[data-open-kid-groups]");
+  if (openKidGroups) {
+    const kid = state.children.find((c) => c.id === openKidGroups.dataset.openKidGroups);
+    sheet = {
+      type: "child-groups",
+      childId: openKidGroups.dataset.openKidGroups,
+      selected: [...((kid && kid.groupIds) || [])],
+      backFamily: sheet && sheet.type === "family" ? { ...sheet, view: "child", viewChildId: openKidGroups.dataset.openKidGroups } : null
+    };
+    drawOverlay();
+    return;
+  }
+  const removeParent = e.target.closest("[data-remove-parent]");
+  if (removeParent && sheet && sheet.type === "family") {
+    const child = state.children.find((c) => c.id === sheet.childId);
+    const famId = sheet.familyId || (child && child.familyId);
+    if (!confirm("Убрать этого родителя из семьи?")) return;
+    const res = await api("/api/families/" + famId, "PATCH", { removeParentId: removeParent.dataset.removeParent });
+    const data = await res.json();
+    if (!res.ok) return alert(data.error);
+    await load();
+    sheet = { type: "family", childId: sheet.childId, familyId: famId, view: "home" };
+    drawOverlay();
+    return;
+  }
+
   if (e.target.closest("[data-do-assign]") && sheet) {
     const sel = document.querySelector("[data-assign-fam]");
     const familyId = sel ? sel.value : "";
-    await api("/api/children/" + sheet.childId + "/family", "POST", { familyId });
-    sheet = null;
+    const res = await api("/api/children/" + sheet.childId + "/family", "POST", { familyId });
+    const data = await res.json();
+    if (!res.ok) return alert(data.error);
     await load();
+    const child = state.children.find((c) => c.id === sheet.childId) || data.child;
+    sheet = {
+      type: "family",
+      childId: sheet.childId,
+      familyId: (child && child.familyId) || (data.family && data.family.id) || "",
+      view: "home"
+    };
+    drawOverlay();
+    return;
   }
 });
 
 document.getElementById("overlay").addEventListener("submit", async (e) => {
-  if (e.target.id !== "fam-edit" || !sheet) return;
-  e.preventDefault();
+  if (!sheet || sheet.type !== "family") return;
   const child = state.children.find((c) => c.id === sheet.childId);
-  await api("/api/families/" + child.familyId, "PATCH", {
-    parentName: e.target.parentName.value,
-    phone: e.target.phone.value,
-    email: e.target.email.value
-  });
-  await load();
-  sheet = { type: "family", childId: child.id, kids: false };
-  drawOverlay();
+  const famId = sheet.familyId || (child && child.familyId);
+  if (!famId) return;
+
+  if (e.target.id === "fam-parent-edit") {
+    e.preventDefault();
+    await api("/api/families/" + famId, "PATCH", {
+      parent: {
+        id: e.target.elements.id.value,
+        name: e.target.elements.name.value,
+        phone: e.target.elements.phone.value,
+        email: e.target.elements.email.value
+      }
+    });
+    await load();
+    sheet = { type: "family", childId: sheet.childId, familyId: famId, view: "home" };
+    drawOverlay();
+    return;
+  }
+  if (e.target.id === "fam-parent-new") {
+    e.preventDefault();
+    await api("/api/families/" + famId, "PATCH", {
+      addParent: {
+        name: e.target.elements.name.value,
+        phone: e.target.elements.phone.value,
+        email: e.target.elements.email.value
+      }
+    });
+    await load();
+    sheet = { type: "family", childId: sheet.childId, familyId: famId, view: "home" };
+    drawOverlay();
+  }
 });
 
 document.getElementById("overlay").addEventListener("input", (e) => {

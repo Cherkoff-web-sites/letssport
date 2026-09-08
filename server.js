@@ -203,6 +203,15 @@ app.patch("/api/children/:id", (req, res) => {
   }
 });
 
+app.post("/api/children/:id/enroll", (req, res) => {
+  const { role } = ctx(req);
+  try {
+    res.json(store.enrollFromTrial(req.params.id, role));
+  } catch (err) {
+    sendError(res, 400, err.message);
+  }
+});
+
 app.post("/api/children/:id/family", (req, res) => {
   const { role } = ctx(req);
   if (!isStaff(role)) return sendError(res, 403, "Нет прав");
