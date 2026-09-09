@@ -36,8 +36,8 @@ let selectedChild = "";
 let selectedSport = "";
 let selectedTrainer = "";
 let selectedFamily = "";
-let calMode = sessionStorage.getItem("lk-cal") || "";
-let selectedDay = Number(sessionStorage.getItem("lk-day") || 0);
+let calMode = sessionStorage.getItem("lk-cal-" + role) || sessionStorage.getItem("lk-cal") || "";
+let selectedDay = Number(sessionStorage.getItem("lk-day-" + role) || sessionStorage.getItem("lk-day") || 0);
 let sheet = null;
 let trainerDraft = {};
 let qAthletes = "";
@@ -45,6 +45,7 @@ let qParents = "";
 let qSick = "";
 let showFormula = false;
 let showDirFormula = "";
+let priceGroupsOpen = {};
 let periods = null;
 let eye = {};
 
@@ -61,7 +62,11 @@ async function load() {
     return;
   }
   if (!view) view = defaultView();
+  // Не даём «внутренним» view модалки семьи перетирать навигацию кабинета
+  const navOk = ["parent", "attendance", "athletes", "sick", "branches", "groups", "group", "trainers", "trainer-sport", "trainer-one"].includes(view);
+  if (!navOk) view = defaultView();
   if (!calMode) calMode = role === "trainer" ? "day" : "month";
+  if (role === "parent" && calMode === "day") calMode = "month";
   if (!selectedDay) selectedDay = todayDay();
   persistCal();
   render();
@@ -74,6 +79,8 @@ function defaultView() {
 }
 
 function persistCal() {
+  sessionStorage.setItem("lk-cal-" + role, calMode);
+  sessionStorage.setItem("lk-day-" + role, String(selectedDay));
   sessionStorage.setItem("lk-cal", calMode);
   sessionStorage.setItem("lk-day", String(selectedDay));
 }
@@ -150,7 +157,11 @@ function attOf(groupId, childId, day) {
 }
 
 function cellMark(child, groupId, day) {
-  if (isSick(child.id, day)) return { cls: "sick", text: "Б", locked: true };
+  const group = (state.groups || []).find((g) => g.id === groupId);
+  // Б только в дни занятий группы — как в метриках «Был / Б»
+  if (isSick(child.id, day) && (!group || isTrainingDay(group, day))) {
+    return { cls: "sick", text: "Б", locked: true };
+  }
   const m = attOf(groupId, child.id, day);
   if (m === "trial0") return { cls: "trial0", text: "0", locked: false };
   if (m === "trial500") return { cls: "trial500", text: "500", locked: false };
@@ -335,8 +346,12 @@ function addTrialForm() {
 function attendanceScreen() {
   const g = currentGroup();
   const staff = staffMode();
+  const back = staff && view === "group"
+    ? `<button class="btn ghost" type="button" data-back-nav="groups">← ${esc(branchName(g && g.branchId) || "К группам")}</button>`
+    : "";
   return `
     <div class="gcal gcal-table">
+      ${back}
       ${calToolbar(true)}
       ${attTable({ clickable: true, deletable: true, group: g })}
       ${addTrialForm()}
@@ -386,15 +401,94 @@ function parentPeriodBanner() {
   const m = state.month;
   const phase = periodPhase(m);
   const phaseText = periodPhaseLabel(phase);
+  let extra = "Расчёт и счёт ниже закреплены за этим месяцем.";
+  if (phase === "upcoming") {
+    extra = "Будущий период: виден аванс и счёт к оплате. Остаток на конец появится, когда месяц завершится; на старте виден перенос с прошлого месяца.";
+  } else if (phase === "closed") {
+    extra = "Период завершён. Остаток на конец переносится на начало следующего месяца.";
+  } else if (phase === "current") {
+    extra = "Месяц идёт: остаток на начало + аванс, текущий баланс меняется по посещениям. Итог «на конец» — после закрытия периода.";
+  }
   return `
     <div class="period-banner period-${phase}">
       <p class="period-banner-title">Платёжный период · ${esc(m.label)}</p>
-      <p class="period-banner-meta">Период <b>${phaseText}</b>. Расчёт, баланс и счёт ниже закреплены за этим месяцем.</p>
+      <p class="period-banner-meta">Период <b>${phaseText}</b>. ${extra}</p>
+    </div>`;
+}
+
+function parentPayBlocks(p, phase) {
+  const qrs = (state.qrs || ["qr1"]).map((id) => `
+    <figure>
+      <img src="${qrMap[id] || "/img/qr-1.jpg"}" alt="QR">
+      <figcaption>${id === "qr2" ? "QR 2" : "QR 1"}</figcaption>
+    </figure>`).join("");
+  const paid = p.status === "yellow" || p.status === "green";
+  const endLabel = phase === "closed"
+    ? "Остаток на конец месяца"
+    : phase === "current"
+      ? "Текущий баланс"
+      : "";
+  const balHint = phase === "upcoming"
+    ? `<p class="hint">В будущем месяце нет «остатка на конец» — он появится после закрытия периода. Сейчас: перенос на начало и аванс/счёт.</p>`
+    : phase === "closed"
+      ? `<p class="hint">Остаток на конец = начало + приход − списания за «+»/500. Он же станет «началом» следующего месяца.</p>`
+      : `<p class="hint">Текущий баланс обновляется по отметкам. После завершения месяца это станет «остатком на конец».</p>`;
+
+  return `
+    <article class="child-card">
+      <p class="card-period-tag">Баланс · ${esc(state.month.label)}${phase === "closed" ? " · завершён" : phase === "upcoming" ? " · ещё впереди" : " · сейчас"}</p>
+      <div class="pay">
+        <div><span>Остаток на начало месяца</span><strong>${rub(p.opening)}</strong></div>
+        <div><span>Аванс за ${esc(state.month.label)}</span><strong>${rub(p.advance)}</strong></div>
+        ${endLabel ? `<div><span>${endLabel}</span><strong>${rub(p.balance)}</strong></div>` : ""}
+      </div>
+      ${balHint}
+    </article>
+    <article class="child-card">
+      <p class="card-period-tag">Счёт · ${esc(state.month.label)}</p>
+      <div class="pay"><div><span>Итого к оплате</span><strong>${rub(Math.max(0, p.amountDue))}</strong></div></div>
+      ${p.discountPercent ? `<p class="hint">Скидка многодетных ${p.discountPercent}%</p>` : ""}
+      <button class="btn ghost" type="button" data-toggle-formula>${showFormula ? "Скрыть формулу" : "Показать формулу"}</button>
+      ${showFormula ? formulaHtml(p, phase) : ""}
+    </article>
+    <article class="child-card pay-how">
+      <h2>Как оплатить</h2>
+      <p class="hint">Оплата относится к периоду ${esc(state.month.label)}</p>
+      <div class="qr-row">${qrs}</div>
+      <label class="field">Сумма<input value="${Math.round(Math.max(0, p.amountDue || 0))}" readonly></label>
+      <button class="btn pay-btn ${paid ? "is-paid" : ""}" type="button" data-parent-pay ${paid ? "disabled" : ""}>
+        ${p.status === "green" ? "Оплачено" : p.status === "yellow" ? "Ожидает подтверждения" : "Оплатил"}
+      </button>
+    </article>`;
+}
+
+function parentChildCalendarSection() {
+  const child = state.children.find((c) => c.id === selectedChild);
+  if (!child) return `<p class="hint">Ребёнок не найден</p>`;
+  const row = (state.period && state.period.perChild || []).find((x) => x.childId === child.id);
+  const groups = row && row.groups ? row.groups : [];
+  const summary = groups.map((g) => `
+    <div class="group-sum-card">
+      <strong>${esc(g.branch ? g.branch + " · " : "")}${esc(g.title)}</strong>
+      <p>${esc(g.durationLabel)} · пакет ${rub(g.packPrice)} / ${g.packLessons} = <b>${rub(g.unit)}</b> за занятие</p>
+      <div class="pay">
+        <div><span>Занятий в месяце</span><strong>${g.sessions}</strong></div>
+        <div><span>Аванс</span><strong>${rub(g.advance)}</strong></div>
+        <div><span>Был / Б</span><strong>${g.present} / ${g.sickCount}</strong></div>
+      </div>
+    </div>`).join("");
+  return `
+    <div class="gcal gcal-table parent-child">
+      <h2>Календарь · ${esc(child.name)}</h2>
+      <p class="note">«Б» только в дни занятий группы — те же числа, что в «Был / Б». Счёт и оплата за период — ниже.</p>
+      <div class="group-sum-grid">${summary || "<p class=\"hint\">Нет групп</p>"}</div>
+      ${calToolbar(false)}
+      <h3 class="sheet-section">Таблица посещений</h3>
+      ${parentCombinedAtt(child)}
     </div>`;
 }
 
 function parentView() {
-  if (selectedChild) return parentChildView();
   const p = state.period || {};
   const phase = periodPhase(state.month);
   const kids = (p.perChild || []).map((row) => {
@@ -406,55 +500,35 @@ function parentView() {
         <span class="group-line-meta">был ${g.present} · Б ${g.sickCount}</span>
       </div>`).join("");
     return `
-    <article class="child-card parent-child-card">
+    <article class="child-card parent-child-card ${selectedChild === row.childId ? "is-open-child" : ""}">
       <h2 class="${row.kind === "trial" ? "name-trial" : ""}">${esc(row.name)}${row.kind === "trial" ? " · пробный" : ""}</h2>
       ${groups.length > 1 ? `<p class="hint">Ходит в ${groups.length} группы — данные сведены ниже</p>` : ""}
       <div class="group-lines">${groupLines || "<p class=\"hint\">Нет группы</p>"}</div>
       <div class="pay">
         <div><span>Был / Б</span><strong>${row.present} / ${row.sickCount}</strong></div>
       </div>
-      <button class="btn child-open-btn" type="button" data-open-child="${row.childId}">Календарь посещений</button>
+      <button class="btn child-open-btn" type="button" data-open-child="${row.childId}">
+        ${selectedChild === row.childId ? "Свернуть календарь" : "Календарь посещений"}
+      </button>
     </article>`;
   }).join("");
-  const qrs = (state.qrs || ["qr1"]).map((id) => `
-    <figure>
-      <img src="${qrMap[id] || "/img/qr-1.jpg"}" alt="QR">
-      <figcaption>${id === "qr2" ? "QR 2" : "QR 1"}</figcaption>
-    </figure>`).join("");
-  const paid = p.status === "yellow" || p.status === "green";
+
   return `
-    <div class="parent-home">
-      ${monthSwitch()}
-      ${parentPeriodBanner()}
-      <div class="child-grid">${kids || "<p class=\"hint\">Нет детей в семье</p>"}</div>
-      <article class="child-card">
-        <p class="card-period-tag">Баланс за ${esc(state.month.label)}${phase === "closed" ? " · период завершён" : ""}</p>
-        <div class="pay">
-          <div><span>Остаток на начало месяца</span><strong>${rub(p.opening)}</strong></div>
-          <div><span>Аванс</span><strong>${rub(p.advance)}</strong></div>
-          <div><span>Остаток на конец месяца</span><strong>${rub(p.balance)}</strong></div>
-        </div>
-      </article>
-      <article class="child-card">
-        <p class="card-period-tag">Счёт платёжного периода · ${esc(state.month.label)}</p>
-        <div class="pay"><div><span>Итого к оплате</span><strong>${rub(Math.max(0, p.amountDue))}</strong></div></div>
-        ${p.discountPercent ? `<p class="hint">Скидка многодетных ${p.discountPercent}%</p>` : ""}
-        <button class="btn ghost" type="button" data-toggle-formula>${showFormula ? "Скрыть формулу" : "Показать формулу"}</button>
-        ${showFormula ? formulaHtml(p) : ""}
-      </article>
-      <article class="child-card pay-how">
-        <h2>Как оплатить</h2>
-        <p class="hint">Оплата относится к периоду ${esc(state.month.label)}</p>
-        <div class="qr-row">${qrs}</div>
-        <label class="field">Сумма<input value="${Math.round(Math.max(0, p.amountDue || 0))}" readonly></label>
-        <button class="btn pay-btn ${paid ? "is-paid" : ""}" type="button" data-parent-pay ${paid ? "disabled" : ""}>
-          ${p.status === "green" ? "Оплачено" : p.status === "yellow" ? "Ожидает подтверждения" : "Оплатил"}
-        </button>
-      </article>
+    <div class="parent-shell">
+      <div class="parent-home">
+        ${monthSwitch()}
+        ${parentPeriodBanner()}
+        <div class="child-grid">${kids || "<p class=\"hint\">Нет детей в семье</p>"}</div>
+      </div>
+      ${selectedChild ? parentChildCalendarSection() : ""}
+      <div class="parent-home">
+        ${parentPayBlocks(p, phase)}
+      </div>
     </div>`;
 }
 
-function formulaHtml(p) {
+function formulaHtml(p, phase) {
+  const phaseNow = phase || periodPhase(state.month);
   const kids = (p.perChild || []).map((c) => {
     const visits = (c.formula || []).filter((l) => l.day != null || l.mark);
     const adv = (c.formula || []).filter((l) => l.sessions != null);
@@ -472,17 +546,22 @@ function formulaHtml(p) {
   }).join("");
   const credit = p.credit != null ? p.credit : Math.max(0, p.opening || 0);
   const debt = p.debt != null ? p.debt : Math.max(0, -(p.opening || 0));
+  const balStep = phaseNow === "upcoming"
+    ? `<li>Остаток на конец месяца ещё не считается (период впереди). На начало уже перенесено: <b>${rub(p.opening)}</b></li>`
+    : phaseNow === "closed"
+      ? `<li>Остаток на конец месяца: начало ${rub(p.opening)} + приход ${rub(p.incoming)} − списано ${rub(p.spent)} = <b>${rub(p.balance)}</b> (уйдёт в начало следующего)</li>`
+      : `<li>Текущий баланс: начало ${rub(p.opening)} + приход ${rub(p.incoming)} − списано ${rub(p.spent)} = <b>${rub(p.balance)}</b></li>`;
   return `<div class="formula">
-    <h3>Ход расчёта</h3>
+    <h3>Ход расчёта · ${esc(state.month.label)}</h3>
     <ol class="formula-steps">
-      <li>Аванс сырой (по группам: занятия × цена пакета ÷ занятий в пакете): <b>${rub(p.advanceRaw)}</b></li>
+      <li>Аванс сырой (занятия × цена пакета ÷ занятий в пакете): <b>${rub(p.advanceRaw)}</b></li>
       <li>Скидка многодетных ${p.discountPercent || 0}%: аванс = ${rub(p.advanceRaw)} × (1 − ${p.discountPercent || 0}/100) = <b>${rub(p.advance)}</b></li>
-      <li>Остаток с прошлого периода: <b>${rub(credit)}</b>${debt ? ` · долг прошлого: <b class="warn-text">${rub(debt)}</b>` : ""}</li>
+      <li>Остаток на начало (перенос с прошлого периода): <b>${rub(credit)}</b>${debt ? ` · долг прошлого: <b class="warn-text">${rub(debt)}</b>` : ""}</li>
       <li>Счёт к оплате: аванс ${rub(p.advance)} − остаток ${rub(credit)} + долг ${rub(debt)} = <b>${rub(p.requested)}</b></li>
       <li>Приход (подтверждённый): <b>${rub(p.incoming)}</b></li>
-      <li>Списано за «+» / 500 в этом месяце: <b>−${rub(p.spent)}</b>${p.sickCredit ? ` · больничные Б не списаны (условно ${rub(p.sickCredit)})` : ""}</li>
+      <li>Списано за «+» / 500: <b>−${rub(p.spent)}</b>${p.sickCredit ? ` · Б не списываются (условно ${rub(p.sickCredit)})` : ""}</li>
       <li>К оплате сейчас: счёт ${rub(p.requested)} − приход ${rub(p.incoming)} = <b>${rub(p.amountDue)}</b></li>
-      <li>Текущий баланс: остаток/долг ${rub(p.opening)} + приход ${rub(p.incoming)} − списано ${rub(p.spent)} = <b>${rub(p.balance)}</b></li>
+      ${balStep}
     </ol>
     <h3>По детям</h3>
     ${kids || "<p class=\"hint\">Нет детей</p>"}
@@ -523,46 +602,6 @@ function parentCombinedAtt(child) {
         <thead><tr><th class="sticky">Группа / тариф</th>${head}</tr></thead>
         <tbody>${rows}</tbody>
       </table>
-    </div>`;
-}
-
-function parentChildView() {
-  const child = state.children.find((c) => c.id === selectedChild);
-  if (!child) return `<p class="hint">Ребёнок не найден</p>`;
-  const row = (state.period && state.period.perChild || []).find((x) => x.childId === child.id);
-  const groups = row && row.groups ? row.groups : [];
-  const summary = groups.map((g) => `
-    <div class="group-sum-card">
-      <strong>${esc(g.branch ? g.branch + " · " : "")}${esc(g.title)}</strong>
-      <p>${esc(g.durationLabel)} · пакет ${rub(g.packPrice)} / ${g.packLessons} = <b>${rub(g.unit)}</b> за занятие</p>
-      <div class="pay">
-        <div><span>В месяце</span><strong>${g.sessions}</strong></div>
-        <div><span>Аванс</span><strong>${rub(g.advance)}</strong></div>
-        <div><span>Был / Б</span><strong>${g.present} / ${g.sickCount}</strong></div>
-      </div>
-    </div>`).join("");
-  return `
-    <div class="gcal gcal-table parent-child">
-      <button class="btn ghost" type="button" data-back-parent>← К семье</button>
-      <h2>${esc(child.name)}</h2>
-      ${parentPeriodBanner()}
-      <p class="note">Сводная таблица из всех групп ребёнка. Разный тариф часа и 1,5 ч считается отдельно и складывается в итог.</p>
-      <div class="group-sum-grid">${summary || "<p class=\"hint\">Нет групп</p>"}</div>
-      <article class="child-card">
-        <div class="pay">
-          <div><span>Итого аванс</span><strong>${rub(row ? row.advance : 0)}</strong></div>
-          <div><span>Был / Б</span><strong>${row ? row.present : 0} / ${row ? row.sickCount : 0}</strong></div>
-        </div>
-      </article>
-      ${calToolbar(false)}
-      <h3 class="sheet-section">Общая таблица посещений</h3>
-      ${parentCombinedAtt(child)}
-      <button class="btn ghost" type="button" data-toggle-formula>${showFormula ? "Скрыть формулу" : "Формула расчёта"}</button>
-      ${showFormula && state.period ? formulaHtml({
-        ...state.period,
-        perChild: (state.period.perChild || []).filter((x) => x.childId === child.id),
-        formula: row ? row.formula : []
-      }) : ""}
     </div>`;
 }
 
@@ -777,10 +816,11 @@ function pricesView() {
   const cards = (state.branches || []).map((b) => {
     const groups = state.groups.filter((g) => g.branchId === b.id);
     const tariffs = b.tariffs || [];
+    const open = !!priceGroupsOpen[b.id];
     return `
     <article class="ath-card price-branch">
       <strong>${esc(b.name)}</strong>
-      <p class="hint">Базовые пакеты филиала (если у группы свой пакет не задан): ${pack}×1ч = ${rub(b.priceHour)}, ${pack}×1,5ч = ${rub(b.priceHourHalf)}</p>
+      <p class="hint">Цена филиала применяется сразу ко <b>всем группам</b> этого филиала (1 ч и 1,5 ч — по длительности группы).</p>
       <form class="add-bar" data-branch-price="${b.id}">
         <label class="field">${pack} занятий · 1 час, ₽
           <input name="priceHour" type="number" value="${b.priceHour}">
@@ -788,19 +828,24 @@ function pricesView() {
         <label class="field">${pack} занятий · 1,5 часа, ₽
           <input name="priceHourHalf" type="number" value="${b.priceHourHalf}">
         </label>
-        <label class="field">QR
+        <label class="field">Выберите QR для оплаты
           <select name="qr">
             <option value="qr1" ${b.qr === "qr1" ? "selected" : ""}>QR 1</option>
             <option value="qr2" ${b.qr === "qr2" ? "selected" : ""}>QR 2</option>
           </select>
         </label>
-        <button class="btn" type="submit">Сохранить базу</button>
+        <button class="btn" type="submit">Сохранить для всех групп филиала</button>
       </form>
       ${tariffs.length ? `
-        <p class="hint">Тарифы с бумажки (быстрый выбор для группы):
+        <p class="hint">Тарифы-шаблоны Валдайского:
           ${tariffs.map((t) => `${esc(t.label)} — ${rub(t.packPrice)}`).join(" · ")}
         </p>` : ""}
-      <h3 class="sheet-section">Группы филиала</h3>
+      <button class="btn ghost" type="button" data-toggle-price-groups="${b.id}">
+        ${open ? "Скрыть группы" : "Настроить цену в группах филиала"}
+      </button>
+      ${open ? `
+      <h3 class="sheet-section">Группы · индивидуальная настройка</h3>
+      <p class="hint">Нужно только если у части групп свой пакет (например 12 или 16 занятий), отличный от базы филиала.</p>
       <div class="price-groups">
         ${groups.map((g) => {
           const lessons = Number(g.packLessons) || pack;
@@ -828,19 +873,23 @@ function pricesView() {
                 ${tariffs.map((t) => `<option value="${t.id}">${esc(t.label)} (${rub(t.packPrice)})</option>`).join("")}
               </select>
             </label>` : ""}
-            <p class="hint price-hint">1 занятие = ${rub(unit)} · аванс за месяц ≈ число тренировок × ${rub(unit)}</p>
+            <p class="hint price-hint">1 занятие = ${rub(unit)}</p>
             <button class="btn" type="submit">Сохранить группу</button>
           </form>`;
         }).join("") || "<p class=\"hint\">Нет групп</p>"}
-      </div>
+      </div>` : ""}
     </article>`;
   }).join("");
   return `
-    <p class="note">Ребёнок может ходить в несколько групп — стоимость месяца складывается: занятия₁×(пакет₁/N₁) + занятия₂×(пакет₂/N₂). Пример Валдайский: 4 из «8×1,5ч за 9500» + 4 из «12×1ч за 9500» = 4×1187,5 + 4×791,67.</p>
+    <article class="child-card">
+      <h2>Скидка многодетных</h2>
+      <p class="hint">Скидка <b>не задаётся здесь</b>. Она считается автоматически по числу детей в семье и настраивается во вкладке <b>«Родители»</b>: 2 ребёнка → 10%, 3+ → 20%. Можно выставить вручную у конкретной семьи.</p>
+    </article>
+    <p class="note">Сначала сохраните цену филиала — она проставится во все его группы. Точечная правка групп — по кнопке ниже в карточке филиала.</p>
     <div class="ath-list">${cards}</div>
     <article class="child-card">
       <h2>QR для оплаты</h2>
-      <p class="hint">Три филиала — один QR, остальные — другой. Родителю показывается подходящий.</p>
+      <p class="hint">У каждого филиала выше выберите QR 1 или QR 2. Здесь можно загрузить сами картинки. Родителю показывается QR его филиалов.</p>
       <div class="qr-row">
         ${["qr1","qr2"].map((id) => `
           <figure>
@@ -867,6 +916,9 @@ function parentsCalcView() {
     const st = p.status || "red";
     const exact = st === "green" && p.incoming >= p.requested && p.amountDue <= 0 && p.incoming === p.requested;
     const showPass = !!eye[r.family.id];
+    const kidsN = state.children.filter((c) => c.familyId === r.family.id && c.kind !== "trial").length;
+    const auto = p.discountAuto != null ? p.discountAuto : (kidsN >= 3 ? 20 : kidsN >= 2 ? 10 : 0);
+    const curDisc = p.discountManual ? String(p.discountPercent) : "auto";
     return `<article class="pay-row status-${st} ${exact ? "is-white" : ""}">
       <div class="pay-row-main">
         <strong>${esc(r.family.parentName)}</strong>
@@ -876,10 +928,19 @@ function parentsCalcView() {
         <span>${esc(r.family.login)} / ${showPass ? esc(r.family.password) : "••••••"}</span>
         <button class="icon-btn" type="button" data-eye="${r.family.id}" title="Показать пароль">👁</button>
       </div>
+      <label class="field discount-field">Скидка многодетных
+        <select data-fam-discount="${r.family.id}">
+          <option value="auto" ${curDisc === "auto" ? "selected" : ""}>Авто (${auto}% · ${kidsN} дет.)</option>
+          <option value="0" ${curDisc === "0" ? "selected" : ""}>0%</option>
+          <option value="10" ${curDisc === "10" ? "selected" : ""}>10%</option>
+          <option value="20" ${curDisc === "20" ? "selected" : ""}>20%</option>
+        </select>
+      </label>
       <div class="pay-nums">
         <div><span>К оплате</span><b>${rub(Math.max(0, p.amountDue))}</b></div>
         <div><span>Счёт</span><b>${rub(p.requested)}</b></div>
         <div><span>Баланс</span><b>${rub(p.balance)}</b></div>
+        <div><span>Скидка сейчас</span><b>${p.discountPercent || 0}%</b></div>
         ${p.parentClickedAt ? `<div><span>Родитель нажал</span><b>${fmtWhen(p.parentClickedAt)}</b></div>` : ""}
       </div>
       <div class="pay-row-actions">
@@ -890,6 +951,10 @@ function parentsCalcView() {
     </article>`;
   }).join("");
   return `
+    <article class="child-card">
+      <h2>Где скидка</h2>
+      <p class="hint">У каждой семьи ниже — поле <b>«Скидка многодетных»</b>. По умолчанию авто: 2 ребёнка = 10%, 3 и больше = 20%. Можно зафиксировать 0 / 10 / 20 вручную.</p>
+    </article>
     <input class="search-input" data-par-q placeholder="Поиск семьи или ребёнка" value="${esc(qParents)}">
     <div class="ath-list">${html || "<p class=\"hint\">Нет семей</p>"}</div>`;
 }
@@ -939,7 +1004,9 @@ function drawOverlay() {
     });
     el.innerHTML = `
       <div class="sheet" role="dialog">
-        ${sheet.backFamily ? `<button class="sheet-back" type="button" data-back-family aria-label="Назад">← Назад</button>` : ""}
+        ${sheet.backFamily
+          ? `<button class="sheet-back" type="button" data-back-family aria-label="Назад">← Назад</button>`
+          : `<button class="sheet-back" type="button" data-close-sheet aria-label="Назад">← Назад</button>`}
         <p class="sheet-kicker">${esc(child ? child.name : "")} · группы</p>
         <p class="hint">Сначала выбранные. В названии указан филиал. Нажмите на группу, чтобы добавить или убрать.</p>
         <div class="sheet-list">
@@ -962,28 +1029,40 @@ function drawOverlay() {
 function familySheetHtml() {
   const child = state.children.find((c) => c.id === sheet.childId);
   const fam = state.families.find((f) => f.id === (sheet.familyId || (child && child.familyId)));
-  const view = sheet.view || "home";
-  const back = view !== "home"
+  const sheetView = sheet.view || "home";
+  const back = sheetView !== "home"
     ? `<button class="sheet-back" type="button" data-fam-view="home" aria-label="Назад">← Назад</button>`
     : "";
 
-  if (!fam && view !== "assign") {
+  if (!fam && sheetView !== "assign") {
     return `
       <div class="sheet" role="dialog">
         <p class="sheet-kicker">Семья · ${esc(child ? child.name : "")}</p>
-        <p class="hint">Семья не назначена</p>
+        <div class="family-help">
+          <p class="hint"><b>Как устроить семью</b></p>
+          <ol class="family-help-list">
+            <li><b>Создать новую</b> — отдельный логин/пароль для кабинета родителя.</li>
+            <li><b>Назначить из списка</b> — объединить с уже существующей семьёй (общий кабинет и скидка).</li>
+          </ol>
+        </div>
         <button class="btn" type="button" data-do-assign>Создать новую семью</button>
         <button class="btn ghost" type="button" data-fam-view="assign">Назначить из списка</button>
         <button type="button" class="btn ghost sheet-cancel" data-close-sheet>Закрыть</button>
       </div>`;
   }
 
-  if (view === "assign") {
+  if (sheetView === "assign") {
     return `
       <div class="sheet" role="dialog">
         ${child && child.familyId ? back : `<button class="sheet-back" type="button" data-fam-view="home" aria-label="Назад">← Назад</button>`}
-        <p class="sheet-kicker">Назначить семью</p>
-        <p class="hint">Выберите существующую семью или создайте новую для ${esc(child ? child.name : "ребёнка")}.</p>
+        <p class="sheet-kicker">Назначить / объединить семью</p>
+        <div class="family-help">
+          <ol class="family-help-list">
+            <li>Выберите семью — ребёнок перейдёт в неё (общий ЛК родителя).</li>
+            <li>«Создать новую» — отдельная семья только для этого ребёнка.</li>
+            <li>Братья/сёстры в одной семье: скидка 10% (2 детей) или 20% (3+).</li>
+          </ol>
+        </div>
         <select data-assign-fam>
           <option value="">— создать новую семью —</option>
           ${state.families.map((f) => `<option value="${f.id}" ${fam && fam.id === f.id ? "selected" : ""}>${esc(f.parentName)} (${esc(f.login)})</option>`).join("")}
@@ -998,7 +1077,7 @@ function familySheetHtml() {
     return familySheetHtml();
   }
 
-  if (view === "parent-new") {
+  if (sheetView === "parent-new") {
     return `
       <div class="sheet" role="dialog">
         ${back}
@@ -1013,7 +1092,7 @@ function familySheetHtml() {
       </div>`;
   }
 
-  if (view === "parent-edit") {
+  if (sheetView === "parent-edit") {
     const parent = (fam.parents || []).find((p) => p.id === sheet.parentId) || (fam.parents || [])[0];
     if (!parent) {
       sheet.view = "home";
@@ -1037,7 +1116,7 @@ function familySheetHtml() {
       </div>`;
   }
 
-  if (view === "child") {
+  if (sheetView === "child") {
     const kid = state.children.find((c) => c.id === sheet.viewChildId);
     if (!kid) {
       sheet.view = "home";
@@ -1072,6 +1151,16 @@ function familySheetHtml() {
         <div><span>пароль</span><b>${esc(fam.password)}</b></div>
       </div>
 
+      <details class="family-help">
+        <summary>Алгоритм семей</summary>
+        <ol class="family-help-list">
+          <li><b>Новая семья</b> — «Сменить / объединить» → создать новую: свой логин для ЛК.</li>
+          <li><b>Объединить</b> — выбрать существующую семью: дети в одном кабинете, общая оплата.</li>
+          <li><b>Родители</b> — несколько контактов; правка по клику на карточку.</li>
+          <li><b>Дети</b> — из карточки ребёнка можно править группы.</li>
+        </ol>
+      </details>
+
       <h3 class="sheet-section">Родители</h3>
       <div class="sheet-list">
         ${parents.map((p) => `
@@ -1091,10 +1180,11 @@ function familySheetHtml() {
           </button>`).join("") || `<p class="hint">Нет детей</p>`}
       </div>
 
-      <button class="btn ghost" type="button" data-fam-view="assign">Сменить семью ребёнка</button>
+      <button class="btn ghost" type="button" data-fam-view="assign">Сменить / объединить семью</button>
       <button type="button" class="btn ghost sheet-cancel" data-close-sheet>Закрыть</button>
     </div>`;
 }
+
 
 document.getElementById("logout").addEventListener("click", () => {
   sessionStorage.clear();
@@ -1147,11 +1237,34 @@ document.getElementById("app").addEventListener("click", async (e) => {
     return;
   }
 
+  const backNav = e.target.closest("[data-back-nav]");
+  if (backNav) {
+    const to = backNav.dataset.backNav;
+    if (to === "groups") {
+      const g = currentGroup();
+      if (g && g.branchId) selectedBranch = g.branchId;
+      view = "groups";
+    } else if (to === "branches") {
+      view = "branches";
+    } else {
+      view = to;
+    }
+    render();
+    return;
+  }
+
   const br = e.target.closest("[data-open-branch]");
   if (br) { selectedBranch = br.dataset.openBranch; view = "groups"; render(); return; }
 
   const og = e.target.closest("[data-open-group]");
-  if (og) { selectedGroup = og.dataset.openGroup; view = "group"; render(); return; }
+  if (og) {
+    selectedGroup = og.dataset.openGroup;
+    const g = state.groups.find((x) => x.id === selectedGroup);
+    if (g) selectedBranch = g.branchId;
+    view = "group";
+    render();
+    return;
+  }
 
   const sport = e.target.closest("[data-sport]");
   if (sport) {
@@ -1178,10 +1291,24 @@ document.getElementById("app").addEventListener("click", async (e) => {
   }
 
   const openChild = e.target.closest("[data-open-child]");
-  if (openChild) { selectedChild = openChild.dataset.openChild; showFormula = false; render(); return; }
+  if (openChild) {
+    const id = openChild.dataset.openChild;
+    selectedChild = selectedChild === id ? "" : id;
+    showFormula = false;
+    render();
+    return;
+  }
   if (e.target.closest("[data-back-parent]")) { selectedChild = ""; render(); return; }
 
   if (e.target.closest("[data-toggle-formula]")) { showFormula = !showFormula; render(); return; }
+
+  const togPriceGroups = e.target.closest("[data-toggle-price-groups]");
+  if (togPriceGroups) {
+    const id = togPriceGroups.dataset.togglePriceGroups;
+    priceGroupsOpen[id] = !priceGroupsOpen[id];
+    render();
+    return;
+  }
 
   const toggle = e.target.closest("[data-toggle-mark]");
   if (toggle) {
@@ -1254,7 +1381,8 @@ document.getElementById("app").addEventListener("click", async (e) => {
       type: "family",
       childId: cf.dataset.childFamily,
       familyId: child ? child.familyId : "",
-      view: "home"
+      view: "home",
+      returnView: view
     };
     drawOverlay();
     return;
@@ -1341,6 +1469,14 @@ document.getElementById("app").addEventListener("change", async (e) => {
       documents: { insurance: e.target.value }
     });
     await load();
+    return;
+  }
+  if (e.target.dataset.famDiscount) {
+    const val = e.target.value;
+    await api("/api/families/" + e.target.dataset.famDiscount, "PATCH", {
+      discountPercent: val === "auto" ? "auto" : Number(val)
+    });
+    await loadPeriods();
     return;
   }
   const file = e.target.closest("[data-qr-file]");
@@ -1432,7 +1568,8 @@ document.getElementById("app").addEventListener("submit", async (e) => {
     await api("/api/branches/" + bp.dataset.branchPrice, "PATCH", {
       priceHour: Number(e.target.priceHour.value),
       priceHourHalf: Number(e.target.priceHourHalf.value),
-      qr: e.target.qr.value
+      qr: e.target.qr.value,
+      applyToGroups: true
     });
     await load();
     dirTab = "calc";
@@ -1536,7 +1673,7 @@ document.getElementById("overlay").addEventListener("click", async (e) => {
     const data = await res.json();
     if (!res.ok) return alert(data.error);
     await load();
-    sheet = { type: "family", childId: sheet.childId, familyId: famId, view: "home" };
+    sheet = { type: "family", childId: sheet.childId, familyId: famId, view: "home", returnView: sheet.returnView || view };
     drawOverlay();
     return;
   }
@@ -1544,16 +1681,19 @@ document.getElementById("overlay").addEventListener("click", async (e) => {
   if (e.target.closest("[data-do-assign]") && sheet) {
     const sel = document.querySelector("[data-assign-fam]");
     const familyId = sel ? sel.value : "";
+    const returnView = sheet.returnView || view;
     const res = await api("/api/children/" + sheet.childId + "/family", "POST", { familyId });
     const data = await res.json();
     if (!res.ok) return alert(data.error);
+    view = returnView;
     await load();
     const child = state.children.find((c) => c.id === sheet.childId) || data.child;
     sheet = {
       type: "family",
       childId: sheet.childId,
       familyId: (child && child.familyId) || (data.family && data.family.id) || "",
-      view: "home"
+      view: "home",
+      returnView
     };
     drawOverlay();
     return;
@@ -1561,14 +1701,18 @@ document.getElementById("overlay").addEventListener("click", async (e) => {
 });
 
 document.getElementById("overlay").addEventListener("submit", async (e) => {
+  e.preventDefault();
   if (!sheet || sheet.type !== "family") return;
   const child = state.children.find((c) => c.id === sheet.childId);
   const famId = sheet.familyId || (child && child.familyId);
-  if (!famId) return;
+  const returnView = sheet.returnView || view;
+  if (!famId) {
+    alert("Сначала назначьте семью");
+    return;
+  }
 
   if (e.target.id === "fam-parent-edit") {
-    e.preventDefault();
-    await api("/api/families/" + famId, "PATCH", {
+    const res = await api("/api/families/" + famId, "PATCH", {
       parent: {
         id: e.target.elements.id.value,
         name: e.target.elements.name.value,
@@ -1576,22 +1720,27 @@ document.getElementById("overlay").addEventListener("submit", async (e) => {
         email: e.target.elements.email.value
       }
     });
+    const data = await res.json();
+    if (!res.ok) return alert(data.error || "Не удалось сохранить");
+    view = returnView;
     await load();
-    sheet = { type: "family", childId: sheet.childId, familyId: famId, view: "home" };
+    sheet = { type: "family", childId: sheet.childId, familyId: famId, view: "home", returnView };
     drawOverlay();
     return;
   }
   if (e.target.id === "fam-parent-new") {
-    e.preventDefault();
-    await api("/api/families/" + famId, "PATCH", {
+    const res = await api("/api/families/" + famId, "PATCH", {
       addParent: {
         name: e.target.elements.name.value,
         phone: e.target.elements.phone.value,
         email: e.target.elements.email.value
       }
     });
+    const data = await res.json();
+    if (!res.ok) return alert(data.error || "Не удалось добавить");
+    view = returnView;
     await load();
-    sheet = { type: "family", childId: sheet.childId, familyId: famId, view: "home" };
+    sheet = { type: "family", childId: sheet.childId, familyId: famId, view: "home", returnView };
     drawOverlay();
   }
 });

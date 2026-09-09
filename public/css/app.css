@@ -124,6 +124,8 @@ button, input, select { font: inherit; }
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  min-width: 0;
+  overflow-x: visible;
 }
 
 /* Сброс «слипшихся» внешних margin у прямых детей — отступы даёт gap */
@@ -182,10 +184,15 @@ label.field {
 
 .grid-wrap {
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  min-width: 0;
   background: rgba(255,255,255,.78);
   border-radius: 18px;
   box-shadow: var(--shadow);
   max-height: calc(100vh - 180px);
+  width: calc(100vw - (100vw - min(100vw, var(--app-max))) / 2 - var(--app-pad));
+  max-width: none;
+  border-radius: 18px 0 0 18px;
 }
 table.sheet {
   border-collapse: collapse;
@@ -334,28 +341,31 @@ input, select {
   flex-direction: column;
   gap: var(--space-sm, 12px);
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 .gcal > h2,
 .gcal > h3 { margin: 4px 0 0; }
 .gcal > .btn { align-self: flex-start; }
 .gcal > .hint { margin: 0; }
 .gcal.gcal-table { max-width: none; }
+
+/* Все таблицы посещений: гориз. скролл + липкий 1-й столбец */
 .att-wrap {
   overflow-x: auto;
+  overflow-y: visible;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  min-width: 0;
   background: rgba(255,255,255,.86);
-  border-radius: 16px;
-  max-width: 100%;
+  border-radius: 16px 0 0 16px;
   margin: 0;
-}
-/* Таблицацы: контейнер 1400, наружу только вправо до края экрана */
-.gcal.gcal-table .att-wrap {
   width: calc(100vw - (100vw - min(100vw, var(--app-max))) / 2 - var(--app-pad));
   max-width: none;
-  border-radius: 16px 0 0 16px;
 }
 .att-table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   width: max-content;
   min-width: 100%;
   font-size: 13px;
@@ -365,6 +375,7 @@ input, select {
   padding: 8px 6px;
   text-align: center;
   min-width: 40px;
+  background: #fff;
 }
 .att-table th.sticky, .att-table td.sticky {
   position: sticky;
@@ -372,13 +383,15 @@ input, select {
   z-index: 2;
   text-align: left;
   min-width: 148px;
-  max-width: 42vw;
+  max-width: min(220px, 42vw);
   background: #f4fafc;
   white-space: normal;
   word-break: break-word;
+  box-shadow: 4px 0 8px -4px rgba(15, 40, 55, .18);
 }
 .att-table thead th { background: #e7f2f7; font-weight: 500; }
-.att-table thead th.sticky { z-index: 3; }
+.att-table thead th.sticky { z-index: 4; background: #e7f2f7; }
+.att-table tbody th.sticky { z-index: 2; background: #f4fafc; }
 .att-table th small { display: block; font-size: 10px; color: var(--muted); font-weight: 400; }
 .att-table th.is-on { background: var(--navy); color: #fff; }
 .att-table th.is-on small { color: rgba(255,255,255,.8); }
@@ -851,7 +864,28 @@ input, select {
 }
 .branch-card small { display: block; margin-top: 8px; color: var(--muted); }
 .center-row { display: flex; justify-content: center; margin: 8px 0 0; }
-.list-cards { display: grid; gap: 10px; margin: 0; }
+.family-help {
+  margin: 0;
+  padding: 10px 12px;
+  background: #f4fafc;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+.family-help summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+}
+.family-help-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+}
+.family-help-list b { color: var(--ink); font-weight: 500; }
 .trainer-list-card {
   display: flex;
   flex-direction: column;
@@ -901,6 +935,13 @@ input, select {
   background: #f7fbfc;
 }
 .price-branch .sheet-section { margin-top: 8px; }
+.discount-field {
+  margin: 0;
+  max-width: 280px;
+}
+.discount-field select {
+  margin-top: 4px;
+}
 .period-banner {
   padding: 14px 16px;
   border-radius: 14px;
@@ -963,6 +1004,11 @@ input, select {
   padding: 14px 16px;
 }
 .group-sum-card > p { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
+.parent-child {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
 .parent-child > .child-card { margin: 0; }
 .parent-child > .note { margin: 0; }
 .trial-tag {
@@ -1073,6 +1119,19 @@ input, select {
   border: 1px solid var(--line);
 }
 .stack-form { flex-direction: column; align-items: stretch; }
+.parent-shell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md, 16px);
+  width: 100%;
+  min-width: 0;
+}
+.parent-shell > .parent-child {
+  margin: 0;
+}
+.parent-child-card.is-open-child {
+  outline: 2px solid var(--navy);
+}
 .parent-home {
   max-width: 720px;
   width: 100%;
