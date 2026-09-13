@@ -1150,3 +1150,97 @@ input, select {
   .att-table td.mark { font-size: 16px; min-width: 36px; }
 }
 
+/* DEV-only: расчёты (убрать перед продом или DEV_CALC=0) */
+.dev-calc-fab {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 80;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: var(--navy);
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(15, 40, 70, 0.28);
+  cursor: pointer;
+}
+.dev-calc-fab:hover { filter: brightness(1.06); }
+.dev-calc-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: #f2f6f9;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.dev-calc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px max(16px, env(safe-area-inset-right)) 12px max(16px, env(safe-area-inset-left));
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.dev-calc-head h2 { margin: 0; font-size: 16px; font-weight: 600; }
+.dev-calc-head .badge-dev {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8a5a00;
+  background: #fff3cd;
+  border-radius: 6px;
+  padding: 2px 8px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+.dev-calc-body {
+  flex: 1;
+  overflow: auto;
+  padding: 16px max(16px, env(safe-area-inset-right)) 32px max(16px, env(safe-area-inset-left));
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.dev-calc-ref {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.dev-calc-ref code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  background: #eef3f7;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.dev-calc-ref ul { margin: 8px 0 0; padding-left: 18px; }
+.dev-calc-packs {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+}
+.dev-calc-pack {
+  background: #f7fafc;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+.dev-calc-family {
+  margin-top: 12px;
+}
+.dev-calc-family summary {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 10px 0;
+}
+

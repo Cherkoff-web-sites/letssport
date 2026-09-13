@@ -1,11 +1,19 @@
 const XLSX = require("xlsx");
 const path = require("path");
 const fs = require("fs");
-const { monthDays, parseGroupWeekdays, familyKey, scheduledDays, attKey } = require("../lib/billing");
-const { write } = require("../lib/store");
+const { monthDays, parseGroupWeekdays, familyKey, attKey } = require("../lib/billing");
+const { save, load, DATA_FILE } = require("../lib/store");
 
 const ROOT = path.join(__dirname, "..", "..");
-const ATT_FILE = path.join(ROOT, "Посещаемость 2021 (5).xlsx");
+
+function findAttFile() {
+  const files = fs.readdirSync(ROOT).filter((f) => /\.xlsx$/i.test(f));
+  const prefer = files.find((f) => /\(6\)/.test(f) && /посещаемость/i.test(f))
+    || files.find((f) => /\(6\)/.test(f))
+    || files.find((f) => /посещаемость/i.test(f));
+  if (!prefer) throw new Error("Не найден xlsx посещаемости в " + ROOT);
+  return path.join(ROOT, prefer);
+}
 
 function findSheet(wb, pred) {
   return wb.SheetNames.find((n) => pred(n.replace(/\s+/g, " ").trim()));
@@ -22,7 +30,8 @@ function cell(row, i) {
 function isGroupHeader(val) {
   const s = String(val || "").trim();
   if (s.length < 8) return false;
-  return /ХГ|САМБО|ДЗЮДО|ГИМНАСТ/i.test(s);
+  if (/^\d+$/.test(s)) return false;
+  return /ХГ|САМБО|ДЗЮДО|ГИМНАСТ|ФУТБОЛ|ХОККЕЙ|ТЕННИС|ШАХМАТ|ЕДИНОБОР|ЙОГА|ПЛАВАНИЕ|ГТО/i.test(s);
 }
 
 function detectLayout(rows) {
@@ -41,9 +50,41 @@ function detectLayout(rows) {
   return { headerRow: 1, nameCol: 1, numCol: 0, dateStart: 2, doc: false };
 }
 
+function dayColumns(headerRow, dateStart) {
+  const cols = [];
+  for (let c = dateStart; c < (headerRow || []).length; c++) {
+    const raw = String(headerRow[c] || "").trim();
+    if (!raw) continue;
+    const m = raw.match(/^(\d{1,2})/);
+    if (!m) continue;
+    const day = Number(m[1]);
+    if (day >= 1 && day <= 31) cols.push({ col: c, day });
+  }
+  return cols;
+}
+
+/** Map Excel cell → { status?, sick? } */
+function mapMark(raw) {
+  const s = String(raw || "").trim().toLowerCase().replace(/\s+/g, " ");
+  if (!s) return null;
+  if (/^(пн|вт|ср|чт|пт|сб|воскр|вс)$/i.test(s)) return null;
+  if (/^\d{1,2}[-./]/.test(s)) return null;
+
+  if (/^б$|^бол/.test(s) || s === "б") return { sick: true };
+  if (/^ф$|факульт|уваж|пропуск/.test(s)) return { sick: true };
+  if (/^т(\s|$)|пробн|500/.test(s)) return { status: "trial500" };
+  if (/^0$|бесплат/.test(s)) return { status: "trial0" };
+  if (/не\s*занимал|не\s*состоял|не\s*было|х2|1\.5|\?/.test(s)) return null;
+  if (/^[вп+]|^был|^дб|в\s*дб/.test(s)) return { status: "present" };
+  if (s === "п") return { status: "present" };
+  return null;
+}
+
 function parseRoster(ws) {
   const rows = rowsOf(ws);
   const layout = detectLayout(rows);
+  const header = rows[layout.headerRow] || [];
+  const dayCols = dayColumns(header, layout.dateStart);
   const groups = [];
   const children = [];
   let current = null;
@@ -70,78 +111,103 @@ function parseRoster(ws) {
     if (/^\d+$/.test(name)) continue;
     if (/день недели|заявление|справка|страховка|^число$/i.test(name)) continue;
     if (name.length < 3) continue;
+
+    const marks = {};
+    const sickDays = [];
+    for (const { col, day } of dayCols) {
+      const mapped = mapMark(row[col]);
+      if (!mapped) continue;
+      if (mapped.sick) sickDays.push(day);
+      else if (mapped.status) marks[day] = mapped.status;
+    }
+
     children.push({
       name: name.replace(/\s+/g, " ").trim(),
       groupId: current.id,
-      documents: {
-        application: cell(row, 0) === "+",
-        certificate: cell(row, 1) === "+",
-        insurance: cell(row, 2) === "+"
-      }
+      documents: layout.doc
+        ? {
+            application: cell(row, 0) === "+",
+            certificate: cell(row, 1) === "+",
+            insurance: cell(row, 2) === "+"
+          }
+        : { application: false, certificate: false, insurance: false },
+      marks,
+      sickDays
     });
   }
-  return { groups, children };
+  return { groups, children, dayCols };
 }
 
-function seedMarks(db) {
-  const month = db.months[0];
-  db.children.forEach((child, idx) => {
-    const group = db.groups.find((g) => g.id === child.groupId);
-    if (!group) return;
-    for (const day of scheduledDays(month, group)) {
-      const n = (idx * 11 + day * 3) % 13;
-      let status = "present";
-      if (n === 0) status = "excused";
-      else if (n > 9) status = "";
-      if (status) db.attendance[attKey(month.id, child.id, day)] = status;
-    }
-  });
+function monthLabelRu(year, monthNum) {
+  const names = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+  return names[monthNum - 1] + " " + year;
 }
 
 function build() {
-  if (!fs.existsSync(ATT_FILE)) {
-    throw new Error("Не найден файл посещаемости: " + ATT_FILE);
-  }
+  const ATT_FILE = findAttFile();
   console.log("Читаю", ATT_FILE);
   const wb = XLSX.readFile(ATT_FILE, { raw: false });
-  const sheetName = findSheet(wb, (n) => /март/.test(n) && /26/.test(n))
-    || findSheet(wb, (n) => /феврал/.test(n) && /26/.test(n));
-  if (!sheetName) throw new Error("Нет листа марта/февраля 26. Листы: " + wb.SheetNames.join(", "));
-  const parsed = parseRoster(wb.Sheets[sheetName]);
+
+  const sheetName = findSheet(wb, (n) => /сентябрь/.test(n) && /26/.test(n))
+    || findSheet(wb, (n) => /май/.test(n) && /26/.test(n))
+    || findSheet(wb, (n) => /март/.test(n) && /26/.test(n));
+  if (!sheetName) throw new Error("Нет подходящего листа 2026. Листы: " + wb.SheetNames.join(", "));
 
   const year = 2026;
-  const monthNum = 9;
+  const monthNum = /сентябрь/i.test(sheetName) ? 9
+    : /май/i.test(sheetName) ? 5
+    : /март/i.test(sheetName) ? 3
+    : 9;
+  const monthId = `${year}-${String(monthNum).padStart(2, "0")}`;
   const days = monthDays(year, monthNum);
 
+  const parsed = parseRoster(wb.Sheets[sheetName]);
   const groups = parsed.groups;
   const keyToFamily = {};
+  const attendance = {};
+  const sick = {};
+
   const children = parsed.children.map((c, i) => {
     const key = familyKey(c.name) || "solo-" + (i + 1);
     if (!keyToFamily[key]) {
       keyToFamily[key] = "f" + (Object.keys(keyToFamily).length + 1);
     }
+    const id = "c" + (i + 1);
+    for (const [day, status] of Object.entries(c.marks || {})) {
+      attendance[attKey(monthId, c.groupId, id, Number(day))] = status;
+    }
+    if (c.sickDays && c.sickDays.length) {
+      sick[id] = c.sickDays.map((d) => `${monthId}-${String(d).padStart(2, "0")}`);
+    }
     return {
-      id: "c" + (i + 1),
+      id,
       name: c.name,
       groupId: c.groupId,
+      groupIds: [c.groupId],
       familyId: keyToFamily[key],
+      kind: "regular",
       discountPercent: null,
       documents: c.documents
     };
   });
+
   const used = {};
   children.forEach((c) => { used[c.familyId] = (used[c.familyId] || 0) + 1; });
+
+  const markCount = Object.keys(attendance).length;
+  const sickKids = Object.keys(sick).length;
 
   const db = {
     settings: {
       packPrice: 7500,
       packLessons: 8,
-      note: "Цена 8 занятий из расчёта стоимости. 1 занятие = 7500 / 8. Скидка семьи: 2 ребёнка 10%, 3 ребёнка 20%."
+      trialPrice: 500,
+      note: "Импорт из таблицы посещаемости. Цена пакета / число занятий = цена за занятие. Скидка семьи: 2 ребёнка 10%, 3+ — 20%."
     },
     months: [
       {
-        id: "2026-09",
-        label: "Сентябрь 2026",
+        id: monthId,
+        label: monthLabelRu(year, monthNum),
         year,
         month: monthNum,
         days
@@ -149,18 +215,24 @@ function build() {
     ],
     groups,
     children,
-    attendance: {},
+    attendance,
+    sick,
+    familyPayments: {},
     source: {
+      file: path.basename(ATT_FILE),
       attendanceSheet: sheetName,
-      comment: "Состав групп из таблицы посещаемости (март 2026, группы конца прошлого сезона). Актуальные группы клиент пришлёт отдельно."
+      comment: `Состав и отметки из «${sheetName}» (${markCount} посещений, больничных у ${sickKids} детей).`
     }
   };
 
-  seedMarks(db);
-  write(db);
-  console.log("Групп:", groups.length, "детей:", children.length, "семей 2+:", Object.values(used).filter((n) => n > 1).length);
+  save(db, { backup: true });
+  // migrate / trainers / packs / demo multi-group
+  const live = load();
+  console.log("Групп:", live.groups.length, "детей:", live.children.length);
+  console.log("Семей 2+:", Object.values(used).filter((n) => n > 1).length);
+  console.log("Отметок:", markCount, "· больничные:", sickKids);
   console.log("Лист:", sheetName);
-  console.log("Записано", require("../lib/store").DB_PATH);
+  console.log("Записано", DATA_FILE);
 }
 
 build();

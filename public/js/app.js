@@ -48,17 +48,29 @@ let showDirFormula = "";
 let priceGroupsOpen = {};
 let periods = null;
 let eye = {};
+let state = null;
+let devCalcEnabled = false;
+let devCalcOpen = false;
+let devCalcFamily = "";
+let devCalcQ = "";
+let devCalcPeriods = null;
 
 async function load() {
   const q = monthId ? ("?month=" + encodeURIComponent(monthId)) : "";
-  const [res, qr] = await Promise.all([
+  const [res, qr, meta] = await Promise.all([
     fetch("/api/state" + q, { headers: headers() }),
-    fetch("/api/qr-map")
+    fetch("/api/qr-map"),
+    fetch("/api/meta")
   ]);
   state = await res.json();
   if (qr.ok) qrMap = Object.assign(qrMap, await qr.json());
+  if (meta.ok) {
+    const m = await meta.json();
+    devCalcEnabled = !!m.devCalc;
+  }
   if (!res.ok) {
     document.getElementById("app").innerHTML = `<p class="warn-text">${esc(state.error || "Нет данных")}</p>`;
+    renderDevCalc();
     return;
   }
   if (!view) view = defaultView();
@@ -232,6 +244,7 @@ function render() {
   else if (role === "director" && dirTab === "calc") app.innerHTML = calcView();
   else app.innerHTML = coordView();
   drawOverlay();
+  renderDevCalc();
 }
 
 function renderTabs() {
@@ -566,6 +579,112 @@ function formulaHtml(p, phase) {
     <h3>По детям</h3>
     ${kids || "<p class=\"hint\">Нет детей</p>"}
   </div>`;
+}
+
+function packExplainHtml() {
+  const list = (state.groups || []).slice().sort((a, b) => (a.title || a.name).localeCompare(b.title || b.name, "ru"));
+  const rows = list.map((g) => {
+    const packLessons = Number(g.packLessons) || 8;
+    const packPrice = Number(g.packPrice) || 0;
+    const unit = packLessons ? Math.round(packPrice / packLessons) : 0;
+    const sessions = (state.month.days || []).filter((d) => (g.weekdays || []).includes(d.weekday)).length;
+    const branch = branchName(g.branchId);
+    return `<div class="dev-calc-pack">
+      <b>${esc(branch)}</b> · ${esc(groupTitle(g))}<br>
+      пакет <code>${rub(packPrice)}</code> / <code>${packLessons}</code> = <b>${rub(unit)}</b> за занятие ·
+      в месяце по расписанию <b>${sessions}</b> зан. → аванс группы <b>${rub(sessions * unit)}</b>
+    </div>`;
+  }).join("");
+  return `<div class="dev-calc-packs">${rows || "<p class=\"hint\">Нет групп в зоне видимости</p>"}</div>`;
+}
+
+function devCalcRefHtml() {
+  return `<div class="dev-calc-ref">
+    <strong>Справочник формул (разработка)</strong>
+    <ul>
+      <li>Цена занятия = <code>packPrice / packLessons</code> (для филиала Валдай — тарифы 1 ч / 1,5 ч).</li>
+      <li>Аванс ребёнка = сумма по группам: <code>число тренировок в месяце × цена занятия</code>. Пробный — 0.</li>
+      <li>Скидка семьи: авто 10% при 2 детях, 20% при 3+ (только regular), либо ручная 0/10/20 у руководителя.</li>
+      <li>Счёт = аванс со скидкой − остаток прошлого + долг прошлого.</li>
+      <li>Списание: «+» = цена занятия, «500» = пробное, «Б» = 0 (не списывается).</li>
+      <li>Баланс = начало + приход − списано. У тренера денег нет — только отметки; у родителя/руководителя — полный ход.</li>
+    </ul>
+    <p class="hint" style="margin:10px 0 0">Кнопка «Открыть расчёты» видна только пока на сервере <code>DEV_CALC≠0</code> и не production. Перед сдачей: <code>DEV_CALC=0</code> или <code>NODE_ENV=production</code>.</p>
+  </div>`;
+}
+
+function renderDevCalc() {
+  const root = document.getElementById("dev-calc-root");
+  if (!root) return;
+  if (!devCalcEnabled) {
+    root.hidden = true;
+    root.innerHTML = "";
+    return;
+  }
+  root.hidden = false;
+  if (!devCalcOpen) {
+    root.innerHTML = `<button type="button" class="dev-calc-fab" data-dev-calc-open>Открыть расчёты</button>`;
+    return;
+  }
+
+  let body = "";
+  if (role === "parent" && state.period) {
+    body = `
+      ${devCalcRefHtml()}
+      <h3 style="margin:0 0 8px">Ваша семья · ${esc(state.month.label)}</h3>
+      ${formulaHtml(state.period)}
+      <h3 style="margin:20px 0 8px">Пакеты групп (видимые)</h3>
+      ${packExplainHtml()}`;
+  } else if (role === "trainer") {
+    body = `
+      ${devCalcRefHtml()}
+      <h3 style="margin:0 0 8px">Группы тренера · как считается цена</h3>
+      <p class="hint">Деньги считаются в кабинете родителя/руководителя. Здесь — из чего складывается цена занятия по вашим группам.</p>
+      ${packExplainHtml()}`;
+  } else {
+    const q = devCalcQ.trim().toLowerCase();
+    const rows = ((devCalcPeriods && devCalcPeriods.rows) || periods && periods.rows || []).filter((r) => {
+      if (!q) return true;
+      const kids = state.children.filter((c) => c.familyId === r.family.id).map((c) => c.name).join(" ");
+      return (r.family.parentName + " " + r.family.login + " " + kids).toLowerCase().includes(q);
+    });
+    const list = rows.map((r) => {
+      const open = devCalcFamily === r.family.id;
+      return `<details class="dev-calc-family" ${open ? "open" : ""} data-dev-fam="${r.family.id}">
+        <summary>${esc(r.family.parentName)} · ${esc(r.family.login)} · к оплате ${rub(Math.max(0, r.period.amountDue))} · аванс ${rub(r.period.advance)}</summary>
+        ${open ? formulaHtml(r.period) : "<p class=\"hint\">Раскрывается при выборе…</p>"}
+      </details>`;
+    }).join("");
+    body = `
+      ${devCalcRefHtml()}
+      <h3 style="margin:0 0 8px">Пакеты по группам</h3>
+      ${packExplainHtml()}
+      <h3 style="margin:20px 0 8px">Семьи · ${esc(state.month.label)}</h3>
+      <input class="search-input" data-dev-calc-q placeholder="Поиск семьи / ребёнка" value="${esc(devCalcQ)}">
+      ${list || "<p class=\"hint\">Нет данных по периодам (откройте ещё раз или зайдите под руководителем)</p>"}`;
+  }
+
+  root.innerHTML = `
+    <div class="dev-calc-modal" role="dialog" aria-modal="true">
+      <div class="dev-calc-head">
+        <h2>Расчёты <span class="badge-dev">только для разработки</span></h2>
+        <button type="button" class="btn ghost" data-dev-calc-close>Закрыть</button>
+      </div>
+      <div class="dev-calc-body">${body}</div>
+    </div>`;
+}
+
+async function openDevCalc() {
+  devCalcOpen = true;
+  if (role === "admin" || role === "director") {
+    const q = monthId ? ("?month=" + encodeURIComponent(monthId)) : "";
+    const res = await fetch("/api/periods" + q, { headers: headers() });
+    if (res.ok) {
+      devCalcPeriods = await res.json();
+      periods = periods || devCalcPeriods;
+    }
+  }
+  renderDevCalc();
 }
 
 function parentCombinedAtt(child) {
@@ -1749,6 +1868,33 @@ document.getElementById("overlay").addEventListener("input", (e) => {
   if (e.target.dataset.groupQ !== undefined && sheet) {
     sheet.q = e.target.value;
     drawOverlay();
+  }
+});
+
+document.addEventListener("click", async (e) => {
+  if (e.target.closest("[data-dev-calc-open]")) {
+    await openDevCalc();
+    return;
+  }
+  if (e.target.closest("[data-dev-calc-close]")) {
+    devCalcOpen = false;
+    renderDevCalc();
+    return;
+  }
+  const fam = e.target.closest("[data-dev-fam]");
+  if (fam && e.target.closest("summary")) {
+    const id = fam.getAttribute("data-dev-fam");
+    devCalcFamily = devCalcFamily === id ? "" : id;
+    e.preventDefault();
+    renderDevCalc();
+  }
+});
+
+document.addEventListener("input", (e) => {
+  if (e.target.matches("[data-dev-calc-q]")) {
+    devCalcQ = e.target.value;
+    clearTimeout(document._devCalcQTimer);
+    document._devCalcQTimer = setTimeout(() => renderDevCalc(), 180);
   }
 });
 

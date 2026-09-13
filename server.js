@@ -99,8 +99,11 @@ function publicState(db, role, familyId, trainerId, month) {
   };
 }
 
+const DEV_CALC = process.env.DEV_CALC !== "0"
+  && (process.env.DEV_CALC === "1" || process.env.NODE_ENV !== "production");
+
 app.get("/api/meta", (_req, res) => {
-  res.json({ roles: ROLES });
+  res.json({ roles: ROLES, devCalc: DEV_CALC });
 });
 
 app.get("/api/demo-accounts", (_req, res) => {
