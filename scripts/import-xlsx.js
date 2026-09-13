@@ -7,7 +7,7 @@ const { save, load, DATA_FILE } = require("../lib/store");
 const ROOT = path.join(__dirname, "..", "..");
 
 function findAttFile() {
-  const files = fs.readdirSync(ROOT).filter((f) => /\.xlsx$/i.test(f));
+  const files = fs.readdirSync(ROOT).filter((f) => /\.xlsx$/i.test(f) && !/^~\$?/.test(f));
   const prefer = files.find((f) => /\(6\)/.test(f) && /посещаемость/i.test(f))
     || files.find((f) => /\(6\)/.test(f))
     || files.find((f) => /посещаемость/i.test(f));
@@ -63,20 +63,31 @@ function dayColumns(headerRow, dateStart) {
   return cols;
 }
 
-/** Map Excel cell → { status?, sick? } */
-function mapMark(raw) {
-  const s = String(raw || "").trim().toLowerCase().replace(/\s+/g, " ");
-  if (!s) return null;
-  if (/^(пн|вт|ср|чт|пт|сб|воскр|вс)$/i.test(s)) return null;
-  if (/^\d{1,2}[-./]/.test(s)) return null;
+/** Жёлтая заливка в таблице = «был» (часто без текста в ячейке). */
+function isYellowFill(style) {
+  if (!style || style.patternType !== "solid") return false;
+  const colors = [style.fgColor, style.bgColor].filter(Boolean);
+  for (const c of colors) {
+    if (c.indexed === 5 || c.indexed === 43 || c.indexed === 13) return true;
+    const rgb = String(c.rgb || "").toUpperCase().replace(/^FF/, "");
+    if (/^(FFFF00|FFEB9C|FFFF99|FFC000|FFD966|FFF2CC|FFE699)$/.test(rgb)) return true;
+  }
+  return false;
+}
 
-  if (/^б$|^бол/.test(s) || s === "б") return { sick: true };
-  if (/^ф$|факульт|уваж|пропуск/.test(s)) return { sick: true };
-  if (/^т(\s|$)|пробн|500/.test(s)) return { status: "trial500" };
-  if (/^0$|бесплат/.test(s)) return { status: "trial0" };
-  if (/не\s*занимал|не\s*состоял|не\s*было|х2|1\.5|\?/.test(s)) return null;
-  if (/^[вп+]|^был|^дб|в\s*дб/.test(s)) return { status: "present" };
-  if (s === "п") return { status: "present" };
+/** Map Excel cell → { status?, sick? }; text overrides fill. */
+function mapMark(raw, style) {
+  const s = String(raw || "").trim().toLowerCase().replace(/\s+/g, " ");
+  if (s && !/^(пн|вт|ср|чт|пт|сб|воскр|вс)$/i.test(s) && !/^\d{1,2}[-./]/.test(s)) {
+    if (/^б$|^бол/.test(s) || s === "б") return { sick: true };
+    if (/^ф$|факульт|уваж|пропуск/.test(s)) return { sick: true };
+    if (/^т(\s|$)|пробн|500/.test(s)) return { status: "trial500" };
+    if (/^0$|бесплат/.test(s)) return { status: "trial0" };
+    if (/не\s*занимал|не\s*состоял|не\s*было|х2|1\.5|\?/.test(s)) return null;
+    if (/^[вп+]|^был|^дб|в\s*дб/.test(s)) return { status: "present" };
+    if (s === "п") return { status: "present" };
+  }
+  if (isYellowFill(style)) return { status: "present" };
   return null;
 }
 
@@ -115,7 +126,9 @@ function parseRoster(ws) {
     const marks = {};
     const sickDays = [];
     for (const { col, day } of dayCols) {
-      const mapped = mapMark(row[col]);
+      const addr = XLSX.utils.encode_cell({ r, c: col });
+      const xcell = ws[addr];
+      const mapped = mapMark(row[col], xcell && xcell.s);
       if (!mapped) continue;
       if (mapped.sick) sickDays.push(day);
       else if (mapped.status) marks[day] = mapped.status;
@@ -146,7 +159,7 @@ function monthLabelRu(year, monthNum) {
 function build() {
   const ATT_FILE = findAttFile();
   console.log("Читаю", ATT_FILE);
-  const wb = XLSX.readFile(ATT_FILE, { raw: false });
+  const wb = XLSX.readFile(ATT_FILE, { raw: false, cellStyles: true });
 
   const sheetName = findSheet(wb, (n) => /сентябрь/.test(n) && /26/.test(n))
     || findSheet(wb, (n) => /май/.test(n) && /26/.test(n))
@@ -221,7 +234,7 @@ function build() {
     source: {
       file: path.basename(ATT_FILE),
       attendanceSheet: sheetName,
-      comment: `Состав и отметки из «${sheetName}» (${markCount} посещений, больничных у ${sickKids} детей).`
+      comment: `Состав и отметки из «${sheetName}»: жёлтая заливка = был (${markCount} посещений, больничных у ${sickKids} детей).`
     }
   };
 
