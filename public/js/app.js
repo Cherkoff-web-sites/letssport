@@ -1149,7 +1149,7 @@ function parentsCalcView() {
           <button class="btn" type="button" data-save-opening="${r.family.id}">Сохранить остаток</button>
           ${p.openingManual ? `<button class="btn ghost" type="button" data-clear-opening="${r.family.id}">Сбросить</button>` : ""}
         </div>
-        <p class="hint opening-hint">Сейчас в расчёте: <b>${rub(p.opening)}</b>${p.openingManual ? " (задано вручную)" : " (авто: перенос за Б / долг)"}. «+» — перенос за справку, «−» — долг.</p>
+        <p class="hint opening-hint">Сейчас в расчёте: <b>${rub(p.opening)}</b>${p.openingManual ? " (задано вручную — автоперенос с прошлого месяца отключён)" : " (авто: перенос за Б / долг с прошлого)"}. «+» — перенос за справку, «−» — долг. Чтобы подтянуть сентябрь → нажмите «Сбросить».</p>
       </div>
       <div class="pay-nums">
         <div><span>К оплате</span><b>${rub(Math.max(0, p.amountDue))}</b></div>
@@ -1173,6 +1173,10 @@ function parentsCalcView() {
     </article>
     <input class="search-input" data-par-q placeholder="Поиск семьи или ребёнка" value="${esc(qParents)}">
     <div class="ath-list">${html || "<p class=\"hint\">Нет семей</p>"}</div>`;
+}
+
+function currentMonthId() {
+  return monthId || (state && state.month && state.month.id) || "";
 }
 
 async function loadPeriods() {
@@ -1431,8 +1435,8 @@ document.getElementById("app").addEventListener("click", async (e) => {
   const monthBtn = e.target.closest("[data-month]");
   if (monthBtn) {
     monthId = monthBtn.dataset.month;
+    await load();
     if (role === "director" && dirTab === "calc" && calcTab === "parents") await loadPeriods();
-    else await load();
     return;
   }
   if (e.target.closest("[data-today]")) {
@@ -1651,7 +1655,7 @@ document.getElementById("app").addEventListener("click", async (e) => {
       familyId: dp.dataset.dirPay,
       incoming: Number(incoming),
       requested: Number(dp.dataset.need),
-      monthId: state.month.id
+      monthId: currentMonthId()
     });
     await loadPeriods();
     return;
@@ -1666,7 +1670,7 @@ document.getElementById("app").addEventListener("click", async (e) => {
     await api("/api/pay/opening", "POST", {
       familyId: fid,
       openingSeed: Number(raw),
-      monthId: state.month.id
+      monthId: currentMonthId()
     });
     await loadPeriods();
     return;
@@ -1677,7 +1681,7 @@ document.getElementById("app").addEventListener("click", async (e) => {
     await api("/api/pay/opening", "POST", {
       familyId: clearOpen.dataset.clearOpening,
       openingSeed: null,
-      monthId: state.month.id
+      monthId: currentMonthId()
     });
     await loadPeriods();
     return;
