@@ -8,7 +8,8 @@ const ROOT = path.join(__dirname, "..", "..");
 
 function findAttFile() {
   const files = fs.readdirSync(ROOT).filter((f) => /\.xlsx$/i.test(f) && !/^~\$?/.test(f));
-  const prefer = files.find((f) => /\(6\)/.test(f) && /посещаемость/i.test(f))
+  const prefer = files.find((f) => /посещаемость\s*сентябрь/i.test(f))
+    || files.find((f) => /\(6\)/.test(f) && /посещаемость/i.test(f))
     || files.find((f) => /\(6\)/.test(f))
     || files.find((f) => /посещаемость/i.test(f));
   if (!prefer) throw new Error("Не найден xlsx посещаемости в " + ROOT);
@@ -79,6 +80,8 @@ function isYellowFill(style) {
 function mapMark(raw, style) {
   const s = String(raw || "").trim().toLowerCase().replace(/\s+/g, " ");
   if (s && !/^(пн|вт|ср|чт|пт|сб|воскр|вс)$/i.test(s) && !/^\d{1,2}[-./]/.test(s)) {
+    // Excel serial dates / мусор
+    if (/^\d{4,}$/.test(s)) return null;
     if (/^б$|^бол/.test(s) || s === "б") return { sick: true };
     if (/^ф$|факульт|уваж|пропуск/.test(s)) return { sick: true };
     if (/^т(\s|$)|пробн|500/.test(s)) return { status: "trial500" };
@@ -162,15 +165,19 @@ function build() {
   const wb = XLSX.readFile(ATT_FILE, { raw: false, cellStyles: true });
 
   const sheetName = findSheet(wb, (n) => /сентябрь/.test(n) && /26/.test(n))
+    || findSheet(wb, (n) => /^лист1$/i.test(n))
+    || findSheet(wb, (n) => /сентябрь/i.test(n))
     || findSheet(wb, (n) => /май/.test(n) && /26/.test(n))
-    || findSheet(wb, (n) => /март/.test(n) && /26/.test(n));
-  if (!sheetName) throw new Error("Нет подходящего листа 2026. Листы: " + wb.SheetNames.join(", "));
+    || findSheet(wb, (n) => /март/.test(n) && /26/.test(n))
+    || wb.SheetNames[0];
+  if (!sheetName) throw new Error("Нет листов в файле");
 
   const year = 2026;
-  const monthNum = /сентябрь/i.test(sheetName) ? 9
-    : /май/i.test(sheetName) ? 5
-    : /март/i.test(sheetName) ? 3
-    : 9;
+  const monthNum = /май/i.test(sheetName) && !/сентябрь/i.test(path.basename(ATT_FILE))
+    ? 5
+    : /март/i.test(sheetName) && !/сентябрь/i.test(path.basename(ATT_FILE))
+      ? 3
+      : 9;
   const monthId = `${year}-${String(monthNum).padStart(2, "0")}`;
   const days = monthDays(year, monthNum);
 

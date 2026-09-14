@@ -411,6 +411,18 @@ app.post("/api/pay/director", (req, res) => {
   }
 });
 
+app.post("/api/pay/opening", (req, res) => {
+  const { role } = ctx(req);
+  if (role !== "director") return sendError(res, 403, "Только руководитель");
+  const { familyId, openingSeed, monthId } = req.body || {};
+  if (!familyId) return sendError(res, 400, "Нужна семья");
+  try {
+    res.json(store.setOpeningSeed(familyId, openingSeed, monthId));
+  } catch (err) {
+    sendError(res, 400, err.message);
+  }
+});
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log("ЛК «Займемся Спортом»: http://localhost:" + PORT);
 });

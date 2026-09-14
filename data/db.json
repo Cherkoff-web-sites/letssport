@@ -687,10 +687,10 @@
     },
     {
       "id": "c4",
-      "name": "Казак Мария",
-      "groupId": "g2",
+      "name": "Ким Юлия",
+      "groupId": "g1",
       "groupIds": [
-        "g2"
+        "g1"
       ],
       "familyId": "f4",
       "kind": "regular",
@@ -704,10 +704,10 @@
     },
     {
       "id": "c5",
-      "name": "Бабкина Римма",
-      "groupId": "g2",
+      "name": "Пронкина Вера",
+      "groupId": "g1",
       "groupIds": [
-        "g2"
+        "g1"
       ],
       "familyId": "f5",
       "kind": "regular",
@@ -721,7 +721,7 @@
     },
     {
       "id": "c6",
-      "name": "Кадацкая Анастасия",
+      "name": "Казак Мария",
       "groupId": "g2",
       "groupIds": [
         "g2"
@@ -738,7 +738,7 @@
     },
     {
       "id": "c7",
-      "name": "Плешка Хлоя",
+      "name": "Бабкина Римма",
       "groupId": "g2",
       "groupIds": [
         "g2"
@@ -755,27 +755,10 @@
     },
     {
       "id": "c8",
-      "name": "Плешка Ева",
+      "name": "Кадацкая Анастасия",
       "groupId": "g2",
       "groupIds": [
         "g2"
-      ],
-      "familyId": "f7",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c9",
-      "name": "Махрова София",
-      "groupId": "g3",
-      "groupIds": [
-        "g3"
       ],
       "familyId": "f8",
       "kind": "regular",
@@ -788,11 +771,28 @@
       }
     },
     {
-      "id": "c10",
-      "name": "Тюрина Кристина",
-      "groupId": "g3",
+      "id": "c9",
+      "name": "Плешка Хлоя",
+      "groupId": "g2",
       "groupIds": [
-        "g3"
+        "g2"
+      ],
+      "familyId": "f9",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c10",
+      "name": "Плешка Ева",
+      "groupId": "g2",
+      "groupIds": [
+        "g2"
       ],
       "familyId": "f9",
       "kind": "regular",
@@ -806,7 +806,7 @@
     },
     {
       "id": "c11",
-      "name": "Костенко Мария",
+      "name": "Махрова София",
       "groupId": "g3",
       "groupIds": [
         "g3"
@@ -823,10 +823,10 @@
     },
     {
       "id": "c12",
-      "name": "Кравчук Маргарита",
-      "groupId": "g4",
+      "name": "Тюрина Кристина",
+      "groupId": "g3",
       "groupIds": [
-        "g4"
+        "g3"
       ],
       "familyId": "f11",
       "kind": "regular",
@@ -840,10 +840,10 @@
     },
     {
       "id": "c13",
-      "name": "Новикова Николь",
-      "groupId": "g4",
+      "name": "Костенко Мария",
+      "groupId": "g3",
       "groupIds": [
-        "g4"
+        "g3"
       ],
       "familyId": "f12",
       "kind": "regular",
@@ -857,10 +857,10 @@
     },
     {
       "id": "c14",
-      "name": "Марсакова Василиса",
-      "groupId": "g4",
+      "name": "Голодова Татьяна",
+      "groupId": "g3",
       "groupIds": [
-        "g4"
+        "g3"
       ],
       "familyId": "f13",
       "kind": "regular",
@@ -874,7 +874,7 @@
     },
     {
       "id": "c15",
-      "name": "Грехова Ольга",
+      "name": "Кравчук Маргарита",
       "groupId": "g4",
       "groupIds": [
         "g4"
@@ -891,7 +891,7 @@
     },
     {
       "id": "c16",
-      "name": "Мухина София",
+      "name": "Новикова Николь",
       "groupId": "g4",
       "groupIds": [
         "g4"
@@ -908,7 +908,7 @@
     },
     {
       "id": "c17",
-      "name": "Орел София",
+      "name": "Марсакова Василиса",
       "groupId": "g4",
       "groupIds": [
         "g4"
@@ -925,7 +925,7 @@
     },
     {
       "id": "c18",
-      "name": "Лоренсон Ирина",
+      "name": "Грехова Ольга",
       "groupId": "g4",
       "groupIds": [
         "g4"
@@ -942,10 +942,10 @@
     },
     {
       "id": "c19",
-      "name": "Никишкина Александра",
-      "groupId": "g5",
+      "name": "Мухина София",
+      "groupId": "g4",
       "groupIds": [
-        "g5"
+        "g4"
       ],
       "familyId": "f18",
       "kind": "regular",
@@ -959,27 +959,10 @@
     },
     {
       "id": "c20",
-      "name": "Никишкина Полина",
-      "groupId": "g5",
+      "name": "Орел София",
+      "groupId": "g4",
       "groupIds": [
-        "g5"
-      ],
-      "familyId": "f18",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c21",
-      "name": "Деренкова Настя",
-      "groupId": "g5",
-      "groupIds": [
-        "g5"
+        "g4"
       ],
       "familyId": "f19",
       "kind": "regular",
@@ -992,11 +975,11 @@
       }
     },
     {
-      "id": "c22",
-      "name": "Пантелеева Дарья",
-      "groupId": "g5",
+      "id": "c21",
+      "name": "Лоренсон Ирина",
+      "groupId": "g4",
       "groupIds": [
-        "g5"
+        "g4"
       ],
       "familyId": "f20",
       "kind": "regular",
@@ -1009,11 +992,11 @@
       }
     },
     {
-      "id": "c23",
-      "name": "Степина Пелагея",
-      "groupId": "g5",
+      "id": "c22",
+      "name": "Цатурова Ариана",
+      "groupId": "g4",
       "groupIds": [
-        "g5"
+        "g4"
       ],
       "familyId": "f21",
       "kind": "regular",
@@ -1026,11 +1009,11 @@
       }
     },
     {
-      "id": "c24",
-      "name": "Василиса (новенькая)",
-      "groupId": "g5",
+      "id": "c23",
+      "name": "Имагилова Эмина",
+      "groupId": "g4",
       "groupIds": [
-        "g5"
+        "g4"
       ],
       "familyId": "f22",
       "kind": "regular",
@@ -1043,11 +1026,11 @@
       }
     },
     {
-      "id": "c25",
-      "name": "Свистунова София",
-      "groupId": "g6",
+      "id": "c24",
+      "name": "Султыгова Камила",
+      "groupId": "g4",
       "groupIds": [
-        "g6"
+        "g4"
       ],
       "familyId": "f23",
       "kind": "regular",
@@ -1060,11 +1043,11 @@
       }
     },
     {
-      "id": "c26",
-      "name": "Тихоненкова Виктория",
-      "groupId": "g6",
+      "id": "c25",
+      "name": "Байкова Арина",
+      "groupId": "g4",
       "groupIds": [
-        "g6"
+        "g4"
       ],
       "familyId": "f24",
       "kind": "regular",
@@ -1077,11 +1060,28 @@
       }
     },
     {
-      "id": "c27",
-      "name": "Трухина Милана",
-      "groupId": "g7",
+      "id": "c26",
+      "name": "Никишкина Александра",
+      "groupId": "g5",
       "groupIds": [
-        "g7"
+        "g5"
+      ],
+      "familyId": "f25",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c27",
+      "name": "Никишкина Полина",
+      "groupId": "g5",
+      "groupIds": [
+        "g5"
       ],
       "familyId": "f25",
       "kind": "regular",
@@ -1095,10 +1095,10 @@
     },
     {
       "id": "c28",
-      "name": "Ермакова Александра",
-      "groupId": "g7",
+      "name": "Деренкова Настя",
+      "groupId": "g5",
       "groupIds": [
-        "g7"
+        "g5"
       ],
       "familyId": "f26",
       "kind": "regular",
@@ -1112,10 +1112,10 @@
     },
     {
       "id": "c29",
-      "name": "Гулдаева Кира",
-      "groupId": "g7",
+      "name": "Пантелеева Дарья",
+      "groupId": "g5",
       "groupIds": [
-        "g7"
+        "g5"
       ],
       "familyId": "f27",
       "kind": "regular",
@@ -1129,10 +1129,10 @@
     },
     {
       "id": "c30",
-      "name": "Игошин Арсений",
-      "groupId": "g8",
+      "name": "Степина Пелагея",
+      "groupId": "g5",
       "groupIds": [
-        "g8"
+        "g5"
       ],
       "familyId": "f28",
       "kind": "regular",
@@ -1146,10 +1146,10 @@
     },
     {
       "id": "c31",
-      "name": "Чиков Леонид",
-      "groupId": "g8",
+      "name": "Романова Василиса",
+      "groupId": "g5",
       "groupIds": [
-        "g8"
+        "g5"
       ],
       "familyId": "f29",
       "kind": "regular",
@@ -1163,10 +1163,10 @@
     },
     {
       "id": "c32",
-      "name": "Прохоренко Егор",
-      "groupId": "g8",
+      "name": "Свистунова София",
+      "groupId": "g6",
       "groupIds": [
-        "g8"
+        "g6"
       ],
       "familyId": "f30",
       "kind": "regular",
@@ -1180,10 +1180,10 @@
     },
     {
       "id": "c33",
-      "name": "Алимов Маулен",
-      "groupId": "g8",
+      "name": "Тихоненкова Виктория",
+      "groupId": "g6",
       "groupIds": [
-        "g8"
+        "g6"
       ],
       "familyId": "f31",
       "kind": "regular",
@@ -1197,6 +1197,193 @@
     },
     {
       "id": "c34",
+      "name": "Носкова Афина",
+      "groupId": "g6",
+      "groupIds": [
+        "g6"
+      ],
+      "familyId": "f32",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c35",
+      "name": "Трухина Милана",
+      "groupId": "g7",
+      "groupIds": [
+        "g7"
+      ],
+      "familyId": "f33",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c36",
+      "name": "Ермакова Александра",
+      "groupId": "g7",
+      "groupIds": [
+        "g7"
+      ],
+      "familyId": "f34",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c37",
+      "name": "Гулдаева Кира",
+      "groupId": "g7",
+      "groupIds": [
+        "g7"
+      ],
+      "familyId": "f35",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c38",
+      "name": "Кинель Алиса",
+      "groupId": "g7",
+      "groupIds": [
+        "g7"
+      ],
+      "familyId": "f36",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c39",
+      "name": "Гулдаева Ясмина",
+      "groupId": "g7",
+      "groupIds": [
+        "g7"
+      ],
+      "familyId": "f35",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c40",
+      "name": "Уколова Дарья",
+      "groupId": "g7",
+      "groupIds": [
+        "g7"
+      ],
+      "familyId": "f37",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c41",
+      "name": "Игошин Арсений",
+      "groupId": "g8",
+      "groupIds": [
+        "g8"
+      ],
+      "familyId": "f38",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c42",
+      "name": "Чиков Леонид",
+      "groupId": "g8",
+      "groupIds": [
+        "g8"
+      ],
+      "familyId": "f39",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c43",
+      "name": "Прохоренко Егор",
+      "groupId": "g8",
+      "groupIds": [
+        "g8"
+      ],
+      "familyId": "f40",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c44",
+      "name": "Алимов Маулен",
+      "groupId": "g8",
+      "groupIds": [
+        "g8"
+      ],
+      "familyId": "f41",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c45",
       "name": "Попов Михаил",
       "groupId": "g8",
       "groupIds": [
@@ -1213,198 +1400,11 @@
       }
     },
     {
-      "id": "c35",
+      "id": "c46",
       "name": "Мурадов Эмин",
       "groupId": "g8",
       "groupIds": [
         "g8"
-      ],
-      "familyId": "f32",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c36",
-      "name": "Малхасян Андрей",
-      "groupId": "g8",
-      "groupIds": [
-        "g8"
-      ],
-      "familyId": "f33",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c37",
-      "name": "Жук Степан",
-      "groupId": "g8",
-      "groupIds": [
-        "g8"
-      ],
-      "familyId": "f34",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c38",
-      "name": "Адамчук Алексей",
-      "groupId": "g8",
-      "groupIds": [
-        "g8"
-      ],
-      "familyId": "f35",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c39",
-      "name": "Белов Александр",
-      "groupId": "g8",
-      "groupIds": [
-        "g8"
-      ],
-      "familyId": "f36",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c40",
-      "name": "Барковский Родион",
-      "groupId": "g9",
-      "groupIds": [
-        "g9"
-      ],
-      "familyId": "f37",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c41",
-      "name": "Барковская Амина",
-      "groupId": "g9",
-      "groupIds": [
-        "g9"
-      ],
-      "familyId": "f37",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c42",
-      "name": "Смирнов Мирон",
-      "groupId": "g9",
-      "groupIds": [
-        "g9"
-      ],
-      "familyId": "f38",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c43",
-      "name": "Климов Петр",
-      "groupId": "g9",
-      "groupIds": [
-        "g9"
-      ],
-      "familyId": "f39",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c44",
-      "name": "Ларин Николай",
-      "groupId": "g9",
-      "groupIds": [
-        "g9"
-      ],
-      "familyId": "f40",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c45",
-      "name": "Гусейнов Адам",
-      "groupId": "g9",
-      "groupIds": [
-        "g9"
-      ],
-      "familyId": "f41",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c46",
-      "name": "Ткаченко Михаил",
-      "groupId": "g9",
-      "groupIds": [
-        "g9"
       ],
       "familyId": "f42",
       "kind": "regular",
@@ -1418,10 +1418,10 @@
     },
     {
       "id": "c47",
-      "name": "Петров Мирон",
-      "groupId": "g9",
+      "name": "Малхасян Андрей",
+      "groupId": "g8",
       "groupIds": [
-        "g9"
+        "g8"
       ],
       "familyId": "f43",
       "kind": "regular",
@@ -1435,10 +1435,10 @@
     },
     {
       "id": "c48",
-      "name": "Корчагина Софья",
-      "groupId": "g9",
+      "name": "Жук Степан",
+      "groupId": "g8",
       "groupIds": [
-        "g9"
+        "g8"
       ],
       "familyId": "f44",
       "kind": "regular",
@@ -1452,10 +1452,10 @@
     },
     {
       "id": "c49",
-      "name": "Щеглов Алексей",
-      "groupId": "g9",
+      "name": "Адамчук Алексей",
+      "groupId": "g8",
       "groupIds": [
-        "g9"
+        "g8"
       ],
       "familyId": "f45",
       "kind": "regular",
@@ -1469,10 +1469,10 @@
     },
     {
       "id": "c50",
-      "name": "Постригайлов Юрий",
-      "groupId": "g9",
+      "name": "Белов Александр",
+      "groupId": "g8",
       "groupIds": [
-        "g9"
+        "g8"
       ],
       "familyId": "f46",
       "kind": "regular",
@@ -1486,10 +1486,10 @@
     },
     {
       "id": "c51",
-      "name": "Рожаев Михаил",
-      "groupId": "g10",
+      "name": "Найда Александр",
+      "groupId": "g8",
       "groupIds": [
-        "g10"
+        "g8"
       ],
       "familyId": "f47",
       "kind": "regular",
@@ -1503,10 +1503,10 @@
     },
     {
       "id": "c52",
-      "name": "Прошин Илья",
-      "groupId": "g10",
+      "name": "Ахмедов Умар",
+      "groupId": "g8",
       "groupIds": [
-        "g10"
+        "g8"
       ],
       "familyId": "f48",
       "kind": "regular",
@@ -1520,10 +1520,10 @@
     },
     {
       "id": "c53",
-      "name": "Тарасов Александр",
-      "groupId": "g10",
+      "name": "Лаптев Савелий",
+      "groupId": "g8",
       "groupIds": [
-        "g10"
+        "g8"
       ],
       "familyId": "f49",
       "kind": "regular",
@@ -1537,44 +1537,10 @@
     },
     {
       "id": "c54",
-      "name": "Смирнова Тася",
-      "groupId": "g10",
+      "name": "Грискевич Маргарита",
+      "groupId": "g8",
       "groupIds": [
-        "g10"
-      ],
-      "familyId": "f38",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c55",
-      "name": "Новиков Тимофей",
-      "groupId": "g10",
-      "groupIds": [
-        "g10"
-      ],
-      "familyId": "f12",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c56",
-      "name": "Хайруллин Тимур",
-      "groupId": "g10",
-      "groupIds": [
-        "g10"
+        "g8"
       ],
       "familyId": "f50",
       "kind": "regular",
@@ -1587,11 +1553,11 @@
       }
     },
     {
-      "id": "c57",
-      "name": "Сальников Владимир",
-      "groupId": "g10",
+      "id": "c55",
+      "name": "Даниелян Глеб",
+      "groupId": "g8",
       "groupIds": [
-        "g10"
+        "g8"
       ],
       "familyId": "f51",
       "kind": "regular",
@@ -1604,11 +1570,11 @@
       }
     },
     {
-      "id": "c58",
-      "name": "Осипов Степан",
-      "groupId": "g10",
+      "id": "c56",
+      "name": "Барковский Родион",
+      "groupId": "g9",
       "groupIds": [
-        "g10"
+        "g9"
       ],
       "familyId": "f52",
       "kind": "regular",
@@ -1621,8 +1587,263 @@
       }
     },
     {
+      "id": "c57",
+      "name": "Барковская Амина",
+      "groupId": "g9",
+      "groupIds": [
+        "g9"
+      ],
+      "familyId": "f52",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c58",
+      "name": "Смирнов Мирон",
+      "groupId": "g9",
+      "groupIds": [
+        "g9"
+      ],
+      "familyId": "f53",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
       "id": "c59",
-      "name": "Каптелов Влад",
+      "name": "Климов Петр",
+      "groupId": "g9",
+      "groupIds": [
+        "g9"
+      ],
+      "familyId": "f54",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c60",
+      "name": "Ларин Николай",
+      "groupId": "g9",
+      "groupIds": [
+        "g9"
+      ],
+      "familyId": "f55",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c61",
+      "name": "Гусейнов Адам",
+      "groupId": "g9",
+      "groupIds": [
+        "g9"
+      ],
+      "familyId": "f56",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c62",
+      "name": "Ткаченко Михаил",
+      "groupId": "g9",
+      "groupIds": [
+        "g9"
+      ],
+      "familyId": "f57",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c63",
+      "name": "Петров Мирон",
+      "groupId": "g9",
+      "groupIds": [
+        "g9"
+      ],
+      "familyId": "f58",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c64",
+      "name": "Корчагина Софья",
+      "groupId": "g9",
+      "groupIds": [
+        "g9"
+      ],
+      "familyId": "f59",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c65",
+      "name": "Щеглов Алексей",
+      "groupId": "g9",
+      "groupIds": [
+        "g9"
+      ],
+      "familyId": "f60",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c66",
+      "name": "Постригайлов Юрий",
+      "groupId": "g9",
+      "groupIds": [
+        "g9"
+      ],
+      "familyId": "f61",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c67",
+      "name": "Машуров Руслан",
+      "groupId": "g9",
+      "groupIds": [
+        "g9"
+      ],
+      "familyId": "f62",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c68",
+      "name": "Грискевич Никита",
+      "groupId": "g9",
+      "groupIds": [
+        "g9"
+      ],
+      "familyId": "f50",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c69",
+      "name": "Рожаев Михаил",
+      "groupId": "g10",
+      "groupIds": [
+        "g10"
+      ],
+      "familyId": "f63",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c70",
+      "name": "Прошин Илья",
+      "groupId": "g10",
+      "groupIds": [
+        "g10"
+      ],
+      "familyId": "f64",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c71",
+      "name": "Тарасов Александр",
+      "groupId": "g10",
+      "groupIds": [
+        "g10"
+      ],
+      "familyId": "f65",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c72",
+      "name": "Смирнова Тася",
       "groupId": "g10",
       "groupIds": [
         "g10"
@@ -1638,234 +1859,13 @@
       }
     },
     {
-      "id": "c60",
-      "name": "Артамошин Александр",
+      "id": "c73",
+      "name": "Новиков Тимофей",
       "groupId": "g10",
       "groupIds": [
         "g10"
       ],
-      "familyId": "f54",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c61",
-      "name": "Хорова Анастасия 5,5",
-      "groupId": "g11",
-      "groupIds": [
-        "g11"
-      ],
-      "familyId": "f55",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c62",
-      "name": "Качесов Михаил 4,5",
-      "groupId": "g11",
-      "groupIds": [
-        "g11"
-      ],
-      "familyId": "f56",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c63",
-      "name": "Буденный Андрей 7",
-      "groupId": "g11",
-      "groupIds": [
-        "g11"
-      ],
-      "familyId": "f57",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c64",
-      "name": "Новиков Роман",
-      "groupId": "g11",
-      "groupIds": [
-        "g11"
-      ],
-      "familyId": "f12",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c65",
-      "name": "Гусев Кирилл 10",
-      "groupId": "g12",
-      "groupIds": [
-        "g12"
-      ],
-      "familyId": "f58",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c66",
-      "name": "Мальсагов Абдула",
-      "groupId": "g12",
-      "groupIds": [
-        "g12"
-      ],
-      "familyId": "f59",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c67",
-      "name": "МАльсагов Саад",
-      "groupId": "g12",
-      "groupIds": [
-        "g12"
-      ],
-      "familyId": "f59",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c68",
-      "name": "Цыпухин Владимир",
-      "groupId": "g12",
-      "groupIds": [
-        "g12"
-      ],
-      "familyId": "f60",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c69",
-      "name": "Арсентьев Артем",
-      "groupId": "g13",
-      "groupIds": [
-        "g13"
-      ],
-      "familyId": "f61",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c70",
-      "name": "Чепусов Ярослав",
-      "groupId": "g13",
-      "groupIds": [
-        "g13"
-      ],
-      "familyId": "f62",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c71",
-      "name": "Бровко Ева",
-      "groupId": "g13",
-      "groupIds": [
-        "g13"
-      ],
-      "familyId": "f63",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c72",
-      "name": "Хмельницкий Тимофей",
-      "groupId": "g13",
-      "groupIds": [
-        "g13"
-      ],
-      "familyId": "f64",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c73",
-      "name": "Матвеев Илья",
-      "groupId": "g13",
-      "groupIds": [
-        "g13"
-      ],
-      "familyId": "f65",
+      "familyId": "f15",
       "kind": "regular",
       "discountPercent": null,
       "documents": {
@@ -1877,11 +1877,10 @@
     },
     {
       "id": "c74",
-      "name": "Шиманов Артем",
-      "groupId": "g13",
+      "name": "Хайруллин Тимур",
+      "groupId": "g10",
       "groupIds": [
-        "g13",
-        "g14"
+        "g10"
       ],
       "familyId": "f66",
       "kind": "regular",
@@ -1895,10 +1894,10 @@
     },
     {
       "id": "c75",
-      "name": "Шуть Михаил",
-      "groupId": "g13",
+      "name": "Сальников Владимир",
+      "groupId": "g10",
       "groupIds": [
-        "g13"
+        "g10"
       ],
       "familyId": "f67",
       "kind": "regular",
@@ -1912,10 +1911,10 @@
     },
     {
       "id": "c76",
-      "name": "Павлов Федор",
-      "groupId": "g13",
+      "name": "Осипов Степан",
+      "groupId": "g10",
       "groupIds": [
-        "g13"
+        "g10"
       ],
       "familyId": "f68",
       "kind": "regular",
@@ -1929,10 +1928,10 @@
     },
     {
       "id": "c77",
-      "name": "Иванченко Глеб",
-      "groupId": "g13",
+      "name": "Каптелов Влад",
+      "groupId": "g10",
       "groupIds": [
-        "g13"
+        "g10"
       ],
       "familyId": "f69",
       "kind": "regular",
@@ -1946,10 +1945,10 @@
     },
     {
       "id": "c78",
-      "name": "Хочинский Федор",
-      "groupId": "g13",
+      "name": "Артамошин Александр",
+      "groupId": "g10",
       "groupIds": [
-        "g13"
+        "g10"
       ],
       "familyId": "f70",
       "kind": "regular",
@@ -1963,10 +1962,10 @@
     },
     {
       "id": "c79",
-      "name": "Саркисов Эдгар",
-      "groupId": "g14",
+      "name": "Семченков Роман",
+      "groupId": "g10",
       "groupIds": [
-        "g14"
+        "g10"
       ],
       "familyId": "f71",
       "kind": "regular",
@@ -1980,10 +1979,10 @@
     },
     {
       "id": "c80",
-      "name": "Михалев Артем",
-      "groupId": "g14",
+      "name": "Шабаев Сергей",
+      "groupId": "g10",
       "groupIds": [
-        "g14"
+        "g10"
       ],
       "familyId": "f72",
       "kind": "regular",
@@ -1997,10 +1996,10 @@
     },
     {
       "id": "c81",
-      "name": "Синяев Максим",
-      "groupId": "g14",
+      "name": "Разборов Марк",
+      "groupId": "g10",
       "groupIds": [
-        "g14"
+        "g10"
       ],
       "familyId": "f73",
       "kind": "regular",
@@ -2014,10 +2013,10 @@
     },
     {
       "id": "c82",
-      "name": "Степанов Максим",
-      "groupId": "g14",
+      "name": "Хорова Анастасия 5,5",
+      "groupId": "g11",
       "groupIds": [
-        "g14"
+        "g11"
       ],
       "familyId": "f74",
       "kind": "regular",
@@ -2031,10 +2030,10 @@
     },
     {
       "id": "c83",
-      "name": "Мелешко Иван",
-      "groupId": "g15",
+      "name": "Качесов Михаил 4,5",
+      "groupId": "g11",
       "groupIds": [
-        "g15"
+        "g11"
       ],
       "familyId": "f75",
       "kind": "regular",
@@ -2048,10 +2047,10 @@
     },
     {
       "id": "c84",
-      "name": "Артемьев Федор",
-      "groupId": "g15",
+      "name": "Буденный Андрей 7",
+      "groupId": "g11",
       "groupIds": [
-        "g15"
+        "g11"
       ],
       "familyId": "f76",
       "kind": "regular",
@@ -2065,10 +2064,27 @@
     },
     {
       "id": "c85",
-      "name": "Коротеев Денис",
-      "groupId": "g15",
+      "name": "Новиков Роман",
+      "groupId": "g11",
       "groupIds": [
-        "g15"
+        "g11"
+      ],
+      "familyId": "f15",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c86",
+      "name": "Гусев Кирилл 10",
+      "groupId": "g12",
+      "groupIds": [
+        "g12"
       ],
       "familyId": "f77",
       "kind": "regular",
@@ -2081,11 +2097,11 @@
       }
     },
     {
-      "id": "c86",
-      "name": "Колгушкин Никита",
-      "groupId": "g15",
+      "id": "c87",
+      "name": "Мальсагов Абдула",
+      "groupId": "g12",
       "groupIds": [
-        "g15"
+        "g12"
       ],
       "familyId": "f78",
       "kind": "regular",
@@ -2098,11 +2114,28 @@
       }
     },
     {
-      "id": "c87",
-      "name": "Сурнин Федор",
-      "groupId": "g15",
+      "id": "c88",
+      "name": "Мальсагов Саад",
+      "groupId": "g12",
       "groupIds": [
-        "g15"
+        "g12"
+      ],
+      "familyId": "f78",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c89",
+      "name": "Цыплухин Владимир",
+      "groupId": "g12",
+      "groupIds": [
+        "g12"
       ],
       "familyId": "f79",
       "kind": "regular",
@@ -2115,11 +2148,11 @@
       }
     },
     {
-      "id": "c88",
-      "name": "Мазай Михаил",
-      "groupId": "g15",
+      "id": "c90",
+      "name": "Арсентьев Артем",
+      "groupId": "g13",
       "groupIds": [
-        "g15"
+        "g13"
       ],
       "familyId": "f80",
       "kind": "regular",
@@ -2132,11 +2165,11 @@
       }
     },
     {
-      "id": "c89",
-      "name": "Байкалов Георгий",
-      "groupId": "g15",
+      "id": "c91",
+      "name": "Чепусов Ярослав",
+      "groupId": "g13",
       "groupIds": [
-        "g15"
+        "g13"
       ],
       "familyId": "f81",
       "kind": "regular",
@@ -2149,11 +2182,11 @@
       }
     },
     {
-      "id": "c90",
-      "name": "Шпортун Александр",
-      "groupId": "g15",
+      "id": "c92",
+      "name": "Бровко Ева",
+      "groupId": "g13",
       "groupIds": [
-        "g15"
+        "g13"
       ],
       "familyId": "f82",
       "kind": "regular",
@@ -2166,11 +2199,11 @@
       }
     },
     {
-      "id": "c91",
-      "name": "Шулклов Мил",
-      "groupId": "g15",
+      "id": "c93",
+      "name": "Хмельницкий Тимофей",
+      "groupId": "g13",
       "groupIds": [
-        "g15"
+        "g13"
       ],
       "familyId": "f83",
       "kind": "regular",
@@ -2183,11 +2216,11 @@
       }
     },
     {
-      "id": "c92",
-      "name": "Шеин Петр",
-      "groupId": "g15",
+      "id": "c94",
+      "name": "Матвеев Илья",
+      "groupId": "g13",
       "groupIds": [
-        "g15"
+        "g13"
       ],
       "familyId": "f84",
       "kind": "regular",
@@ -2200,11 +2233,12 @@
       }
     },
     {
-      "id": "c93",
-      "name": "Стукалов Арсений",
-      "groupId": "g15",
+      "id": "c95",
+      "name": "Шиманов Артем",
+      "groupId": "g13",
       "groupIds": [
-        "g15"
+        "g13",
+        "g14"
       ],
       "familyId": "f85",
       "kind": "regular",
@@ -2217,11 +2251,11 @@
       }
     },
     {
-      "id": "c94",
-      "name": "Пенчуков Станислав",
-      "groupId": "g15",
+      "id": "c96",
+      "name": "Шуть Михаил",
+      "groupId": "g13",
       "groupIds": [
-        "g15"
+        "g13"
       ],
       "familyId": "f86",
       "kind": "regular",
@@ -2234,11 +2268,11 @@
       }
     },
     {
-      "id": "c95",
-      "name": "Неумоин Александр",
-      "groupId": "g16",
+      "id": "c97",
+      "name": "Павлов Федор",
+      "groupId": "g13",
       "groupIds": [
-        "g16"
+        "g13"
       ],
       "familyId": "f87",
       "kind": "regular",
@@ -2251,28 +2285,11 @@
       }
     },
     {
-      "id": "c96",
-      "name": "Сурнин Михаил",
-      "groupId": "g16",
+      "id": "c98",
+      "name": "Иванченко Глеб",
+      "groupId": "g13",
       "groupIds": [
-        "g16"
-      ],
-      "familyId": "f79",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c97",
-      "name": "Зобов Роман",
-      "groupId": "g16",
-      "groupIds": [
-        "g16"
+        "g13"
       ],
       "familyId": "f88",
       "kind": "regular",
@@ -2285,11 +2302,11 @@
       }
     },
     {
-      "id": "c98",
-      "name": "Евдокимов Александр",
-      "groupId": "g16",
+      "id": "c99",
+      "name": "Хочинский Федор",
+      "groupId": "g13",
       "groupIds": [
-        "g16"
+        "g13"
       ],
       "familyId": "f89",
       "kind": "regular",
@@ -2302,11 +2319,11 @@
       }
     },
     {
-      "id": "c99",
-      "name": "Крашенинников Иван",
-      "groupId": "g16",
+      "id": "c100",
+      "name": "Саркисов Эдгар",
+      "groupId": "g14",
       "groupIds": [
-        "g16"
+        "g14"
       ],
       "familyId": "f90",
       "kind": "regular",
@@ -2319,8 +2336,331 @@
       }
     },
     {
-      "id": "c100",
+      "id": "c101",
+      "name": "Михалев Артем",
+      "groupId": "g14",
+      "groupIds": [
+        "g14"
+      ],
+      "familyId": "f91",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c102",
+      "name": "Синяев Максим",
+      "groupId": "g14",
+      "groupIds": [
+        "g14"
+      ],
+      "familyId": "f92",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c103",
+      "name": "Степанов Максим",
+      "groupId": "g14",
+      "groupIds": [
+        "g14"
+      ],
+      "familyId": "f93",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c104",
+      "name": "Коротеев Денис",
+      "groupId": "g15",
+      "groupIds": [
+        "g15"
+      ],
+      "familyId": "f94",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c105",
+      "name": "Колгушкин Никита",
+      "groupId": "g15",
+      "groupIds": [
+        "g15"
+      ],
+      "familyId": "f95",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c106",
+      "name": "Сурнин Федор",
+      "groupId": "g15",
+      "groupIds": [
+        "g15"
+      ],
+      "familyId": "f96",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c107",
+      "name": "Байкалов Георгий",
+      "groupId": "g15",
+      "groupIds": [
+        "g15"
+      ],
+      "familyId": "f97",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c108",
+      "name": "Шпортун Александр",
+      "groupId": "g15",
+      "groupIds": [
+        "g15"
+      ],
+      "familyId": "f98",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c109",
+      "name": "Шулклов Мил",
+      "groupId": "g15",
+      "groupIds": [
+        "g15"
+      ],
+      "familyId": "f99",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c110",
+      "name": "Стукалов Арсений",
+      "groupId": "g15",
+      "groupIds": [
+        "g15"
+      ],
+      "familyId": "f100",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c111",
+      "name": "Гончаров Артем",
+      "groupId": "g15",
+      "groupIds": [
+        "g15"
+      ],
+      "familyId": "f101",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c112",
+      "name": "Шелуха Максим",
+      "groupId": "g15",
+      "groupIds": [
+        "g15"
+      ],
+      "familyId": "f102",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c113",
+      "name": "Поляков Александр",
+      "groupId": "g15",
+      "groupIds": [
+        "g15"
+      ],
+      "familyId": "f103",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c114",
+      "name": "Неумоин Александр",
+      "groupId": "g16",
+      "groupIds": [
+        "g16"
+      ],
+      "familyId": "f104",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c115",
+      "name": "Сурнин Михаил",
+      "groupId": "g16",
+      "groupIds": [
+        "g16"
+      ],
+      "familyId": "f96",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c116",
+      "name": "Зобов Роман",
+      "groupId": "g16",
+      "groupIds": [
+        "g16"
+      ],
+      "familyId": "f105",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c117",
+      "name": "Евдокимов Александр",
+      "groupId": "g16",
+      "groupIds": [
+        "g16"
+      ],
+      "familyId": "f106",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c118",
+      "name": "Крашенинников Иван",
+      "groupId": "g16",
+      "groupIds": [
+        "g16"
+      ],
+      "familyId": "f107",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c119",
       "name": "Крупчатников Андрей",
+      "groupId": "g16",
+      "groupIds": [
+        "g16"
+      ],
+      "familyId": "f108",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c120",
+      "name": "Михалев Лев",
       "groupId": "g16",
       "groupIds": [
         "g16"
@@ -2336,368 +2676,11 @@
       }
     },
     {
-      "id": "c101",
-      "name": "Якубенок Артем",
-      "groupId": "g17",
-      "groupIds": [
-        "g17"
-      ],
-      "familyId": "f92",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c102",
-      "name": "Якубенок Павел",
-      "groupId": "g17",
-      "groupIds": [
-        "g17"
-      ],
-      "familyId": "f92",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c103",
-      "name": "Глинский Кирилл",
-      "groupId": "g17",
-      "groupIds": [
-        "g17"
-      ],
-      "familyId": "f93",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c104",
-      "name": "Налбандян Роберт",
-      "groupId": "g17",
-      "groupIds": [
-        "g17"
-      ],
-      "familyId": "f94",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c105",
-      "name": "Ераносян Матвей",
-      "groupId": "g17",
-      "groupIds": [
-        "g17"
-      ],
-      "familyId": "f95",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c106",
-      "name": "Ераносян Богдан",
-      "groupId": "g17",
-      "groupIds": [
-        "g17"
-      ],
-      "familyId": "f95",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c107",
-      "name": "Старцев Егор",
-      "groupId": "g17",
-      "groupIds": [
-        "g17"
-      ],
-      "familyId": "f96",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c108",
-      "name": "Шестаков Михаил",
-      "groupId": "g17",
-      "groupIds": [
-        "g17"
-      ],
-      "familyId": "f97",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c109",
-      "name": "Крылов Артем",
-      "groupId": "g17",
-      "groupIds": [
-        "g17"
-      ],
-      "familyId": "f98",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c110",
-      "name": "Старицин Дмитрий",
-      "groupId": "g17",
-      "groupIds": [
-        "g17"
-      ],
-      "familyId": "f99",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c111",
-      "name": "Литвинов Тимофей",
-      "groupId": "g17",
-      "groupIds": [
-        "g17"
-      ],
-      "familyId": "f100",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c112",
-      "name": "Горелов Григорий",
-      "groupId": "g17",
-      "groupIds": [
-        "g17"
-      ],
-      "familyId": "f101",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c113",
-      "name": "Финогеев Даниил",
-      "groupId": "g18",
-      "groupIds": [
-        "g18"
-      ],
-      "familyId": "f102",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c114",
-      "name": "Чесноков Макар",
-      "groupId": "g18",
-      "groupIds": [
-        "g18"
-      ],
-      "familyId": "f103",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c115",
-      "name": "Мазин Лука",
-      "groupId": "g18",
-      "groupIds": [
-        "g18"
-      ],
-      "familyId": "f104",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c116",
-      "name": "Лещев Игорь",
-      "groupId": "g18",
-      "groupIds": [
-        "g18"
-      ],
-      "familyId": "f105",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c117",
-      "name": "Ершов Тихон",
-      "groupId": "g18",
-      "groupIds": [
-        "g18"
-      ],
-      "familyId": "f106",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c118",
-      "name": "Чернавкин Макар",
-      "groupId": "g18",
-      "groupIds": [
-        "g18"
-      ],
-      "familyId": "f107",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c119",
-      "name": "Нагель Сергей",
-      "groupId": "g19",
-      "groupIds": [
-        "g19"
-      ],
-      "familyId": "f108",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c120",
-      "name": "Ершов Иван",
-      "groupId": "g19",
-      "groupIds": [
-        "g19"
-      ],
-      "familyId": "f106",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
       "id": "c121",
-      "name": "Ершов Петр",
-      "groupId": "g19",
+      "name": "Артемьев Федор",
+      "groupId": "g16",
       "groupIds": [
-        "g19"
-      ],
-      "familyId": "f106",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c122",
-      "name": "Стародубцев Александр",
-      "groupId": "g19",
-      "groupIds": [
-        "g19"
+        "g16"
       ],
       "familyId": "f109",
       "kind": "regular",
@@ -2710,11 +2693,11 @@
       }
     },
     {
-      "id": "c123",
-      "name": "Волынцев Александр",
-      "groupId": "g19",
+      "id": "c122",
+      "name": "Мелешко Иван",
+      "groupId": "g16",
       "groupIds": [
-        "g19"
+        "g16"
       ],
       "familyId": "f110",
       "kind": "regular",
@@ -2727,11 +2710,11 @@
       }
     },
     {
-      "id": "c124",
-      "name": "Угрецов Елисей",
-      "groupId": "g19",
+      "id": "c123",
+      "name": "Мазай Михаил",
+      "groupId": "g16",
       "groupIds": [
-        "g19"
+        "g16"
       ],
       "familyId": "f111",
       "kind": "regular",
@@ -2744,11 +2727,11 @@
       }
     },
     {
-      "id": "c125",
-      "name": "Буряков Кирилл",
-      "groupId": "g19",
+      "id": "c124",
+      "name": "Пенчуков Станислав",
+      "groupId": "g16",
       "groupIds": [
-        "g19"
+        "g16"
       ],
       "familyId": "f112",
       "kind": "regular",
@@ -2761,11 +2744,11 @@
       }
     },
     {
-      "id": "c126",
-      "name": "Хасиев Аслан",
-      "groupId": "g19",
+      "id": "c125",
+      "name": "Шеин Петр",
+      "groupId": "g16",
       "groupIds": [
-        "g19"
+        "g16"
       ],
       "familyId": "f113",
       "kind": "regular",
@@ -2778,11 +2761,28 @@
       }
     },
     {
-      "id": "c127",
-      "name": "Баукина Василиса",
-      "groupId": "g19",
+      "id": "c126",
+      "name": "Якубенок Артем",
+      "groupId": "g17",
       "groupIds": [
-        "g19"
+        "g17"
+      ],
+      "familyId": "f114",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c127",
+      "name": "Якубенок Павел",
+      "groupId": "g17",
+      "groupIds": [
+        "g17"
       ],
       "familyId": "f114",
       "kind": "regular",
@@ -2796,10 +2796,10 @@
     },
     {
       "id": "c128",
-      "name": "Кравченко Артем",
-      "groupId": "g19",
+      "name": "Глинский Кирилл",
+      "groupId": "g17",
       "groupIds": [
-        "g19"
+        "g17"
       ],
       "familyId": "f115",
       "kind": "regular",
@@ -2813,10 +2813,10 @@
     },
     {
       "id": "c129",
-      "name": "Хусяинов Тимур",
-      "groupId": "g19",
+      "name": "Налбандян Роберт",
+      "groupId": "g17",
       "groupIds": [
-        "g19"
+        "g17"
       ],
       "familyId": "f116",
       "kind": "regular",
@@ -2830,10 +2830,10 @@
     },
     {
       "id": "c130",
-      "name": "Колмаков Евгений",
-      "groupId": "g19",
+      "name": "Ераносян Матвей",
+      "groupId": "g17",
       "groupIds": [
-        "g19"
+        "g17"
       ],
       "familyId": "f117",
       "kind": "regular",
@@ -2847,10 +2847,27 @@
     },
     {
       "id": "c131",
-      "name": "Кокозов Константин",
-      "groupId": "g20",
+      "name": "Ераносян Богдан",
+      "groupId": "g17",
       "groupIds": [
-        "g20"
+        "g17"
+      ],
+      "familyId": "f117",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c132",
+      "name": "Старцев Егор",
+      "groupId": "g17",
+      "groupIds": [
+        "g17"
       ],
       "familyId": "f118",
       "kind": "regular",
@@ -2863,28 +2880,11 @@
       }
     },
     {
-      "id": "c132",
-      "name": "Гулдаев Александр",
-      "groupId": "g21",
-      "groupIds": [
-        "g21"
-      ],
-      "familyId": "f27",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
       "id": "c133",
-      "name": "Жайляу Алим",
-      "groupId": "g21",
+      "name": "Шестаков Михаил",
+      "groupId": "g17",
       "groupIds": [
-        "g21"
+        "g17"
       ],
       "familyId": "f119",
       "kind": "regular",
@@ -2898,10 +2898,10 @@
     },
     {
       "id": "c134",
-      "name": "Коршиков Яромир",
-      "groupId": "g21",
+      "name": "Крылов Артем",
+      "groupId": "g17",
       "groupIds": [
-        "g21"
+        "g17"
       ],
       "familyId": "f120",
       "kind": "regular",
@@ -2915,10 +2915,10 @@
     },
     {
       "id": "c135",
-      "name": "Мокин Кирилл",
-      "groupId": "g22",
+      "name": "Старицин Дмитрий",
+      "groupId": "g17",
       "groupIds": [
-        "g22"
+        "g17"
       ],
       "familyId": "f121",
       "kind": "regular",
@@ -2932,44 +2932,10 @@
     },
     {
       "id": "c136",
-      "name": "Мокин Даниил",
-      "groupId": "g22",
+      "name": "Литвинов Тимофей",
+      "groupId": "g17",
       "groupIds": [
-        "g22"
-      ],
-      "familyId": "f121",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c137",
-      "name": "Ермаков Михаил",
-      "groupId": "g22",
-      "groupIds": [
-        "g22"
-      ],
-      "familyId": "f26",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c138",
-      "name": "Сехин Сергей",
-      "groupId": "g22",
-      "groupIds": [
-        "g22"
+        "g17"
       ],
       "familyId": "f122",
       "kind": "regular",
@@ -2982,11 +2948,11 @@
       }
     },
     {
-      "id": "c139",
-      "name": "Давыдов Лев",
-      "groupId": "g22",
+      "id": "c137",
+      "name": "Горелов Григорий",
+      "groupId": "g17",
       "groupIds": [
-        "g22"
+        "g17"
       ],
       "familyId": "f123",
       "kind": "regular",
@@ -2999,28 +2965,11 @@
       }
     },
     {
-      "id": "c140",
-      "name": "Давыдов Илья",
-      "groupId": "g22",
+      "id": "c138",
+      "name": "Финогеев Даниил",
+      "groupId": "g18",
       "groupIds": [
-        "g22"
-      ],
-      "familyId": "f123",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c141",
-      "name": "Стрельников Егор",
-      "groupId": "g22",
-      "groupIds": [
-        "g22"
+        "g18"
       ],
       "familyId": "f124",
       "kind": "regular",
@@ -3033,28 +2982,11 @@
       }
     },
     {
-      "id": "c142",
-      "name": "Гусейнов Ильяс",
-      "groupId": "g23",
+      "id": "c139",
+      "name": "Чесноков Макар",
+      "groupId": "g18",
       "groupIds": [
-        "g23"
-      ],
-      "familyId": "f41",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c143",
-      "name": "Лукина Мария",
-      "groupId": "g23",
-      "groupIds": [
-        "g23"
+        "g18"
       ],
       "familyId": "f125",
       "kind": "regular",
@@ -3067,11 +2999,11 @@
       }
     },
     {
-      "id": "c144",
-      "name": "Биячуев Арсений",
-      "groupId": "g23",
+      "id": "c140",
+      "name": "Мазин Лука",
+      "groupId": "g18",
       "groupIds": [
-        "g23"
+        "g18"
       ],
       "familyId": "f126",
       "kind": "regular",
@@ -3084,11 +3016,11 @@
       }
     },
     {
-      "id": "c145",
-      "name": "Бельмас Александр",
-      "groupId": "g23",
+      "id": "c141",
+      "name": "Лещев Игорь",
+      "groupId": "g18",
       "groupIds": [
-        "g23"
+        "g18"
       ],
       "familyId": "f127",
       "kind": "regular",
@@ -3101,11 +3033,11 @@
       }
     },
     {
-      "id": "c146",
-      "name": "Султанов Эмир",
-      "groupId": "g24",
+      "id": "c142",
+      "name": "Ершов Тихон",
+      "groupId": "g18",
       "groupIds": [
-        "g24"
+        "g18"
       ],
       "familyId": "f128",
       "kind": "regular",
@@ -3118,28 +3050,11 @@
       }
     },
     {
-      "id": "c147",
-      "name": "Биячуев Даниил",
-      "groupId": "g24",
+      "id": "c143",
+      "name": "Чернавкин Макар",
+      "groupId": "g18",
       "groupIds": [
-        "g24"
-      ],
-      "familyId": "f126",
-      "kind": "regular",
-      "discountPercent": null,
-      "documents": {
-        "application": false,
-        "certificate": false,
-        "insurance": "",
-        "doctor": false
-      }
-    },
-    {
-      "id": "c148",
-      "name": "Куренков Сергей",
-      "groupId": "g24",
-      "groupIds": [
-        "g24"
+        "g18"
       ],
       "familyId": "f129",
       "kind": "regular",
@@ -3152,11 +3067,11 @@
       }
     },
     {
-      "id": "c149",
-      "name": "Нечаев Петр",
-      "groupId": "g24",
+      "id": "c144",
+      "name": "Куренков Сергей",
+      "groupId": "g18",
       "groupIds": [
-        "g24"
+        "g18"
       ],
       "familyId": "f130",
       "kind": "regular",
@@ -3169,11 +3084,11 @@
       }
     },
     {
-      "id": "c150",
-      "name": "Юшков Родион",
-      "groupId": "g24",
+      "id": "c145",
+      "name": "Науменко Илья",
+      "groupId": "g18",
       "groupIds": [
-        "g24"
+        "g18"
       ],
       "familyId": "f131",
       "kind": "regular",
@@ -3186,11 +3101,11 @@
       }
     },
     {
-      "id": "c151",
-      "name": "Фомичев Глеб",
-      "groupId": "g24",
+      "id": "c146",
+      "name": "Парфишин Александр",
+      "groupId": "g18",
       "groupIds": [
-        "g24"
+        "g18"
       ],
       "familyId": "f132",
       "kind": "regular",
@@ -3203,13 +3118,761 @@
       }
     },
     {
+      "id": "c147",
+      "name": "Мурачуев Рамазан",
+      "groupId": "g18",
+      "groupIds": [
+        "g18"
+      ],
+      "familyId": "f133",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c148",
+      "name": "Нагель Сергей",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f134",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c149",
+      "name": "Ершов Иван",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f128",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c150",
+      "name": "Ершов Петр",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f128",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c151",
+      "name": "Стародубцев Александр",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f135",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
       "id": "c152",
-      "name": "Беждугов Ильдар",
+      "name": "Волынцев Александр",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f136",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c153",
+      "name": "Угрецов Елисей",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f137",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c154",
+      "name": "Буряков Кирилл",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f138",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c155",
+      "name": "Хасиев Аслан",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f139",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c156",
+      "name": "Баукина Василиса",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f140",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c157",
+      "name": "Кравченко Артем",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f141",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c158",
+      "name": "Хусяинов Тимур",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f142",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c159",
+      "name": "Колмаков Евгений",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f143",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c160",
+      "name": "Нечаев Петр",
+      "groupId": "g19",
+      "groupIds": [
+        "g19"
+      ],
+      "familyId": "f144",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c161",
+      "name": "Кокозов Константин",
+      "groupId": "g20",
+      "groupIds": [
+        "g20"
+      ],
+      "familyId": "f145",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c162",
+      "name": "Игнатьев Владимир",
+      "groupId": "g20",
+      "groupIds": [
+        "g20"
+      ],
+      "familyId": "f146",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c163",
+      "name": "Баш Даниил",
+      "groupId": "g20",
+      "groupIds": [
+        "g20"
+      ],
+      "familyId": "f147",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c164",
+      "name": "Габулов Артем",
+      "groupId": "g20",
+      "groupIds": [
+        "g20"
+      ],
+      "familyId": "f148",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c165",
+      "name": "Гулдаев Александр",
+      "groupId": "g21",
+      "groupIds": [
+        "g21"
+      ],
+      "familyId": "f35",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c166",
+      "name": "Жайляу Алим",
+      "groupId": "g21",
+      "groupIds": [
+        "g21"
+      ],
+      "familyId": "f149",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c167",
+      "name": "Коршиков Яромир",
+      "groupId": "g21",
+      "groupIds": [
+        "g21"
+      ],
+      "familyId": "f150",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c168",
+      "name": "Саенко Лев",
+      "groupId": "g21",
+      "groupIds": [
+        "g21"
+      ],
+      "familyId": "f151",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c169",
+      "name": "Сухин Денис",
+      "groupId": "g21",
+      "groupIds": [
+        "g21"
+      ],
+      "familyId": "f152",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c170",
+      "name": "Мокин Кирилл",
+      "groupId": "g22",
+      "groupIds": [
+        "g22"
+      ],
+      "familyId": "f153",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c171",
+      "name": "Мокин Даниил",
+      "groupId": "g22",
+      "groupIds": [
+        "g22"
+      ],
+      "familyId": "f153",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c172",
+      "name": "Ермаков Михаил",
+      "groupId": "g22",
+      "groupIds": [
+        "g22"
+      ],
+      "familyId": "f34",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c173",
+      "name": "Сехин Сергей",
+      "groupId": "g22",
+      "groupIds": [
+        "g22"
+      ],
+      "familyId": "f154",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c174",
+      "name": "Давыдов Лев",
+      "groupId": "g22",
+      "groupIds": [
+        "g22"
+      ],
+      "familyId": "f155",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c175",
+      "name": "Давыдов Илья",
+      "groupId": "g22",
+      "groupIds": [
+        "g22"
+      ],
+      "familyId": "f155",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c176",
+      "name": "Стрельников Егор",
+      "groupId": "g22",
+      "groupIds": [
+        "g22"
+      ],
+      "familyId": "f156",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c177",
+      "name": "Рубан Владимир",
+      "groupId": "g22",
+      "groupIds": [
+        "g22"
+      ],
+      "familyId": "f157",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c178",
+      "name": "Богатов Матвей",
+      "groupId": "g22",
+      "groupIds": [
+        "g22"
+      ],
+      "familyId": "f158",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c179",
+      "name": "Назаров Александр",
+      "groupId": "g22",
+      "groupIds": [
+        "g22"
+      ],
+      "familyId": "f159",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c180",
+      "name": "Гусейнов Ильяс",
+      "groupId": "g23",
+      "groupIds": [
+        "g23"
+      ],
+      "familyId": "f56",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c181",
+      "name": "Лукина Мария",
+      "groupId": "g23",
+      "groupIds": [
+        "g23"
+      ],
+      "familyId": "f160",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c182",
+      "name": "Биячуев Арсений",
+      "groupId": "g23",
+      "groupIds": [
+        "g23"
+      ],
+      "familyId": "f161",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c183",
+      "name": "Бельмас Александр",
+      "groupId": "g23",
+      "groupIds": [
+        "g23"
+      ],
+      "familyId": "f162",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c184",
+      "name": "Свиридов Егор",
+      "groupId": "g23",
+      "groupIds": [
+        "g23"
+      ],
+      "familyId": "f163",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c185",
+      "name": "Арапханов Али",
+      "groupId": "g23",
+      "groupIds": [
+        "g23"
+      ],
+      "familyId": "f164",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c186",
+      "name": "Султанов Эмир",
       "groupId": "g24",
       "groupIds": [
         "g24"
       ],
-      "familyId": "f133",
+      "familyId": "f165",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c187",
+      "name": "Биячуев Даниил",
+      "groupId": "g24",
+      "groupIds": [
+        "g24"
+      ],
+      "familyId": "f161",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c188",
+      "name": "Юшков Родион",
+      "groupId": "g24",
+      "groupIds": [
+        "g24"
+      ],
+      "familyId": "f166",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c189",
+      "name": "Фомичев Глеб",
+      "groupId": "g24",
+      "groupIds": [
+        "g24"
+      ],
+      "familyId": "f167",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c190",
+      "name": "Беждугов Идар",
+      "groupId": "g24",
+      "groupIds": [
+        "g24"
+      ],
+      "familyId": "f168",
+      "kind": "regular",
+      "discountPercent": null,
+      "documents": {
+        "application": false,
+        "certificate": false,
+        "insurance": "",
+        "doctor": false
+      }
+    },
+    {
+      "id": "c191",
+      "name": "Буров Федор",
+      "groupId": "g24",
+      "groupIds": [
+        "g24"
+      ],
+      "familyId": "f169",
       "kind": "regular",
       "discountPercent": null,
       "documents": {
@@ -3224,257 +3887,532 @@
     "2026-09:g1:c1:2": "present",
     "2026-09:g1:c2:2": "present",
     "2026-09:g1:c2:4": "present",
+    "2026-09:g1:c2:9": "present",
+    "2026-09:g1:c2:11": "present",
     "2026-09:g1:c3:2": "present",
     "2026-09:g1:c3:4": "present",
-    "2026-09:g2:c4:2": "present",
-    "2026-09:g2:c5:2": "present",
-    "2026-09:g2:c5:4": "present",
+    "2026-09:g1:c3:9": "present",
+    "2026-09:g1:c3:11": "present",
+    "2026-09:g1:c4:9": "present",
+    "2026-09:g1:c5:11": "present",
     "2026-09:g2:c6:2": "present",
+    "2026-09:g2:c6:9": "present",
+    "2026-09:g2:c6:11": "present",
     "2026-09:g2:c7:2": "present",
     "2026-09:g2:c7:4": "present",
+    "2026-09:g2:c7:9": "present",
+    "2026-09:g2:c7:11": "present",
     "2026-09:g2:c8:2": "present",
-    "2026-09:g2:c8:4": "present",
-    "2026-09:g3:c9:2": "present",
-    "2026-09:g3:c9:4": "present",
-    "2026-09:g3:c10:2": "present",
-    "2026-09:g3:c10:4": "present",
+    "2026-09:g2:c8:9": "present",
+    "2026-09:g2:c9:2": "present",
+    "2026-09:g2:c9:4": "present",
+    "2026-09:g2:c9:9": "present",
+    "2026-09:g2:c9:11": "present",
+    "2026-09:g2:c10:2": "present",
+    "2026-09:g2:c10:4": "present",
+    "2026-09:g2:c10:9": "present",
+    "2026-09:g2:c10:11": "present",
     "2026-09:g3:c11:2": "present",
     "2026-09:g3:c11:4": "present",
-    "2026-09:g4:c12:2": "present",
-    "2026-09:g4:c12:4": "present",
-    "2026-09:g4:c13:2": "present",
-    "2026-09:g4:c13:4": "present",
-    "2026-09:g4:c14:2": "present",
-    "2026-09:g4:c14:7": "present",
+    "2026-09:g3:c11:9": "present",
+    "2026-09:g3:c12:2": "present",
+    "2026-09:g3:c12:4": "present",
+    "2026-09:g3:c12:9": "present",
+    "2026-09:g3:c13:2": "present",
+    "2026-09:g3:c13:4": "present",
+    "2026-09:g3:c13:9": "present",
+    "2026-09:g3:c14:9": "present",
     "2026-09:g4:c15:2": "present",
     "2026-09:g4:c15:4": "present",
+    "2026-09:g4:c15:9": "present",
+    "2026-09:g4:c15:11": "present",
     "2026-09:g4:c16:2": "present",
     "2026-09:g4:c16:4": "present",
+    "2026-09:g4:c16:9": "present",
+    "2026-09:g4:c16:11": "present",
     "2026-09:g4:c17:2": "present",
+    "2026-09:g4:c17:7": "present",
+    "2026-09:g4:c17:9": "present",
+    "2026-09:g4:c17:11": "present",
+    "2026-09:g4:c18:2": "present",
     "2026-09:g4:c18:4": "present",
-    "2026-09:g5:c19:2": "present",
-    "2026-09:g5:c19:5": "present",
-    "2026-09:g5:c20:2": "present",
-    "2026-09:g5:c20:5": "present",
-    "2026-09:g5:c21:2": "present",
-    "2026-09:g5:c21:5": "present",
-    "2026-09:g5:c22:2": "present",
-    "2026-09:g5:c22:5": "present",
-    "2026-09:g5:c23:2": "present",
-    "2026-09:g5:c23:5": "present",
-    "2026-09:g5:c24:5": "present",
-    "2026-09:g6:c25:4": "present",
-    "2026-09:g6:c26:7": "present",
-    "2026-09:g7:c27:5": "present",
-    "2026-09:g7:c28:5": "present",
-    "2026-09:g7:c29:5": "present",
-    "2026-09:g8:c30:1": "present",
-    "2026-09:g8:c30:3": "present",
-    "2026-09:g8:c31:1": "present",
-    "2026-09:g8:c31:3": "present",
-    "2026-09:g8:c32:1": "present",
-    "2026-09:g8:c32:3": "present",
-    "2026-09:g8:c33:1": "present",
-    "2026-09:g8:c33:3": "present",
-    "2026-09:g8:c34:1": "present",
-    "2026-09:g8:c34:3": "present",
-    "2026-09:g8:c35:1": "present",
-    "2026-09:g8:c36:1": "present",
-    "2026-09:g8:c36:3": "present",
-    "2026-09:g8:c37:3": "present",
-    "2026-09:g8:c38:3": "present",
-    "2026-09:g8:c39:3": "present",
-    "2026-09:g9:c40:1": "present",
-    "2026-09:g9:c40:3": "present",
-    "2026-09:g9:c41:1": "present",
-    "2026-09:g9:c41:3": "present",
-    "2026-09:g9:c42:1": "present",
-    "2026-09:g9:c42:3": "present",
-    "2026-09:g9:c43:1": "present",
-    "2026-09:g9:c43:3": "present",
-    "2026-09:g9:c44:1": "present",
-    "2026-09:g9:c44:3": "present",
-    "2026-09:g9:c45:1": "present",
-    "2026-09:g9:c45:3": "present",
-    "2026-09:g9:c46:1": "present",
-    "2026-09:g9:c46:3": "present",
-    "2026-09:g9:c46:4": "present",
-    "2026-09:g9:c46:7": "present",
-    "2026-09:g9:c47:1": "present",
-    "2026-09:g9:c47:3": "present",
-    "2026-09:g9:c48:1": "present",
-    "2026-09:g9:c48:3": "present",
-    "2026-09:g9:c49:1": "present",
-    "2026-09:g9:c49:3": "present",
-    "2026-09:g9:c50:3": "present",
-    "2026-09:g10:c51:1": "present",
-    "2026-09:g10:c51:3": "present",
-    "2026-09:g10:c52:1": "present",
-    "2026-09:g10:c52:3": "present",
-    "2026-09:g10:c53:1": "present",
-    "2026-09:g10:c53:3": "present",
-    "2026-09:g10:c54:1": "present",
-    "2026-09:g10:c54:3": "present",
-    "2026-09:g10:c55:1": "present",
-    "2026-09:g10:c55:3": "present",
-    "2026-09:g10:c56:1": "present",
-    "2026-09:g10:c56:3": "present",
-    "2026-09:g10:c57:1": "present",
-    "2026-09:g10:c57:3": "present",
-    "2026-09:g10:c58:3": "present",
-    "2026-09:g10:c59:3": "present",
-    "2026-09:g10:c60:3": "present",
-    "2026-09:g11:c61:1": "present",
-    "2026-09:g11:c61:4": "present",
-    "2026-09:g11:c62:1": "present",
-    "2026-09:g11:c63:1": "present",
-    "2026-09:g11:c63:4": "present",
-    "2026-09:g11:c64:4": "present",
-    "2026-09:g12:c65:1": "present",
-    "2026-09:g12:c66:4": "present",
-    "2026-09:g12:c67:4": "present",
-    "2026-09:g12:c68:4": "present",
-    "2026-09:g13:c69:4": "present",
-    "2026-09:g13:c69:7": "present",
-    "2026-09:g13:c70:4": "present",
-    "2026-09:g13:c70:7": "present",
-    "2026-09:g13:c71:4": "present",
-    "2026-09:g13:c71:7": "present",
-    "2026-09:g13:c72:4": "present",
-    "2026-09:g13:c72:7": "present",
-    "2026-09:g13:c73:4": "present",
-    "2026-09:g13:c73:7": "present",
-    "2026-09:g13:c74:7": "present",
-    "2026-09:g13:c75:7": "present",
-    "2026-09:g13:c76:7": "present",
-    "2026-09:g13:c77:7": "present",
-    "2026-09:g13:c78:7": "present",
-    "2026-09:g14:c79:4": "present",
-    "2026-09:g14:c80:4": "present",
-    "2026-09:g14:c80:7": "present",
-    "2026-09:g14:c81:4": "present",
-    "2026-09:g14:c81:5": "present",
-    "2026-09:g14:c81:7": "present",
-    "2026-09:g14:c82:7": "present",
-    "2026-09:g15:c83:2": "present",
-    "2026-09:g15:c84:2": "present",
-    "2026-09:g15:c84:5": "present",
-    "2026-09:g15:c85:2": "present",
-    "2026-09:g15:c85:5": "present",
-    "2026-09:g15:c86:2": "present",
-    "2026-09:g15:c87:2": "present",
-    "2026-09:g15:c87:5": "present",
-    "2026-09:g15:c88:2": "present",
-    "2026-09:g15:c88:5": "present",
-    "2026-09:g15:c89:2": "present",
-    "2026-09:g15:c90:2": "present",
-    "2026-09:g15:c90:5": "present",
-    "2026-09:g15:c92:5": "present",
-    "2026-09:g15:c93:5": "present",
-    "2026-09:g15:c94:5": "present",
-    "2026-09:g16:c95:2": "present",
-    "2026-09:g16:c95:5": "present",
-    "2026-09:g16:c96:2": "present",
-    "2026-09:g16:c96:4": "present",
-    "2026-09:g16:c96:5": "present",
-    "2026-09:g16:c96:7": "present",
-    "2026-09:g16:c97:2": "present",
-    "2026-09:g16:c97:5": "present",
-    "2026-09:g16:c98:2": "present",
-    "2026-09:g16:c98:4": "present",
-    "2026-09:g16:c98:7": "present",
-    "2026-09:g16:c99:2": "present",
-    "2026-09:g16:c99:4": "present",
-    "2026-09:g16:c99:7": "present",
-    "2026-09:g16:c100:2": "present",
-    "2026-09:g16:c100:4": "present",
-    "2026-09:g16:c100:7": "present",
-    "2026-09:g17:c101:2": "present",
-    "2026-09:g17:c101:5": "present",
-    "2026-09:g17:c102:2": "present",
-    "2026-09:g17:c102:5": "present",
-    "2026-09:g17:c103:2": "present",
-    "2026-09:g17:c103:5": "present",
-    "2026-09:g17:c104:2": "present",
-    "2026-09:g17:c104:7": "present",
-    "2026-09:g17:c105:2": "present",
-    "2026-09:g17:c105:5": "present",
-    "2026-09:g17:c106:2": "present",
-    "2026-09:g17:c106:5": "present",
-    "2026-09:g17:c107:2": "present",
-    "2026-09:g17:c107:5": "present",
-    "2026-09:g17:c108:2": "present",
-    "2026-09:g17:c108:5": "present",
-    "2026-09:g17:c109:2": "present",
-    "2026-09:g17:c109:5": "present",
-    "2026-09:g17:c110:2": "present",
-    "2026-09:g17:c111:5": "present",
-    "2026-09:g17:c112:5": "present",
-    "2026-09:g18:c113:4": "present",
-    "2026-09:g18:c114:4": "present",
-    "2026-09:g18:c115:4": "present",
-    "2026-09:g18:c116:4": "present",
-    "2026-09:g18:c117:4": "present",
-    "2026-09:g18:c118:4": "present",
-    "2026-09:g19:c119:4": "present",
-    "2026-09:g19:c120:4": "present",
-    "2026-09:g19:c121:4": "present",
-    "2026-09:g19:c122:4": "present",
-    "2026-09:g19:c123:4": "present",
-    "2026-09:g19:c124:4": "present",
-    "2026-09:g19:c125:4": "present",
-    "2026-09:g19:c126:4": "present",
-    "2026-09:g19:c127:4": "present",
-    "2026-09:g19:c128:4": "present",
-    "2026-09:g19:c129:4": "present",
-    "2026-09:g19:c130:4": "present",
-    "2026-09:g20:c131:4": "present",
-    "2026-09:g21:c132:2": "present",
-    "2026-09:g21:c132:5": "present",
-    "2026-09:g21:c133:2": "present",
-    "2026-09:g21:c133:5": "present",
-    "2026-09:g21:c134:2": "present",
-    "2026-09:g21:c134:5": "present",
-    "2026-09:g22:c135:2": "present",
-    "2026-09:g22:c136:2": "present",
-    "2026-09:g22:c137:2": "present",
-    "2026-09:g22:c137:5": "present",
-    "2026-09:g22:c138:2": "present",
-    "2026-09:g22:c138:5": "present",
-    "2026-09:g22:c139:5": "present",
-    "2026-09:g22:c140:5": "present",
-    "2026-09:g22:c141:5": "present",
-    "2026-09:g23:c142:1": "present",
-    "2026-09:g23:c143:1": "present",
-    "2026-09:g23:c144:1": "present",
-    "2026-09:g23:c145:3": "present",
-    "2026-09:g24:c146:1": "present",
-    "2026-09:g24:c147:1": "present",
-    "2026-09:g24:c147:3": "present",
-    "2026-09:g24:c148:1": "present",
-    "2026-09:g24:c149:1": "present",
-    "2026-09:g24:c149:3": "present",
-    "2026-09:g24:c150:3": "present",
-    "2026-09:g24:c151:3": "present",
-    "2026-09:g24:c152:3": "present"
+    "2026-09:g4:c18:9": "present",
+    "2026-09:g4:c18:11": "present",
+    "2026-09:g4:c19:2": "present",
+    "2026-09:g4:c19:4": "present",
+    "2026-09:g4:c19:9": "present",
+    "2026-09:g4:c19:11": "present",
+    "2026-09:g4:c20:2": "present",
+    "2026-09:g4:c20:9": "present",
+    "2026-09:g4:c20:11": "present",
+    "2026-09:g4:c21:4": "present",
+    "2026-09:g4:c21:9": "present",
+    "2026-09:g4:c21:11": "present",
+    "2026-09:g4:c22:9": "present",
+    "2026-09:g4:c22:11": "present",
+    "2026-09:g4:c23:9": "present",
+    "2026-09:g4:c24:9": "present",
+    "2026-09:g4:c25:11": "present",
+    "2026-09:g5:c26:2": "present",
+    "2026-09:g5:c26:5": "present",
+    "2026-09:g5:c26:9": "present",
+    "2026-09:g5:c27:2": "present",
+    "2026-09:g5:c27:5": "present",
+    "2026-09:g5:c27:9": "present",
+    "2026-09:g5:c28:2": "present",
+    "2026-09:g5:c28:5": "present",
+    "2026-09:g5:c28:9": "present",
+    "2026-09:g5:c28:12": "present",
+    "2026-09:g5:c29:2": "present",
+    "2026-09:g5:c29:5": "present",
+    "2026-09:g5:c29:9": "present",
+    "2026-09:g5:c29:12": "present",
+    "2026-09:g5:c30:2": "present",
+    "2026-09:g5:c30:5": "present",
+    "2026-09:g5:c30:9": "present",
+    "2026-09:g5:c30:12": "present",
+    "2026-09:g5:c31:5": "present",
+    "2026-09:g5:c31:9": "present",
+    "2026-09:g5:c31:12": "present",
+    "2026-09:g6:c32:4": "present",
+    "2026-09:g6:c33:7": "present",
+    "2026-09:g6:c33:11": "present",
+    "2026-09:g6:c34:11": "present",
+    "2026-09:g7:c35:5": "present",
+    "2026-09:g7:c35:7": "present",
+    "2026-09:g7:c35:12": "present",
+    "2026-09:g7:c36:5": "present",
+    "2026-09:g7:c36:7": "present",
+    "2026-09:g7:c36:12": "present",
+    "2026-09:g7:c37:5": "present",
+    "2026-09:g7:c37:7": "present",
+    "2026-09:g7:c37:12": "present",
+    "2026-09:g7:c38:7": "present",
+    "2026-09:g7:c39:12": "present",
+    "2026-09:g7:c40:12": "present",
+    "2026-09:g8:c41:1": "present",
+    "2026-09:g8:c41:3": "present",
+    "2026-09:g8:c41:8": "present",
+    "2026-09:g8:c41:10": "present",
+    "2026-09:g8:c42:1": "present",
+    "2026-09:g8:c42:3": "present",
+    "2026-09:g8:c42:8": "present",
+    "2026-09:g8:c42:10": "present",
+    "2026-09:g8:c43:1": "present",
+    "2026-09:g8:c43:3": "present",
+    "2026-09:g8:c43:8": "present",
+    "2026-09:g8:c43:10": "present",
+    "2026-09:g8:c44:1": "present",
+    "2026-09:g8:c44:3": "present",
+    "2026-09:g8:c44:8": "present",
+    "2026-09:g8:c44:10": "present",
+    "2026-09:g8:c45:1": "present",
+    "2026-09:g8:c45:3": "present",
+    "2026-09:g8:c45:8": "present",
+    "2026-09:g8:c45:10": "present",
+    "2026-09:g8:c46:1": "present",
+    "2026-09:g8:c47:1": "present",
+    "2026-09:g8:c47:3": "present",
+    "2026-09:g8:c47:8": "present",
+    "2026-09:g8:c47:10": "present",
+    "2026-09:g8:c48:3": "present",
+    "2026-09:g8:c48:8": "present",
+    "2026-09:g8:c48:10": "present",
+    "2026-09:g8:c49:3": "present",
+    "2026-09:g8:c50:3": "present",
+    "2026-09:g8:c50:8": "present",
+    "2026-09:g8:c51:8": "present",
+    "2026-09:g8:c51:10": "present",
+    "2026-09:g8:c52:8": "present",
+    "2026-09:g8:c53:8": "present",
+    "2026-09:g8:c54:10": "present",
+    "2026-09:g8:c55:8": "present",
+    "2026-09:g9:c56:1": "present",
+    "2026-09:g9:c56:3": "present",
+    "2026-09:g9:c56:8": "present",
+    "2026-09:g9:c56:10": "present",
+    "2026-09:g9:c57:1": "present",
+    "2026-09:g9:c57:3": "present",
+    "2026-09:g9:c57:8": "present",
+    "2026-09:g9:c57:10": "present",
+    "2026-09:g9:c58:1": "present",
+    "2026-09:g9:c58:3": "present",
+    "2026-09:g9:c58:8": "present",
+    "2026-09:g9:c58:10": "present",
+    "2026-09:g9:c59:1": "present",
+    "2026-09:g9:c59:3": "present",
+    "2026-09:g9:c59:8": "present",
+    "2026-09:g9:c59:10": "present",
+    "2026-09:g9:c60:1": "present",
+    "2026-09:g9:c60:3": "present",
+    "2026-09:g9:c60:8": "present",
+    "2026-09:g9:c60:10": "present",
+    "2026-09:g9:c61:1": "present",
+    "2026-09:g9:c61:3": "present",
+    "2026-09:g9:c62:1": "present",
+    "2026-09:g9:c62:3": "present",
+    "2026-09:g9:c62:4": "present",
+    "2026-09:g9:c62:7": "present",
+    "2026-09:g9:c62:8": "present",
+    "2026-09:g9:c63:1": "present",
+    "2026-09:g9:c63:3": "present",
+    "2026-09:g9:c63:8": "present",
+    "2026-09:g9:c63:10": "present",
+    "2026-09:g9:c64:1": "present",
+    "2026-09:g9:c64:3": "present",
+    "2026-09:g9:c64:8": "present",
+    "2026-09:g9:c64:10": "present",
+    "2026-09:g9:c65:1": "present",
+    "2026-09:g9:c65:3": "present",
+    "2026-09:g9:c65:8": "present",
+    "2026-09:g9:c65:10": "present",
+    "2026-09:g9:c66:3": "present",
+    "2026-09:g9:c66:8": "present",
+    "2026-09:g9:c66:10": "present",
+    "2026-09:g9:c67:8": "present",
+    "2026-09:g9:c67:10": "present",
+    "2026-09:g9:c68:10": "present",
+    "2026-09:g10:c69:1": "present",
+    "2026-09:g10:c69:3": "present",
+    "2026-09:g10:c69:8": "present",
+    "2026-09:g10:c69:10": "present",
+    "2026-09:g10:c70:1": "present",
+    "2026-09:g10:c70:3": "present",
+    "2026-09:g10:c70:8": "present",
+    "2026-09:g10:c71:1": "present",
+    "2026-09:g10:c71:3": "present",
+    "2026-09:g10:c71:8": "present",
+    "2026-09:g10:c71:10": "present",
+    "2026-09:g10:c72:1": "present",
+    "2026-09:g10:c72:3": "present",
+    "2026-09:g10:c73:1": "present",
+    "2026-09:g10:c73:3": "present",
+    "2026-09:g10:c73:8": "present",
+    "2026-09:g10:c73:10": "present",
+    "2026-09:g10:c74:1": "present",
+    "2026-09:g10:c74:3": "present",
+    "2026-09:g10:c75:1": "present",
+    "2026-09:g10:c75:3": "present",
+    "2026-09:g10:c75:8": "present",
+    "2026-09:g10:c75:10": "present",
+    "2026-09:g10:c76:3": "present",
+    "2026-09:g10:c76:8": "present",
+    "2026-09:g10:c76:10": "present",
+    "2026-09:g10:c77:3": "present",
+    "2026-09:g10:c77:8": "present",
+    "2026-09:g10:c78:3": "present",
+    "2026-09:g10:c78:8": "present",
+    "2026-09:g10:c79:8": "present",
+    "2026-09:g10:c79:10": "present",
+    "2026-09:g10:c80:8": "present",
+    "2026-09:g10:c80:10": "present",
+    "2026-09:g10:c81:8": "present",
+    "2026-09:g10:c81:10": "present",
+    "2026-09:g11:c82:1": "present",
+    "2026-09:g11:c82:4": "present",
+    "2026-09:g11:c82:8": "present",
+    "2026-09:g11:c82:11": "present",
+    "2026-09:g11:c83:1": "present",
+    "2026-09:g11:c84:1": "present",
+    "2026-09:g11:c84:4": "present",
+    "2026-09:g11:c84:8": "present",
+    "2026-09:g11:c84:11": "present",
+    "2026-09:g11:c85:4": "present",
+    "2026-09:g11:c85:8": "present",
+    "2026-09:g11:c85:11": "present",
+    "2026-09:g12:c86:1": "present",
+    "2026-09:g12:c87:4": "present",
+    "2026-09:g12:c87:8": "present",
+    "2026-09:g12:c87:11": "present",
+    "2026-09:g12:c88:4": "present",
+    "2026-09:g12:c88:8": "present",
+    "2026-09:g12:c88:11": "present",
+    "2026-09:g12:c89:4": "present",
+    "2026-09:g12:c89:8": "present",
+    "2026-09:g12:c89:11": "present",
+    "2026-09:g13:c90:4": "present",
+    "2026-09:g13:c90:7": "present",
+    "2026-09:g13:c90:11": "present",
+    "2026-09:g13:c91:4": "present",
+    "2026-09:g13:c91:7": "present",
+    "2026-09:g13:c91:11": "present",
+    "2026-09:g13:c92:4": "present",
+    "2026-09:g13:c92:7": "present",
+    "2026-09:g13:c92:11": "present",
+    "2026-09:g13:c93:4": "present",
+    "2026-09:g13:c93:7": "present",
+    "2026-09:g13:c93:11": "present",
+    "2026-09:g13:c94:4": "present",
+    "2026-09:g13:c94:7": "present",
+    "2026-09:g13:c94:11": "present",
+    "2026-09:g13:c95:7": "present",
+    "2026-09:g13:c95:11": "present",
+    "2026-09:g13:c95:12": "present",
+    "2026-09:g13:c96:7": "present",
+    "2026-09:g13:c96:11": "present",
+    "2026-09:g13:c97:7": "present",
+    "2026-09:g13:c98:7": "present",
+    "2026-09:g13:c98:11": "present",
+    "2026-09:g13:c99:7": "present",
+    "2026-09:g13:c99:11": "present",
+    "2026-09:g14:c100:4": "present",
+    "2026-09:g14:c101:4": "present",
+    "2026-09:g14:c101:7": "present",
+    "2026-09:g14:c102:4": "present",
+    "2026-09:g14:c102:5": "present",
+    "2026-09:g14:c102:7": "present",
+    "2026-09:g14:c102:11": "present",
+    "2026-09:g14:c102:12": "present",
+    "2026-09:g14:c103:7": "present",
+    "2026-09:g14:c103:12": "present",
+    "2026-09:g15:c104:2": "present",
+    "2026-09:g15:c104:5": "present",
+    "2026-09:g15:c104:9": "present",
+    "2026-09:g15:c104:12": "present",
+    "2026-09:g15:c105:2": "present",
+    "2026-09:g15:c105:9": "present",
+    "2026-09:g15:c105:12": "present",
+    "2026-09:g15:c106:2": "present",
+    "2026-09:g15:c106:5": "present",
+    "2026-09:g15:c106:9": "present",
+    "2026-09:g15:c106:12": "present",
+    "2026-09:g15:c107:2": "present",
+    "2026-09:g15:c108:2": "present",
+    "2026-09:g15:c108:5": "present",
+    "2026-09:g15:c110:5": "present",
+    "2026-09:g15:c110:9": "present",
+    "2026-09:g15:c110:12": "present",
+    "2026-09:g15:c111:9": "present",
+    "2026-09:g15:c111:12": "present",
+    "2026-09:g15:c112:12": "present",
+    "2026-09:g15:c113:12": "present",
+    "2026-09:g16:c114:2": "present",
+    "2026-09:g16:c114:5": "present",
+    "2026-09:g16:c114:9": "present",
+    "2026-09:g16:c114:12": "present",
+    "2026-09:g16:c115:2": "present",
+    "2026-09:g16:c115:4": "present",
+    "2026-09:g16:c115:5": "present",
+    "2026-09:g16:c115:7": "present",
+    "2026-09:g16:c115:9": "present",
+    "2026-09:g16:c115:12": "present",
+    "2026-09:g16:c116:2": "present",
+    "2026-09:g16:c116:5": "present",
+    "2026-09:g16:c117:2": "present",
+    "2026-09:g16:c117:4": "present",
+    "2026-09:g16:c117:7": "present",
+    "2026-09:g16:c117:9": "present",
+    "2026-09:g16:c117:11": "present",
+    "2026-09:g16:c118:2": "present",
+    "2026-09:g16:c118:4": "present",
+    "2026-09:g16:c118:7": "present",
+    "2026-09:g16:c118:9": "present",
+    "2026-09:g16:c118:11": "present",
+    "2026-09:g16:c119:2": "present",
+    "2026-09:g16:c119:4": "present",
+    "2026-09:g16:c119:7": "present",
+    "2026-09:g16:c119:9": "present",
+    "2026-09:g16:c119:11": "present",
+    "2026-09:g16:c120:9": "present",
+    "2026-09:g16:c121:2": "present",
+    "2026-09:g16:c121:5": "present",
+    "2026-09:g16:c121:9": "present",
+    "2026-09:g16:c121:12": "present",
+    "2026-09:g16:c122:2": "present",
+    "2026-09:g16:c122:9": "present",
+    "2026-09:g16:c122:12": "present",
+    "2026-09:g16:c123:2": "present",
+    "2026-09:g16:c123:5": "present",
+    "2026-09:g16:c123:9": "present",
+    "2026-09:g16:c123:12": "present",
+    "2026-09:g16:c124:5": "present",
+    "2026-09:g16:c124:12": "present",
+    "2026-09:g16:c125:5": "present",
+    "2026-09:g16:c125:9": "present",
+    "2026-09:g16:c125:12": "present",
+    "2026-09:g17:c126:2": "present",
+    "2026-09:g17:c126:5": "present",
+    "2026-09:g17:c126:12": "present",
+    "2026-09:g17:c127:2": "present",
+    "2026-09:g17:c127:5": "present",
+    "2026-09:g17:c127:9": "present",
+    "2026-09:g17:c127:12": "present",
+    "2026-09:g17:c128:2": "present",
+    "2026-09:g17:c128:5": "present",
+    "2026-09:g17:c128:9": "present",
+    "2026-09:g17:c128:12": "present",
+    "2026-09:g17:c129:2": "present",
+    "2026-09:g17:c129:7": "present",
+    "2026-09:g17:c129:9": "present",
+    "2026-09:g17:c129:11": "present",
+    "2026-09:g17:c130:2": "present",
+    "2026-09:g17:c130:5": "present",
+    "2026-09:g17:c130:9": "present",
+    "2026-09:g17:c130:12": "present",
+    "2026-09:g17:c131:2": "present",
+    "2026-09:g17:c131:5": "present",
+    "2026-09:g17:c131:9": "present",
+    "2026-09:g17:c131:12": "present",
+    "2026-09:g17:c132:2": "present",
+    "2026-09:g17:c132:5": "present",
+    "2026-09:g17:c132:9": "present",
+    "2026-09:g17:c132:12": "present",
+    "2026-09:g17:c133:2": "present",
+    "2026-09:g17:c133:5": "present",
+    "2026-09:g17:c133:9": "present",
+    "2026-09:g17:c133:12": "present",
+    "2026-09:g17:c134:2": "present",
+    "2026-09:g17:c134:5": "present",
+    "2026-09:g17:c134:9": "present",
+    "2026-09:g17:c134:12": "present",
+    "2026-09:g17:c135:2": "present",
+    "2026-09:g17:c135:9": "present",
+    "2026-09:g17:c135:12": "present",
+    "2026-09:g17:c136:5": "present",
+    "2026-09:g17:c136:9": "present",
+    "2026-09:g17:c136:12": "present",
+    "2026-09:g17:c137:5": "present",
+    "2026-09:g17:c137:12": "present",
+    "2026-09:g18:c138:4": "present",
+    "2026-09:g18:c138:7": "present",
+    "2026-09:g18:c138:11": "present",
+    "2026-09:g18:c139:4": "present",
+    "2026-09:g18:c140:4": "present",
+    "2026-09:g18:c140:7": "present",
+    "2026-09:g18:c140:11": "present",
+    "2026-09:g18:c141:4": "present",
+    "2026-09:g18:c142:4": "present",
+    "2026-09:g18:c142:11": "present",
+    "2026-09:g18:c143:4": "present",
+    "2026-09:g18:c144:1": "present",
+    "2026-09:g18:c144:7": "present",
+    "2026-09:g18:c144:11": "present",
+    "2026-09:g18:c145:7": "present",
+    "2026-09:g18:c146:11": "present",
+    "2026-09:g18:c147:11": "present",
+    "2026-09:g19:c148:4": "present",
+    "2026-09:g19:c148:7": "present",
+    "2026-09:g19:c148:11": "present",
+    "2026-09:g19:c149:4": "present",
+    "2026-09:g19:c149:7": "present",
+    "2026-09:g19:c150:4": "present",
+    "2026-09:g19:c150:7": "present",
+    "2026-09:g19:c150:11": "present",
+    "2026-09:g19:c151:4": "present",
+    "2026-09:g19:c151:7": "present",
+    "2026-09:g19:c151:11": "present",
+    "2026-09:g19:c152:4": "present",
+    "2026-09:g19:c153:4": "present",
+    "2026-09:g19:c153:7": "present",
+    "2026-09:g19:c153:11": "present",
+    "2026-09:g19:c154:4": "present",
+    "2026-09:g19:c154:7": "present",
+    "2026-09:g19:c155:4": "present",
+    "2026-09:g19:c155:7": "present",
+    "2026-09:g19:c155:11": "present",
+    "2026-09:g19:c156:4": "present",
+    "2026-09:g19:c156:7": "present",
+    "2026-09:g19:c156:11": "present",
+    "2026-09:g19:c157:4": "present",
+    "2026-09:g19:c157:7": "present",
+    "2026-09:g19:c157:11": "present",
+    "2026-09:g19:c158:4": "present",
+    "2026-09:g19:c158:7": "present",
+    "2026-09:g19:c158:11": "present",
+    "2026-09:g19:c159:4": "present",
+    "2026-09:g19:c159:7": "present",
+    "2026-09:g19:c159:11": "present",
+    "2026-09:g19:c160:1": "present",
+    "2026-09:g19:c160:3": "present",
+    "2026-09:g19:c160:7": "present",
+    "2026-09:g19:c160:11": "present",
+    "2026-09:g20:c161:4": "present",
+    "2026-09:g20:c161:11": "present",
+    "2026-09:g20:c162:7": "present",
+    "2026-09:g20:c163:7": "present",
+    "2026-09:g20:c164:7": "present",
+    "2026-09:g20:c164:11": "present",
+    "2026-09:g20:c164:12": "present",
+    "2026-09:g21:c165:2": "present",
+    "2026-09:g21:c165:5": "present",
+    "2026-09:g21:c165:12": "present",
+    "2026-09:g21:c166:2": "present",
+    "2026-09:g21:c166:5": "present",
+    "2026-09:g21:c166:9": "present",
+    "2026-09:g21:c166:12": "present",
+    "2026-09:g21:c167:2": "present",
+    "2026-09:g21:c167:5": "present",
+    "2026-09:g21:c167:9": "present",
+    "2026-09:g21:c167:12": "present",
+    "2026-09:g21:c168:9": "present",
+    "2026-09:g21:c169:9": "present",
+    "2026-09:g21:c169:12": "present",
+    "2026-09:g22:c170:2": "present",
+    "2026-09:g22:c170:9": "present",
+    "2026-09:g22:c171:2": "present",
+    "2026-09:g22:c171:9": "present",
+    "2026-09:g22:c172:2": "present",
+    "2026-09:g22:c172:5": "present",
+    "2026-09:g22:c172:9": "present",
+    "2026-09:g22:c172:12": "present",
+    "2026-09:g22:c173:2": "present",
+    "2026-09:g22:c173:5": "present",
+    "2026-09:g22:c173:12": "present",
+    "2026-09:g22:c174:5": "present",
+    "2026-09:g22:c174:9": "present",
+    "2026-09:g22:c174:12": "present",
+    "2026-09:g22:c175:5": "present",
+    "2026-09:g22:c175:9": "present",
+    "2026-09:g22:c175:12": "present",
+    "2026-09:g22:c176:5": "present",
+    "2026-09:g22:c176:9": "present",
+    "2026-09:g22:c176:12": "present",
+    "2026-09:g22:c177:9": "present",
+    "2026-09:g22:c177:12": "present",
+    "2026-09:g22:c178:12": "present",
+    "2026-09:g22:c179:12": "present",
+    "2026-09:g23:c180:1": "present",
+    "2026-09:g23:c181:1": "present",
+    "2026-09:g23:c182:1": "present",
+    "2026-09:g23:c183:3": "present",
+    "2026-09:g23:c183:8": "present",
+    "2026-09:g23:c183:10": "present",
+    "2026-09:g23:c184:8": "present",
+    "2026-09:g23:c185:10": "present",
+    "2026-09:g24:c186:1": "present",
+    "2026-09:g24:c187:1": "present",
+    "2026-09:g24:c187:3": "present",
+    "2026-09:g24:c187:8": "present",
+    "2026-09:g24:c188:3": "present",
+    "2026-09:g24:c188:8": "present",
+    "2026-09:g24:c188:10": "present",
+    "2026-09:g24:c189:3": "present",
+    "2026-09:g24:c189:8": "present",
+    "2026-09:g24:c189:10": "present",
+    "2026-09:g24:c190:3": "present",
+    "2026-09:g24:c190:8": "present",
+    "2026-09:g24:c190:10": "present",
+    "2026-09:g24:c191:10": "present"
   },
   "sick": {
-    "c26": [
+    "c33": [
       "2026-09-02",
       "2026-09-05"
     ],
-    "c135": [
-      "2026-09-04"
+    "c170": [
+      "2026-09-04",
+      "2026-09-11"
     ],
-    "c136": [
-      "2026-09-04"
+    "c171": [
+      "2026-09-04",
+      "2026-09-11"
     ]
   },
   "familyPayments": {},
   "source": {
-    "file": "Посещаемость 2021 (6).xlsx",
-    "attendanceSheet": "сентябрь 26",
-    "comment": "Состав и отметки из «сентябрь 26»: жёлтая заливка = был (236 посещений, больничных у 3 детей)."
+    "file": "ПОСЕЩАЕМОСТЬ СЕНТЯБРЬ.xlsx",
+    "attendanceSheet": "Лист1",
+    "comment": "Состав и отметки из «Лист1»: жёлтая заливка = был (509 посещений, больничных у 3 детей)."
   },
   "branches": [
     {
@@ -3603,6 +4541,38 @@
       "id": "f4",
       "login": "sem4",
       "password": "s1004",
+      "parentName": "Родитель Ким",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ким",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f5",
+      "login": "sem5",
+      "password": "s1005",
+      "parentName": "Родитель Пронкина",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Пронкина",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f6",
+      "login": "sem6",
+      "password": "s1006",
       "parentName": "Родитель Казак",
       "phone": "",
       "email": "",
@@ -3616,9 +4586,9 @@
       ]
     },
     {
-      "id": "f5",
-      "login": "sem5",
-      "password": "s1005",
+      "id": "f7",
+      "login": "sem7",
+      "password": "s1007",
       "parentName": "Родитель Бабкина",
       "phone": "",
       "email": "",
@@ -3632,9 +4602,9 @@
       ]
     },
     {
-      "id": "f6",
-      "login": "sem6",
-      "password": "s1006",
+      "id": "f8",
+      "login": "sem8",
+      "password": "s1008",
       "parentName": "Родитель Кадацкая",
       "phone": "",
       "email": "",
@@ -3648,9 +4618,9 @@
       ]
     },
     {
-      "id": "f7",
-      "login": "sem7",
-      "password": "s1007",
+      "id": "f9",
+      "login": "sem9",
+      "password": "s1009",
       "parentName": "Родитель Плешка",
       "phone": "",
       "email": "",
@@ -3664,9 +4634,9 @@
       ]
     },
     {
-      "id": "f8",
-      "login": "sem8",
-      "password": "s1008",
+      "id": "f10",
+      "login": "sem10",
+      "password": "s1010",
       "parentName": "Родитель Махрова",
       "phone": "",
       "email": "",
@@ -3680,9 +4650,9 @@
       ]
     },
     {
-      "id": "f9",
-      "login": "sem9",
-      "password": "s1009",
+      "id": "f11",
+      "login": "sem11",
+      "password": "s1011",
       "parentName": "Родитель Тюрина",
       "phone": "",
       "email": "",
@@ -3696,9 +4666,9 @@
       ]
     },
     {
-      "id": "f10",
-      "login": "sem10",
-      "password": "s1010",
+      "id": "f12",
+      "login": "sem12",
+      "password": "s1012",
       "parentName": "Родитель Костенко",
       "phone": "",
       "email": "",
@@ -3712,9 +4682,25 @@
       ]
     },
     {
-      "id": "f11",
-      "login": "sem11",
-      "password": "s1011",
+      "id": "f13",
+      "login": "sem13",
+      "password": "s1013",
+      "parentName": "Родитель Голодова",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Голодова",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f14",
+      "login": "sem14",
+      "password": "s1014",
       "parentName": "Родитель Кравчук",
       "phone": "",
       "email": "",
@@ -3728,9 +4714,9 @@
       ]
     },
     {
-      "id": "f12",
-      "login": "sem12",
-      "password": "s1012",
+      "id": "f15",
+      "login": "sem15",
+      "password": "s1015",
       "parentName": "Родитель Новикова",
       "phone": "",
       "email": "",
@@ -3744,9 +4730,9 @@
       ]
     },
     {
-      "id": "f13",
-      "login": "sem13",
-      "password": "s1013",
+      "id": "f16",
+      "login": "sem16",
+      "password": "s1016",
       "parentName": "Родитель Марсакова",
       "phone": "",
       "email": "",
@@ -3760,9 +4746,9 @@
       ]
     },
     {
-      "id": "f14",
-      "login": "sem14",
-      "password": "s1014",
+      "id": "f17",
+      "login": "sem17",
+      "password": "s1017",
       "parentName": "Родитель Грехова",
       "phone": "",
       "email": "",
@@ -3776,9 +4762,9 @@
       ]
     },
     {
-      "id": "f15",
-      "login": "sem15",
-      "password": "s1015",
+      "id": "f18",
+      "login": "sem18",
+      "password": "s1018",
       "parentName": "Родитель Мухина",
       "phone": "",
       "email": "",
@@ -3792,9 +4778,9 @@
       ]
     },
     {
-      "id": "f16",
-      "login": "sem16",
-      "password": "s1016",
+      "id": "f19",
+      "login": "sem19",
+      "password": "s1019",
       "parentName": "Родитель Орел",
       "phone": "",
       "email": "",
@@ -3808,9 +4794,9 @@
       ]
     },
     {
-      "id": "f17",
-      "login": "sem17",
-      "password": "s1017",
+      "id": "f20",
+      "login": "sem20",
+      "password": "s1020",
       "parentName": "Родитель Лоренсон",
       "phone": "",
       "email": "",
@@ -3824,9 +4810,73 @@
       ]
     },
     {
-      "id": "f18",
-      "login": "sem18",
-      "password": "s1018",
+      "id": "f21",
+      "login": "sem21",
+      "password": "s1021",
+      "parentName": "Родитель Цатурова",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Цатурова",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f22",
+      "login": "sem22",
+      "password": "s1022",
+      "parentName": "Родитель Имагилова",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Имагилова",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f23",
+      "login": "sem23",
+      "password": "s1023",
+      "parentName": "Родитель Султыгова",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Султыгова",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f24",
+      "login": "sem24",
+      "password": "s1024",
+      "parentName": "Родитель Байкова",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Байкова",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f25",
+      "login": "sem25",
+      "password": "s1025",
       "parentName": "Родитель Никишкина",
       "phone": "",
       "email": "",
@@ -3840,9 +4890,9 @@
       ]
     },
     {
-      "id": "f19",
-      "login": "sem19",
-      "password": "s1019",
+      "id": "f26",
+      "login": "sem26",
+      "password": "s1026",
       "parentName": "Родитель Деренкова",
       "phone": "",
       "email": "",
@@ -3856,9 +4906,9 @@
       ]
     },
     {
-      "id": "f20",
-      "login": "sem20",
-      "password": "s1020",
+      "id": "f27",
+      "login": "sem27",
+      "password": "s1027",
       "parentName": "Родитель Пантелеева",
       "phone": "",
       "email": "",
@@ -3872,9 +4922,9 @@
       ]
     },
     {
-      "id": "f21",
-      "login": "sem21",
-      "password": "s1021",
+      "id": "f28",
+      "login": "sem28",
+      "password": "s1028",
       "parentName": "Родитель Степина",
       "phone": "",
       "email": "",
@@ -3888,25 +4938,25 @@
       ]
     },
     {
-      "id": "f22",
-      "login": "sem22",
-      "password": "s1022",
-      "parentName": "Родитель Василиса",
+      "id": "f29",
+      "login": "sem29",
+      "password": "s1029",
+      "parentName": "Родитель Романова",
       "phone": "",
       "email": "",
       "parents": [
         {
           "id": "fp1",
-          "name": "Родитель Василиса",
+          "name": "Родитель Романова",
           "phone": "",
           "email": ""
         }
       ]
     },
     {
-      "id": "f23",
-      "login": "sem23",
-      "password": "s1023",
+      "id": "f30",
+      "login": "sem30",
+      "password": "s1030",
       "parentName": "Родитель Свистунова",
       "phone": "",
       "email": "",
@@ -3920,9 +4970,9 @@
       ]
     },
     {
-      "id": "f24",
-      "login": "sem24",
-      "password": "s1024",
+      "id": "f31",
+      "login": "sem31",
+      "password": "s1031",
       "parentName": "Родитель Тихоненкова",
       "phone": "",
       "email": "",
@@ -3936,9 +4986,25 @@
       ]
     },
     {
-      "id": "f25",
-      "login": "sem25",
-      "password": "s1025",
+      "id": "f32",
+      "login": "sem32",
+      "password": "s1032",
+      "parentName": "Родитель Носкова",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Носкова",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f33",
+      "login": "sem33",
+      "password": "s1033",
       "parentName": "Родитель Трухина",
       "phone": "",
       "email": "",
@@ -3952,9 +5018,9 @@
       ]
     },
     {
-      "id": "f26",
-      "login": "sem26",
-      "password": "s1026",
+      "id": "f34",
+      "login": "sem34",
+      "password": "s1034",
       "parentName": "Родитель Ермакова",
       "phone": "",
       "email": "",
@@ -3968,9 +5034,9 @@
       ]
     },
     {
-      "id": "f27",
-      "login": "sem27",
-      "password": "s1027",
+      "id": "f35",
+      "login": "sem35",
+      "password": "s1035",
       "parentName": "Родитель Гулдаева",
       "phone": "",
       "email": "",
@@ -3984,9 +5050,41 @@
       ]
     },
     {
-      "id": "f28",
-      "login": "sem28",
-      "password": "s1028",
+      "id": "f36",
+      "login": "sem36",
+      "password": "s1036",
+      "parentName": "Родитель Кинель",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Кинель",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f37",
+      "login": "sem37",
+      "password": "s1037",
+      "parentName": "Родитель Уколова",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Уколова",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f38",
+      "login": "sem38",
+      "password": "s1038",
       "parentName": "Родитель Игошин",
       "phone": "",
       "email": "",
@@ -4000,9 +5098,9 @@
       ]
     },
     {
-      "id": "f29",
-      "login": "sem29",
-      "password": "s1029",
+      "id": "f39",
+      "login": "sem39",
+      "password": "s1039",
       "parentName": "Родитель Чиков",
       "phone": "",
       "email": "",
@@ -4016,9 +5114,9 @@
       ]
     },
     {
-      "id": "f30",
-      "login": "sem30",
-      "password": "s1030",
+      "id": "f40",
+      "login": "sem40",
+      "password": "s1040",
       "parentName": "Родитель Прохоренко",
       "phone": "",
       "email": "",
@@ -4032,9 +5130,9 @@
       ]
     },
     {
-      "id": "f31",
-      "login": "sem31",
-      "password": "s1031",
+      "id": "f41",
+      "login": "sem41",
+      "password": "s1041",
       "parentName": "Родитель Алимов",
       "phone": "",
       "email": "",
@@ -4048,9 +5146,9 @@
       ]
     },
     {
-      "id": "f32",
-      "login": "sem32",
-      "password": "s1032",
+      "id": "f42",
+      "login": "sem42",
+      "password": "s1042",
       "parentName": "Родитель Мурадов",
       "phone": "",
       "email": "",
@@ -4064,9 +5162,9 @@
       ]
     },
     {
-      "id": "f33",
-      "login": "sem33",
-      "password": "s1033",
+      "id": "f43",
+      "login": "sem43",
+      "password": "s1043",
       "parentName": "Родитель Малхасян",
       "phone": "",
       "email": "",
@@ -4080,9 +5178,9 @@
       ]
     },
     {
-      "id": "f34",
-      "login": "sem34",
-      "password": "s1034",
+      "id": "f44",
+      "login": "sem44",
+      "password": "s1044",
       "parentName": "Родитель Жук",
       "phone": "",
       "email": "",
@@ -4096,9 +5194,9 @@
       ]
     },
     {
-      "id": "f35",
-      "login": "sem35",
-      "password": "s1035",
+      "id": "f45",
+      "login": "sem45",
+      "password": "s1045",
       "parentName": "Родитель Адамчук",
       "phone": "",
       "email": "",
@@ -4112,9 +5210,9 @@
       ]
     },
     {
-      "id": "f36",
-      "login": "sem36",
-      "password": "s1036",
+      "id": "f46",
+      "login": "sem46",
+      "password": "s1046",
       "parentName": "Родитель Белов",
       "phone": "",
       "email": "",
@@ -4128,9 +5226,89 @@
       ]
     },
     {
-      "id": "f37",
-      "login": "sem37",
-      "password": "s1037",
+      "id": "f47",
+      "login": "sem47",
+      "password": "s1047",
+      "parentName": "Родитель Найда",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Найда",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f48",
+      "login": "sem48",
+      "password": "s1048",
+      "parentName": "Родитель Ахмедов",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Ахмедов",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f49",
+      "login": "sem49",
+      "password": "s1049",
+      "parentName": "Родитель Лаптев",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Лаптев",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f50",
+      "login": "sem50",
+      "password": "s1050",
+      "parentName": "Родитель Грискевич",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Грискевич",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f51",
+      "login": "sem51",
+      "password": "s1051",
+      "parentName": "Родитель Даниелян",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Даниелян",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f52",
+      "login": "sem52",
+      "password": "s1052",
       "parentName": "Родитель Барковский",
       "phone": "",
       "email": "",
@@ -4144,9 +5322,9 @@
       ]
     },
     {
-      "id": "f38",
-      "login": "sem38",
-      "password": "s1038",
+      "id": "f53",
+      "login": "sem53",
+      "password": "s1053",
       "parentName": "Родитель Смирнов",
       "phone": "",
       "email": "",
@@ -4160,9 +5338,9 @@
       ]
     },
     {
-      "id": "f39",
-      "login": "sem39",
-      "password": "s1039",
+      "id": "f54",
+      "login": "sem54",
+      "password": "s1054",
       "parentName": "Родитель Климов",
       "phone": "",
       "email": "",
@@ -4176,9 +5354,9 @@
       ]
     },
     {
-      "id": "f40",
-      "login": "sem40",
-      "password": "s1040",
+      "id": "f55",
+      "login": "sem55",
+      "password": "s1055",
       "parentName": "Родитель Ларин",
       "phone": "",
       "email": "",
@@ -4192,9 +5370,9 @@
       ]
     },
     {
-      "id": "f41",
-      "login": "sem41",
-      "password": "s1041",
+      "id": "f56",
+      "login": "sem56",
+      "password": "s1056",
       "parentName": "Родитель Гусейнов",
       "phone": "",
       "email": "",
@@ -4208,9 +5386,9 @@
       ]
     },
     {
-      "id": "f42",
-      "login": "sem42",
-      "password": "s1042",
+      "id": "f57",
+      "login": "sem57",
+      "password": "s1057",
       "parentName": "Родитель Ткаченко",
       "phone": "",
       "email": "",
@@ -4224,9 +5402,9 @@
       ]
     },
     {
-      "id": "f43",
-      "login": "sem43",
-      "password": "s1043",
+      "id": "f58",
+      "login": "sem58",
+      "password": "s1058",
       "parentName": "Родитель Петров",
       "phone": "",
       "email": "",
@@ -4240,9 +5418,9 @@
       ]
     },
     {
-      "id": "f44",
-      "login": "sem44",
-      "password": "s1044",
+      "id": "f59",
+      "login": "sem59",
+      "password": "s1059",
       "parentName": "Родитель Корчагина",
       "phone": "",
       "email": "",
@@ -4256,9 +5434,9 @@
       ]
     },
     {
-      "id": "f45",
-      "login": "sem45",
-      "password": "s1045",
+      "id": "f60",
+      "login": "sem60",
+      "password": "s1060",
       "parentName": "Родитель Щеглов",
       "phone": "",
       "email": "",
@@ -4272,9 +5450,9 @@
       ]
     },
     {
-      "id": "f46",
-      "login": "sem46",
-      "password": "s1046",
+      "id": "f61",
+      "login": "sem61",
+      "password": "s1061",
       "parentName": "Родитель Постригайлов",
       "phone": "",
       "email": "",
@@ -4288,9 +5466,25 @@
       ]
     },
     {
-      "id": "f47",
-      "login": "sem47",
-      "password": "s1047",
+      "id": "f62",
+      "login": "sem62",
+      "password": "s1062",
+      "parentName": "Родитель Машуров",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Машуров",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f63",
+      "login": "sem63",
+      "password": "s1063",
       "parentName": "Родитель Рожаев",
       "phone": "",
       "email": "",
@@ -4304,9 +5498,9 @@
       ]
     },
     {
-      "id": "f48",
-      "login": "sem48",
-      "password": "s1048",
+      "id": "f64",
+      "login": "sem64",
+      "password": "s1064",
       "parentName": "Родитель Прошин",
       "phone": "",
       "email": "",
@@ -4320,9 +5514,9 @@
       ]
     },
     {
-      "id": "f49",
-      "login": "sem49",
-      "password": "s1049",
+      "id": "f65",
+      "login": "sem65",
+      "password": "s1065",
       "parentName": "Родитель Тарасов",
       "phone": "",
       "email": "",
@@ -4336,9 +5530,9 @@
       ]
     },
     {
-      "id": "f50",
-      "login": "sem50",
-      "password": "s1050",
+      "id": "f66",
+      "login": "sem66",
+      "password": "s1066",
       "parentName": "Родитель Хайруллин",
       "phone": "",
       "email": "",
@@ -4352,9 +5546,9 @@
       ]
     },
     {
-      "id": "f51",
-      "login": "sem51",
-      "password": "s1051",
+      "id": "f67",
+      "login": "sem67",
+      "password": "s1067",
       "parentName": "Родитель Сальников",
       "phone": "",
       "email": "",
@@ -4368,9 +5562,9 @@
       ]
     },
     {
-      "id": "f52",
-      "login": "sem52",
-      "password": "s1052",
+      "id": "f68",
+      "login": "sem68",
+      "password": "s1068",
       "parentName": "Родитель Осипов",
       "phone": "",
       "email": "",
@@ -4384,9 +5578,9 @@
       ]
     },
     {
-      "id": "f53",
-      "login": "sem53",
-      "password": "s1053",
+      "id": "f69",
+      "login": "sem69",
+      "password": "s1069",
       "parentName": "Родитель Каптелов",
       "phone": "",
       "email": "",
@@ -4400,9 +5594,9 @@
       ]
     },
     {
-      "id": "f54",
-      "login": "sem54",
-      "password": "s1054",
+      "id": "f70",
+      "login": "sem70",
+      "password": "s1070",
       "parentName": "Родитель Артамошин",
       "phone": "",
       "email": "",
@@ -4416,9 +5610,57 @@
       ]
     },
     {
-      "id": "f55",
-      "login": "sem55",
-      "password": "s1055",
+      "id": "f71",
+      "login": "sem71",
+      "password": "s1071",
+      "parentName": "Родитель Семченков",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Семченков",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f72",
+      "login": "sem72",
+      "password": "s1072",
+      "parentName": "Родитель Шабаев",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Шабаев",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f73",
+      "login": "sem73",
+      "password": "s1073",
+      "parentName": "Родитель Разборов",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Разборов",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f74",
+      "login": "sem74",
+      "password": "s1074",
       "parentName": "Родитель Хорова",
       "phone": "",
       "email": "",
@@ -4432,9 +5674,9 @@
       ]
     },
     {
-      "id": "f56",
-      "login": "sem56",
-      "password": "s1056",
+      "id": "f75",
+      "login": "sem75",
+      "password": "s1075",
       "parentName": "Родитель Качесов",
       "phone": "",
       "email": "",
@@ -4448,9 +5690,9 @@
       ]
     },
     {
-      "id": "f57",
-      "login": "sem57",
-      "password": "s1057",
+      "id": "f76",
+      "login": "sem76",
+      "password": "s1076",
       "parentName": "Родитель Буденный",
       "phone": "",
       "email": "",
@@ -4464,9 +5706,9 @@
       ]
     },
     {
-      "id": "f58",
-      "login": "sem58",
-      "password": "s1058",
+      "id": "f77",
+      "login": "sem77",
+      "password": "s1077",
       "parentName": "Родитель Гусев",
       "phone": "",
       "email": "",
@@ -4480,9 +5722,9 @@
       ]
     },
     {
-      "id": "f59",
-      "login": "sem59",
-      "password": "s1059",
+      "id": "f78",
+      "login": "sem78",
+      "password": "s1078",
       "parentName": "Родитель Мальсагов",
       "phone": "",
       "email": "",
@@ -4496,25 +5738,25 @@
       ]
     },
     {
-      "id": "f60",
-      "login": "sem60",
-      "password": "s1060",
-      "parentName": "Родитель Цыпухин",
+      "id": "f79",
+      "login": "sem79",
+      "password": "s1079",
+      "parentName": "Родитель Цыплухин",
       "phone": "",
       "email": "",
       "parents": [
         {
           "id": "fp1",
-          "name": "Родитель Цыпухин",
+          "name": "Родитель Цыплухин",
           "phone": "",
           "email": ""
         }
       ]
     },
     {
-      "id": "f61",
-      "login": "sem61",
-      "password": "s1061",
+      "id": "f80",
+      "login": "sem80",
+      "password": "s1080",
       "parentName": "Родитель Арсентьев",
       "phone": "",
       "email": "",
@@ -4528,9 +5770,9 @@
       ]
     },
     {
-      "id": "f62",
-      "login": "sem62",
-      "password": "s1062",
+      "id": "f81",
+      "login": "sem81",
+      "password": "s1081",
       "parentName": "Родитель Чепусов",
       "phone": "",
       "email": "",
@@ -4544,9 +5786,9 @@
       ]
     },
     {
-      "id": "f63",
-      "login": "sem63",
-      "password": "s1063",
+      "id": "f82",
+      "login": "sem82",
+      "password": "s1082",
       "parentName": "Родитель Бровко",
       "phone": "",
       "email": "",
@@ -4560,9 +5802,9 @@
       ]
     },
     {
-      "id": "f64",
-      "login": "sem64",
-      "password": "s1064",
+      "id": "f83",
+      "login": "sem83",
+      "password": "s1083",
       "parentName": "Родитель Хмельницкий",
       "phone": "",
       "email": "",
@@ -4576,9 +5818,9 @@
       ]
     },
     {
-      "id": "f65",
-      "login": "sem65",
-      "password": "s1065",
+      "id": "f84",
+      "login": "sem84",
+      "password": "s1084",
       "parentName": "Родитель Матвеев",
       "phone": "",
       "email": "",
@@ -4592,9 +5834,9 @@
       ]
     },
     {
-      "id": "f66",
-      "login": "sem66",
-      "password": "s1066",
+      "id": "f85",
+      "login": "sem85",
+      "password": "s1085",
       "parentName": "Родитель Шиманов",
       "phone": "",
       "email": "",
@@ -4608,9 +5850,9 @@
       ]
     },
     {
-      "id": "f67",
-      "login": "sem67",
-      "password": "s1067",
+      "id": "f86",
+      "login": "sem86",
+      "password": "s1086",
       "parentName": "Родитель Шуть",
       "phone": "",
       "email": "",
@@ -4624,9 +5866,9 @@
       ]
     },
     {
-      "id": "f68",
-      "login": "sem68",
-      "password": "s1068",
+      "id": "f87",
+      "login": "sem87",
+      "password": "s1087",
       "parentName": "Родитель Павлов",
       "phone": "",
       "email": "",
@@ -4640,9 +5882,9 @@
       ]
     },
     {
-      "id": "f69",
-      "login": "sem69",
-      "password": "s1069",
+      "id": "f88",
+      "login": "sem88",
+      "password": "s1088",
       "parentName": "Родитель Иванченко",
       "phone": "",
       "email": "",
@@ -4656,9 +5898,9 @@
       ]
     },
     {
-      "id": "f70",
-      "login": "sem70",
-      "password": "s1070",
+      "id": "f89",
+      "login": "sem89",
+      "password": "s1089",
       "parentName": "Родитель Хочинский",
       "phone": "",
       "email": "",
@@ -4672,9 +5914,9 @@
       ]
     },
     {
-      "id": "f71",
-      "login": "sem71",
-      "password": "s1071",
+      "id": "f90",
+      "login": "sem90",
+      "password": "s1090",
       "parentName": "Родитель Саркисов",
       "phone": "",
       "email": "",
@@ -4688,9 +5930,9 @@
       ]
     },
     {
-      "id": "f72",
-      "login": "sem72",
-      "password": "s1072",
+      "id": "f91",
+      "login": "sem91",
+      "password": "s1091",
       "parentName": "Родитель Михалев",
       "phone": "",
       "email": "",
@@ -4704,9 +5946,9 @@
       ]
     },
     {
-      "id": "f73",
-      "login": "sem73",
-      "password": "s1073",
+      "id": "f92",
+      "login": "sem92",
+      "password": "s1092",
       "parentName": "Родитель Синяев",
       "phone": "",
       "email": "",
@@ -4720,9 +5962,9 @@
       ]
     },
     {
-      "id": "f74",
-      "login": "sem74",
-      "password": "s1074",
+      "id": "f93",
+      "login": "sem93",
+      "password": "s1093",
       "parentName": "Родитель Степанов",
       "phone": "",
       "email": "",
@@ -4736,41 +5978,9 @@
       ]
     },
     {
-      "id": "f75",
-      "login": "sem75",
-      "password": "s1075",
-      "parentName": "Родитель Мелешко",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Мелешко",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f76",
-      "login": "sem76",
-      "password": "s1076",
-      "parentName": "Родитель Артемьев",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Артемьев",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f77",
-      "login": "sem77",
-      "password": "s1077",
+      "id": "f94",
+      "login": "sem94",
+      "password": "s1094",
       "parentName": "Родитель Коротеев",
       "phone": "",
       "email": "",
@@ -4784,9 +5994,9 @@
       ]
     },
     {
-      "id": "f78",
-      "login": "sem78",
-      "password": "s1078",
+      "id": "f95",
+      "login": "sem95",
+      "password": "s1095",
       "parentName": "Родитель Колгушкин",
       "phone": "",
       "email": "",
@@ -4800,9 +6010,9 @@
       ]
     },
     {
-      "id": "f79",
-      "login": "sem79",
-      "password": "s1079",
+      "id": "f96",
+      "login": "sem96",
+      "password": "s1096",
       "parentName": "Родитель Сурнин",
       "phone": "",
       "email": "",
@@ -4816,25 +6026,9 @@
       ]
     },
     {
-      "id": "f80",
-      "login": "sem80",
-      "password": "s1080",
-      "parentName": "Родитель Мазай",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Мазай",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f81",
-      "login": "sem81",
-      "password": "s1081",
+      "id": "f97",
+      "login": "sem97",
+      "password": "s1097",
       "parentName": "Родитель Байкалов",
       "phone": "",
       "email": "",
@@ -4848,9 +6042,9 @@
       ]
     },
     {
-      "id": "f82",
-      "login": "sem82",
-      "password": "s1082",
+      "id": "f98",
+      "login": "sem98",
+      "password": "s1098",
       "parentName": "Родитель Шпортун",
       "phone": "",
       "email": "",
@@ -4864,9 +6058,9 @@
       ]
     },
     {
-      "id": "f83",
-      "login": "sem83",
-      "password": "s1083",
+      "id": "f99",
+      "login": "sem99",
+      "password": "s1099",
       "parentName": "Родитель Шулклов",
       "phone": "",
       "email": "",
@@ -4880,25 +6074,9 @@
       ]
     },
     {
-      "id": "f84",
-      "login": "sem84",
-      "password": "s1084",
-      "parentName": "Родитель Шеин",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Шеин",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f85",
-      "login": "sem85",
-      "password": "s1085",
+      "id": "f100",
+      "login": "sem100",
+      "password": "s1100",
       "parentName": "Родитель Стукалов",
       "phone": "",
       "email": "",
@@ -4912,25 +6090,57 @@
       ]
     },
     {
-      "id": "f86",
-      "login": "sem86",
-      "password": "s1086",
-      "parentName": "Родитель Пенчуков",
+      "id": "f101",
+      "login": "sem101",
+      "password": "s1101",
+      "parentName": "Родитель Гончаров",
       "phone": "",
       "email": "",
       "parents": [
         {
           "id": "fp1",
-          "name": "Родитель Пенчуков",
+          "name": "Родитель Гончаров",
           "phone": "",
           "email": ""
         }
       ]
     },
     {
-      "id": "f87",
-      "login": "sem87",
-      "password": "s1087",
+      "id": "f102",
+      "login": "sem102",
+      "password": "s1102",
+      "parentName": "Родитель Шелуха",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Шелуха",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f103",
+      "login": "sem103",
+      "password": "s1103",
+      "parentName": "Родитель Поляков",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Поляков",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f104",
+      "login": "sem104",
+      "password": "s1104",
       "parentName": "Родитель Неумоин",
       "phone": "",
       "email": "",
@@ -4944,9 +6154,9 @@
       ]
     },
     {
-      "id": "f88",
-      "login": "sem88",
-      "password": "s1088",
+      "id": "f105",
+      "login": "sem105",
+      "password": "s1105",
       "parentName": "Родитель Зобов",
       "phone": "",
       "email": "",
@@ -4960,9 +6170,9 @@
       ]
     },
     {
-      "id": "f89",
-      "login": "sem89",
-      "password": "s1089",
+      "id": "f106",
+      "login": "sem106",
+      "password": "s1106",
       "parentName": "Родитель Евдокимов",
       "phone": "",
       "email": "",
@@ -4976,9 +6186,9 @@
       ]
     },
     {
-      "id": "f90",
-      "login": "sem90",
-      "password": "s1090",
+      "id": "f107",
+      "login": "sem107",
+      "password": "s1107",
       "parentName": "Родитель Крашенинников",
       "phone": "",
       "email": "",
@@ -4992,9 +6202,9 @@
       ]
     },
     {
-      "id": "f91",
-      "login": "sem91",
-      "password": "s1091",
+      "id": "f108",
+      "login": "sem108",
+      "password": "s1108",
       "parentName": "Родитель Крупчатников",
       "phone": "",
       "email": "",
@@ -5008,9 +6218,89 @@
       ]
     },
     {
-      "id": "f92",
-      "login": "sem92",
-      "password": "s1092",
+      "id": "f109",
+      "login": "sem109",
+      "password": "s1109",
+      "parentName": "Родитель Артемьев",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Артемьев",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f110",
+      "login": "sem110",
+      "password": "s1110",
+      "parentName": "Родитель Мелешко",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Мелешко",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f111",
+      "login": "sem111",
+      "password": "s1111",
+      "parentName": "Родитель Мазай",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Мазай",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f112",
+      "login": "sem112",
+      "password": "s1112",
+      "parentName": "Родитель Пенчуков",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Пенчуков",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f113",
+      "login": "sem113",
+      "password": "s1113",
+      "parentName": "Родитель Шеин",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Шеин",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f114",
+      "login": "sem114",
+      "password": "s1114",
       "parentName": "Родитель Якубенок",
       "phone": "",
       "email": "",
@@ -5024,9 +6314,9 @@
       ]
     },
     {
-      "id": "f93",
-      "login": "sem93",
-      "password": "s1093",
+      "id": "f115",
+      "login": "sem115",
+      "password": "s1115",
       "parentName": "Родитель Глинский",
       "phone": "",
       "email": "",
@@ -5040,9 +6330,9 @@
       ]
     },
     {
-      "id": "f94",
-      "login": "sem94",
-      "password": "s1094",
+      "id": "f116",
+      "login": "sem116",
+      "password": "s1116",
       "parentName": "Родитель Налбандян",
       "phone": "",
       "email": "",
@@ -5056,9 +6346,9 @@
       ]
     },
     {
-      "id": "f95",
-      "login": "sem95",
-      "password": "s1095",
+      "id": "f117",
+      "login": "sem117",
+      "password": "s1117",
       "parentName": "Родитель Ераносян",
       "phone": "",
       "email": "",
@@ -5072,9 +6362,9 @@
       ]
     },
     {
-      "id": "f96",
-      "login": "sem96",
-      "password": "s1096",
+      "id": "f118",
+      "login": "sem118",
+      "password": "s1118",
       "parentName": "Родитель Старцев",
       "phone": "",
       "email": "",
@@ -5088,9 +6378,9 @@
       ]
     },
     {
-      "id": "f97",
-      "login": "sem97",
-      "password": "s1097",
+      "id": "f119",
+      "login": "sem119",
+      "password": "s1119",
       "parentName": "Родитель Шестаков",
       "phone": "",
       "email": "",
@@ -5104,9 +6394,9 @@
       ]
     },
     {
-      "id": "f98",
-      "login": "sem98",
-      "password": "s1098",
+      "id": "f120",
+      "login": "sem120",
+      "password": "s1120",
       "parentName": "Родитель Крылов",
       "phone": "",
       "email": "",
@@ -5120,9 +6410,9 @@
       ]
     },
     {
-      "id": "f99",
-      "login": "sem99",
-      "password": "s1099",
+      "id": "f121",
+      "login": "sem121",
+      "password": "s1121",
       "parentName": "Родитель Старицин",
       "phone": "",
       "email": "",
@@ -5136,9 +6426,9 @@
       ]
     },
     {
-      "id": "f100",
-      "login": "sem100",
-      "password": "s1100",
+      "id": "f122",
+      "login": "sem122",
+      "password": "s1122",
       "parentName": "Родитель Литвинов",
       "phone": "",
       "email": "",
@@ -5152,9 +6442,9 @@
       ]
     },
     {
-      "id": "f101",
-      "login": "sem101",
-      "password": "s1101",
+      "id": "f123",
+      "login": "sem123",
+      "password": "s1123",
       "parentName": "Родитель Горелов",
       "phone": "",
       "email": "",
@@ -5168,9 +6458,9 @@
       ]
     },
     {
-      "id": "f102",
-      "login": "sem102",
-      "password": "s1102",
+      "id": "f124",
+      "login": "sem124",
+      "password": "s1124",
       "parentName": "Родитель Финогеев",
       "phone": "",
       "email": "",
@@ -5184,9 +6474,9 @@
       ]
     },
     {
-      "id": "f103",
-      "login": "sem103",
-      "password": "s1103",
+      "id": "f125",
+      "login": "sem125",
+      "password": "s1125",
       "parentName": "Родитель Чесноков",
       "phone": "",
       "email": "",
@@ -5200,9 +6490,9 @@
       ]
     },
     {
-      "id": "f104",
-      "login": "sem104",
-      "password": "s1104",
+      "id": "f126",
+      "login": "sem126",
+      "password": "s1126",
       "parentName": "Родитель Мазин",
       "phone": "",
       "email": "",
@@ -5216,9 +6506,9 @@
       ]
     },
     {
-      "id": "f105",
-      "login": "sem105",
-      "password": "s1105",
+      "id": "f127",
+      "login": "sem127",
+      "password": "s1127",
       "parentName": "Родитель Лещев",
       "phone": "",
       "email": "",
@@ -5232,9 +6522,9 @@
       ]
     },
     {
-      "id": "f106",
-      "login": "sem106",
-      "password": "s1106",
+      "id": "f128",
+      "login": "sem128",
+      "password": "s1128",
       "parentName": "Родитель Ершов",
       "phone": "",
       "email": "",
@@ -5248,9 +6538,9 @@
       ]
     },
     {
-      "id": "f107",
-      "login": "sem107",
-      "password": "s1107",
+      "id": "f129",
+      "login": "sem129",
+      "password": "s1129",
       "parentName": "Родитель Чернавкин",
       "phone": "",
       "email": "",
@@ -5264,345 +6554,9 @@
       ]
     },
     {
-      "id": "f108",
-      "login": "sem108",
-      "password": "s1108",
-      "parentName": "Родитель Нагель",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Нагель",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f109",
-      "login": "sem109",
-      "password": "s1109",
-      "parentName": "Родитель Стародубцев",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Стародубцев",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f110",
-      "login": "sem110",
-      "password": "s1110",
-      "parentName": "Родитель Волынцев",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Волынцев",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f111",
-      "login": "sem111",
-      "password": "s1111",
-      "parentName": "Родитель Угрецов",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Угрецов",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f112",
-      "login": "sem112",
-      "password": "s1112",
-      "parentName": "Родитель Буряков",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Буряков",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f113",
-      "login": "sem113",
-      "password": "s1113",
-      "parentName": "Родитель Хасиев",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Хасиев",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f114",
-      "login": "sem114",
-      "password": "s1114",
-      "parentName": "Родитель Баукина",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Баукина",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f115",
-      "login": "sem115",
-      "password": "s1115",
-      "parentName": "Родитель Кравченко",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Кравченко",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f116",
-      "login": "sem116",
-      "password": "s1116",
-      "parentName": "Родитель Хусяинов",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Хусяинов",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f117",
-      "login": "sem117",
-      "password": "s1117",
-      "parentName": "Родитель Колмаков",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Колмаков",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f118",
-      "login": "sem118",
-      "password": "s1118",
-      "parentName": "Родитель Кокозов",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Кокозов",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f119",
-      "login": "sem119",
-      "password": "s1119",
-      "parentName": "Родитель Жайляу",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Жайляу",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f120",
-      "login": "sem120",
-      "password": "s1120",
-      "parentName": "Родитель Коршиков",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Коршиков",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f121",
-      "login": "sem121",
-      "password": "s1121",
-      "parentName": "Родитель Мокин",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Мокин",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f122",
-      "login": "sem122",
-      "password": "s1122",
-      "parentName": "Родитель Сехин",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Сехин",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f123",
-      "login": "sem123",
-      "password": "s1123",
-      "parentName": "Родитель Давыдов",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Давыдов",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f124",
-      "login": "sem124",
-      "password": "s1124",
-      "parentName": "Родитель Стрельников",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Стрельников",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f125",
-      "login": "sem125",
-      "password": "s1125",
-      "parentName": "Родитель Лукина",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Лукина",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f126",
-      "login": "sem126",
-      "password": "s1126",
-      "parentName": "Родитель Биячуев",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Биячуев",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f127",
-      "login": "sem127",
-      "password": "s1127",
-      "parentName": "Родитель Бельмас",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Бельмас",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f128",
-      "login": "sem128",
-      "password": "s1128",
-      "parentName": "Родитель Султанов",
-      "phone": "",
-      "email": "",
-      "parents": [
-        {
-          "id": "fp1",
-          "name": "Родитель Султанов",
-          "phone": "",
-          "email": ""
-        }
-      ]
-    },
-    {
-      "id": "f129",
-      "login": "sem129",
-      "password": "s1129",
+      "id": "f130",
+      "login": "sem130",
+      "password": "s1130",
       "parentName": "Родитель Куренков",
       "phone": "",
       "email": "",
@@ -5616,9 +6570,217 @@
       ]
     },
     {
-      "id": "f130",
-      "login": "sem130",
-      "password": "s1130",
+      "id": "f131",
+      "login": "sem131",
+      "password": "s1131",
+      "parentName": "Родитель Науменко",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Науменко",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f132",
+      "login": "sem132",
+      "password": "s1132",
+      "parentName": "Родитель Парфишин",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Парфишин",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f133",
+      "login": "sem133",
+      "password": "s1133",
+      "parentName": "Родитель Мурачуев",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Мурачуев",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f134",
+      "login": "sem134",
+      "password": "s1134",
+      "parentName": "Родитель Нагель",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Нагель",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f135",
+      "login": "sem135",
+      "password": "s1135",
+      "parentName": "Родитель Стародубцев",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Стародубцев",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f136",
+      "login": "sem136",
+      "password": "s1136",
+      "parentName": "Родитель Волынцев",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Волынцев",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f137",
+      "login": "sem137",
+      "password": "s1137",
+      "parentName": "Родитель Угрецов",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Угрецов",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f138",
+      "login": "sem138",
+      "password": "s1138",
+      "parentName": "Родитель Буряков",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Буряков",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f139",
+      "login": "sem139",
+      "password": "s1139",
+      "parentName": "Родитель Хасиев",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Хасиев",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f140",
+      "login": "sem140",
+      "password": "s1140",
+      "parentName": "Родитель Баукина",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Баукина",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f141",
+      "login": "sem141",
+      "password": "s1141",
+      "parentName": "Родитель Кравченко",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Кравченко",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f142",
+      "login": "sem142",
+      "password": "s1142",
+      "parentName": "Родитель Хусяинов",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Хусяинов",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f143",
+      "login": "sem143",
+      "password": "s1143",
+      "parentName": "Родитель Колмаков",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Колмаков",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f144",
+      "login": "sem144",
+      "password": "s1144",
       "parentName": "Родитель Нечаев",
       "phone": "",
       "email": "",
@@ -5632,9 +6794,345 @@
       ]
     },
     {
-      "id": "f131",
-      "login": "sem131",
-      "password": "s1131",
+      "id": "f145",
+      "login": "sem145",
+      "password": "s1145",
+      "parentName": "Родитель Кокозов",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Кокозов",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f146",
+      "login": "sem146",
+      "password": "s1146",
+      "parentName": "Родитель Игнатьев",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Игнатьев",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f147",
+      "login": "sem147",
+      "password": "s1147",
+      "parentName": "Родитель Баш",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Баш",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f148",
+      "login": "sem148",
+      "password": "s1148",
+      "parentName": "Родитель Габулов",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Габулов",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f149",
+      "login": "sem149",
+      "password": "s1149",
+      "parentName": "Родитель Жайляу",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Жайляу",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f150",
+      "login": "sem150",
+      "password": "s1150",
+      "parentName": "Родитель Коршиков",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Коршиков",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f151",
+      "login": "sem151",
+      "password": "s1151",
+      "parentName": "Родитель Саенко",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Саенко",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f152",
+      "login": "sem152",
+      "password": "s1152",
+      "parentName": "Родитель Сухин",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Сухин",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f153",
+      "login": "sem153",
+      "password": "s1153",
+      "parentName": "Родитель Мокин",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Мокин",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f154",
+      "login": "sem154",
+      "password": "s1154",
+      "parentName": "Родитель Сехин",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Сехин",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f155",
+      "login": "sem155",
+      "password": "s1155",
+      "parentName": "Родитель Давыдов",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Давыдов",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f156",
+      "login": "sem156",
+      "password": "s1156",
+      "parentName": "Родитель Стрельников",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Стрельников",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f157",
+      "login": "sem157",
+      "password": "s1157",
+      "parentName": "Родитель Рубан",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Рубан",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f158",
+      "login": "sem158",
+      "password": "s1158",
+      "parentName": "Родитель Богатов",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Богатов",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f159",
+      "login": "sem159",
+      "password": "s1159",
+      "parentName": "Родитель Назаров",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Назаров",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f160",
+      "login": "sem160",
+      "password": "s1160",
+      "parentName": "Родитель Лукина",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Лукина",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f161",
+      "login": "sem161",
+      "password": "s1161",
+      "parentName": "Родитель Биячуев",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Биячуев",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f162",
+      "login": "sem162",
+      "password": "s1162",
+      "parentName": "Родитель Бельмас",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Бельмас",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f163",
+      "login": "sem163",
+      "password": "s1163",
+      "parentName": "Родитель Свиридов",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Свиридов",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f164",
+      "login": "sem164",
+      "password": "s1164",
+      "parentName": "Родитель Арапханов",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Арапханов",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f165",
+      "login": "sem165",
+      "password": "s1165",
+      "parentName": "Родитель Султанов",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Султанов",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f166",
+      "login": "sem166",
+      "password": "s1166",
       "parentName": "Родитель Юшков",
       "phone": "",
       "email": "",
@@ -5648,9 +7146,9 @@
       ]
     },
     {
-      "id": "f132",
-      "login": "sem132",
-      "password": "s1132",
+      "id": "f167",
+      "login": "sem167",
+      "password": "s1167",
       "parentName": "Родитель Фомичев",
       "phone": "",
       "email": "",
@@ -5664,9 +7162,9 @@
       ]
     },
     {
-      "id": "f133",
-      "login": "sem133",
-      "password": "s1133",
+      "id": "f168",
+      "login": "sem168",
+      "password": "s1168",
       "parentName": "Родитель Беждугов",
       "phone": "",
       "email": "",
@@ -5674,6 +7172,22 @@
         {
           "id": "fp1",
           "name": "Родитель Беждугов",
+          "phone": "",
+          "email": ""
+        }
+      ]
+    },
+    {
+      "id": "f169",
+      "login": "sem169",
+      "password": "s1169",
+      "parentName": "Родитель Буров",
+      "phone": "",
+      "email": "",
+      "parents": [
+        {
+          "id": "fp1",
+          "name": "Родитель Буров",
           "phone": "",
           "email": ""
         }

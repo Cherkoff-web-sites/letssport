@@ -150,35 +150,75 @@ function dayMeta(dayNum) {
   return state.month.days.find((d) => d.day === dayNum) || { day: dayNum, weekday: "пн" };
 }
 
-function isTrainingDay(group, dayNum) {
-  const d = dayMeta(dayNum);
+function isoOf(day, monthObj) {
+  const m = monthObj || state.month;
+  return `${m.id}-${String(day).padStart(2, "0")}`;
+}
+
+function isSick(childId, day, monthObj) {
+  const m = monthObj || state.month;
+  return ((state.sick && state.sick[childId]) || []).includes(isoOf(day, m));
+}
+
+function attOf(groupId, childId, day, monthObj) {
+  const m = monthObj || state.month;
+  return state.attendance[`${m.id}:${groupId}:${childId}:${day}`] || "";
+}
+
+function cellMark(child, groupId, day, monthObj) {
+  const m = monthObj || state.month;
+  const group = (state.groups || []).find((g) => g.id === groupId);
+  if (isSick(child.id, day, m) && (!group || isTrainingDay(group, day, m))) {
+    return { cls: "sick", text: "Б", locked: true };
+  }
+  const mark = attOf(groupId, child.id, day, m);
+  if (mark === "trial0") return { cls: "trial0", text: "0", locked: false };
+  if (mark === "trial500") return { cls: "trial500", text: "500", locked: false };
+  if (mark === "present") return { cls: "present", text: "+", locked: false };
+  return { cls: "", text: "", locked: false };
+}
+
+function daysOfMonth(year, monthNum) {
+  const count = new Date(year, monthNum, 0).getDate();
+  const days = [];
+  for (let day = 1; day <= count; day++) {
+    const date = new Date(year, monthNum - 1, day);
+    days.push({ day, weekday: WEEK_ORDER[(date.getDay() + 6) % 7] });
+  }
+  return days;
+}
+
+function monthRef(year, monthNum) {
+  const id = `${year}-${String(monthNum).padStart(2, "0")}`;
+  const fromState = (state.months || []).find((m) => m.id === id);
+  if (fromState) return fromState;
+  return {
+    id,
+    year,
+    month: monthNum,
+    label: MONTH_NAMES[monthNum - 1] + " " + year,
+    days: daysOfMonth(year, monthNum)
+  };
+}
+
+function isTrainingDay(group, day, monthObj) {
+  const m = monthObj || state.month;
+  const d = (m.days || daysOfMonth(m.year, m.month)).find((x) => x.day === day);
+  if (!d) return false;
   if (!group || !group.weekdays || !group.weekdays.length) return true;
   return group.weekdays.includes(d.weekday);
 }
 
-function isoOf(day) {
-  return `${state.month.id}-${String(day).padStart(2, "0")}`;
-}
-
-function isSick(childId, day) {
-  return ((state.sick && state.sick[childId]) || []).includes(isoOf(day));
-}
-
-function attOf(groupId, childId, day) {
-  return state.attendance[`${state.month.id}:${groupId}:${childId}:${day}`] || "";
-}
-
-function cellMark(child, groupId, day) {
-  const group = (state.groups || []).find((g) => g.id === groupId);
-  // Б только в дни занятий группы — как в метриках «Был / Б»
-  if (isSick(child.id, day) && (!group || isTrainingDay(group, day))) {
-    return { cls: "sick", text: "Б", locked: true };
+function countMonthMarks(child, groupId, monthObj) {
+  const days = monthObj.days || daysOfMonth(monthObj.year, monthObj.month);
+  let present = 0;
+  let sick = 0;
+  for (const d of days) {
+    const mark = cellMark(child, groupId, d.day, monthObj);
+    if (mark.text === "+") present += 1;
+    if (mark.text === "Б") sick += 1;
   }
-  const m = attOf(groupId, child.id, day);
-  if (m === "trial0") return { cls: "trial0", text: "0", locked: false };
-  if (m === "trial500") return { cls: "trial500", text: "500", locked: false };
-  if (m === "present") return { cls: "present", text: "+", locked: false };
-  return { cls: "", text: "", locked: false };
+  return { present, sick };
 }
 
 function weekDays() {
@@ -278,7 +318,7 @@ function calToolbar(showGroup) {
       <button type="button" class="btn ghost today-btn" data-today>Сегодня</button>
     </div>
     ${groupBtn}
-    <div class="gcal-title">${MONTH_NAMES[state.month.month - 1]} ${state.month.year}</div>
+    <div class="gcal-title">${calMode === "year" ? state.month.year : `${MONTH_NAMES[state.month.month - 1]} ${state.month.year}`}</div>
   `;
 }
 
@@ -288,22 +328,27 @@ function attTable(opts) {
   const clickable = !!opts.clickable;
   const gid = group && group.id;
   if (calMode === "year") {
+    const year = state.month.year;
     const months = MONTH_NAMES.map((name, i) => {
       const active = i + 1 === state.month.month;
-      return `<th class="${active ? "is-now" : ""}">${name.slice(0, 3)}</th>`;
+      return `<th class="${active ? "is-now" : ""}" data-pick-month="${i + 1}">${name.slice(0, 3)}</th>`;
     }).join("");
     const rows = kids.map((c) => {
       const cells = MONTH_NAMES.map((_, i) => {
+        const mref = monthRef(year, i + 1);
+        const { present, sick } = countMonthMarks(c, gid, mref);
         const active = i + 1 === state.month.month;
-        const n = active ? state.month.days.filter((d) => cellMark(c, gid, d.day).text === "+").length : "";
-        return `<td class="${active ? "is-now" : "is-out"}">${active ? (n || "—") : ""}</td>`;
+        const has = present || sick;
+        const label = has ? (sick ? `${present}/${sick}` : String(present)) : "—";
+        return `<td class="year-cell ${active ? "is-now" : ""} ${has ? "has-marks" : "is-out"}" data-pick-month="${i + 1}">${label}</td>`;
       }).join("");
       return `<tr>
         <th class="sticky ${c.kind === "trial" ? "name-trial" : ""}">${esc(c.name)}${c.kind === "trial" ? " <em>пробный</em>" : ""}</th>
         ${cells}
       </tr>`;
     }).join("");
-    return `<div class="att-wrap"><table class="att-table"><thead><tr><th class="sticky">Фамилия</th>${months}</tr></thead><tbody>${rows || "<tr><td class=\"sticky\">Никого нет</td></tr>"}</tbody></table></div>`;
+    return `<div class="att-wrap"><table class="att-table att-year"><thead><tr><th class="sticky">Фамилия</th>${months}</tr></thead><tbody>${rows || "<tr><td class=\"sticky\">Никого нет</td></tr>"}</tbody></table></div>
+      <p class="hint">Год ${year}: в ячейке число «+» за месяц${" / Б"}. Нажмите месяц, чтобы открыть его подробно.</p>`;
   }
   const cols = trainerColumns();
   const head = cols.map((d) => `
@@ -416,11 +461,11 @@ function parentPeriodBanner() {
   const phaseText = periodPhaseLabel(phase);
   let extra = "Расчёт и счёт ниже закреплены за этим месяцем.";
   if (phase === "upcoming") {
-    extra = "Будущий период: виден аванс и счёт к оплате. Остаток на конец появится, когда месяц завершится; на старте виден перенос с прошлого месяца.";
+    extra = "Будущий период: виден аванс и счёт. На начало уже учтён перенос за «Б» (до 4 занятий) или долг с прошлого месяца.";
   } else if (phase === "closed") {
-    extra = "Период завершён. Остаток на конец переносится на начало следующего месяца.";
+    extra = "Период завершён. На следующий месяц уходит только компенсация за «Б» (макс. 4 занятия) минус долг. Неиспользованный аванс не переносится.";
   } else if (phase === "current") {
-    extra = "Месяц идёт: остаток на начало + аванс, текущий баланс меняется по посещениям. Итог «на конец» — после закрытия периода.";
+    extra = "Месяц идёт: списания за «+». Несгоревший аванс на октябрь сам не перейдёт — только «Б» по справке (до 4 занятий).";
   }
   return `
     <div class="period-banner period-${phase}">
@@ -437,15 +482,15 @@ function parentPayBlocks(p, phase) {
     </figure>`).join("");
   const paid = p.status === "yellow" || p.status === "green";
   const endLabel = phase === "closed"
-    ? "Остаток на конец месяца"
+    ? "Перенос на следующий месяц"
     : phase === "current"
-      ? "Текущий баланс"
+      ? "Перенос (если месяц закрыть сейчас)"
       : "";
   const balHint = phase === "upcoming"
-    ? `<p class="hint">В будущем месяце нет «остатка на конец» — он появится после закрытия периода. Сейчас: перенос на начало и аванс/счёт.</p>`
+    ? `<p class="hint">Перенос с прошлого: компенсация за «Б» (до 4) или долг. Неиспользованный аванс прошлого месяца сюда не входит.</p>`
     : phase === "closed"
-      ? `<p class="hint">Остаток на конец = начало + приход − списания за «+»/500. Он же станет «началом» следующего месяца.</p>`
-      : `<p class="hint">Текущий баланс обновляется по отметкам. После завершения месяца это станет «остатком на конец».</p>`;
+      ? `<p class="hint">Перенос = компенсация за «Б» (макс. ${p.sickCarryMax || 4} зан.${p.sickCarrySessions != null ? `: ${p.sickCarrySessions}` : ""}${p.sickCarry ? ` · ${rub(p.sickCarry)}` : ""}) − долг. Сдача с аванса сгорает${p.forfeit ? ` (${rub(p.forfeit)})` : ""}.</p>`
+      : `<p class="hint">Сейчас к переносу: за «Б» ${rub(p.sickCarry || 0)} (учтено ${(p.sickCarrySessions || 0)}/${p.sickCarryMax || 4})${p.sickCarryCapped ? " · лимит" : ""}${(p.unpaid || 0) > 0 ? ` − долг ${rub(p.unpaid)}` : ""}. Несписанный аванс не переносится${p.forfeit ? ` · сгорит ${rub(p.forfeit)}` : ""}.</p>`;
 
   return `
     <article class="child-card">
@@ -560,19 +605,18 @@ function formulaHtml(p, phase) {
   const credit = p.credit != null ? p.credit : Math.max(0, p.opening || 0);
   const debt = p.debt != null ? p.debt : Math.max(0, -(p.opening || 0));
   const balStep = phaseNow === "upcoming"
-    ? `<li>Остаток на конец месяца ещё не считается (период впереди). На начало уже перенесено: <b>${rub(p.opening)}</b></li>`
-    : phaseNow === "closed"
-      ? `<li>Остаток на конец месяца: начало ${rub(p.opening)} + приход ${rub(p.incoming)} − списано ${rub(p.spent)} = <b>${rub(p.balance)}</b> (уйдёт в начало следующего)</li>`
-      : `<li>Текущий баланс: начало ${rub(p.opening)} + приход ${rub(p.incoming)} − списано ${rub(p.spent)} = <b>${rub(p.balance)}</b></li>`;
+    ? `<li>На начало уже учтён перенос с прошлого: <b>${rub(p.opening)}</b> (только «Б» до 4 зан. или долг — не сдача с аванса).</li>`
+    : `<li>Перенос на следующий месяц: компенсация за «Б» <b>${rub(p.sickCarry || 0)}</b> (${p.sickCarrySessions || 0}/${p.sickCarryMax || 4} зан.)${(p.unpaid || 0) > 0 ? ` − долг ${rub(p.unpaid)}` : ""} = <b>${rub(p.balance)}</b>. Неиспользованный аванс не переносится${p.forfeit ? ` (сгорит ${rub(p.forfeit)})` : ""}.</li>`;
   return `<div class="formula">
     <h3>Ход расчёта · ${esc(state.month.label)}</h3>
     <ol class="formula-steps">
       <li>Аванс сырой (занятия × цена пакета ÷ занятий в пакете): <b>${rub(p.advanceRaw)}</b></li>
       <li>Скидка многодетных ${p.discountPercent || 0}%: аванс = ${rub(p.advanceRaw)} × (1 − ${p.discountPercent || 0}/100) = <b>${rub(p.advance)}</b></li>
-      <li>Остаток на начало (перенос с прошлого периода): <b>${rub(credit)}</b>${debt ? ` · долг прошлого: <b class="warn-text">${rub(debt)}</b>` : ""}</li>
+      <li>Остаток на начало (перенос за «Б» / долг${p.openingManual ? " · задан вручную" : ""}): <b>${rub(credit)}</b>${debt ? ` · долг прошлого: <b class="warn-text">${rub(debt)}</b>` : ""}</li>
       <li>Счёт к оплате: аванс ${rub(p.advance)} − остаток ${rub(credit)} + долг ${rub(debt)} = <b>${rub(p.requested)}</b></li>
       <li>Приход (подтверждённый): <b>${rub(p.incoming)}</b></li>
-      <li>Списано за «+» / 500: <b>−${rub(p.spent)}</b>${p.sickCredit ? ` · Б не списываются (условно ${rub(p.sickCredit)})` : ""}</li>
+      <li>Списано за «+» / 500: <b>−${rub(p.spent)}</b></li>
+      <li>«Б» по справке: всего ${p.sickCount || 0} зан., к переносу макс. ${p.sickCarryMax || 4} → <b>${rub(p.sickCarry || 0)}</b>${p.sickCarryCapped ? " (лишние Б сверх лимита не переносятся)" : ""}</li>
       <li>К оплате сейчас: счёт ${rub(p.requested)} − приход ${rub(p.incoming)} = <b>${rub(p.amountDue)}</b></li>
       ${balStep}
     </ol>
@@ -605,9 +649,10 @@ function devCalcRefHtml() {
       <li>Цена занятия = <code>packPrice / packLessons</code> (для филиала Валдай — тарифы 1 ч / 1,5 ч).</li>
       <li>Аванс ребёнка = сумма по группам: <code>число тренировок в месяце × цена занятия</code>. Пробный — 0.</li>
       <li>Скидка семьи: авто 10% при 2 детях, 20% при 3+ (только regular), либо ручная 0/10/20 у руководителя.</li>
-      <li>Счёт = аванс со скидкой − остаток прошлого + долг прошлого.</li>
-      <li>Списание: «+» = цена занятия, «500» = пробное, «Б» = 0 (не списывается).</li>
-      <li>Баланс = начало + приход − списано. У тренера денег нет — только отметки; у родителя/руководителя — полный ход.</li>
+      <li>Счёт = аванс со скидкой − перенос прошлого (только «Б» до 4) + долг прошлого.</li>
+      <li>Списание: «+» = цена занятия, «500» = пробное, «Б» = 0.</li>
+      <li>На следующий месяц: неиспользованный аванс <b>не</b> переносится. Переносится только сумма за «Б» (справка), максимум 4 занятия, минус долг.</li>
+      <li>Баланс у родителя/руководителя — полный ход; у тренера денег нет — только отметки.</li>
     </ul>
     <p class="hint" style="margin:10px 0 0">Кнопка «Открыть расчёты» видна только пока на сервере <code>DEV_CALC≠0</code> и не production. Перед сдачей: <code>DEV_CALC=0</code> или <code>NODE_ENV=production</code>.</p>
   </div>`;
@@ -690,6 +735,45 @@ async function openDevCalc() {
 function parentCombinedAtt(child) {
   const groups = state.groups.filter((g) => (child.groupIds || []).includes(g.id));
   if (!groups.length) return `<p class="hint">Нет группы</p>`;
+
+  if (calMode === "year") {
+    const year = state.month.year;
+    const head = MONTH_NAMES.map((name, i) => {
+      const active = i + 1 === state.month.month;
+      return `<th class="${active ? "is-now" : ""}" data-pick-month="${i + 1}">${name.slice(0, 3)}</th>`;
+    }).join("");
+    const rows = groups.map((g) => {
+      const packLessons = Number(g.packLessons) || 8;
+      const packPrice = Number(g.packPrice) || 0;
+      const unit = packLessons ? Math.round(packPrice / packLessons) : 0;
+      const dur = g.durationMin === 90 ? "1,5 ч" : "1 ч";
+      const branch = branchName(g.branchId);
+      const cells = MONTH_NAMES.map((_, i) => {
+        const mref = monthRef(year, i + 1);
+        const { present, sick } = countMonthMarks(child, g.id, mref);
+        const active = i + 1 === state.month.month;
+        const has = present || sick;
+        const label = has ? (sick ? `${present}/${sick}` : String(present)) : "—";
+        return `<td class="year-cell ${active ? "is-now" : ""} ${has ? "has-marks" : "is-out"}" data-pick-month="${i + 1}">${label}</td>`;
+      }).join("");
+      return `<tr>
+        <th class="sticky">
+          <span class="sheet-item-branch">${esc(branch || "Филиал")} · ${dur} · ${rub(unit)}</span>
+          <span>${esc(groupTitle(g))}</span>
+        </th>
+        ${cells}
+      </tr>`;
+    }).join("");
+    return `
+      <div class="att-wrap">
+        <table class="att-table att-year">
+          <thead><tr><th class="sticky">Группа / тариф</th>${head}</tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <p class="hint">Год ${year}: в ячейке число посещений «+» за месяц (и Б через /). Нажмите месяц, чтобы открыть дни.</p>`;
+  }
+
   const cols = trainerColumns();
   const head = cols.map((d) => `
     <th class="${isToday(d.day) ? "is-today" : ""} ${d.day === selectedDay ? "is-on" : ""}" data-pick-day="${d.day}">
@@ -1025,6 +1109,7 @@ function pricesView() {
 function parentsCalcView() {
   if (!periods) return `<p class="hint">Загрузка…</p>`;
   const q = qParents.trim().toLowerCase();
+  const monthLabel = (periods.month && periods.month.label) || state.month.label;
   const rows = (periods.rows || []).filter((r) => {
     if (!q) return true;
     const kids = state.children.filter((c) => c.familyId === r.family.id).map((c) => c.name).join(" ");
@@ -1038,6 +1123,7 @@ function parentsCalcView() {
     const kidsN = state.children.filter((c) => c.familyId === r.family.id && c.kind !== "trial").length;
     const auto = p.discountAuto != null ? p.discountAuto : (kidsN >= 3 ? 20 : kidsN >= 2 ? 10 : 0);
     const curDisc = p.discountManual ? String(p.discountPercent) : "auto";
+    const openingVal = p.openingManual ? p.opening : "";
     return `<article class="pay-row status-${st} ${exact ? "is-white" : ""}">
       <div class="pay-row-main">
         <strong>${esc(r.family.parentName)}</strong>
@@ -1055,6 +1141,16 @@ function parentsCalcView() {
           <option value="20" ${curDisc === "20" ? "selected" : ""}>20%</option>
         </select>
       </label>
+      <div class="opening-edit">
+        <label class="field">Остаток на начало · ${esc(monthLabel)}
+          <input type="number" step="1" data-opening-input="${r.family.id}" value="${openingVal}" placeholder="${p.opening}">
+        </label>
+        <div class="opening-edit-actions">
+          <button class="btn" type="button" data-save-opening="${r.family.id}">Сохранить остаток</button>
+          ${p.openingManual ? `<button class="btn ghost" type="button" data-clear-opening="${r.family.id}">Сбросить</button>` : ""}
+        </div>
+        <p class="hint opening-hint">Сейчас в расчёте: <b>${rub(p.opening)}</b>${p.openingManual ? " (задано вручную)" : " (авто: перенос за Б / долг)"}. «+» — перенос за справку, «−» — долг.</p>
+      </div>
       <div class="pay-nums">
         <div><span>К оплате</span><b>${rub(Math.max(0, p.amountDue))}</b></div>
         <div><span>Счёт</span><b>${rub(p.requested)}</b></div>
@@ -1071,8 +1167,9 @@ function parentsCalcView() {
   }).join("");
   return `
     <article class="child-card">
-      <h2>Где скидка</h2>
-      <p class="hint">У каждой семьи ниже — поле <b>«Скидка многодетных»</b>. По умолчанию авто: 2 ребёнка = 10%, 3 и больше = 20%. Можно зафиксировать 0 / 10 / 20 вручную.</p>
+      <h2>Родители · ${esc(monthLabel)}</h2>
+      <p class="hint">Стартовый остаток на начало месяца (ручной ввод) — если учёт начинается с сентября. Автоперенос дальше: только «Б» до 4 занятий, аванс сам не переносится.</p>
+      <p class="hint">Скидка многодетных: авто 2 ребёнка = 10%, 3+ = 20%, либо вручную 0 / 10 / 20.</p>
     </article>
     <input class="search-input" data-par-q placeholder="Поиск семьи или ребёнка" value="${esc(qParents)}">
     <div class="ath-list">${html || "<p class=\"hint\">Нет семей</p>"}</div>`;
@@ -1345,6 +1442,21 @@ document.getElementById("app").addEventListener("click", async (e) => {
   }
   const pick = e.target.closest("[data-pick-day]");
   if (pick && pick.dataset.pickDay) { selectedDay = Number(pick.dataset.pickDay); persistCal(); render(); return; }
+  const pickMonth = e.target.closest("[data-pick-month]");
+  if (pickMonth && pickMonth.dataset.pickMonth) {
+    const num = Number(pickMonth.dataset.pickMonth);
+    const id = `${state.month.year}-${String(num).padStart(2, "0")}`;
+    const found = (state.months || []).find((m) => m.id === id);
+    if (!found) {
+      alert(`Период «${MONTH_NAMES[num - 1]} ${state.month.year}» ещё не открыт в учёте`);
+      return;
+    }
+    monthId = id;
+    calMode = "month";
+    persistCal();
+    await load();
+    return;
+  }
   if (e.target.closest("[data-open-groups]")) { sheet = { type: "groups", q: "" }; drawOverlay(); return; }
 
   const go = e.target.closest("[data-go]");
@@ -1539,6 +1651,32 @@ document.getElementById("app").addEventListener("click", async (e) => {
       familyId: dp.dataset.dirPay,
       incoming: Number(incoming),
       requested: Number(dp.dataset.need),
+      monthId: state.month.id
+    });
+    await loadPeriods();
+    return;
+  }
+
+  const saveOpen = e.target.closest("[data-save-opening]");
+  if (saveOpen) {
+    const fid = saveOpen.dataset.saveOpening;
+    const input = document.querySelector(`[data-opening-input="${fid}"]`);
+    const raw = input ? String(input.value).trim() : "";
+    if (raw === "") return alert("Введите сумму остатка на начало (0 если ничего не было)");
+    await api("/api/pay/opening", "POST", {
+      familyId: fid,
+      openingSeed: Number(raw),
+      monthId: state.month.id
+    });
+    await loadPeriods();
+    return;
+  }
+
+  const clearOpen = e.target.closest("[data-clear-opening]");
+  if (clearOpen) {
+    await api("/api/pay/opening", "POST", {
+      familyId: clearOpen.dataset.clearOpening,
+      openingSeed: null,
       monthId: state.month.id
     });
     await loadPeriods();

@@ -348,20 +348,22 @@ input, select {
 .gcal > h3 { margin: 4px 0 0; }
 .gcal > .btn { align-self: flex-start; }
 .gcal > .hint { margin: 0; }
-.gcal.gcal-table { max-width: none; }
+.gcal.gcal-table { max-width: 100%; }
 
-/* Все таблицы посещений: гориз. скролл + липкий 1-й столбец */
+/* Таблицы посещений: гориз. скролл + липкий 1-й столбец (ФИО) */
 .att-wrap {
+  display: block;
   overflow-x: auto;
-  overflow-y: visible;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
   min-width: 0;
+  width: 100%;
+  max-width: 100%;
   background: rgba(255,255,255,.86);
-  border-radius: 16px 0 0 16px;
+  border-radius: 16px;
   margin: 0;
-  width: calc(100vw - (100vw - min(100vw, var(--app-max))) / 2 - var(--app-pad));
-  max-width: none;
 }
 .att-table {
   border-collapse: separate;
@@ -380,7 +382,7 @@ input, select {
 .att-table th.sticky, .att-table td.sticky {
   position: sticky;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   text-align: left;
   min-width: 148px;
   max-width: min(220px, 42vw);
@@ -389,9 +391,10 @@ input, select {
   word-break: break-word;
   box-shadow: 4px 0 8px -4px rgba(15, 40, 55, .18);
 }
-.att-table thead th { background: #e7f2f7; font-weight: 500; }
-.att-table thead th.sticky { z-index: 4; background: #e7f2f7; }
-.att-table tbody th.sticky { z-index: 2; background: #f4fafc; }
+.att-table thead th { background: #e7f2f7; font-weight: 500; position: relative; z-index: 1; }
+.att-table thead th.sticky { z-index: 5; background: #e7f2f7; }
+.att-table tbody th.sticky,
+.att-table tbody td.sticky { z-index: 3; background: #f4fafc; }
 .att-table th small { display: block; font-size: 10px; color: var(--muted); font-weight: 400; }
 .att-table th.is-on { background: var(--navy); color: #fff; }
 .att-table th.is-on small { color: rgba(255,255,255,.8); }
@@ -401,6 +404,10 @@ input, select {
 .att-table td.mark.present { color: var(--ok); }
 .att-table td.mark.trial { color: var(--navy); }
 .att-table td.mark.excused { color: var(--warn); }
+.att-table .year-cell { min-width: 48px; font-weight: 500; }
+.att-table .year-cell.has-marks { color: var(--navy); cursor: pointer; }
+.att-table .year-cell.is-out { color: var(--muted); }
+.att-table th[data-pick-month] { cursor: pointer; }
 .att-table .icon-del { padding: 0 4px; }
 .att-table .name-row { display: inline; }
 .att-table .name-actions {
@@ -1092,6 +1099,16 @@ input, select {
 .pay-nums span { display: block; font-size: 11px; text-transform: uppercase; color: var(--muted); }
 .pay-row-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
 .pay-row .formula { margin-top: 4px; }
+.opening-edit {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 12px;
+  background: rgba(255,255,255,.55);
+  border-radius: 12px;
+}
+.opening-edit-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.opening-hint { margin: 0; font-size: 12px; }
 .multi {
   display: grid;
   gap: 8px;
@@ -1124,10 +1141,13 @@ input, select {
   flex-direction: column;
   gap: var(--space-md, 16px);
   width: 100%;
+  max-width: 100%;
   min-width: 0;
 }
 .parent-shell > .parent-child {
   margin: 0;
+  min-width: 0;
+  max-width: 100%;
 }
 .parent-child-card.is-open-child {
   outline: 2px solid var(--navy);
