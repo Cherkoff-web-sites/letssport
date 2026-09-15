@@ -54,6 +54,184 @@ let devCalcOpen = false;
 let devCalcFamily = "";
 let devCalcQ = "";
 let devCalcPeriods = null;
+let attScroll = { left: 0, top: 0 };
+const undoStack = [];
+const UNDO_MAX = 25;
+let toastTimer = null;
+
+function rememberAttScroll() {
+  const w = document.querySelector(".att-wrap");
+  if (w) attScroll = { left: w.scrollLeft, top: w.scrollTop };
+}
+
+function restoreAttScroll() {
+  const w = document.querySelector(".att-wrap");
+  if (!w) return;
+  w.scrollLeft = attScroll.left;
+  w.scrollTop = attScroll.top;
+}
+
+function attKeyLocal(monthIdVal, groupId, childId, day) {
+  return `${monthIdVal}:${groupId}:${childId}:${day}`;
+}
+
+function applyMarkToCell(el, child, groupId, day) {
+  if (!el) return;
+  const group = (state.groups || []).find((g) => g.id === groupId);
+  const mark = cellMark(child, groupId, day);
+  const train = isTrainingDay(group, day) ? "is-train" : "";
+  el.className = `mark big-mark ${mark.cls} ${train}`.trim();
+  el.textContent = mark.text;
+}
+
+function pushUndo(entry) {
+  undoStack.push({ ...entry, at: Date.now() });
+  while (undoStack.length > UNDO_MAX) undoStack.shift();
+  renderUndoBtn();
+}
+
+function renderUndoBtn() {
+  let btn = document.getElementById("undo-btn");
+  if (!btn) {
+    const top = document.querySelector(".top-slim");
+    if (!top) return;
+    btn = document.createElement("button");
+    btn.id = "undo-btn";
+    btn.type = "button";
+    btn.className = "btn ghost undo-btn";
+    btn.title = "Отменить последнее действие";
+    const logout = document.getElementById("logout");
+    top.insertBefore(btn, logout || null);
+    btn.addEventListener("click", () => { runUndo(); });
+  }
+  const n = undoStack.length;
+  btn.hidden = n === 0;
+  btn.disabled = n === 0;
+  btn.textContent = n ? `↩ Отменить${n > 1 ? ` (${n})` : ""}` : "↩ Отменить";
+}
+
+function showToast(text) {
+  let el = document.getElementById("lk-toast");
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "lk-toast";
+    el.className = "lk-toast";
+    document.body.appendChild(el);
+  }
+  el.textContent = text;
+  el.classList.add("is-on");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("is-on"), 2200);
+}
+
+function askConfirm({ title, body, confirmLabel, danger }) {
+  return new Promise((resolve) => {
+    const root = document.getElementById("confirm-root");
+    if (!root) {
+      resolve(window.confirm([title, body].filter(Boolean).join("\n")));
+      return;
+    }
+    root.innerHTML = `
+      <div class="confirm-backdrop" data-confirm-cancel></div>
+      <div class="confirm-card" role="dialog" aria-modal="true">
+        <h3>${esc(title || "Подтвердите действие")}</h3>
+        ${body ? `<p>${body}</p>` : ""}
+        <div class="confirm-actions">
+          <button type="button" class="btn ghost" data-confirm-cancel>Отмена</button>
+          <button type="button" class="btn ${danger ? "danger" : ""}" data-confirm-ok>${esc(confirmLabel || "Подтвердить")}</button>
+        </div>
+      </div>`;
+    root.className = "confirm-on";
+    const done = (val) => {
+      root.className = "";
+      root.innerHTML = "";
+      resolve(val);
+    };
+    root.querySelector("[data-confirm-ok]").onclick = () => done(true);
+    root.querySelectorAll("[data-confirm-cancel]").forEach((b) => {
+      b.onclick = () => done(false);
+    });
+  });
+}
+
+async function runUndo() {
+  const entry = undoStack.pop();
+  renderUndoBtn();
+  if (!entry) return;
+  try {
+    if (entry.type === "attendance") {
+      const res = await api("/api/attendance", "POST", {
+        groupId: entry.groupId,
+        childId: entry.childId,
+        day: entry.day,
+        monthId: entry.monthId,
+        status: entry.prev || ""
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Не удалось отменить");
+      const key = attKeyLocal(entry.monthId, entry.groupId, entry.childId, entry.day);
+      if (data.mark && data.mark !== "sick") state.attendance[key] = data.mark;
+      else delete state.attendance[key];
+      const child = state.children.find((c) => c.id === entry.childId);
+      const cell = document.querySelector(
+        `[data-toggle-mark="${entry.childId}"][data-day="${entry.day}"][data-group="${entry.groupId}"]`
+      );
+      if (child && cell) applyMarkToCell(cell, child, entry.groupId, entry.day);
+      else {
+        rememberAttScroll();
+        await load();
+        restoreAttScroll();
+      }
+      showToast("Отметка отменена");
+      return;
+    }
+    if (entry.type === "ungroup") {
+      const res = await api(`/api/groups/${entry.groupId}/children`, "POST", { childId: entry.childId });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Не удалось вернуть в группу");
+      rememberAttScroll();
+      await load();
+      restoreAttScroll();
+      showToast("Ребёнок снова в группе");
+      return;
+    }
+    if (entry.type === "sick") {
+      const res = await api("/api/sick", "POST", { childId: entry.childId, iso: entry.iso });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Не удалось отменить");
+      if (data.dates) state.sick[entry.childId] = data.dates;
+      rememberAttScroll();
+      await load();
+      restoreAttScroll();
+      showToast("Больничный отменён");
+      return;
+    }
+    if (entry.type === "name") {
+      const res = await api("/api/children/" + entry.childId, "PATCH", { name: entry.prev });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Не удалось вернуть имя");
+      await load();
+      showToast("Имя возвращено");
+      return;
+    }
+    if (entry.type === "opening") {
+      const res = await api("/api/pay/opening", "POST", {
+        familyId: entry.familyId,
+        openingSeed: entry.prev,
+        monthId: entry.monthId
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Не удалось отменить");
+      await loadPeriods();
+      showToast("Остаток на начало отменён");
+      return;
+    }
+    showToast("Это действие уже нельзя отменить");
+  } catch (err) {
+    pushUndo(entry);
+    alert(err.message || "Ошибка отмены");
+  }
+}
 
 async function load() {
   const q = monthId ? ("?month=" + encodeURIComponent(monthId)) : "";
@@ -277,6 +455,7 @@ function staffMode() {
 }
 
 function render() {
+  rememberAttScroll();
   renderTabs();
   const app = document.getElementById("app");
   if (role === "parent") app.innerHTML = parentView();
@@ -285,6 +464,8 @@ function render() {
   else app.innerHTML = coordView();
   drawOverlay();
   renderDevCalc();
+  renderUndoBtn();
+  requestAnimationFrame(() => restoreAttScroll());
 }
 
 function renderTabs() {
@@ -1547,54 +1728,119 @@ document.getElementById("app").addEventListener("click", async (e) => {
 
   const toggle = e.target.closest("[data-toggle-mark]");
   if (toggle) {
+    const groupId = toggle.dataset.group;
+    const childId = toggle.dataset.toggleMark;
+    const day = Number(toggle.dataset.day);
+    const mid = state.month.id;
+    const key = attKeyLocal(mid, groupId, childId, day);
+    const prev = state.attendance[key] || "";
     const res = await api("/api/attendance", "POST", {
-      groupId: toggle.dataset.group,
-      childId: toggle.dataset.toggleMark,
-      day: Number(toggle.dataset.day),
-      monthId: state.month.id
+      groupId,
+      childId,
+      day,
+      monthId: mid
     });
     const data = await res.json();
     if (!res.ok) return alert(data.error);
-    await load();
+    if (data.mark === "sick") return;
+    if (data.mark) state.attendance[key] = data.mark;
+    else delete state.attendance[key];
+    const child = state.children.find((c) => c.id === childId);
+    if (child) applyMarkToCell(toggle, child, groupId, day);
+    pushUndo({
+      type: "attendance",
+      label: "отметка посещения",
+      groupId,
+      childId,
+      day,
+      monthId: mid,
+      prev,
+      next: data.mark || ""
+    });
     return;
   }
 
   const un = e.target.closest("[data-ungroup]");
   if (un) {
     e.preventDefault();
-    if (!confirm("Убрать из группы?")) return;
+    const child = state.children.find((c) => c.id === un.dataset.ungroup);
+    const ok = await askConfirm({
+      title: "Убрать из группы?",
+      body: child
+        ? `Ребёнок <b>${esc(child.name)}</b> будет убран из текущей группы. Посещения в других группах сохранятся.`
+        : "Ребёнок будет убран из текущей группы.",
+      confirmLabel: "Убрать",
+      danger: true
+    });
+    if (!ok) return;
     const g = currentGroup();
     const res = await api(`/api/groups/${g.id}/children/${un.dataset.ungroup}`, "DELETE");
     const data = await res.json();
     if (!res.ok) return alert(data.error);
+    pushUndo({
+      type: "ungroup",
+      groupId: g.id,
+      childId: un.dataset.ungroup,
+      label: "удаление из группы"
+    });
+    rememberAttScroll();
     await load();
+    restoreAttScroll();
+    showToast("Убран из группы · можно отменить");
     return;
   }
 
   const enrollBtn = e.target.closest("[data-enroll]");
   if (enrollBtn) {
     e.preventDefault();
-    if (!confirm("Зачислить в группу? Отметки 0 и 500 сохранятся, дальше можно ставить «+» как обычным.")) return;
+    const child = state.children.find((c) => c.id === enrollBtn.dataset.enroll);
+    const ok = await askConfirm({
+      title: "Зачислить в группу?",
+      body: child
+        ? `<b>${esc(child.name)}</b>: отметки 0 и 500 сохранятся, дальше можно ставить «+» как обычным ученикам.`
+        : "Отметки 0 и 500 сохранятся, дальше можно ставить «+».",
+      confirmLabel: "Зачислить"
+    });
+    if (!ok) return;
     const res = await api(`/api/children/${enrollBtn.dataset.enroll}/enroll`, "POST");
     const data = await res.json();
     if (!res.ok) return alert(data.error);
+    rememberAttScroll();
     await load();
+    restoreAttScroll();
+    showToast("Зачислен в группу");
     return;
   }
 
   if (e.target.closest("[data-parent-pay]")) {
+    const ok = await askConfirm({
+      title: "Подтвердить оплату?",
+      body: `Период <b>${esc(state.month.label)}</b>. Статус у руководителя станет жёлтым — ожидает подтверждения прихода.`,
+      confirmLabel: "Я оплатил"
+    });
+    if (!ok) return;
     await api("/api/pay/parent", "POST", { monthId: state.month.id });
     await load();
+    showToast("Отмечено как оплачено");
     return;
   }
 
   const editName = e.target.closest("[data-edit-name]");
   if (editName) {
     const child = state.children.find((c) => c.id === editName.dataset.editName);
-    const name = prompt("Фамилия Имя", child ? child.name : "");
-    if (!name) return;
+    const prev = child ? child.name : "";
+    const name = prompt("Фамилия Имя", prev);
+    if (!name || name === prev) return;
+    const ok = await askConfirm({
+      title: "Изменить ФИО?",
+      body: `<b>${esc(prev)}</b> → <b>${esc(name)}</b>`,
+      confirmLabel: "Сохранить"
+    });
+    if (!ok) return;
     await api("/api/children/" + child.id, "PATCH", { name });
+    pushUndo({ type: "name", childId: child.id, prev, next: name });
     await load();
+    showToast("Имя изменено · можно отменить");
     return;
   }
 
@@ -1628,8 +1874,21 @@ document.getElementById("app").addEventListener("click", async (e) => {
   if (e.target.closest("[data-clear-sick]")) { selectedChild = ""; render(); return; }
   const ts = e.target.closest("[data-toggle-sick]");
   if (ts) {
-    await api("/api/sick", "POST", { childId: selectedChild, iso: ts.dataset.toggleSick });
+    const iso = ts.dataset.toggleSick;
+    const had = ((state.sick && state.sick[selectedChild]) || []).includes(iso);
+    const ok = await askConfirm({
+      title: had ? "Снять больничный?" : "Отметить больничный?",
+      body: had
+        ? `Убрать «Б» на <b>${esc(iso)}</b> во всех группах ребёнка.`
+        : `Поставить «Б» на <b>${esc(iso)}</b> во всех группах ребёнка.`,
+      confirmLabel: had ? "Снять" : "Отметить",
+      danger: had
+    });
+    if (!ok) return;
+    await api("/api/sick", "POST", { childId: selectedChild, iso });
+    pushUndo({ type: "sick", childId: selectedChild, iso, label: "больничный" });
     await load();
+    showToast(had ? "Больничный снят · можно отменить" : "Больничный отмечен · можно отменить");
     return;
   }
 
@@ -1651,6 +1910,12 @@ document.getElementById("app").addEventListener("click", async (e) => {
   if (dp) {
     const incoming = prompt("Сумма прихода, ₽", dp.dataset.need || "0");
     if (incoming == null) return;
+    const ok = await askConfirm({
+      title: "Подтвердить приход?",
+      body: `Записать приход <b>${esc(rub(Number(incoming)))}</b> по счёту <b>${esc(rub(Number(dp.dataset.need)))}</b> за период <b>${esc((state.month && state.month.label) || "")}</b>.`,
+      confirmLabel: "Записать"
+    });
+    if (!ok) return;
     await api("/api/pay/director", "POST", {
       familyId: dp.dataset.dirPay,
       incoming: Number(incoming),
@@ -1658,6 +1923,7 @@ document.getElementById("app").addEventListener("click", async (e) => {
       monthId: currentMonthId()
     });
     await loadPeriods();
+    showToast("Статус оплаты обновлён");
     return;
   }
 
@@ -1667,23 +1933,56 @@ document.getElementById("app").addEventListener("click", async (e) => {
     const input = document.querySelector(`[data-opening-input="${fid}"]`);
     const raw = input ? String(input.value).trim() : "";
     if (raw === "") return alert("Введите сумму остатка на начало (0 если ничего не было)");
+    const row = (periods && periods.rows || []).find((r) => r.family.id === fid);
+    const prev = row && row.period.openingManual ? row.period.opening : null;
+    const ok = await askConfirm({
+      title: "Сохранить остаток на начало?",
+      body: `Для периода <b>${esc((state.month && state.month.label) || "")}</b> задать остаток <b>${esc(rub(Number(raw)))}</b>. Автоперенос с прошлого месяца будет отключён.`,
+      confirmLabel: "Сохранить"
+    });
+    if (!ok) return;
     await api("/api/pay/opening", "POST", {
       familyId: fid,
       openingSeed: Number(raw),
       monthId: currentMonthId()
     });
+    pushUndo({
+      type: "opening",
+      familyId: fid,
+      monthId: currentMonthId(),
+      prev,
+      next: Number(raw)
+    });
     await loadPeriods();
+    showToast("Остаток сохранён · можно отменить");
     return;
   }
 
   const clearOpen = e.target.closest("[data-clear-opening]");
   if (clearOpen) {
+    const fid = clearOpen.dataset.clearOpening;
+    const row = (periods && periods.rows || []).find((r) => r.family.id === fid);
+    const prev = row && row.period.openingManual ? row.period.opening : null;
+    const ok = await askConfirm({
+      title: "Сбросить ручной остаток?",
+      body: "Вернётся автоматический перенос с прошлого месяца (за «Б» / долг).",
+      confirmLabel: "Сбросить"
+    });
+    if (!ok) return;
     await api("/api/pay/opening", "POST", {
-      familyId: clearOpen.dataset.clearOpening,
+      familyId: fid,
       openingSeed: null,
       monthId: currentMonthId()
     });
+    pushUndo({
+      type: "opening",
+      familyId: fid,
+      monthId: currentMonthId(),
+      prev,
+      next: null
+    });
     await loadPeriods();
+    showToast("Остаток сброшен · можно отменить");
     return;
   }
 
@@ -1929,13 +2228,20 @@ document.getElementById("overlay").addEventListener("click", async (e) => {
   if (removeParent && sheet && sheet.type === "family") {
     const child = state.children.find((c) => c.id === sheet.childId);
     const famId = sheet.familyId || (child && child.familyId);
-    if (!confirm("Убрать этого родителя из семьи?")) return;
+    const ok = await askConfirm({
+      title: "Убрать родителя из семьи?",
+      body: "Контакты родителя будут удалены из этой семьи.",
+      confirmLabel: "Убрать",
+      danger: true
+    });
+    if (!ok) return;
     const res = await api("/api/families/" + famId, "PATCH", { removeParentId: removeParent.dataset.removeParent });
     const data = await res.json();
     if (!res.ok) return alert(data.error);
     await load();
     sheet = { type: "family", childId: sheet.childId, familyId: famId, view: "home", returnView: sheet.returnView || view };
     drawOverlay();
+    showToast("Родитель убран");
     return;
   }
 
